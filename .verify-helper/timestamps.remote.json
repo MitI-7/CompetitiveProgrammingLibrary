@@ -1,5 +1,6 @@
 {
 "test/cpp/DataStructure/CumulativeSum.test.cpp": "2020-06-29 22:30:29 +0900",
 "test/cpp/DataStructure/CumulativeSum_2.test.cpp": "2020-06-29 22:30:29 +0900",
+"test/cpp/Math/get_divisor.test.cpp": "2020-06-30 00:56:15 +0900",
 "test/cpp/tree/UnionFind.test.cpp": "2020-06-29 00:35:26 +0900"
 }
