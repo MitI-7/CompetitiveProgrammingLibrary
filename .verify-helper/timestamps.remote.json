@@ -1,6 +1,7 @@
 {
 "test/cpp/DataStructure/CumulativeSum.test.cpp": "2020-06-29 22:30:29 +0900",
 "test/cpp/DataStructure/CumulativeSum_2.test.cpp": "2020-06-29 22:30:29 +0900",
+"test/cpp/DynamicProgramming/longest_increasing_subsequence.test.cpp": "2020-07-12 17:48:30 +0900",
 "test/cpp/Math/Matrix.test.cpp": "2020-07-03 22:51:28 +0900",
 "test/cpp/Math/Matrix_2.test.cpp": "2020-07-03 22:51:28 +0900",
 "test/cpp/Math/get_divisor.test.cpp": "2020-06-30 00:56:15 +0900",
