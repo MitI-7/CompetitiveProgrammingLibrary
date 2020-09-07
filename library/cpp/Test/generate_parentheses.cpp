@@ -4,7 +4,6 @@
 #include <random>
 
 
-// ’·‚³n‚Ìvalid‚ÈƒJƒbƒR—ñ‚ğ¶¬
 std::string generate_parentheses(const int n) {
     assert(n % 2 == 0);
 
