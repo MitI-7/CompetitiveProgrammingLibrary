@@ -21,6 +21,7 @@
 "test/cpp/Tree/Tree_distance.test.cpp": "2020-09-07 21:02:35 +0900",
 "test/cpp/Tree/Tree_lca.test.cpp": "2020-09-07 21:02:35 +0900",
 "test/cpp/Tree/UnionFind.test.cpp": "2020-09-07 21:02:35 +0900",
+"test/cpp/Tree/kruskal.test.cpp": "2020-09-07 22:33:43 +0900",
 "test/cpp/tree/FenwickTree.test.cpp": "2020-09-07 21:02:35 +0900",
 "test/cpp/tree/Tree_diameter.test.cpp": "2020-09-07 21:02:35 +0900",
 "test/cpp/tree/Tree_distance.test.cpp": "2020-09-07 21:02:35 +0900",
