@@ -12,6 +12,7 @@
 "test/cpp/Geometry/SmallestEnclosingCircle.test.cpp": "2020-08-28 23:37:24 +0900",
 "test/cpp/Graph/BridgeDetection.test.cpp": "2020-09-07 22:13:52 +0900",
 "test/cpp/Graph/StronglyConnectedComponents.test.cpp": "2020-09-08 01:48:44 +0900",
+"test/cpp/Graph/detect_minimum_cycle.test.cpp": "2020-09-08 15:20:27 +0900",
 "test/cpp/Math/Matrix.test.cpp": "2020-07-03 22:51:28 +0900",
 "test/cpp/Math/Matrix_2.test.cpp": "2020-07-03 22:51:28 +0900",
 "test/cpp/Math/get_divisor.test.cpp": "2020-06-30 00:56:15 +0900",
