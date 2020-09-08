@@ -1,3 +1,8 @@
+#include <vector>
+#include <functional>
+#include <cassert>
+
+
 template <typename T> class SegmentTree {
     const int array_size;        // もとの配列のサイズ
     int n;
@@ -14,7 +19,7 @@ public:
 
     SegmentTree(int array_size, Mode mode) : array_size(array_size) {
         if (mode == RangeMinimumQuery) {
-            unit = INT_MAX;
+            unit = std::numeric_limits<T>::max() / 3;;
             op = [](T a, T b) { return std::min(a, b); };
         }
         else if (mode == RangeMaximumQuery) {
@@ -39,7 +44,7 @@ public:
         data.resize(2 * n - 1, unit);
     }
 
-    T access(int idx) {
+    T access(const int idx) const {
         return data[idx + n - 1];
     }
 
