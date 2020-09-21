@@ -39,8 +39,22 @@ public:
     }
 
     // 最大マッチング
-    long long get_maximum_matching() {
+    long long get_maximum_matching_cost() const {
         return maximum_matching;
+    }
+
+    // 最大マッチングのマッチングした辺
+    std::vector<std::pair<int, int>> get_maximum_matching_edges() const {
+        std::vector<std::pair<int, int>> ans;
+        for (auto u : this->left_nodes) {
+            for (const auto &edge : this->dinic.graph[u]) {
+                if (edge.flow == edge.cap and not edge.is_rev) {
+                    ans.emplace_back(std::make_pair(u, edge.to));
+                }
+            }
+        }
+
+        return ans;
     }
 
     // 最大安定集合のサイズ

@@ -21,7 +21,7 @@ int main() {
     }
     bm.solve();
 
-    cout << bm.get_maximum_matching() << endl;
+    cout << bm.get_maximum_matching_cost() << endl;
 
     return 0;
 }
