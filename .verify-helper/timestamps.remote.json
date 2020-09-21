@@ -8,6 +8,7 @@
 "test/cpp/DataStructure/WaveletMatrix_nextValue.test.cpp": "2020-08-23 22:02:32 +0900",
 "test/cpp/DataStructure/WaveletMatrix_prevValue.test.cpp": "2020-08-23 22:02:32 +0900",
 "test/cpp/DataStructure/WaveletMatrix_quantileRange.test.cpp": "2020-08-23 22:02:32 +0900",
+"test/cpp/DataStructure/WaveletMatrix_quantileRange2.test.cpp": "2020-09-21 18:40:58 +0900",
 "test/cpp/DataStructure/WaveletMatrix_rankLessThan.test.cpp": "2020-08-23 22:02:32 +0900",
 "test/cpp/DataStructure/WaveletMatrix_rankMoreThan.test.cpp": "2020-08-23 22:02:32 +0900",
 "test/cpp/DynamicProgramming/levenshtein_distance.test.cpp": "2020-09-08 20:36:23 +0900",
