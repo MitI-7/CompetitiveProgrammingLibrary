@@ -10,6 +10,7 @@
 "test/cpp/DataStructure/WaveletMatrix_quantileRange.test.cpp": "2020-08-23 22:02:32 +0900",
 "test/cpp/DataStructure/WaveletMatrix_rankLessThan.test.cpp": "2020-08-23 22:02:32 +0900",
 "test/cpp/DataStructure/WaveletMatrix_rankMoreThan.test.cpp": "2020-08-23 22:02:32 +0900",
+"test/cpp/DynamicProgramming/levenshtein_distance.test.cpp": "2020-09-08 20:36:23 +0900",
 "test/cpp/DynamicProgramming/longest_common_subsequence.test.cpp": "2020-07-13 14:20:50 +0900",
 "test/cpp/DynamicProgramming/longest_increasing_subsequence.test.cpp": "2020-07-12 17:48:30 +0900",
 "test/cpp/Geometry/SmallestEnclosingCircle.test.cpp": "2020-08-28 23:37:24 +0900",
