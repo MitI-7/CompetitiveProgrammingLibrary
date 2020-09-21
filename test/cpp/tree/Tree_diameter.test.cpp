@@ -24,7 +24,8 @@ int main() {
     tree.build2(0);
 
     int u, v;
-    tie(u, v) = tree.diameter();
+    long long d;
+    tie(u, v, d) = tree.diameter();
     cout << tree.distance(u, v) << endl;
 
     return 0;

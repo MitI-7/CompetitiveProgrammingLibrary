@@ -4,6 +4,7 @@
 #include <stack>
 
 
+
 class Tree {
 public:
     int num_of_node;
@@ -33,14 +34,14 @@ public:
     }
 
     // u <-> v
-    void add_undirected_edge(const int u, const int v, const int w=1) {
+    void add_undirected_edge(const int u, const int v, const long long w=1) {
         this->tree[u].emplace_back(v);
         this->tree[v].emplace_back(u);
         this->weight_edge[u][v] = this->weight_edge[v][u] = w;
     }
 
     // u -> v
-    void add_directed_edge(const int u, const int v, const int w=1) {
+    void add_directed_edge(const int u, const int v, const long long w=1) {
         this->tree[u].emplace_back(v);
         this->weight_edge[u][v] = w;
     }
@@ -78,7 +79,7 @@ public:
 
     // 木の直径のうちのひとつのペア O(N log N)
     // 距離は辺の長さを考慮している点に注意
-    std::pair<int, int> diameter() const {
+    std::tuple<int, int, long long> diameter() const {
         // node 0から一番遠いnode
         int u = 0;
         long long max_distance = -1;
@@ -101,7 +102,7 @@ public:
             }
         }
 
-        return std::make_pair(u, v);
+        return std::make_tuple(u, v, diameter);
     }
 
     // fromからtoへいくルートを取得 O(N + M)
@@ -139,7 +140,8 @@ public:
     // 木の中心のノード
     int center() const {
         int u, v;
-        std::tie(u, v) = this->diameter();
+        long long d;
+        std::tie(u, v, d) = this->diameter();
         std::vector<int> r = this->route(u, v);
         return r[r.size() / 2];
     }

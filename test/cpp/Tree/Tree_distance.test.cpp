@@ -24,7 +24,8 @@ int main() {
     tree.build2(0);
 
     int d1, d2;
-    tie(d1, d2) = tree.diameter();
+    long long d;
+    tie(d1, d2, d) = tree.diameter();
 
     for (int u = 0; u < N; ++u) {
         long long ans = 0;
