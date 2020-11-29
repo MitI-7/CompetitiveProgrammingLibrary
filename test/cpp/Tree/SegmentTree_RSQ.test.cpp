@@ -5,6 +5,14 @@
 using namespace std;
 
 
+// RangeSummationQuery
+int op(int a, int b) {
+    return a + b;
+}
+int unit() {
+    return 0;
+}
+
 int main(int argc, char *argv[]) {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -13,7 +21,7 @@ int main(int argc, char *argv[]) {
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<long long> st(N, SegmentTree<long long>::RangeSummationQuery);
+    SegmentTree<int, op, unit> st(N);
     for (int i = 0; i < N; ++i) {
         st.update(i, 0);
     }

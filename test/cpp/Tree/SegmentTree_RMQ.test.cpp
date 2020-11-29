@@ -5,6 +5,14 @@
 using namespace std;
 
 
+// RangeMinimumQuery
+int op(int a, int b) {
+    return std::min(a, b);
+}
+int unit() {
+    return (1ull << 31u) - 1;
+}
+
 int main(int argc, char *argv[]) {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -13,7 +21,7 @@ int main(int argc, char *argv[]) {
     int N, Q;
     cin >> N >> Q;
 
-    SegmentTree<long long> st(N, SegmentTree<long long>::RangeMinimumQuery);
+    SegmentTree<int, op, unit> st(N);
     for (int i = 0; i < N; ++i) {
         st.update(i, (1ull << 31u) - 1);
     }
