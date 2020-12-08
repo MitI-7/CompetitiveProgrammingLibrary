@@ -13,10 +13,7 @@ int main(int argc, char *argv[]) {
     int N, Q;
     cin >> N >> Q;
 
-    const auto query = LazySegmentTree<long long>::RangeMinimumQuery;
-    const auto operation = LazySegmentTree<long long>::Update;
-    const auto mode = LazySegmentTree<long long>::getMode(query, operation);
-
+    const auto mode = range_minimum_query_update<long long>();
     vector<long long> v(N, (1ull << 31u) - 1);
     LazySegmentTree<long long> lst(v, mode);
     for (int i = 0; i < Q; ++i) {
