@@ -182,3 +182,16 @@ template <typename T> Mode<T> range_summation_query_add() {
         0,
     };
 }
+
+// 区間min更新
+template<typename T> T &chmin(T &a, const T &b) { return a = std::min(a, b); }
+template <typename T> Mode<T> range_minimum_query_min() {
+    return Mode<T>{
+        [](T a, T b) { return std::min(a, b); },
+        [](T a, T b) { return chmin(a, b); },
+        [](T a, T b) { return chmin(a, b); },
+        [](T a, int len) { return a; },
+        std::numeric_limits<T>::max() / 3,
+        std::numeric_limits<T>::max() / 3,
+    };
+}
