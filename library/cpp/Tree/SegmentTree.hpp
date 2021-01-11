@@ -132,3 +132,11 @@ private:
 //int unit() {
 //    return 0;
 //}
+
+// RangeXorQuery
+//LL op(LL a, LL b) {
+//    return a ^ b;
+//}
+//LL unit() {
+//    return 0;
+//}
