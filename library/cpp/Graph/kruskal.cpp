@@ -31,7 +31,7 @@ long long kruskal(int num_of_node, std::vector<Edge> &edges) {
     long long ans = 0;
     for (const auto e: edges) {
         if (!uf.is_same_set(e.from, e.to)) {
-            uf.union_set(e.from, e.to);
+            uf.unite(e.from, e.to);
             ans += e.cost;
         }
     }
