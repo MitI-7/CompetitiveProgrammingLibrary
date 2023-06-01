@@ -1,0 +1,68 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/DataStructure/FenwickTree1.test.cpp
+    title: test/cpp/DataStructure/FenwickTree1.test.cpp
+  _isVerificationFailed: false
+  _pathExtension: hpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    links: []
+  bundledCode: "#line 1 \"library/cpp/DataStructure/FenwickTree.hpp\"\n#include <cassert>\n\
+    #include <vector>\n\n// \u3059\u3079\u30660-origin\ntemplate<class T=long long>\n\
+    class FenwickTree {\npublic:\n    const int n;\n    std::vector<T> v;\n\n    //\
+    \ n: \u8981\u7D20\u6570\n    FenwickTree(const int n) : n(n) {\n        this->v.assign(n\
+    \ + 1, 0);\n    }\n\n    // i \u756A\u76EE\u306E\u8981\u7D20\u3092\u53D6\u5F97\
+    \u3059\u308B\n    // O(log n)\n    T access(const int i) const {\n        return\
+    \ this->sum(i, i + 1);\n    }\n\n    // \u533A\u9593[0, i) \u306E\u5408\u8A08\u3092\
+    \u6C42\u3081\u308B\n    // O(log n)\n    T sum(int i) const {\n        assert(0\
+    \ <= i and i <= this->n);\n\n        T s = 0;\n        i -= 1;\n        while\
+    \ (i >= 0) {\n            s += this->v[i];\n            i = (i & (i + 1)) - 1;\n\
+    \        }\n        return s;\n    }\n\n    // \u533A\u9593 [left, right) \u306E\
+    \u5408\u8A08\u3092\u6C42\u3081\u308B\n    // O(log n)\n    T sum(const int left,\
+    \ const int right) const {\n        if (left >= right) {\n            return 0;\n\
+    \        }\n        return this->sum(right) - this->sum(left);\n    }\n\n    //\
+    \ i \u756A\u76EE\u306E\u8981\u7D20\u306B x \u3092\u52A0\u3048\u308B\n    // O(log\
+    \ n)\n    void add(int i, T x) {\n        assert(i < this->n);\n\n        while\
+    \ (i < this->n) {\n            this->v.at(i) += x;\n            i |= i + 1;\n\
+    \        }\n    }\n\n    // i \u756A\u76EE\u306E\u8981\u7D20\u3092 x \u306B\u3059\
+    \u308B\n    // O(log n)\n    void set(int i, T x) {\n        assert(i < this->n);\n\
+    \n        T now = this->access(i);\n        this->add(i, x - now);\n    }\n};\n"
+  code: "#include <cassert>\n#include <vector>\n\n// \u3059\u3079\u30660-origin\n\
+    template<class T=long long>\nclass FenwickTree {\npublic:\n    const int n;\n\
+    \    std::vector<T> v;\n\n    // n: \u8981\u7D20\u6570\n    FenwickTree(const\
+    \ int n) : n(n) {\n        this->v.assign(n + 1, 0);\n    }\n\n    // i \u756A\
+    \u76EE\u306E\u8981\u7D20\u3092\u53D6\u5F97\u3059\u308B\n    // O(log n)\n    T\
+    \ access(const int i) const {\n        return this->sum(i, i + 1);\n    }\n\n\
+    \    // \u533A\u9593[0, i) \u306E\u5408\u8A08\u3092\u6C42\u3081\u308B\n    //\
+    \ O(log n)\n    T sum(int i) const {\n        assert(0 <= i and i <= this->n);\n\
+    \n        T s = 0;\n        i -= 1;\n        while (i >= 0) {\n            s +=\
+    \ this->v[i];\n            i = (i & (i + 1)) - 1;\n        }\n        return s;\n\
+    \    }\n\n    // \u533A\u9593 [left, right) \u306E\u5408\u8A08\u3092\u6C42\u3081\
+    \u308B\n    // O(log n)\n    T sum(const int left, const int right) const {\n\
+    \        if (left >= right) {\n            return 0;\n        }\n        return\
+    \ this->sum(right) - this->sum(left);\n    }\n\n    // i \u756A\u76EE\u306E\u8981\
+    \u7D20\u306B x \u3092\u52A0\u3048\u308B\n    // O(log n)\n    void add(int i,\
+    \ T x) {\n        assert(i < this->n);\n\n        while (i < this->n) {\n    \
+    \        this->v.at(i) += x;\n            i |= i + 1;\n        }\n    }\n\n  \
+    \  // i \u756A\u76EE\u306E\u8981\u7D20\u3092 x \u306B\u3059\u308B\n    // O(log\
+    \ n)\n    void set(int i, T x) {\n        assert(i < this->n);\n\n        T now\
+    \ = this->access(i);\n        this->add(i, x - now);\n    }\n};"
+  dependsOn: []
+  isVerificationFile: false
+  path: library/cpp/DataStructure/FenwickTree.hpp
+  requiredBy: []
+  timestamp: '2023-05-21 19:05:38+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/cpp/DataStructure/FenwickTree1.test.cpp
+documentation_of: library/cpp/DataStructure/FenwickTree.hpp
+layout: document
+redirect_from:
+- /library/library/cpp/DataStructure/FenwickTree.hpp
+- /library/library/cpp/DataStructure/FenwickTree.hpp.html
+title: library/cpp/DataStructure/FenwickTree.hpp
+---
