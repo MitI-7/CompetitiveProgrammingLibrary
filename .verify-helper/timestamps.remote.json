@@ -5,6 +5,7 @@
 "test/cpp/Graph/dijkstra1.test.cpp": "2023-05-15 18:47:40 +0900",
 "test/cpp/Graph/find_cycle1.test.cpp": "2023-05-15 18:41:28 +0900",
 "test/cpp/Graph/find_cycle2.test.cpp": "2023-05-15 18:41:34 +0900",
+"test/cpp/Graph/kruskal1.test.cpp": "2023-06-01 19:09:03 +0900",
 "test/cpp/Graph/warshall_floyd1.test.cpp": "2023-05-15 19:58:34 +0900",
 "test/cpp/Math/make_divisor_list1.test.cpp": "2023-05-20 15:21:29 +0900",
 "test/cpp/Math/pow_mod1.test.cpp": "2023-05-21 18:45:21 +0900",
