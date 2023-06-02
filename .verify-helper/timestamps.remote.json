@@ -6,6 +6,7 @@
 "test/cpp/DataStructure/CumulativeSum1.test.cpp": "2023-06-01 20:01:48 +0900",
 "test/cpp/DataStructure/FenwickTree1.test.cpp": "2023-05-21 19:05:48 +0900",
 "test/cpp/DataStructure/UnionFind1.test.cpp": "2023-05-15 18:22:55 +0900",
+"test/cpp/Geometry/Point1_rotate.test.cpp": "2023-06-02 16:47:45 +0900",
 "test/cpp/Geometry/Polygon1_area.test.cpp": "2023-06-02 17:18:57 +0900",
 "test/cpp/Geometry/Polygon2_area.test.cpp": "2023-06-02 17:19:14 +0900",
 "test/cpp/Graph/bellman_ford1.test.cpp": "2023-05-15 19:51:57 +0900",
