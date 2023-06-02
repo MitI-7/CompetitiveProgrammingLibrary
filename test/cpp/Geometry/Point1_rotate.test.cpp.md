@@ -29,19 +29,21 @@ data:
     \ Point<T> &p) const {\n        return this->x * p.x + this->y * p.y;\n    }\n\
     \n    // \u5916\u7A4D (cross product) : a\xD7b = |a||b|sin\u03B8\n    double cross(const\
     \ Point<T> &p) const {\n        return this->y * p.x - this->x * p.y;\n    }\n\
-    \n    Point<T> operator+(const Point<T> a) const {\n        Point<T> res(*this);\n\
-    \        res.y += a.y;\n        res.x += a.x;\n        return res;\n    }\n\n\
-    \    Point<T> operator-(const Point<T> a) const {\n        Point<T> res(*this);\n\
-    \        res.y -= a.y;\n        res.x -= a.x;\n        return res;\n    }\n};\n\
-    #line 5 \"test/cpp/Geometry/Point1_rotate.test.cpp\"\n#include <iostream>\n#include\
-    \ <iomanip>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n \
-    \   ios::sync_with_stdio(false);\n\n    double A, B, D;\n    cin >> A >> B >>\
-    \ D;\n\n    double theta = D * (M_PI / 180.0);\n\n    Point<double> p(A, B);\n\
-    \    auto ans = p.rotate(theta);\n    cout << setprecision(10) << fixed << ans.x\
-    \ << \" \" << ans.y << endl;\n\n    return 0;\n}\n"
+    \n    T norm2() const {\n        return this->x * this->x + this->y * this->y;\n\
+    \    }\n\n    Point<T> operator+(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \ + p.x, this->y + p.y);\n    }\n\n    Point<T> operator-(const Point<T> p) const\
+    \ {\n        return Point<T>(this->x - p.x, this->y - p.y);\n    }\n\n    Point<T>\
+    \ operator*(const T d) const {\n        return Point<T>(this->x * d, this->y *\
+    \ d);\n    }\n\n    Point<T> operator/(const T d) const {\n        return Point<T>(this->x\
+    \ / d, this->y / d);\n    }\n};\n#line 5 \"test/cpp/Geometry/Point1_rotate.test.cpp\"\
+    \n#include <iomanip>\n#include <iostream>\n\nusing namespace std;\n\nint main()\
+    \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n    double A,\
+    \ B, D;\n    cin >> A >> B >> D;\n\n    double theta = D * (M_PI / 180.0);\n\n\
+    \    Point<double> p(A, B);\n    auto ans = p.rotate(theta);\n    cout << setprecision(10)\
+    \ << fixed << ans.x << \" \" << ans.y << endl;\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc259/tasks/abc259_b\"\n#define\
-    \ ERROR 1e-6\n\n#include \"library/cpp/Geometry/Point.hpp\"\n#include <iostream>\n\
-    #include <iomanip>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
+    \ ERROR 1e-6\n\n#include \"library/cpp/Geometry/Point.hpp\"\n#include <iomanip>\n\
+    #include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
     \    ios::sync_with_stdio(false);\n\n    double A, B, D;\n    cin >> A >> B >>\
     \ D;\n\n    double theta = D * (M_PI / 180.0);\n\n    Point<double> p(A, B);\n\
     \    auto ans = p.rotate(theta);\n    cout << setprecision(10) << fixed << ans.x\

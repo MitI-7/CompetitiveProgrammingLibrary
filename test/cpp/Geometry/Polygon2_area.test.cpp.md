@@ -33,21 +33,23 @@ data:
     \ Point<T> &p) const {\n        return this->x * p.x + this->y * p.y;\n    }\n\
     \n    // \u5916\u7A4D (cross product) : a\xD7b = |a||b|sin\u03B8\n    double cross(const\
     \ Point<T> &p) const {\n        return this->y * p.x - this->x * p.y;\n    }\n\
-    \n    Point<T> operator+(const Point<T> a) const {\n        Point<T> res(*this);\n\
-    \        res.y += a.y;\n        res.x += a.x;\n        return res;\n    }\n\n\
-    \    Point<T> operator-(const Point<T> a) const {\n        Point<T> res(*this);\n\
-    \        res.y -= a.y;\n        res.x -= a.x;\n        return res;\n    }\n};\n\
-    #line 4 \"library/cpp/Geometry/Polygon.hpp\"\n\ntemplate<class T>\nclass Polygon\
-    \ {\npublic:\n    int n;\n    const std::vector<Point<T>> points;\n\n    explicit\
-    \ Polygon(const std::vector<Point<T>> &points) : n(points.size()), points(points)\
-    \ {}\n\n    // \u591A\u89D2\u5F62\u306E\u9762\u7A4D\u306E 2 \u500D\u3092\u6C42\
-    \u3081\u308B\n    // \u51F8\u3067\u306A\u304F\u3066\u3082\u3044\u3044\n    //\
-    \ 1/2 |sum_i x_i * y_(i+1) - x_(i+1) * y_i|\n    T double_polygon_area() const\
-    \ {\n        T area = 0;\n        for (int i = 0; i < this->n; ++i) {\n      \
-    \      area += this->points[i].x * this->points[(i + 1) % this->n].y\n       \
-    \             - this->points[(i + 1) % this->n].x * this->points[i].y;\n     \
-    \   }\n        return std::abs(area);\n    }\n};\n#line 5 \"test/cpp/Geometry/Polygon2_area.test.cpp\"\
-    \n#include <iostream>\n#include <iomanip>\n\nusing namespace std;\n\nint main()\
+    \n    T norm2() const {\n        return this->x * this->x + this->y * this->y;\n\
+    \    }\n\n    Point<T> operator+(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \ + p.x, this->y + p.y);\n    }\n\n    Point<T> operator-(const Point<T> p) const\
+    \ {\n        return Point<T>(this->x - p.x, this->y - p.y);\n    }\n\n    Point<T>\
+    \ operator*(const T d) const {\n        return Point<T>(this->x * d, this->y *\
+    \ d);\n    }\n\n    Point<T> operator/(const T d) const {\n        return Point<T>(this->x\
+    \ / d, this->y / d);\n    }\n};\n#line 4 \"library/cpp/Geometry/Polygon.hpp\"\n\
+    \ntemplate<class T>\nclass Polygon {\npublic:\n    int n;\n    const std::vector<Point<T>>\
+    \ points;\n\n    explicit Polygon(const std::vector<Point<T>> &points) : n(points.size()),\
+    \ points(points) {}\n\n    // \u591A\u89D2\u5F62\u306E\u9762\u7A4D\u306E 2 \u500D\
+    \u3092\u6C42\u3081\u308B\n    // \u51F8\u3067\u306A\u304F\u3066\u3082\u3044\u3044\
+    \n    // 1/2 |sum_i x_i * y_(i+1) - x_(i+1) * y_i|\n    T double_polygon_area()\
+    \ const {\n        T area = 0;\n        for (int i = 0; i < this->n; ++i) {\n\
+    \            area += this->points[i].x * this->points[(i + 1) % this->n].y\n \
+    \                   - this->points[(i + 1) % this->n].x * this->points[i].y;\n\
+    \        }\n        return std::abs(area);\n    }\n};\n#line 5 \"test/cpp/Geometry/Polygon2_area.test.cpp\"\
+    \n#include <iomanip>\n#include <iostream>\n\nusing namespace std;\n\nint main()\
     \ {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n    int no = 1;\n\
     \    while (true) {\n        int N;\n        cin >> N;\n        if (N == 0) {\n\
     \            break;\n        }\n\n        vector<Point<double>> points(N);\n \
@@ -57,7 +59,7 @@ data:
     \ << polygon.double_polygon_area() / 2.0 << endl;\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1100\"\
     \n#define ERROR 1e-1\n\n#include \"library/cpp/Geometry/Polygon.hpp\"\n#include\
-    \ <iostream>\n#include <iomanip>\n\nusing namespace std;\n\nint main() {\n   \
+    \ <iomanip>\n#include <iostream>\n\nusing namespace std;\n\nint main() {\n   \
     \ cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n    int no = 1;\n   \
     \ while (true) {\n        int N;\n        cin >> N;\n        if (N == 0) {\n \
     \           break;\n        }\n\n        vector<Point<double>> points(N);\n  \

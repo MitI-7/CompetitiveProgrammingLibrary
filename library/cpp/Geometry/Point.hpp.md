@@ -32,10 +32,13 @@ data:
     \ Point<T> &p) const {\n        return this->x * p.x + this->y * p.y;\n    }\n\
     \n    // \u5916\u7A4D (cross product) : a\xD7b = |a||b|sin\u03B8\n    double cross(const\
     \ Point<T> &p) const {\n        return this->y * p.x - this->x * p.y;\n    }\n\
-    \n    Point<T> operator+(const Point<T> a) const {\n        Point<T> res(*this);\n\
-    \        res.y += a.y;\n        res.x += a.x;\n        return res;\n    }\n\n\
-    \    Point<T> operator-(const Point<T> a) const {\n        Point<T> res(*this);\n\
-    \        res.y -= a.y;\n        res.x -= a.x;\n        return res;\n    }\n};\n"
+    \n    T norm2() const {\n        return this->x * this->x + this->y * this->y;\n\
+    \    }\n\n    Point<T> operator+(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \ + p.x, this->y + p.y);\n    }\n\n    Point<T> operator-(const Point<T> p) const\
+    \ {\n        return Point<T>(this->x - p.x, this->y - p.y);\n    }\n\n    Point<T>\
+    \ operator*(const T d) const {\n        return Point<T>(this->x * d, this->y *\
+    \ d);\n    }\n\n    Point<T> operator/(const T d) const {\n        return Point<T>(this->x\
+    \ / d, this->y / d);\n    }\n};\n"
   code: "#include <cmath>\n\ntemplate<class T>\nclass Point {\npublic:\n    T x;\n\
     \    T y;\n    int no;\n\n    Point() : x(0), y(0), no(0) {};\n\n    Point(const\
     \ T x, const T y, int no = 0) : x(x), y(y), no(no) {}\n\n    // \u539F\u70B9\u3092\
@@ -47,11 +50,13 @@ data:
     \ |a||b|cos\u03B8\n    double dot(const Point<T> &p) const {\n        return this->x\
     \ * p.x + this->y * p.y;\n    }\n\n    // \u5916\u7A4D (cross product) : a\xD7\
     b = |a||b|sin\u03B8\n    double cross(const Point<T> &p) const {\n        return\
-    \ this->y * p.x - this->x * p.y;\n    }\n\n    Point<T> operator+(const Point<T>\
-    \ a) const {\n        Point<T> res(*this);\n        res.y += a.y;\n        res.x\
-    \ += a.x;\n        return res;\n    }\n\n    Point<T> operator-(const Point<T>\
-    \ a) const {\n        Point<T> res(*this);\n        res.y -= a.y;\n        res.x\
-    \ -= a.x;\n        return res;\n    }\n};"
+    \ this->y * p.x - this->x * p.y;\n    }\n\n    T norm2() const {\n        return\
+    \ this->x * this->x + this->y * this->y;\n    }\n\n    Point<T> operator+(const\
+    \ Point<T> &p) const {\n        return Point<T>(this->x + p.x, this->y + p.y);\n\
+    \    }\n\n    Point<T> operator-(const Point<T> p) const {\n        return Point<T>(this->x\
+    \ - p.x, this->y - p.y);\n    }\n\n    Point<T> operator*(const T d) const {\n\
+    \        return Point<T>(this->x * d, this->y * d);\n    }\n\n    Point<T> operator/(const\
+    \ T d) const {\n        return Point<T>(this->x / d, this->y / d);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/cpp/Geometry/Point.hpp
