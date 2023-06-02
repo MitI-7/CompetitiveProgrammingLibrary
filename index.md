@@ -25,7 +25,7 @@ data:
       title: library/cpp/DataStructure/UnionFind.hpp
   - name: library/cpp/Geometry
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Geometry/Point.hpp
       title: library/cpp/Geometry/Point.hpp
     - icon: ':heavy_check_mark:'
@@ -93,7 +93,7 @@ data:
       title: test/cpp/DataStructure/UnionFind1.test.cpp
   - name: test/cpp/Geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Point1_rotate.test.cpp
       title: test/cpp/Geometry/Point1_rotate.test.cpp
     - icon: ':heavy_check_mark:'
