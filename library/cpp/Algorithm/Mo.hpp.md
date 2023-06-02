@@ -154,8 +154,8 @@ data:
   timestamp: '2023-06-01 19:35:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Algorithm/Mo1.test.cpp
   - test/cpp/Algorithm/Mo2.test.cpp
+  - test/cpp/Algorithm/Mo1.test.cpp
 documentation_of: library/cpp/Algorithm/Mo.hpp
 layout: document
 redirect_from:

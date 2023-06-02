@@ -23,6 +23,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/UnionFind.hpp
       title: library/cpp/DataStructure/UnionFind.hpp
+  - name: library/cpp/Geometry
+    pages:
+    - icon: ':question:'
+      path: library/cpp/Geometry/Point.hpp
+      title: library/cpp/Geometry/Point.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Geometry/Polygon.hpp
+      title: library/cpp/Geometry/Polygon.hpp
   - name: library/cpp/Graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -83,6 +91,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/UnionFind1.test.cpp
       title: test/cpp/DataStructure/UnionFind1.test.cpp
+  - name: test/cpp/Geometry
+    pages:
+    - icon: ':x:'
+      path: test/cpp/Geometry/Point1_rotate.test.cpp
+      title: test/cpp/Geometry/Point1_rotate.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Polygon1_area.test.cpp
+      title: test/cpp/Geometry/Polygon1_area.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Polygon2_area.test.cpp
+      title: test/cpp/Geometry/Polygon2_area.test.cpp
   - name: test/cpp/Graph
     pages:
     - icon: ':heavy_check_mark:'
