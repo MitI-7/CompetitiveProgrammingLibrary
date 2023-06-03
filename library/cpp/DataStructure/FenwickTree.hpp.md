@@ -1,11 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: library/cpp/DataStructure/FenwickTreeRange.hpp
+    title: library/cpp/DataStructure/FenwickTreeRange.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/FenwickTree1.test.cpp
     title: test/cpp/DataStructure/FenwickTree1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
+    title: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
+    title: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -48,11 +57,14 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: library/cpp/DataStructure/FenwickTree.hpp
-  requiredBy: []
+  requiredBy:
+  - library/cpp/DataStructure/FenwickTreeRange.hpp
   timestamp: '2023-05-21 19:05:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/DataStructure/FenwickTree1.test.cpp
+  - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
+  - test/cpp/DataStructure/FenwickTreeRange2.test.cpp
 documentation_of: library/cpp/DataStructure/FenwickTree.hpp
 layout: document
 redirect_from:

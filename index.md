@@ -21,6 +21,9 @@ data:
       path: library/cpp/DataStructure/FenwickTree.hpp
       title: library/cpp/DataStructure/FenwickTree.hpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/DataStructure/FenwickTreeRange.hpp
+      title: library/cpp/DataStructure/FenwickTreeRange.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/UnionFind.hpp
       title: library/cpp/DataStructure/UnionFind.hpp
   - name: library/cpp/Geometry
@@ -88,6 +91,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/FenwickTree1.test.cpp
       title: test/cpp/DataStructure/FenwickTree1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
+      title: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
+      title: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/UnionFind1.test.cpp
       title: test/cpp/DataStructure/UnionFind1.test.cpp
