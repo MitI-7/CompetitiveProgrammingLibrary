@@ -37,6 +37,9 @@ data:
   - name: library/cpp/Graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Graph/FunctionalGraph.hpp
+      title: library/cpp/Graph/FunctionalGraph.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/Graph.hpp
       title: library/cpp/Graph/Graph.hpp
     - icon: ':heavy_check_mark:'
@@ -113,6 +116,9 @@ data:
       title: test/cpp/Geometry/Polygon2_area.test.cpp
   - name: test/cpp/Graph
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
+      title: test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/bellman_ford1.test.cpp
       title: test/cpp/Graph/bellman_ford1.test.cpp
