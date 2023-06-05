@@ -63,6 +63,9 @@ data:
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Math/is_odd_permutation.cpp
+      title: library/cpp/Math/is_odd_permutation.cpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/make_divisor_list.cpp
       title: library/cpp/Math/make_divisor_list.cpp
     - icon: ':heavy_check_mark:'
@@ -142,6 +145,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Math/is_odd_permutation1.test.cpp
+      title: test/cpp/Math/is_odd_permutation1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/make_divisor_list1.test.cpp
       title: test/cpp/Math/make_divisor_list1.test.cpp
