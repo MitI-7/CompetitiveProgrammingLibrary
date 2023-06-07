@@ -74,6 +74,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/prime_factor_decomposition.cpp
       title: library/cpp/Math/prime_factor_decomposition.cpp
+  - name: library/python/Utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/python/Utility/rotate.py
+      title: library/python/Utility/rotate.py
   verificationCategories:
   - name: test/cpp/Algorithm
     pages:
@@ -157,5 +162,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/prime_factor_decomposition1.test.cpp
       title: test/cpp/Math/prime_factor_decomposition1.test.cpp
+  - name: test/python/Utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/python/Utility/rotate1.test.py
+      title: test/python/Utility/rotate1.test.py
 layout: toppage
 ---
