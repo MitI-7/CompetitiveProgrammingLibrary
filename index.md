@@ -46,6 +46,9 @@ data:
       path: library/cpp/Graph/bellman_ford.cpp
       title: library/cpp/Graph/bellman_ford.cpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Graph/connected_components.cpp
+      title: library/cpp/Graph/connected_components.cpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/dijkstra.cpp
       title: library/cpp/Graph/dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -66,6 +69,9 @@ data:
       path: library/cpp/Math/is_odd_permutation.cpp
       title: library/cpp/Math/is_odd_permutation.cpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Math/is_prime.cpp
+      title: library/cpp/Math/is_prime.cpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/make_divisor_list.cpp
       title: library/cpp/Math/make_divisor_list.cpp
     - icon: ':heavy_check_mark:'
@@ -74,6 +80,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/prime_factor_decomposition.cpp
       title: library/cpp/Math/prime_factor_decomposition.cpp
+  - name: library/cpp/String
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/String/RollingHash.hpp
+      title: library/cpp/String/RollingHash.hpp
   - name: library/python/Utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -131,6 +142,9 @@ data:
       path: test/cpp/Graph/bellman_ford1.test.cpp
       title: test/cpp/Graph/bellman_ford1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Graph/connected_components1.test.cpp
+      title: test/cpp/Graph/connected_components1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/dijkstra1.test.cpp
       title: test/cpp/Graph/dijkstra1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -154,6 +168,9 @@ data:
       path: test/cpp/Math/is_odd_permutation1.test.cpp
       title: test/cpp/Math/is_odd_permutation1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Math/is_prime1.test.cpp
+      title: test/cpp/Math/is_prime1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/make_divisor_list1.test.cpp
       title: test/cpp/Math/make_divisor_list1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -162,6 +179,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/prime_factor_decomposition1.test.cpp
       title: test/cpp/Math/prime_factor_decomposition1.test.cpp
+  - name: test/cpp/String
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/String/RollingHash1_hash.test.cpp
+      title: test/cpp/String/RollingHash1_hash.test.cpp
   - name: test/python/Utility
     pages:
     - icon: ':heavy_check_mark:'
