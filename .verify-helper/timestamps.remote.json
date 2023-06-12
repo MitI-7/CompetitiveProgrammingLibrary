@@ -26,5 +26,7 @@
 "test/cpp/Math/pow_mod1.test.cpp": "2023-05-21 18:45:21 +0900",
 "test/cpp/Math/prime_factor_decomposition1.test.cpp": "2023-05-21 18:38:34 +0900",
 "test/cpp/String/RollingHash1_hash.test.cpp": "2023-06-09 11:17:27 +0900",
+"test/python/Utility/matrix_shift1.test.py": "2023-06-10 11:24:00 +0900",
+"test/python/Utility/matrix_shift2.test.py": "2023-06-10 11:24:10 +0900",
 "test/python/Utility/rotate1.test.py": "2023-06-07 17:58:57 +0900"
 }
