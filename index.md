@@ -62,6 +62,9 @@ data:
       title: library/cpp/Graph/warshall_floyd.cpp
   - name: library/cpp/Math
     pages:
+    - icon: ':warning:'
+      path: library/cpp/Math/Combination.hpp
+      title: library/cpp/Math/Combination.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
@@ -87,6 +90,9 @@ data:
       title: library/cpp/String/RollingHash.hpp
   - name: library/python/Utility
     pages:
+    - icon: ':heavy_check_mark:'
+      path: library/python/Utility/matrix_shift.py
+      title: library/python/Utility/matrix_shift.py
     - icon: ':heavy_check_mark:'
       path: library/python/Utility/rotate.py
       title: library/python/Utility/rotate.py
@@ -161,6 +167,9 @@ data:
       title: test/cpp/Graph/warshall_floyd1.test.cpp
   - name: test/cpp/Math
     pages:
+    - icon: ':x:'
+      path: test/cpp/Math/Combination1_nCr.test.cpp
+      title: test/cpp/Math/Combination1_nCr.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp
@@ -186,6 +195,12 @@ data:
       title: test/cpp/String/RollingHash1_hash.test.cpp
   - name: test/python/Utility
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/python/Utility/matrix_shift1.test.py
+      title: test/python/Utility/matrix_shift1.test.py
+    - icon: ':heavy_check_mark:'
+      path: test/python/Utility/matrix_shift2.test.py
+      title: test/python/Utility/matrix_shift2.test.py
     - icon: ':heavy_check_mark:'
       path: test/python/Utility/rotate1.test.py
       title: test/python/Utility/rotate1.test.py
