@@ -5,10 +5,13 @@ data:
     path: library/cpp/DataStructure/FenwickTree.hpp
     title: library/cpp/DataStructure/FenwickTree.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Math/inversion_number1.test.cpp
+    title: test/cpp/Math/inversion_number1.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Math/inversion_number.cpp\"\n#include <algorithm>\n\
@@ -53,8 +56,9 @@ data:
   path: library/cpp/Math/inversion_number.cpp
   requiredBy: []
   timestamp: '2023-12-02 23:21:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/cpp/Math/inversion_number1.test.cpp
 documentation_of: library/cpp/Math/inversion_number.cpp
 layout: document
 redirect_from:

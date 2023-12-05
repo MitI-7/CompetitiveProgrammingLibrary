@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Compression/run_length_encoding1.test.cpp
+    title: test/cpp/Compression/run_length_encoding1.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Compression/run_length_encoding.cpp\"\n#include\
@@ -27,8 +30,9 @@ data:
   path: library/cpp/Compression/run_length_encoding.cpp
   requiredBy: []
   timestamp: '2023-12-05 10:52:49+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/cpp/Compression/run_length_encoding1.test.cpp
 documentation_of: library/cpp/Compression/run_length_encoding.cpp
 layout: document
 redirect_from:

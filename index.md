@@ -14,7 +14,10 @@ data:
       title: library/cpp/Algorithm/Mo.hpp
   - name: library/cpp/Compression
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Compression/CoordinateCompression.hpp
+      title: library/cpp/Compression/CoordinateCompression.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Compression/run_length_encoding.cpp
       title: library/cpp/Compression/run_length_encoding.cpp
   - name: library/cpp/DataStructure
@@ -85,7 +88,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/derangement.cpp
       title: library/cpp/Math/derangement.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/inversion_number.cpp
       title: library/cpp/Math/inversion_number.cpp
     - icon: ':heavy_check_mark:'
@@ -154,7 +157,7 @@ data:
       title: test/cpp/Algorithm/Mo2.test.cpp
   - name: test/cpp/Compression
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Compression/run_length_encoding1.test.cpp
       title: test/cpp/Compression/run_length_encoding1.test.cpp
   - name: test/cpp/DataStructure
@@ -240,7 +243,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/derangement1.test.cpp
       title: test/cpp/Math/derangement1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/inversion_number1.test.cpp
       title: test/cpp/Math/inversion_number1.test.cpp
     - icon: ':heavy_check_mark:'
