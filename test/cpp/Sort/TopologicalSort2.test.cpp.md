@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Sort/TopologicalSort.hpp
     title: library/cpp/Sort/TopologicalSort.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc291/tasks/abc291_e
@@ -78,7 +78,7 @@ data:
   path: test/cpp/Sort/TopologicalSort2.test.cpp
   requiredBy: []
   timestamp: '2023-10-01 14:11:11+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Sort/TopologicalSort2.test.cpp
 layout: document

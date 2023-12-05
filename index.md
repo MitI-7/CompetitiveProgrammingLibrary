@@ -111,7 +111,7 @@ data:
       title: library/cpp/Math/row_reduction_xor.cpp
   - name: library/cpp/Sort
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Sort/TopologicalSort.hpp
       title: library/cpp/Sort/TopologicalSort.hpp
   - name: library/cpp/String
@@ -261,10 +261,10 @@ data:
       title: test/cpp/Math/row_reduction_xor.test.cpp
   - name: test/cpp/Sort
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Sort/TopologicalSort1.test.cpp
       title: test/cpp/Sort/TopologicalSort1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Sort/TopologicalSort2.test.cpp
       title: test/cpp/Sort/TopologicalSort2.test.cpp
   - name: test/cpp/String
