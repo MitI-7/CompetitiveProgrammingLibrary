@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
-  _pathExtension: hpp
+  _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/Compression/run_length_encoding.hpp\"\n#include\
+  bundledCode: "#line 1 \"library/cpp/Compression/run_length_encoding.cpp\"\n#include\
     \ <string>\n#include <vector>\n\nstd::vector<std::pair<char, int>> run_length_encoding(const\
     \ std::string &s) {\n    std::vector<std::pair<char, int>> ans;\n\n    const int\
     \ n = s.size();\n    int num = 1;\n    for (int i = 0; i < n - 1; ++i) {\n   \
@@ -24,15 +24,15 @@ data:
     \ return ans;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/cpp/Compression/run_length_encoding.hpp
+  path: library/cpp/Compression/run_length_encoding.cpp
   requiredBy: []
-  timestamp: '2023-12-05 09:36:56+09:00'
+  timestamp: '2023-12-05 10:52:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/cpp/Compression/run_length_encoding.hpp
+documentation_of: library/cpp/Compression/run_length_encoding.cpp
 layout: document
 redirect_from:
-- /library/library/cpp/Compression/run_length_encoding.hpp
-- /library/library/cpp/Compression/run_length_encoding.hpp.html
-title: library/cpp/Compression/run_length_encoding.hpp
+- /library/library/cpp/Compression/run_length_encoding.cpp
+- /library/library/cpp/Compression/run_length_encoding.cpp.html
+title: library/cpp/Compression/run_length_encoding.cpp
 ---

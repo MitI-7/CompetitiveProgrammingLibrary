@@ -15,8 +15,8 @@ data:
   - name: library/cpp/Compression
     pages:
     - icon: ':warning:'
-      path: library/cpp/Compression/run_length_encoding.hpp
-      title: library/cpp/Compression/run_length_encoding.hpp
+      path: library/cpp/Compression/run_length_encoding.cpp
+      title: library/cpp/Compression/run_length_encoding.cpp
   - name: library/cpp/DataStructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -76,13 +76,13 @@ data:
       title: library/cpp/Graph/warshall_floyd.cpp
   - name: library/cpp/Math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/Combination.hpp
       title: library/cpp/Math/Combination.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/derangement.cpp
       title: library/cpp/Math/derangement.cpp
     - icon: ':warning:'
@@ -119,6 +119,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/String/RollingHash.hpp
       title: library/cpp/String/RollingHash.hpp
+  - name: library/cpp/Utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Utility/mint.hpp
+      title: library/cpp/Utility/mint.hpp
   - name: library/python/Utility
     pages:
     - icon: ':heavy_check_mark:'
@@ -226,13 +231,13 @@ data:
       title: test/cpp/Graph/warshall_floyd1.test.cpp
   - name: test/cpp/Math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/Combination1_nCr.test.cpp
       title: test/cpp/Math/Combination1_nCr.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/derangement1.test.cpp
       title: test/cpp/Math/derangement1.test.cpp
     - icon: ':x:'
