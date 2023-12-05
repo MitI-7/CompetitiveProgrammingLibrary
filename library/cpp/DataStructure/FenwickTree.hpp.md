@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/cpp/DataStructure/FenwickTreeRange.hpp
     title: library/cpp/DataStructure/FenwickTreeRange.hpp
+  - icon: ':warning:'
+    path: library/cpp/Math/inversion_number.cpp
+    title: library/cpp/Math/inversion_number.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/FenwickTree1.test.cpp
@@ -58,13 +61,14 @@ data:
   isVerificationFile: false
   path: library/cpp/DataStructure/FenwickTree.hpp
   requiredBy:
+  - library/cpp/Math/inversion_number.cpp
   - library/cpp/DataStructure/FenwickTreeRange.hpp
   timestamp: '2023-05-21 19:05:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/DataStructure/FenwickTree1.test.cpp
-  - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
   - test/cpp/DataStructure/FenwickTreeRange2.test.cpp
+  - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
+  - test/cpp/DataStructure/FenwickTree1.test.cpp
 documentation_of: library/cpp/DataStructure/FenwickTree.hpp
 layout: document
 redirect_from:

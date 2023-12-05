@@ -78,8 +78,8 @@ data:
   timestamp: '2023-06-03 11:57:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
   - test/cpp/DataStructure/FenwickTreeRange2.test.cpp
+  - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
 documentation_of: library/cpp/DataStructure/FenwickTreeRange.hpp
 layout: document
 redirect_from:

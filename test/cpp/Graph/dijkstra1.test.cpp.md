@@ -21,19 +21,36 @@ data:
     https://judge.yosupo.jp/problem/shortest_path\"\n\n#include <iostream>\n#line\
     \ 1 \"library/cpp/Graph/dijkstra.cpp\"\n#include <functional>\n#include <vector>\n\
     #include <queue>\n#include <limits>\n#line 2 \"library/cpp/Graph/Graph.hpp\"\n\
-    \ntemplate<typename T>\nclass Edge {\npublic:\n    int from;\n    int to;\n  \
-    \  T w;\n    int no;\n\n    Edge() : from(-1), to(-1), w(-1), no(-1) {}\n\n  \
-    \  Edge(int from, int to, T w = 1, int no = -1) : from(from), to(to), w(w), no(no)\
-    \ {\n\n    }\n};\n\ntemplate<typename T=int>\nclass Graph {\npublic:\n    const\
-    \ int num_nodes;\n    int num_edges;\n    std::vector<std::vector<Edge<T>>> graph;\n\
-    \n    Graph(const int num_nodes) : num_nodes(num_nodes), num_edges(0) {\n    \
-    \    this->graph.resize(num_nodes);\n    }\n\n    void add_directed_edge(const\
-    \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
-    \ v, w, no));\n        this->num_edges++;\n    }\n\n    void add_undirected_edge(const\
-    \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
+    \n#line 5 \"library/cpp/Graph/Graph.hpp\"\n\ntemplate<typename T>\nclass Edge\
+    \ {\npublic:\n    int from;\n    int to;\n    T w;\n    int no;\n\n    Edge()\
+    \ : from(-1), to(-1), w(-1), no(-1) {}\n\n    Edge(int from, int to, T w = 1,\
+    \ int no = -1) : from(from), to(to), w(w), no(no) {\n\n    }\n};\n\ntemplate<typename\
+    \ T=int>\nclass Graph {\npublic:\n    const int num_nodes;\n    int num_edges;\n\
+    \    std::vector<std::vector<Edge<T>>> graph;\n\n    Graph(const int num_nodes)\
+    \ : num_nodes(num_nodes), num_edges(0) {\n        this->graph.resize(num_nodes);\n\
+    \    }\n\n    void add_directed_edge(const int u, const int v, const T w = 1,\
+    \ const int no = -1) {\n        this->graph[u].emplace_back(Edge(u, v, w, no));\n\
+    \        this->num_edges++;\n    }\n\n    void add_undirected_edge(const int u,\
+    \ const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 6 \"library/cpp/Graph/dijkstra.cpp\"\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
+    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
+    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
+    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
+    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
+    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
+    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
+    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
+    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
+    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
+    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
+    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
+    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
+    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
+    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
+    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
+    \ v, w, i);\n    }\n    return graph;\n}\n#line 6 \"library/cpp/Graph/dijkstra.cpp\"\
     \n\n/**\n * s \u304B\u3089\u3059\u3079\u3066\u306E\u9802\u70B9\u3078\u306E\u6700\
     \u77ED\u8DDD\u96E2\u3068\uFF0C\u5404\u9802\u70B9\u306B\u63A5\u7D9A\u3059\u308B\
     \u6700\u77ED\u8DDD\u96E2\u3068\u306A\u308B\u8FBA\u3092\u6C42\u3081\u308B\n * O(|E|\
@@ -55,12 +72,14 @@ data:
     \          prev_edge[edge.to] = edge;\n                distance[edge.to] = new_dist;\n\
     \                que.push({new_dist, edge.to});\n            }\n        }\n  \
     \  }\n\n    return {distance, prev_edge};\n}\n\n// \u7D4C\u8DEF\u5FA9\u5143\n\
-    // O(M)\ntemplate<typename T>\nstd::vector<Edge<T>> get_path(const int s, const\
-    \ int t, const std::vector<Edge<T>> &prev) {\n    int now = t;\n    std::vector<Edge<long\
-    \ long>> path;\n    while (now != s) {\n        path.emplace_back(prev[now]);\n\
-    \        now = prev[now].from;\n    }\n    std::reverse(path.begin(), path.end());\n\
-    \n    return path;\n}\n#line 5 \"test/cpp/Graph/dijkstra1.test.cpp\"\n\nusing\
-    \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    // s-t \u7D4C\u8DEF\u304C\u306A\u3044\u5834\u5408\u306F\u7A7A\u3092\u8FD4\u3059\
+    \n// prev: prev[u] = u \u3078\u305F\u3069\u308B\u8FBA\n// O(M)\ntemplate<typename\
+    \ T>\nstd::vector<Edge<T>> get_path(const int s, const int t, const std::vector<Edge<T>>\
+    \ &prev) {\n    int now = t;\n    std::vector<Edge<long long>> path;\n    while\
+    \ (now != s) {\n        path.emplace_back(prev[now]);\n        now = prev[now].from;\n\
+    \        if (now == -1) {\n            return {};\n        }\n    }\n    std::reverse(path.begin(),\
+    \ path.end());\n\n    return path;\n}\n#line 5 \"test/cpp/Graph/dijkstra1.test.cpp\"\
+    \n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int N, M, S, T;\n    cin >> N >> M >> S >> T;\n\n    Graph<long long> graph(N);\n\
     \    for (int i = 0; i < M; ++i) {\n        int A, B;\n        long long C;\n\
     \        cin >> A >> B >> C;\n        graph.add_directed_edge(A, B, C, i);\n \

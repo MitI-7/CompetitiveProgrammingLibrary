@@ -78,8 +78,8 @@ data:
   timestamp: '2023-05-15 18:21:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/DataStructure/UnionFind1.test.cpp
   - test/cpp/Graph/kruskal1.test.cpp
+  - test/cpp/DataStructure/UnionFind1.test.cpp
 documentation_of: library/cpp/DataStructure/UnionFind.hpp
 layout: document
 redirect_from:

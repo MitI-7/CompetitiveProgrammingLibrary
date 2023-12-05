@@ -14,12 +14,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1100
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=ja
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1100
-  bundledCode: "#line 1 \"test/cpp/Geometry/Polygon2_area.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1100\"\n\n#line\
-    \ 1 \"library/cpp/Geometry/Polygon.hpp\"\n#include <cmath>\n#include <vector>\n\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=ja
+  bundledCode: "#line 1 \"test/cpp/Geometry/Polygon3_is_convex.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=ja\"\
+    \n\n#line 1 \"library/cpp/Geometry/Polygon.hpp\"\n#include <cmath>\n#include <vector>\n\
     #line 2 \"library/cpp/Geometry/Point.hpp\"\n\ntemplate<class T>\nclass Point {\n\
     public:\n    T x;\n    T y;\n    int no;\n\n    Point() : x(0), y(0), no(0) {};\n\
     \n    Point(const T x, const T y, int no = 0) : x(x), y(y), no(no) {}\n\n    //\
@@ -59,38 +59,32 @@ data:
     \ x2 = c.x - b.x;\n\n            const auto p1 = Point<T>(x1, y1);\n         \
     \   const auto p2 = Point<T>(x2, y2);\n\n            if (p1.cross(p2) > 0) {\n\
     \                return false;\n            }\n        }\n\n        return true;\n\
-    \    }\n};\n#line 4 \"test/cpp/Geometry/Polygon2_area.test.cpp\"\n#include <iomanip>\n\
-    #include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
-    \    ios::sync_with_stdio(false);\n\n    int no = 1;\n    while (true) {\n   \
-    \     int N;\n        cin >> N;\n        if (N == 0) {\n            break;\n \
-    \       }\n\n        vector <Point<double>> points(N);\n        for (int i = 0;\
-    \ i < N; ++i) {\n            double X, Y;\n            cin >> X >> Y;\n      \
-    \      points[i] = {X, Y};\n        }\n\n        Polygon<double> polygon(points);\n\
-    \        cout << no++ << \" \" << setprecision(1) << fixed << polygon.double_polygon_area()\
-    \ / 2.0 << endl;\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1100\"\
-    \n\n#include \"library/cpp/Geometry/Polygon.hpp\"\n#include <iomanip>\n#include\
+    \    }\n};\n#line 4 \"test/cpp/Geometry/Polygon3_is_convex.test.cpp\"\n#include\
     \ <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
-    \    ios::sync_with_stdio(false);\n\n    int no = 1;\n    while (true) {\n   \
-    \     int N;\n        cin >> N;\n        if (N == 0) {\n            break;\n \
-    \       }\n\n        vector <Point<double>> points(N);\n        for (int i = 0;\
-    \ i < N; ++i) {\n            double X, Y;\n            cin >> X >> Y;\n      \
-    \      points[i] = {X, Y};\n        }\n\n        Polygon<double> polygon(points);\n\
-    \        cout << no++ << \" \" << setprecision(1) << fixed << polygon.double_polygon_area()\
-    \ / 2.0 << endl;\n    }\n\n    return 0;\n}\n"
+    \    ios::sync_with_stdio(false);\n\n    int N;\n    cin >> N;\n    vector <Point<int>>\
+    \ points(N);\n    for (int i = 0; i < N; ++i) {\n        int X, Y;\n        cin\
+    \ >> X >> Y;\n        points[i] = {X, Y};\n    }\n    \n    Polygon<int> polygon(points);\n\
+    \    cout << polygon.is_convex() << endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=ja\"\
+    \n\n#include \"library/cpp/Geometry/Polygon.hpp\"\n#include <iostream>\n\nusing\
+    \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N;\n    cin >> N;\n    vector <Point<int>> points(N);\n    for (int\
+    \ i = 0; i < N; ++i) {\n        int X, Y;\n        cin >> X >> Y;\n        points[i]\
+    \ = {X, Y};\n    }\n    \n    Polygon<int> polygon(points);\n    cout << polygon.is_convex()\
+    \ << endl;\n\n    return 0;\n}\n"
   dependsOn:
   - library/cpp/Geometry/Polygon.hpp
   - library/cpp/Geometry/Point.hpp
   isVerificationFile: true
-  path: test/cpp/Geometry/Polygon2_area.test.cpp
+  path: test/cpp/Geometry/Polygon3_is_convex.test.cpp
   requiredBy: []
-  timestamp: '2023-06-02 17:19:14+09:00'
+  timestamp: '2023-12-02 22:09:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Geometry/Polygon2_area.test.cpp
+documentation_of: test/cpp/Geometry/Polygon3_is_convex.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Geometry/Polygon2_area.test.cpp
-- /verify/test/cpp/Geometry/Polygon2_area.test.cpp.html
-title: test/cpp/Geometry/Polygon2_area.test.cpp
+- /verify/test/cpp/Geometry/Polygon3_is_convex.test.cpp
+- /verify/test/cpp/Geometry/Polygon3_is_convex.test.cpp.html
+title: test/cpp/Geometry/Polygon3_is_convex.test.cpp
 ---

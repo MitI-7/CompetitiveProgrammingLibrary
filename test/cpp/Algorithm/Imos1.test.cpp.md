@@ -19,16 +19,17 @@ data:
     \ \"library/cpp/Algorithm/Imos.hpp\"\n#include <vector>\n#include <iostream>\n\
     #include <cassert>\n\ntemplate<typename T>\nclass Imos {\npublic:\n    const int\
     \ n;\n    std::vector<T> line;\n\n    Imos(int n) : n(n) {\n        this->line.resize(n\
-    \ + 1, 0);\n    }\n\n    // [left, right) \u306B +num\n    void add(int left,\
-    \ int right, T num) {\n        assert(left < right);\n        this->line[left]\
-    \ += num;\n        this->line[right] -= num;\n    }\n\n    void build() {\n  \
-    \      for (int i = 1; i < (int) line.size(); ++i) {\n            this->line[i]\
-    \ += this->line[i - 1];\n        }\n    }\n};\n#line 5 \"test/cpp/Algorithm/Imos1.test.cpp\"\
+    \ + 1, 0);\n    }\n\n    // [left, right) \u306B +num\n    void add(const int\
+    \ left, const int right, const T num) {\n        assert(left < right);\n     \
+    \   this->line[left] += num;\n        this->line[right] -= num;\n    }\n\n   \
+    \ void build() {\n        for (int i = 1; i < (int) line.size(); ++i) {\n    \
+    \        this->line[i] += this->line[i - 1];\n        }\n    }\n\n    T access(const\
+    \ int i) {\n        return this->line[i];\n    }\n};\n#line 5 \"test/cpp/Algorithm/Imos1.test.cpp\"\
     \n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int N, T;\n    cin >> N >> T;\n\n    Imos<int> imos(T + 100);\n    for (int\
     \ i = 0; i < N; ++i) {\n        int L, R;\n        cin >> L >> R;\n        imos.add(L,\
     \ R, 1);\n    }\n    imos.build();\n\n    int ans = 0;\n    for (int i = 0; i\
-    \ <= T; ++i) {\n        ans = max(ans, imos.line[i]);\n    }\n    cout << ans\
+    \ <= T; ++i) {\n        ans = max(ans, imos.access(i));\n    }\n    cout << ans\
     \ << endl;\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_A\"\
     \n\n#include \"library/cpp/Algorithm/Imos.hpp\"\n#include <iostream>\n\nusing\
@@ -36,7 +37,7 @@ data:
     \n    int N, T;\n    cin >> N >> T;\n\n    Imos<int> imos(T + 100);\n    for (int\
     \ i = 0; i < N; ++i) {\n        int L, R;\n        cin >> L >> R;\n        imos.add(L,\
     \ R, 1);\n    }\n    imos.build();\n\n    int ans = 0;\n    for (int i = 0; i\
-    \ <= T; ++i) {\n        ans = max(ans, imos.line[i]);\n    }\n    cout << ans\
+    \ <= T; ++i) {\n        ans = max(ans, imos.access(i));\n    }\n    cout << ans\
     \ << endl;\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Algorithm/Imos.hpp

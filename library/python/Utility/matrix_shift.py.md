@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.3/x64/lib/python3.11/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.11.3/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/python.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/python.py\"\
     , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "# 2 \u6B21\u5143\u884C\u5217 A \u306E y \u884C\u3092\u53F3\u306B\u30B7\u30D5\
     \u30C8\ndef shift_right_y(y, A):\n    back = A[y][-1]\n    for x in range(len(A[0])\
@@ -39,8 +39,8 @@ data:
   timestamp: '2023-06-10 11:23:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/python/Utility/matrix_shift2.test.py
   - test/python/Utility/matrix_shift1.test.py
+  - test/python/Utility/matrix_shift2.test.py
 documentation_of: library/python/Utility/matrix_shift.py
 layout: document
 redirect_from:

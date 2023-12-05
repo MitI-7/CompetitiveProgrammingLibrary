@@ -17,20 +17,36 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/Graph/Graph.hpp\"\n#include <vector>\n\ntemplate<typename\
-    \ T>\nclass Edge {\npublic:\n    int from;\n    int to;\n    T w;\n    int no;\n\
-    \n    Edge() : from(-1), to(-1), w(-1), no(-1) {}\n\n    Edge(int from, int to,\
-    \ T w = 1, int no = -1) : from(from), to(to), w(w), no(no) {\n\n    }\n};\n\n\
-    template<typename T=int>\nclass Graph {\npublic:\n    const int num_nodes;\n \
-    \   int num_edges;\n    std::vector<std::vector<Edge<T>>> graph;\n\n    Graph(const\
-    \ int num_nodes) : num_nodes(num_nodes), num_edges(0) {\n        this->graph.resize(num_nodes);\n\
-    \    }\n\n    void add_directed_edge(const int u, const int v, const T w = 1,\
-    \ const int no = -1) {\n        this->graph[u].emplace_back(Edge(u, v, w, no));\n\
-    \        this->num_edges++;\n    }\n\n    void add_undirected_edge(const int u,\
-    \ const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
+  bundledCode: "#line 2 \"library/cpp/Graph/Graph.hpp\"\n\n#include <vector>\n#include\
+    \ <iostream>\n\ntemplate<typename T>\nclass Edge {\npublic:\n    int from;\n \
+    \   int to;\n    T w;\n    int no;\n\n    Edge() : from(-1), to(-1), w(-1), no(-1)\
+    \ {}\n\n    Edge(int from, int to, T w = 1, int no = -1) : from(from), to(to),\
+    \ w(w), no(no) {\n\n    }\n};\n\ntemplate<typename T=int>\nclass Graph {\npublic:\n\
+    \    const int num_nodes;\n    int num_edges;\n    std::vector<std::vector<Edge<T>>>\
+    \ graph;\n\n    Graph(const int num_nodes) : num_nodes(num_nodes), num_edges(0)\
+    \ {\n        this->graph.resize(num_nodes);\n    }\n\n    void add_directed_edge(const\
+    \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
+    \ v, w, no));\n        this->num_edges++;\n    }\n\n    void add_undirected_edge(const\
+    \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 2 \"library/cpp/Graph/find_cycle.cpp\"\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
+    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
+    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
+    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
+    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
+    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
+    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
+    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
+    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
+    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
+    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
+    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
+    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
+    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
+    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
+    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
+    \ v, w, i);\n    }\n    return graph;\n}\n#line 2 \"library/cpp/Graph/find_cycle.cpp\"\
     \n\ntemplate<typename T>\nbool dfs(const int u, const Edge<T> &prev, std::vector<int>\
     \ &state, std::vector<Edge<T>> &edges, const Graph<T> &graph) {\n    state[u]\
     \ = 1;\n    for (auto e: graph.graph[u]) {\n        if (e.no == prev.no) {\n \
@@ -87,8 +103,8 @@ data:
   timestamp: '2023-05-15 18:45:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Graph/find_cycle2.test.cpp
   - test/cpp/Graph/find_cycle1.test.cpp
+  - test/cpp/Graph/find_cycle2.test.cpp
 documentation_of: library/cpp/Graph/find_cycle.cpp
 layout: document
 redirect_from:
