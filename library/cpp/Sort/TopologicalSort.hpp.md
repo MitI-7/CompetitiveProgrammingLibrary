@@ -88,8 +88,8 @@ data:
   timestamp: '2023-09-30 17:12:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Sort/TopologicalSort1.test.cpp
   - test/cpp/Sort/TopologicalSort2.test.cpp
+  - test/cpp/Sort/TopologicalSort1.test.cpp
 documentation_of: library/cpp/Sort/TopologicalSort.hpp
 layout: document
 redirect_from:

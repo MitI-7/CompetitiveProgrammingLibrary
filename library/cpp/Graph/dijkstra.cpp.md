@@ -114,8 +114,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Graph/dijkstra.cpp
   requiredBy:
-  - library/cpp/Graph/make_shortest_path_tree.cpp
   - test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+  - library/cpp/Graph/make_shortest_path_tree.cpp
   timestamp: '2023-05-15 18:47:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

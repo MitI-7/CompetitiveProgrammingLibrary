@@ -145,8 +145,8 @@ data:
   timestamp: '2023-06-05 15:03:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
   - test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
+  - test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
 documentation_of: library/cpp/Graph/FunctionalGraph.hpp
 layout: document
 redirect_from:

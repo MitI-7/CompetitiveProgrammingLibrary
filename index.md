@@ -83,6 +83,9 @@ data:
       path: library/cpp/Math/Combination.hpp
       title: library/cpp/Math/Combination.hpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Math/Fraction.hpp
+      title: library/cpp/Math/Fraction.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
     - icon: ':heavy_check_mark:'
@@ -140,6 +143,11 @@ data:
     - icon: ':warning:'
       path: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
       title: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+  - name: tools
+    pages:
+    - icon: ':warning:'
+      path: tools/make_livetemplate_xml.py
+      title: tools/make_livetemplate_xml.py
   verificationCategories:
   - name: test/cpp/Algorithm
     pages:
@@ -237,6 +245,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/Combination1_nCr.test.cpp
       title: test/cpp/Math/Combination1_nCr.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Math/Fraction1.test.cpp
+      title: test/cpp/Math/Fraction1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp

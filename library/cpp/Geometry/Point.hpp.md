@@ -68,10 +68,10 @@ data:
   timestamp: '2023-06-02 16:47:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Geometry/Point1_rotate.test.cpp
-  - test/cpp/Geometry/Polygon2_area.test.cpp
   - test/cpp/Geometry/Polygon3_is_convex.test.cpp
+  - test/cpp/Geometry/Polygon2_area.test.cpp
   - test/cpp/Geometry/Polygon1_area.test.cpp
+  - test/cpp/Geometry/Point1_rotate.test.cpp
 documentation_of: library/cpp/Geometry/Point.hpp
 layout: document
 redirect_from:

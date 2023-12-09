@@ -109,9 +109,9 @@ data:
   timestamp: '2023-11-25 18:26:00+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
   - test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
   - test/cpp/DataStructure/TopK1_get_top_k.test.cpp
+  - test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
 documentation_of: library/cpp/DataStructure/TopK.hpp
 layout: document
 redirect_from:
