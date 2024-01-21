@@ -11,11 +11,11 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc179/tasks/abc179_e
+    PROBLEM: https://atcoder.jp/contests/abc167/tasks/abc167_d
     links:
-    - https://atcoder.jp/contests/abc179/tasks/abc179_e
-  bundledCode: "#line 1 \"test/cpp/Graph/FunctionalGraph2_k_step.test.cpp\"\n#define\
-    \ PROBLEM \"https://atcoder.jp/contests/abc179/tasks/abc179_e\"\n\n#line 1 \"\
+    - https://atcoder.jp/contests/abc167/tasks/abc167_d
+  bundledCode: "#line 1 \"test/cpp/Graph/FunctionalGraph3_k_step.test.cpp\"\n#define\
+    \ PROBLEM \"https://atcoder.jp/contests/abc167/tasks/abc167_d\"\n\n#line 1 \"\
     library/cpp/Graph/FunctionalGraph.hpp\"\n#include <cassert>\n#include <vector>\n\
     \n// \u5404\u9802\u70B9\u304C\u3061\u3087\u3046\u3069 1 \u306E\u51FA\u81EA\u6570\
     \u3092\u3082\u3064\u6709\u5411\u30B0\u30E9\u30D5\n// \u30B0\u30E9\u30D5\u306F\u9023\
@@ -77,33 +77,34 @@ data:
     \u30FC\u30D7\u3092\u307F\u3064\u3051\u305F\n        if (seen[u]) {\n         \
     \   this->in_cycle[u] = true;\n            return this->component_no[u] = c;\n\
     \        }\n\n        seen[u] = true;\n        return this->component_no[u] =\
-    \ this->dfs(this->to[u], c, seen);\n    }\n};\n#line 4 \"test/cpp/Graph/FunctionalGraph2_k_step.test.cpp\"\
-    \n\n#include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
-    \    ios::sync_with_stdio(false);\n\n    long long N;\n    int X, M;\n    cin\
-    \ >> N >> X >> M;\n\n    FunctionalGraph<long long> fg(M);\n    for (int u = 0;\
-    \ u < M; ++u) {\n        fg.set_value(u, u);\n        fg.add_directed_edge(u,\
-    \ int(((long long) u * u) % M));\n    }\n    fg.build();\n\n    auto [u, ans]\
-    \ = fg.k_step(X, N);\n    cout << ans << endl;\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/abc179/tasks/abc179_e\"\n\n\
-    #include \"library/cpp/Graph/FunctionalGraph.hpp\"\n\n#include <iostream>\n\n\
-    using namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    long long N;\n    int X, M;\n    cin >> N >> X >> M;\n\n    FunctionalGraph<long\
-    \ long> fg(M);\n    for (int u = 0; u < M; ++u) {\n        fg.set_value(u, u);\n\
-    \        fg.add_directed_edge(u, int(((long long) u * u) % M));\n    }\n    fg.build();\n\
-    \n    auto [u, ans] = fg.k_step(X, N);\n    cout << ans << endl;\n\n    return\
-    \ 0;\n}"
+    \ this->dfs(this->to[u], c, seen);\n    }\n};\n#line 4 \"test/cpp/Graph/FunctionalGraph3_k_step.test.cpp\"\
+    \n#include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int N;\n    long long K;\n    cin >>\
+    \ N >> K;\n\n    vector<int> A(N);\n    for (int i = 0; i < N; ++i) {\n      \
+    \  cin >> A[i];\n        A[i]--;\n    }\n\n    FunctionalGraph<long long> fg(N);\n\
+    \    for (int u = 0; u < N; ++u) {\n        fg.add_directed_edge(u, A[u]);\n \
+    \   }\n    fg.build();\n\n    auto [u, _] = fg.k_step(0, K);\n    cout << u +\
+    \ 1 << endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc167/tasks/abc167_d\"\n\n\
+    #include \"library/cpp/Graph/FunctionalGraph.hpp\"\n#include <iostream>\n\nusing\
+    \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N;\n    long long K;\n    cin >> N >> K;\n\n    vector<int> A(N);\n\
+    \    for (int i = 0; i < N; ++i) {\n        cin >> A[i];\n        A[i]--;\n  \
+    \  }\n\n    FunctionalGraph<long long> fg(N);\n    for (int u = 0; u < N; ++u)\
+    \ {\n        fg.add_directed_edge(u, A[u]);\n    }\n    fg.build();\n\n    auto\
+    \ [u, _] = fg.k_step(0, K);\n    cout << u + 1 << endl;\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Graph/FunctionalGraph.hpp
   isVerificationFile: true
-  path: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
+  path: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
   requiredBy: []
-  timestamp: '2024-01-20 16:47:12+09:00'
+  timestamp: '2024-01-20 16:51:58+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
+documentation_of: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
-- /verify/test/cpp/Graph/FunctionalGraph2_k_step.test.cpp.html
-title: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
+- /verify/test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
+- /verify/test/cpp/Graph/FunctionalGraph3_k_step.test.cpp.html
+title: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
 ---

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/String/RollingHash1_hash.test.cpp
     title: test/cpp/String/RollingHash1_hash.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links:
     - https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
@@ -71,8 +71,8 @@ data:
   isVerificationFile: false
   path: library/cpp/String/RollingHash.hpp
   requiredBy: []
-  timestamp: '2023-06-09 11:17:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:48:03+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/cpp/String/RollingHash1_hash.test.cpp
 documentation_of: library/cpp/String/RollingHash.hpp

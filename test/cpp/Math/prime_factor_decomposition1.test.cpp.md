@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Math/prime_factor_decomposition.cpp
     title: library/cpp/Math/prime_factor_decomposition.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
@@ -42,8 +42,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Math/prime_factor_decomposition1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-21 18:38:34+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:43:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Math/prime_factor_decomposition1.test.cpp
 layout: document

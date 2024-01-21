@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
   - icon: ':heavy_check_mark:'
@@ -99,7 +99,7 @@ data:
   path: library/cpp/Graph/make_shortest_path_tree.cpp
   requiredBy:
   - test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
-  timestamp: '2023-06-12 15:32:04+09:00'
+  timestamp: '2024-01-20 16:49:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: library/cpp/Graph/make_shortest_path_tree.cpp

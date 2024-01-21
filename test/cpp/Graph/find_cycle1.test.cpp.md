@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
   - icon: ':heavy_check_mark:'
@@ -49,34 +49,35 @@ data:
     \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
     \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
     \ v, w, i);\n    }\n    return graph;\n}\n#line 2 \"library/cpp/Graph/find_cycle.cpp\"\
-    \n\ntemplate<typename T>\nbool dfs(const int u, const Edge<T> &prev, std::vector<int>\
-    \ &state, std::vector<Edge<T>> &edges, const Graph<T> &graph) {\n    state[u]\
-    \ = 1;\n    for (auto e: graph.graph[u]) {\n        if (e.no == prev.no) {\n \
-    \           continue;\n        }\n        if (state[e.to] == 2) {\n          \
-    \  break;\n        }\n\n        edges.push_back(e);\n        // find cycle\n \
-    \       if (state[e.to] == 1 or dfs(e.to, e, state, edges, graph)) {\n       \
-    \     return true;\n        }\n        edges.pop_back();\n    }\n\n    state[u]\
-    \ = 2;\n    return false;\n}\n\n// \u6709\u52B9/\u7121\u5411\u30B0\u30E9\u30D5\
-    \u306E\u30B5\u30A4\u30AF\u30EB\u3092\u3072\u3068\u3064\u898B\u3064\u3051\u308B\
-    \n// \u5358\u7D14\u30B0\u30E9\u30D5\u3067\u306A\u304F\u3066\u3082\u3044\u3044\n\
-    // O(N + M)\n// \u8FBA\u756A\u53F7\u3092\u3044\u308C\u3066\u304A\u304F\u3053\u3068\
-    \ntemplate<typename T>\nstd::vector<Edge<T>> find_cycle(const Graph<T> &graph)\
-    \ {\n    std::vector<Edge<T>> edges;\n    std::vector<int> state(graph.num_nodes,\
-    \ 0);   // 0: \u672A\u63A2\u7D22\uFF0C 1: \u63A2\u7D22\u4E2D\uFF0C2: \u63A2\u7D22\
-    \u6E08\u307F\n\n    // u \u3092\u59CB\u70B9\u3068\u3057\uFF0C\u9589\u8DEF\u3092\
-    \u63A2\u7D22\n    std::vector<Edge<T>> cycle;\n    for (int u = 0; u < graph.num_nodes;\
-    \ ++u) {\n        if (state[u] != 0) {\n            continue;\n        }\n   \
-    \     if (dfs(u, Edge(-1, -1, 0, -1), state, edges, graph)) {\n            auto\
-    \ end = edges.back().to;\n            bool in_cycle = false;\n            for\
-    \ (auto e: edges) {\n                // cycle \u306E\u958B\u59CB\u30CE\u30FC\u30C9\
-    \u3092\u898B\u3064\u3051\u305F\n                if (e.from == end) {\n       \
-    \             in_cycle = true;\n                }\n                if (in_cycle)\
-    \ {\n                    cycle.emplace_back(e);\n                }\n         \
-    \   }\n            break;\n        }\n    }\n\n    return cycle;\n}\n#line 5 \"\
-    test/cpp/Graph/find_cycle1.test.cpp\"\n\nusing namespace std;\n\nint main() {\n\
-    \    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n    int N, M;\n  \
-    \  cin >> N >> M;\n    Graph<int> graph(N);\n    for (int i = 0; i < M; ++i) {\n\
-    \        int U, V;\n        cin >> U >> V;\n        graph.add_undirected_edge(U,\
+    \n\ntemplate<typename T>\nbool find_cycle_dfs(const int u, const Edge <T> &prev,\
+    \ std::vector<int> &state, std::vector <Edge<T>> &edges, const Graph <T> &graph)\
+    \ {\n    state[u] = 1;\n    for (const auto e: graph.graph[u]) {\n        if (e.no\
+    \ == prev.no) {\n            continue;\n        }\n\n        // \u63A2\u7D22\u6E08\
+    \u307F\n        if (state[e.to] == 2) {\n            break;\n        }\n\n   \
+    \     edges.emplace_back(e);\n        // find cycle\n        if (state[e.to] ==\
+    \ 1 or find_cycle_dfs(e.to, e, state, edges, graph)) {\n            return true;\n\
+    \        }\n        edges.pop_back();\n    }\n\n    state[u] = 2;\n    return\
+    \ false;\n}\n\n// \u6709\u52B9/\u7121\u5411\u30B0\u30E9\u30D5\u306E\u30B5\u30A4\
+    \u30AF\u30EB\u3092\u3072\u3068\u3064\u898B\u3064\u3051\u308B\n// \u5358\u7D14\u30B0\
+    \u30E9\u30D5\u3067\u306A\u304F\u3066\u3082\u3044\u3044\n// O(N + M)\n// \u8FBA\
+    \u756A\u53F7\u3092\u3044\u308C\u3066\u304A\u304F\u3053\u3068\ntemplate<typename\
+    \ T>\nstd::vector <Edge<T>> find_cycle(const Graph <T> &graph) {\n    std::vector\
+    \ <Edge<T>> edges;\n    std::vector<int> state(graph.num_nodes, 0);   // 0: \u672A\
+    \u63A2\u7D22\uFF0C 1: \u63A2\u7D22\u4E2D\uFF0C2: \u63A2\u7D22\u6E08\u307F\n\n\
+    \    // u \u3092\u59CB\u70B9\u3068\u3057\uFF0C\u9589\u8DEF\u3092\u63A2\u7D22\n\
+    \    std::vector <Edge<T>> cycle;\n    for (int u = 0; u < graph.num_nodes; ++u)\
+    \ {\n        if (state[u] != 0) {\n            continue;\n        }\n        if\
+    \ (find_cycle_dfs(u, Edge(-1, -1, 0, -1), state, edges, graph)) {\n          \
+    \  auto cycle_start = edges.back().to;\n            bool in_cycle = false;\n \
+    \           for (auto e: edges) {\n                // cycle \u306E\u958B\u59CB\
+    \u30CE\u30FC\u30C9\u3092\u898B\u3064\u3051\u305F\n                if (e.from ==\
+    \ cycle_start) {\n                    in_cycle = true;\n                }\n  \
+    \              if (in_cycle) {\n                    cycle.emplace_back(e);\n \
+    \               }\n            }\n            break;\n        }\n    }\n\n   \
+    \ return cycle;\n}\n#line 5 \"test/cpp/Graph/find_cycle1.test.cpp\"\n\nusing namespace\
+    \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N, M;\n    cin >> N >> M;\n    Graph<int> graph(N);\n    for (int i\
+    \ = 0; i < M; ++i) {\n        int U, V;\n        cin >> U >> V;\n        graph.add_undirected_edge(U,\
     \ V, 0, i);\n    }\n\n    auto cycle = find_cycle(graph);\n\n    if (cycle.empty())\
     \ {\n        cout << -1 << endl;\n        return 0;\n    }\n\n    cout << cycle.size()\
     \ << endl;\n    for (auto e: cycle) {\n        cout << e.from << \" \";\n    }\n\

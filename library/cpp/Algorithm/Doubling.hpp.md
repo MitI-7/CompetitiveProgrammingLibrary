@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: library/cpp/Algorithm/Doubling.hpp
   requiredBy: []
-  timestamp: '2023-06-01 19:59:30+09:00'
+  timestamp: '2024-01-20 16:44:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Algorithm/Doubling1.test.cpp

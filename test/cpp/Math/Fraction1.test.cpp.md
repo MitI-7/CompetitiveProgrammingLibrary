@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Math/Fraction.hpp
     title: library/cpp/Math/Fraction.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc225/tasks/abc225_e
@@ -75,8 +75,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Math/Fraction1.test.cpp
   requiredBy: []
-  timestamp: '2023-12-09 11:59:59+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:51:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Math/Fraction1.test.cpp
 layout: document

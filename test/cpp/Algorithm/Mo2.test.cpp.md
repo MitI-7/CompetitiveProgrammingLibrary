@@ -123,7 +123,7 @@ data:
   isVerificationFile: true
   path: test/cpp/Algorithm/Mo2.test.cpp
   requiredBy: []
-  timestamp: '2023-06-01 21:16:50+09:00'
+  timestamp: '2024-01-20 16:44:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Algorithm/Mo2.test.cpp

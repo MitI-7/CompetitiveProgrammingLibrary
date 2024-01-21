@@ -29,20 +29,18 @@ data:
     \    }\n\n    // u \u3068 v \u306E\u5C5E\u3059\u308B\u96C6\u5408\u3092\u4F75\u5408\
     \u3059\u308B\n    void unite(int u, int v) {\n        u = this->find_root(u);\n\
     \        v = this->find_root(v);\n        if (u == v) {\n            return;\n\
-    \        }\n\n        // \u96C6\u5408\u306E\u30B5\u30A4\u30BA\u304C\u5C0F\u3055\
-    \u3044\u65B9\u3092 u \u3068\u3059\u308B\n        if (this->parent[u] > this->parent[v])\
-    \ {\n            std::swap(u, v);\n        }\n\n        // \u5C0F\u3055\u3044\u65B9\
-    (u) \u306B\u5927\u304D\u3044\u65B9(v) \u3092\u304F\u3063\u3064\u3051\u308B\n \
-    \       // \u4E21\u65B9\u3068\u3082root\u306A\u306E\u3067-(\u96C6\u5408\u306E\u30B5\
-    \u30A4\u30BA)\u304C\u5165\u3063\u3066\u3044\u308B\n        this->parent[u] +=\
-    \ this->parent[v];\n        // v \u306E\u89AA\u3092 u \u306B\u3059\u308B\n   \
-    \     this->parent[v] = u;\n        this->set_size--;\n    }\n\n    // x\u306E\
-    \u5C5E\u3059\u308B\u96C6\u5408\u306E\u8981\u7D20\u6570\u3092\u6C42\u3081\u308B\
-    \n    int size(const int u) {\n        return (-this->parent[find_root(u)]);\n\
-    \    }\n\n    int leader(const int u) {\n        return this->find_root(u);\n\
-    \    }\n\nprivate:\n    // \u6728\u306E\u6839\u3092\u6C42\u3081\u308B\n    int\
-    \ find_root(const int u) {\n        if (this->parent[u] < 0) {\n            return\
-    \ u;\n        }\n        else {\n            return this->parent[u] = this->find_root(this->parent[u]);\n\
+    \        }\n\n        // \u96C6\u5408\u306E\u30B5\u30A4\u30BA\u304C\u5927\u304D\
+    \u3044\u3044\u65B9\u3092 u \u3068\u306A\u308B\u3088\u3046\u306B\u3059\u308B\n\
+    \        if (this->parent[u] > this->parent[v]) {\n            std::swap(u, v);\n\
+    \        }\n\n        // u \u306E\u4E0B\u306B v \u3092\u3064\u3051\u308B\n   \
+    \     this->parent[u] += this->parent[v];\n        this->parent[v] = u;\n    \
+    \    this->set_size--;\n    }\n\n    // u \u306E\u5C5E\u3059\u308B\u96C6\u5408\
+    \u306E\u8981\u7D20\u6570\u3092\u6C42\u3081\u308B\n    int size(const int u) {\n\
+    \        return (-this->parent[this->find_root(u)]);\n    }\n\n    int leader(const\
+    \ int u) {\n        return this->find_root(u);\n    }\n\nprivate:\n    // \u6728\
+    \u306E\u6839\u3092\u6C42\u3081\u308B\n    int find_root(const int u) {\n     \
+    \   if (this->parent[u] < 0) {\n            return u;\n        }\n        else\
+    \ {\n            return this->parent[u] = this->find_root(this->parent[u]);\n\
     \        }\n    }\n};\n"
   code: "#include <vector>\n\nclass UnionFind {\npublic:\n    const int num_nodes;\
     \    // \u8981\u7D20\u306E\u500B\u6570\n    int set_size;           // \u96C6\u5408\
@@ -56,20 +54,18 @@ data:
     \ v \u306E\u5C5E\u3059\u308B\u96C6\u5408\u3092\u4F75\u5408\u3059\u308B\n    void\
     \ unite(int u, int v) {\n        u = this->find_root(u);\n        v = this->find_root(v);\n\
     \        if (u == v) {\n            return;\n        }\n\n        // \u96C6\u5408\
-    \u306E\u30B5\u30A4\u30BA\u304C\u5C0F\u3055\u3044\u65B9\u3092 u \u3068\u3059\u308B\
-    \n        if (this->parent[u] > this->parent[v]) {\n            std::swap(u, v);\n\
-    \        }\n\n        // \u5C0F\u3055\u3044\u65B9(u) \u306B\u5927\u304D\u3044\u65B9\
-    (v) \u3092\u304F\u3063\u3064\u3051\u308B\n        // \u4E21\u65B9\u3068\u3082\
-    root\u306A\u306E\u3067-(\u96C6\u5408\u306E\u30B5\u30A4\u30BA)\u304C\u5165\u3063\
-    \u3066\u3044\u308B\n        this->parent[u] += this->parent[v];\n        // v\
-    \ \u306E\u89AA\u3092 u \u306B\u3059\u308B\n        this->parent[v] = u;\n    \
-    \    this->set_size--;\n    }\n\n    // x\u306E\u5C5E\u3059\u308B\u96C6\u5408\u306E\
-    \u8981\u7D20\u6570\u3092\u6C42\u3081\u308B\n    int size(const int u) {\n    \
-    \    return (-this->parent[find_root(u)]);\n    }\n\n    int leader(const int\
-    \ u) {\n        return this->find_root(u);\n    }\n\nprivate:\n    // \u6728\u306E\
-    \u6839\u3092\u6C42\u3081\u308B\n    int find_root(const int u) {\n        if (this->parent[u]\
-    \ < 0) {\n            return u;\n        }\n        else {\n            return\
-    \ this->parent[u] = this->find_root(this->parent[u]);\n        }\n    }\n};"
+    \u306E\u30B5\u30A4\u30BA\u304C\u5927\u304D\u3044\u3044\u65B9\u3092 u \u3068\u306A\
+    \u308B\u3088\u3046\u306B\u3059\u308B\n        if (this->parent[u] > this->parent[v])\
+    \ {\n            std::swap(u, v);\n        }\n\n        // u \u306E\u4E0B\u306B\
+    \ v \u3092\u3064\u3051\u308B\n        this->parent[u] += this->parent[v];\n  \
+    \      this->parent[v] = u;\n        this->set_size--;\n    }\n\n    // u \u306E\
+    \u5C5E\u3059\u308B\u96C6\u5408\u306E\u8981\u7D20\u6570\u3092\u6C42\u3081\u308B\
+    \n    int size(const int u) {\n        return (-this->parent[this->find_root(u)]);\n\
+    \    }\n\n    int leader(const int u) {\n        return this->find_root(u);\n\
+    \    }\n\nprivate:\n    // \u6728\u306E\u6839\u3092\u6C42\u3081\u308B\n    int\
+    \ find_root(const int u) {\n        if (this->parent[u] < 0) {\n            return\
+    \ u;\n        }\n        else {\n            return this->parent[u] = this->find_root(this->parent[u]);\n\
+    \        }\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/cpp/DataStructure/UnionFind.hpp
@@ -78,8 +74,8 @@ data:
   timestamp: '2023-05-15 18:21:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Graph/kruskal1.test.cpp
   - test/cpp/DataStructure/UnionFind1.test.cpp
+  - test/cpp/Graph/kruskal1.test.cpp
 documentation_of: library/cpp/DataStructure/UnionFind.hpp
 layout: document
 redirect_from:

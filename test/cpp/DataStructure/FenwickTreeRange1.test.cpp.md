@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/DataStructure/FenwickTree.hpp
     title: library/cpp/DataStructure/FenwickTree.hpp
   - icon: ':heavy_check_mark:'
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
   requiredBy: []
-  timestamp: '2023-06-03 11:57:41+09:00'
+  timestamp: '2024-01-20 16:46:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/DataStructure/FenwickTreeRange1.test.cpp

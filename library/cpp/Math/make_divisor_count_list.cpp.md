@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Math/make_divisor_count_list1.test.cpp
     title: test/cpp/Math/make_divisor_count_list1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Math/make_divisor_count_list.cpp\"\n#include\
@@ -28,8 +28,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Math/make_divisor_count_list.cpp
   requiredBy: []
-  timestamp: '2023-11-12 11:34:39+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:49:51+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/cpp/Math/make_divisor_count_list1.test.cpp
 documentation_of: library/cpp/Math/make_divisor_count_list.cpp

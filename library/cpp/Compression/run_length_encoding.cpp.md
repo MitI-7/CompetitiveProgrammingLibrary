@@ -29,7 +29,7 @@ data:
   isVerificationFile: false
   path: library/cpp/Compression/run_length_encoding.cpp
   requiredBy: []
-  timestamp: '2023-12-05 10:52:49+09:00'
+  timestamp: '2024-01-20 16:51:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Compression/run_length_encoding1.test.cpp

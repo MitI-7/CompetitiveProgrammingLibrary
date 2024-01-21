@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Compression/CoordinateCompression.hpp
     title: library/cpp/Compression/CoordinateCompression.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/DataStructure/FenwickTree.hpp
     title: library/cpp/DataStructure/FenwickTree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Math/inversion_number.cpp
     title: library/cpp/Math/inversion_number.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
@@ -85,8 +85,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Math/inversion_number1.test.cpp
   requiredBy: []
-  timestamp: '2023-12-02 23:21:44+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:51:12+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Math/inversion_number1.test.cpp
 layout: document

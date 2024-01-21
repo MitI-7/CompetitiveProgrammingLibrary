@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Math/prime_factor_decomposition1.test.cpp
     title: test/cpp/Math/prime_factor_decomposition1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Math/prime_factor_decomposition.cpp\"\n#include\
@@ -33,8 +33,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Math/prime_factor_decomposition.cpp
   requiredBy: []
-  timestamp: '2023-05-21 18:38:08+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:43:27+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/cpp/Math/prime_factor_decomposition1.test.cpp
 documentation_of: library/cpp/Math/prime_factor_decomposition.cpp

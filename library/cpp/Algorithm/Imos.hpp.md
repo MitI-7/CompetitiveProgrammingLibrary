@@ -33,7 +33,7 @@ data:
   isVerificationFile: false
   path: library/cpp/Algorithm/Imos.hpp
   requiredBy: []
-  timestamp: '2023-05-21 23:19:08+09:00'
+  timestamp: '2024-01-20 16:44:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Algorithm/Imos1.test.cpp

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Geometry/Point.hpp
     title: library/cpp/Geometry/Point.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-6
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Geometry/Point1_rotate.test.cpp
   requiredBy: []
-  timestamp: '2023-06-02 16:47:45+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:45:57+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Geometry/Point1_rotate.test.cpp
 layout: document

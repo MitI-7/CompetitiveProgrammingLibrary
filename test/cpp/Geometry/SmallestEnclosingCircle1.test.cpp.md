@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Geometry/SmallestEnclosingCircle.hpp
     title: library/cpp/Geometry/SmallestEnclosingCircle.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-10
@@ -77,8 +77,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
   requiredBy: []
-  timestamp: '2023-12-02 16:53:15+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:50:51+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
 layout: document

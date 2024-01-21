@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Math/Combination.hpp
     title: library/cpp/Math/Combination.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Math/derangement.cpp
     title: library/cpp/Math/derangement.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Utility/mint.hpp
     title: library/cpp/Utility/mint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc172/tasks/abc172_e
@@ -22,25 +22,27 @@ data:
     - https://atcoder.jp/contests/abc172/tasks/abc172_e
   bundledCode: "#line 1 \"test/cpp/Math/derangement1.test.cpp\"\n#define PROBLEM \"\
     https://atcoder.jp/contests/abc172/tasks/abc172_e\"\n\n#line 1 \"library/cpp/Math/derangement.cpp\"\
-    \n#include <algorithm>\n#line 2 \"library/cpp/Utility/mint.hpp\"\n\ntemplate<int\
-    \ mod>\nstruct mint {\n    long long x;\n\n    mint(long long x = 0) : x((x %\
-    \ mod + mod) % mod) {\n    }\n\n    mint &operator+=(const mint a) {\n       \
-    \ if ((x += a.x) >= mod) {\n            x -= mod;\n        }\n        return *this;\n\
-    \    }\n\n    mint &operator-=(const mint a) {\n        if ((x += mod - a.x) >=\
-    \ mod) {\n            x -= mod;\n        }\n        return *this;\n    }\n\n \
-    \   mint &operator*=(const mint a) {\n        (x *= a.x) %= mod;\n        return\
-    \ *this;\n    }\n\n    mint operator+(const mint a) const {\n        mint res(*this);\n\
-    \        return res += a;\n    }\n\n    mint operator-(const mint a) const {\n\
-    \        mint res(*this);\n        return res -= a;\n    }\n\n    mint operator*(const\
-    \ mint a) const {\n        mint res(*this);\n        return res *= a;\n    }\n\
-    \n    mint pow(long long t) const {\n        if (!t) {\n            return 1;\n\
-    \        }\n        mint a = pow(t >> 1);\n        a *= a;\n        if (t & 1)\
-    \ {\n            a *= *this;\n        }\n        return a;\n    }\n\n    // mod\
-    \ \u304C\u7D20\u6570\u306E\u3068\u304D\u306E\u307F\u5229\u7528\u53EF\u80FD\n \
-    \   mint inv() const {\n        return pow(mod - 2);\n    }\n\n    mint &operator/=(const\
-    \ mint a) {\n        return (*this) *= a.inv();\n    }\n\n    mint operator/(const\
-    \ mint a) const {\n        mint res(*this);\n        return res /= a;\n    }\n\
-    };\n\n\n//const int MOD = 1000000000 + 7; // 10^9 + 7\n//const int MOD = 998244353;\n\
+    \n#include <algorithm>\n#line 2 \"library/cpp/Utility/mint.hpp\"\n\n#include <iostream>\n\
+    \ntemplate<int mod>\nstruct mint {\n    long long x;\n\n    mint(long long x =\
+    \ 0) : x((x % mod + mod) % mod) {\n    }\n\n    mint &operator+=(const mint a)\
+    \ {\n        if ((x += a.x) >= mod) {\n            x -= mod;\n        }\n    \
+    \    return *this;\n    }\n\n    mint &operator-=(const mint a) {\n        if\
+    \ ((x += mod - a.x) >= mod) {\n            x -= mod;\n        }\n        return\
+    \ *this;\n    }\n\n    mint &operator*=(const mint a) {\n        (x *= a.x) %=\
+    \ mod;\n        return *this;\n    }\n\n    mint operator+(const mint a) const\
+    \ {\n        mint res(*this);\n        return res += a;\n    }\n\n    mint operator-(const\
+    \ mint a) const {\n        mint res(*this);\n        return res -= a;\n    }\n\
+    \n    mint operator*(const mint a) const {\n        mint res(*this);\n       \
+    \ return res *= a;\n    }\n\n    mint pow(long long t) const {\n        if (!t)\
+    \ {\n            return 1;\n        }\n        mint a = pow(t >> 1);\n       \
+    \ a *= a;\n        if (t & 1) {\n            a *= *this;\n        }\n        return\
+    \ a;\n    }\n\n    // mod \u304C\u7D20\u6570\u306E\u3068\u304D\u306E\u307F\u5229\
+    \u7528\u53EF\u80FD\n    mint inv() const {\n        return pow(mod - 2);\n   \
+    \ }\n\n    mint &operator/=(const mint a) {\n        return (*this) *= a.inv();\n\
+    \    }\n\n    mint operator/(const mint a) const {\n        mint res(*this);\n\
+    \        return res /= a;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
+    \ &os, const mint &obj) {\n        os << obj.x;\n        return os;\n    }\n};\n\
+    \n\n//const int MOD = 1000000000 + 7; // 10^9 + 7\n//const int MOD = 998244353;\n\
     #line 1 \"library/cpp/Math/Combination.hpp\"\n#include <cassert>\n#include <cstdint>\n\
     #include <vector>\n#line 5 \"library/cpp/Math/Combination.hpp\"\n\n// nCr\n//\
     \ O(r)\ntemplate<typename T>\nT combination(long long n, long long r) {\n    T\
@@ -75,12 +77,12 @@ data:
     \u306F\u6307\u5B9A\u306E\u8272\u3068\u4E00\u81F4\u3057\u3066\u3082\u3057\u306A\
     \u304F\u3066\u3082\u3044\u3044\n        now *= comb.nPr(m - i, n - i);\n\n   \
     \     if (i % 2 == 0) {\n            ans += now;\n        }\n        else {\n\
-    \            ans -= now;\n        }\n    }\n\n    return ans;\n}\n#line 5 \"test/cpp/Math/derangement1.test.cpp\"\
-    \n#include <iostream>\n\nusing namespace std;\n\nconst int MOD = 1000000007;\n\
-    \nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n  \
-    \  int N, M;\n    cin >> N >> M;\n\n    mint<MOD> ans = 1;\n    for (int i = 0;\
-    \ i < N; ++i) {\n        ans *= M - i;\n    }\n    ans *= derangement<MOD>(N,\
-    \ M);\n    cout << ans.x << endl;\n\n    return 0;\n}\n"
+    \            ans -= now;\n        }\n    }\n\n    return ans;\n}\n#line 6 \"test/cpp/Math/derangement1.test.cpp\"\
+    \n\nusing namespace std;\n\nconst int MOD = 1000000007;\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int N, M;\n    cin >> N >> M;\n\n   \
+    \ mint<MOD> ans = 1;\n    for (int i = 0; i < N; ++i) {\n        ans *= M - i;\n\
+    \    }\n    ans *= derangement<MOD>(N, M);\n    cout << ans.x << endl;\n\n   \
+    \ return 0;\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc172/tasks/abc172_e\"\n\n\
     #include \"library/cpp/Math/derangement.cpp\"\n#include \"library/cpp/Utility/mint.hpp\"\
     \n#include <iostream>\n\nusing namespace std;\n\nconst int MOD = 1000000007;\n\
@@ -95,8 +97,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Math/derangement1.test.cpp
   requiredBy: []
-  timestamp: '2023-11-20 16:28:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:50:11+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Math/derangement1.test.cpp
 layout: document

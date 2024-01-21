@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
     title: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Geometry/SmallestEnclosingCircle.hpp\"\n#include\
@@ -92,8 +92,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Geometry/SmallestEnclosingCircle.hpp
   requiredBy: []
-  timestamp: '2023-12-02 16:53:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:50:44+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
 documentation_of: library/cpp/Geometry/SmallestEnclosingCircle.hpp

@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Math/Fraction1.test.cpp
     title: test/cpp/Math/Fraction1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Math/Fraction.hpp\"\ntemplate<typename T=long\
@@ -86,8 +86,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Math/Fraction.hpp
   requiredBy: []
-  timestamp: '2023-12-09 11:59:46+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:51:46+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/cpp/Math/Fraction1.test.cpp
 documentation_of: library/cpp/Math/Fraction.hpp

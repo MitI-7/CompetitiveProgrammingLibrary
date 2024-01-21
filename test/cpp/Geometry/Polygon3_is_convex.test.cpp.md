@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Geometry/Point.hpp
     title: library/cpp/Geometry/Point.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Geometry/Polygon.hpp
     title: library/cpp/Geometry/Polygon.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_3_B&lang=ja
@@ -78,8 +78,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Geometry/Polygon3_is_convex.test.cpp
   requiredBy: []
-  timestamp: '2023-12-02 22:09:08+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:46:23+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Geometry/Polygon3_is_convex.test.cpp
 layout: document

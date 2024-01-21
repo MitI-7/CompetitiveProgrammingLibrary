@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Graph/FunctionalGraph.hpp
     title: library/cpp/Graph/FunctionalGraph.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc296/tasks/abc296_e
@@ -97,8 +97,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
   requiredBy: []
-  timestamp: '2023-06-05 15:03:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:46:52+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
 layout: document

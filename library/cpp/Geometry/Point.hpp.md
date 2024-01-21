@@ -2,25 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Geometry/Polygon.hpp
     title: library/cpp/Geometry/Polygon.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Geometry/Point1_rotate.test.cpp
     title: test/cpp/Geometry/Point1_rotate.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Geometry/Polygon1_area.test.cpp
     title: test/cpp/Geometry/Polygon1_area.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Geometry/Polygon2_area.test.cpp
     title: test/cpp/Geometry/Polygon2_area.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Geometry/Polygon3_is_convex.test.cpp
     title: test/cpp/Geometry/Polygon3_is_convex.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Geometry/Point.hpp\"\n#include <cmath>\n\ntemplate<class\
@@ -65,11 +65,11 @@ data:
   path: library/cpp/Geometry/Point.hpp
   requiredBy:
   - library/cpp/Geometry/Polygon.hpp
-  timestamp: '2023-06-02 16:47:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:45:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/cpp/Geometry/Polygon3_is_convex.test.cpp
   - test/cpp/Geometry/Polygon2_area.test.cpp
+  - test/cpp/Geometry/Polygon3_is_convex.test.cpp
   - test/cpp/Geometry/Polygon1_area.test.cpp
   - test/cpp/Geometry/Point1_rotate.test.cpp
 documentation_of: library/cpp/Geometry/Point.hpp

@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: test/cpp/Algorithm/Imos1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-21 23:19:23+09:00'
+  timestamp: '2024-01-20 16:44:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Algorithm/Imos1.test.cpp

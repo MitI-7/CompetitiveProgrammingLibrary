@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/Graph/connected_components.cpp
     title: library/cpp/Graph/connected_components.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_D&lang=ja
@@ -84,8 +84,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Graph/connected_components1.test.cpp
   requiredBy: []
-  timestamp: '2023-06-09 11:12:50+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-20 16:47:57+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/Graph/connected_components1.test.cpp
 layout: document

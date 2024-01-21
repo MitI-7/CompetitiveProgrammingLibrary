@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/Graph/connected_components1.test.cpp
     title: test/cpp/Graph/connected_components1.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/cpp/Graph/Graph.hpp\"\n\n#include <vector>\n#include\
@@ -71,8 +71,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Graph/connected_components.cpp
   requiredBy: []
-  timestamp: '2023-06-09 11:12:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-20 16:47:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/cpp/Graph/connected_components1.test.cpp
 documentation_of: library/cpp/Graph/connected_components.cpp
