@@ -39,8 +39,8 @@ data:
   timestamp: '2024-01-20 16:48:30+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/python/Utility/matrix_shift2.test.py
   - test/python/Utility/matrix_shift1.test.py
+  - test/python/Utility/matrix_shift2.test.py
 documentation_of: library/python/Utility/matrix_shift.py
 layout: document
 redirect_from:

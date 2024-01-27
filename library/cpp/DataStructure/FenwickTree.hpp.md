@@ -70,9 +70,9 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/cpp/Math/inversion_number1.test.cpp
+  - test/cpp/DataStructure/FenwickTree1.test.cpp
   - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
   - test/cpp/DataStructure/FenwickTreeRange2.test.cpp
-  - test/cpp/DataStructure/FenwickTree1.test.cpp
 documentation_of: library/cpp/DataStructure/FenwickTree.hpp
 layout: document
 redirect_from:

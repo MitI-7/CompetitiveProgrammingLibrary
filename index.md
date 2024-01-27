@@ -37,26 +37,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/RollbackUnionFind.hpp
       title: library/cpp/DataStructure/RollbackUnionFind.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/TopK.hpp
       title: library/cpp/DataStructure/TopK.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/cpp/DataStructure/UnionFind.hpp
       title: library/cpp/DataStructure/UnionFind.hpp
   - name: library/cpp/Geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Geometry/Point.hpp
       title: library/cpp/Geometry/Point.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Geometry/Polygon.hpp
       title: library/cpp/Geometry/Polygon.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Geometry/SmallestEnclosingCircle.hpp
       title: library/cpp/Geometry/SmallestEnclosingCircle.hpp
   - name: library/cpp/Graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/FunctionalGraph.hpp
       title: library/cpp/Graph/FunctionalGraph.hpp
     - icon: ':question:'
@@ -74,7 +74,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/find_cycle.cpp
       title: library/cpp/Graph/find_cycle.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/cpp/Graph/kruskal.cpp
       title: library/cpp/Graph/kruskal.cpp
     - icon: ':warning:'
@@ -131,6 +131,14 @@ data:
     - icon: ':x:'
       path: library/cpp/String/RollingHash.hpp
       title: library/cpp/String/RollingHash.hpp
+  - name: library/cpp/Tree
+    pages:
+    - icon: ':x:'
+      path: library/cpp/Tree/SegmentTree.hpp
+      title: library/cpp/Tree/SegmentTree.hpp
+    - icon: ':x:'
+      path: library/cpp/Tree/WeightedUnionFind.hpp
+      title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
     pages:
     - icon: ':question:'
@@ -197,41 +205,44 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
       title: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
       title: test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
       title: test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/UnionFind1.test.cpp
       title: test/cpp/DataStructure/UnionFind1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/DataStructure/UnionFind2_group.test.cpp
+      title: test/cpp/DataStructure/UnionFind2_group.test.cpp
   - name: test/cpp/Geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Point1_rotate.test.cpp
       title: test/cpp/Geometry/Point1_rotate.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Polygon1_area.test.cpp
       title: test/cpp/Geometry/Polygon1_area.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Polygon2_area.test.cpp
       title: test/cpp/Geometry/Polygon2_area.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Polygon3_is_convex.test.cpp
       title: test/cpp/Geometry/Polygon3_is_convex.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
       title: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
   - name: test/cpp/Graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
       title: test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
       title: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
       title: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
     - icon: ':heavy_check_mark:'
@@ -249,7 +260,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/find_cycle2.test.cpp
       title: test/cpp/Graph/find_cycle2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/cpp/Graph/kruskal1.test.cpp
       title: test/cpp/Graph/kruskal1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -306,6 +317,29 @@ data:
     - icon: ':x:'
       path: test/cpp/String/RollingHash1_hash.test.cpp
       title: test/cpp/String/RollingHash1_hash.test.cpp
+  - name: test/cpp/Tree
+    pages:
+    - icon: ':x:'
+      path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
+      title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
+      title: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+      title: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
+      title: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/WeightedUnionFind1.test.cpp
+      title: test/cpp/Tree/WeightedUnionFind1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/WeightedUnionFind2.test.cpp
+      title: test/cpp/Tree/WeightedUnionFind2.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/WeightedUnionFind3.test.cpp
+      title: test/cpp/Tree/WeightedUnionFind3.test.cpp
   - name: test/python/Utility
     pages:
     - icon: ':x:'

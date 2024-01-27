@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/FunctionalGraph.hpp
     title: library/cpp/Graph/FunctionalGraph.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc179/tasks/abc179_e
@@ -38,12 +38,12 @@ data:
     \ const T x) {\n        this->value[u] = x;\n    }\n\n    // u \u304B\u3089 k\
     \ step \u9077\u79FB\u3057\u305F\u3068\u304D\u306E(\u30CE\u30FC\u30C9, \u30CE\u30FC\
     \u30C9\u306E\u8A2D\u5B9A\u5024\u306E\u5408\u8A08)\u3092\u6C42\u3081\u308B\n  \
-    \  // O(N)\n    std::pair<int, long long> k_step(const int u, long long k) const\
-    \ {\n        long long total = 0;\n\n        // \u30EB\u30FC\u30D7\u306B\u5165\
-    \u308B\u307E\u3067\u9032\u3080\n        int now = u;\n        while (not this->in_cycle[now]\
+    \  // O(N)\n    std::pair<int, T> k_step(const int u, long long k) const {\n \
+    \       T total = 0;\n\n        // \u30B5\u30A4\u30AF\u30EB\u306B\u5165\u308B\u307E\
+    \u3067\u9032\u3080\n        int now = u;\n        while (not this->in_cycle[now]\
     \ and k > 0) {\n            total += this->value[now];\n            now = this->to[now];\n\
-    \            k--;\n        }\n\n        // \u30EB\u30FC\u30D7\u3092\u30B7\u30E7\
-    \u30FC\u30C8\u30AB\u30C3\u30C8\n        const int no = this->component_no[now];\n\
+    \            k--;\n        }\n\n        // \u30B5\u30A4\u30AF\u30EB\u3092\u30B7\
+    \u30E7\u30FC\u30C8\u30AB\u30C3\u30C8\n        const int no = this->component_no[now];\n\
     \        total += this->cycle_sum[no] * (k / this->cycle_size[no]);\n        k\
     \ %= this->cycle_size[no];\n\n        for (int i = 0; i < k; ++i) {\n        \
     \    total += this->value[now];\n            now = this->to[now];\n        }\n\
@@ -97,8 +97,8 @@ data:
   isVerificationFile: true
   path: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
   requiredBy: []
-  timestamp: '2024-01-20 16:47:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-01-22 20:11:49+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Graph/FunctionalGraph2_k_step.test.cpp
 layout: document

@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
     title: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
     title: test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
     title: test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/DataStructure/TopK.hpp\"\n#include <cassert>\n\
@@ -114,11 +114,11 @@ data:
   path: library/cpp/DataStructure/TopK.hpp
   requiredBy: []
   timestamp: '2024-01-20 16:50:17+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
   - test/cpp/DataStructure/TopK1_get_top_k.test.cpp
   - test/cpp/DataStructure/TopK2_get_top_k_sum.test.cpp
-  - test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
 documentation_of: library/cpp/DataStructure/TopK.hpp
 layout: document
 redirect_from:
