@@ -2,34 +2,33 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: library/cpp/DataStructure/UnionFind.hpp
-    title: library/cpp/DataStructure/UnionFind.hpp
+    path: library/cpp/Tree/UnionFind.hpp
+    title: library/cpp/Tree/UnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Graph/kruskal1.test.cpp
     title: test/cpp/Graph/kruskal1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Graph/kruskal.cpp\"\n#include <algorithm>\n\
-    #include <vector>\n#line 1 \"library/cpp/DataStructure/UnionFind.hpp\"\n#include\
-    \ <numeric>\n#line 3 \"library/cpp/DataStructure/UnionFind.hpp\"\n\nclass UnionFind\
-    \ {\npublic:\n    const int num_nodes;    // \u8981\u7D20\u306E\u500B\u6570\n\
-    \    int set_size;           // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n \
-    \   std::vector<int> parent;    // \u89AA\u306E\u756A\u53F7(\u89AA\u3060\u3063\
-    \u305F\u5834\u5408\u306F-(\u305D\u306E\u96C6\u5408\u306E\u30B5\u30A4\u30BA))\n\
-    \    std::vector<int> next;\n\npublic:\n    explicit UnionFind(int num_nodes)\
-    \ : num_nodes(num_nodes), set_size(num_nodes), parent(num_nodes, -1) {\n     \
-    \   this->next.resize(num_nodes);\n        std::iota(this->next.begin(), this->next.end(),\
-    \ 0);\n    }\n\n    // u \u3068 v \u304C\u540C\u3058\u96C6\u5408\u306B\u5C5E\u3059\
-    \u308B\u304B\u5224\u5B9A\u3059\u308B\n    bool is_same_set(const int u, const\
-    \ int v) {\n        return this->find_root(u) == this->find_root(v);\n    }\n\n\
-    \    // u \u3068 v \u306E\u5C5E\u3059\u308B\u96C6\u5408\u3092\u4F75\u5408\u3059\
-    \u308B\n    bool unite(int u, int v) {\n        u = this->find_root(u);\n    \
-    \    v = this->find_root(v);\n        if (u == v) {\n            return false;\n\
+    #include <vector>\n#line 1 \"library/cpp/Tree/UnionFind.hpp\"\n#include <numeric>\n\
+    #line 3 \"library/cpp/Tree/UnionFind.hpp\"\n\nclass UnionFind {\npublic:\n   \
+    \ const int num_nodes;    // \u8981\u7D20\u306E\u500B\u6570\n    int set_size;\
+    \           // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n    std::vector<int>\
+    \ parent;    // \u89AA\u306E\u756A\u53F7(\u89AA\u3060\u3063\u305F\u5834\u5408\u306F\
+    -(\u305D\u306E\u96C6\u5408\u306E\u30B5\u30A4\u30BA))\n    std::vector<int> next;\n\
+    \npublic:\n    explicit UnionFind(int num_nodes) : num_nodes(num_nodes), set_size(num_nodes),\
+    \ parent(num_nodes, -1) {\n        this->next.resize(num_nodes);\n        std::iota(this->next.begin(),\
+    \ this->next.end(), 0);\n    }\n\n    // u \u3068 v \u304C\u540C\u3058\u96C6\u5408\
+    \u306B\u5C5E\u3059\u308B\u304B\u5224\u5B9A\u3059\u308B\n    bool is_same_set(const\
+    \ int u, const int v) {\n        return this->find_root(u) == this->find_root(v);\n\
+    \    }\n\n    // u \u3068 v \u306E\u5C5E\u3059\u308B\u96C6\u5408\u3092\u4F75\u5408\
+    \u3059\u308B\n    bool unite(int u, int v) {\n        u = this->find_root(u);\n\
+    \        v = this->find_root(v);\n        if (u == v) {\n            return false;\n\
     \        }\n\n        // \u96C6\u5408\u306E\u30B5\u30A4\u30BA\u304C\u5927\u304D\
     \u3044\u3044\u65B9\u3092 u \u3068\u306A\u308B\u3088\u3046\u306B\u3059\u308B\n\
     \        if (this->parent[u] > this->parent[v]) {\n            std::swap(u, v);\n\
@@ -61,7 +60,7 @@ data:
     \  long long ans = 0;\n    for (const auto e: edges) {\n        if (!uf.is_same_set(e.from,\
     \ e.to)) {\n            uf.unite(e.from, e.to);\n            ans += e.cost;\n\
     \        }\n    }\n\n    return ans;\n}\n"
-  code: "#include <algorithm>\n#include <vector>\n#include \"library/cpp/DataStructure/UnionFind.hpp\"\
+  code: "#include <algorithm>\n#include <vector>\n#include \"library/cpp/Tree/UnionFind.hpp\"\
     \n\n\nstruct Edge {\n    int from;\n    int to;\n    long long cost;\n    int\
     \ no;\n\n    Edge() {}\n\n    Edge(int from, int to, long long cost, int no =\
     \ 0) : from(from), to(to), cost(cost), no(no) {}\n\n    bool operator<(const Edge\
@@ -75,12 +74,12 @@ data:
     \ e.to)) {\n            uf.unite(e.from, e.to);\n            ans += e.cost;\n\
     \        }\n    }\n\n    return ans;\n}"
   dependsOn:
-  - library/cpp/DataStructure/UnionFind.hpp
+  - library/cpp/Tree/UnionFind.hpp
   isVerificationFile: false
   path: library/cpp/Graph/kruskal.cpp
   requiredBy: []
-  timestamp: '2024-01-22 20:10:57+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-05-18 13:20:26+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Graph/kruskal1.test.cpp
 documentation_of: library/cpp/Graph/kruskal.cpp

@@ -3,30 +3,30 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: library/cpp/DataStructure/FenwickTreeRange.hpp
-    title: library/cpp/DataStructure/FenwickTreeRange.hpp
-  - icon: ':x:'
     path: library/cpp/Math/inversion_number.cpp
     title: library/cpp/Math/inversion_number.cpp
+  - icon: ':x:'
+    path: library/cpp/Tree/FenwickTreeRange.hpp
+    title: library/cpp/Tree/FenwickTreeRange.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/cpp/DataStructure/FenwickTree1.test.cpp
-    title: test/cpp/DataStructure/FenwickTree1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
-    title: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
-    title: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
-  - icon: ':x:'
     path: test/cpp/Math/inversion_number1.test.cpp
     title: test/cpp/Math/inversion_number1.test.cpp
+  - icon: ':x:'
+    path: test/cpp/Tree/FenwickTree1.test.cpp
+    title: test/cpp/Tree/FenwickTree1.test.cpp
+  - icon: ':x:'
+    path: test/cpp/Tree/FenwickTreeRange1.test.cpp
+    title: test/cpp/Tree/FenwickTreeRange1.test.cpp
+  - icon: ':x:'
+    path: test/cpp/Tree/FenwickTreeRange2.test.cpp
+    title: test/cpp/Tree/FenwickTreeRange2.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/DataStructure/FenwickTree.hpp\"\n#include <cassert>\n\
+  bundledCode: "#line 1 \"library/cpp/Tree/FenwickTree.hpp\"\n#include <cassert>\n\
     #include <vector>\n\n// \u3059\u3079\u3066 0-origin\ntemplate<class T>\nclass\
     \ FenwickTree {\npublic:\n    const int n;\n    std::vector<T> v;\n\n    // n:\
     \ \u8981\u7D20\u6570\n    explicit FenwickTree(const int n) : n(n) {\n       \
@@ -62,21 +62,21 @@ data:
     \ - this->sum(left);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/cpp/DataStructure/FenwickTree.hpp
+  path: library/cpp/Tree/FenwickTree.hpp
   requiredBy:
+  - library/cpp/Tree/FenwickTreeRange.hpp
   - library/cpp/Math/inversion_number.cpp
-  - library/cpp/DataStructure/FenwickTreeRange.hpp
   timestamp: '2024-01-20 16:44:05+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/cpp/Tree/FenwickTree1.test.cpp
+  - test/cpp/Tree/FenwickTreeRange1.test.cpp
+  - test/cpp/Tree/FenwickTreeRange2.test.cpp
   - test/cpp/Math/inversion_number1.test.cpp
-  - test/cpp/DataStructure/FenwickTree1.test.cpp
-  - test/cpp/DataStructure/FenwickTreeRange1.test.cpp
-  - test/cpp/DataStructure/FenwickTreeRange2.test.cpp
-documentation_of: library/cpp/DataStructure/FenwickTree.hpp
+documentation_of: library/cpp/Tree/FenwickTree.hpp
 layout: document
 redirect_from:
-- /library/library/cpp/DataStructure/FenwickTree.hpp
-- /library/library/cpp/DataStructure/FenwickTree.hpp.html
-title: library/cpp/DataStructure/FenwickTree.hpp
+- /library/library/cpp/Tree/FenwickTree.hpp
+- /library/library/cpp/Tree/FenwickTree.hpp.html
+title: library/cpp/Tree/FenwickTree.hpp
 ---

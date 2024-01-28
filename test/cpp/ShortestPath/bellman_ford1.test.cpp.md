@@ -5,8 +5,8 @@ data:
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
   - icon: ':heavy_check_mark:'
-    path: library/cpp/Graph/bellman_ford.cpp
-    title: library/cpp/Graph/bellman_ford.cpp
+    path: library/cpp/ShortestPath/bellman_ford.cpp
+    title: library/cpp/ShortestPath/bellman_ford.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,10 +17,10 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
-  bundledCode: "#line 1 \"test/cpp/Graph/bellman_ford1.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\n\n#include\
-    \ <iostream>\n#line 1 \"library/cpp/Graph/bellman_ford.cpp\"\n#include <vector>\n\
-    #include <functional>\n#include <limits>\n#line 2 \"library/cpp/Graph/Graph.hpp\"\
+  bundledCode: "#line 1 \"test/cpp/ShortestPath/bellman_ford1.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
+    \n\n#include <iostream>\n#line 1 \"library/cpp/ShortestPath/bellman_ford.cpp\"\
+    \n#include <vector>\n#include <functional>\n#include <limits>\n#line 2 \"library/cpp/Graph/Graph.hpp\"\
     \n\n#line 5 \"library/cpp/Graph/Graph.hpp\"\n\ntemplate<typename T>\nclass Edge\
     \ {\npublic:\n    int from;\n    int to;\n    T w;\n    int no;\n\n    Edge()\
     \ : from(-1), to(-1), w(-1), no(-1) {}\n\n    Edge(int from, int to, T w = 1,\
@@ -34,23 +34,7 @@ data:
     \ const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n#line 5 \"library/cpp/Graph/bellman_ford.cpp\"\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 5 \"library/cpp/ShortestPath/bellman_ford.cpp\"\
     \n\n/**\n * start\u304B\u3089\u4ED6\u306E\u3059\u3079\u3066\u306Enode\u3078\u306E\
     \u6700\u77ED\u8DDD\u96E2(\u5230\u9054\u3067\u304D\u306A\u3044node\u306Finf)\u3092\
     \u3082\u3068\u3081\u308B\n * \u8CA0\u306E\u9589\u8DEF\u304C\u3042\u308B\u5834\u5408\
@@ -75,7 +59,7 @@ data:
     \ = edge;\n                    update = true;\n                }\n           \
     \ }\n        }\n        if (not update) {\n            break;\n        }\n   \
     \ }\n\n    if (i == num_nodes) {\n        return {{}, {}};\n    } else {\n   \
-    \     return {distance, prev_edge};\n    }\n}\n#line 5 \"test/cpp/Graph/bellman_ford1.test.cpp\"\
+    \     return {distance, prev_edge};\n    }\n}\n#line 5 \"test/cpp/ShortestPath/bellman_ford1.test.cpp\"\
     \n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int V, E, R;\n    cin >> V >> E >> R;\n\n    Graph<long long> graph(V);\n\
     \    for (int i = 0; i < E; ++i) {\n        int S, T, D;\n        cin >> S >>\
@@ -86,8 +70,8 @@ data:
     \                cout << \"INF\" << endl;\n            } else {\n            \
     \    cout << a << endl;\n            }\n        }\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
-    \n\n#include <iostream>\n#include \"library/cpp/Graph/bellman_ford.cpp\"\n\nusing\
-    \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n\n#include <iostream>\n#include \"library/cpp/ShortestPath/bellman_ford.cpp\"\
+    \n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int V, E, R;\n    cin >> V >> E >> R;\n\n    Graph<long long> graph(V);\n\
     \    for (int i = 0; i < E; ++i) {\n        int S, T, D;\n        cin >> S >>\
     \ T >> D;\n        graph.add_directed_edge(S, T, D);\n    }\n\n    const auto\
@@ -97,18 +81,18 @@ data:
     \                cout << \"INF\" << endl;\n            } else {\n            \
     \    cout << a << endl;\n            }\n        }\n    }\n\n    return 0;\n}"
   dependsOn:
-  - library/cpp/Graph/bellman_ford.cpp
+  - library/cpp/ShortestPath/bellman_ford.cpp
   - library/cpp/Graph/Graph.hpp
   isVerificationFile: true
-  path: test/cpp/Graph/bellman_ford1.test.cpp
+  path: test/cpp/ShortestPath/bellman_ford1.test.cpp
   requiredBy: []
   timestamp: '2023-05-15 19:51:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Graph/bellman_ford1.test.cpp
+documentation_of: test/cpp/ShortestPath/bellman_ford1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Graph/bellman_ford1.test.cpp
-- /verify/test/cpp/Graph/bellman_ford1.test.cpp.html
-title: test/cpp/Graph/bellman_ford1.test.cpp
+- /verify/test/cpp/ShortestPath/bellman_ford1.test.cpp
+- /verify/test/cpp/ShortestPath/bellman_ford1.test.cpp.html
+title: test/cpp/ShortestPath/bellman_ford1.test.cpp
 ---

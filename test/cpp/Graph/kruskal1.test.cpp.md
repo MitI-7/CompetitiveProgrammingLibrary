@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: library/cpp/DataStructure/UnionFind.hpp
-    title: library/cpp/DataStructure/UnionFind.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/kruskal.cpp
     title: library/cpp/Graph/kruskal.cpp
+  - icon: ':question:'
+    path: library/cpp/Tree/UnionFind.hpp
+    title: library/cpp/Tree/UnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
@@ -19,13 +19,13 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A
   bundledCode: "#line 1 \"test/cpp/Graph/kruskal1.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
     \n\n#line 1 \"library/cpp/Graph/kruskal.cpp\"\n#include <algorithm>\n#include\
-    \ <vector>\n#line 1 \"library/cpp/DataStructure/UnionFind.hpp\"\n#include <numeric>\n\
-    #line 3 \"library/cpp/DataStructure/UnionFind.hpp\"\n\nclass UnionFind {\npublic:\n\
-    \    const int num_nodes;    // \u8981\u7D20\u306E\u500B\u6570\n    int set_size;\
-    \           // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n    std::vector<int>\
-    \ parent;    // \u89AA\u306E\u756A\u53F7(\u89AA\u3060\u3063\u305F\u5834\u5408\u306F\
-    -(\u305D\u306E\u96C6\u5408\u306E\u30B5\u30A4\u30BA))\n    std::vector<int> next;\n\
-    \npublic:\n    explicit UnionFind(int num_nodes) : num_nodes(num_nodes), set_size(num_nodes),\
+    \ <vector>\n#line 1 \"library/cpp/Tree/UnionFind.hpp\"\n#include <numeric>\n#line\
+    \ 3 \"library/cpp/Tree/UnionFind.hpp\"\n\nclass UnionFind {\npublic:\n    const\
+    \ int num_nodes;    // \u8981\u7D20\u306E\u500B\u6570\n    int set_size;     \
+    \      // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n    std::vector<int> parent;\
+    \    // \u89AA\u306E\u756A\u53F7(\u89AA\u3060\u3063\u305F\u5834\u5408\u306F-(\u305D\
+    \u306E\u96C6\u5408\u306E\u30B5\u30A4\u30BA))\n    std::vector<int> next;\n\npublic:\n\
+    \    explicit UnionFind(int num_nodes) : num_nodes(num_nodes), set_size(num_nodes),\
     \ parent(num_nodes, -1) {\n        this->next.resize(num_nodes);\n        std::iota(this->next.begin(),\
     \ this->next.end(), 0);\n    }\n\n    // u \u3068 v \u304C\u540C\u3058\u96C6\u5408\
     \u306B\u5C5E\u3059\u308B\u304B\u5224\u5B9A\u3059\u308B\n    bool is_same_set(const\
@@ -78,12 +78,12 @@ data:
     \n    return 0;\n}"
   dependsOn:
   - library/cpp/Graph/kruskal.cpp
-  - library/cpp/DataStructure/UnionFind.hpp
+  - library/cpp/Tree/UnionFind.hpp
   isVerificationFile: true
   path: test/cpp/Graph/kruskal1.test.cpp
   requiredBy: []
-  timestamp: '2024-01-22 20:10:57+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-18 13:20:26+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Graph/kruskal1.test.cpp
 layout: document

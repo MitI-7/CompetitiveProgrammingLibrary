@@ -3,39 +3,39 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: library/cpp/Graph/bellman_ford.cpp
-    title: library/cpp/Graph/bellman_ford.cpp
-  - icon: ':x:'
     path: library/cpp/Graph/connected_components.cpp
     title: library/cpp/Graph/connected_components.cpp
   - icon: ':heavy_check_mark:'
-    path: library/cpp/Graph/dijkstra.cpp
-    title: library/cpp/Graph/dijkstra.cpp
-  - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/find_cycle.cpp
     title: library/cpp/Graph/find_cycle.cpp
+  - icon: ':heavy_check_mark:'
+    path: library/cpp/ShortestPath/bellman_ford.cpp
+    title: library/cpp/ShortestPath/bellman_ford.cpp
+  - icon: ':x:'
+    path: library/cpp/ShortestPath/dijkstra.cpp
+    title: library/cpp/ShortestPath/dijkstra.cpp
   - icon: ':warning:'
-    path: library/cpp/Graph/make_shortest_path_tree.cpp
-    title: library/cpp/Graph/make_shortest_path_tree.cpp
+    path: library/cpp/ShortestPath/make_shortest_path_tree.cpp
+    title: library/cpp/ShortestPath/make_shortest_path_tree.cpp
   - icon: ':warning:'
-    path: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
-    title: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+    path: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
+    title: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/cpp/Graph/bellman_ford1.test.cpp
-    title: test/cpp/Graph/bellman_ford1.test.cpp
-  - icon: ':x:'
     path: test/cpp/Graph/connected_components1.test.cpp
     title: test/cpp/Graph/connected_components1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/Graph/dijkstra1.test.cpp
-    title: test/cpp/Graph/dijkstra1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/cpp/Graph/find_cycle1.test.cpp
     title: test/cpp/Graph/find_cycle1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/cpp/Graph/find_cycle2.test.cpp
     title: test/cpp/Graph/find_cycle2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/ShortestPath/bellman_ford1.test.cpp
+    title: test/cpp/ShortestPath/bellman_ford1.test.cpp
+  - icon: ':x:'
+    path: test/cpp/ShortestPath/dijkstra1.test.cpp
+    title: test/cpp/ShortestPath/dijkstra1.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -54,23 +54,7 @@ data:
     \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n"
+    \ int u) {\n        return this->graph[u];\n    }\n};\n"
   code: "#pragma once\n\n#include <vector>\n#include <iostream>\n\ntemplate<typename\
     \ T>\nclass Edge {\npublic:\n    int from;\n    int to;\n    T w;\n    int no;\n\
     \n    Edge() : from(-1), to(-1), w(-1), no(-1) {}\n\n    Edge(int from, int to,\
@@ -84,41 +68,25 @@ data:
     \ const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}"
+    \ int u) {\n        return this->graph[u];\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/cpp/Graph/Graph.hpp
   requiredBy:
-  - test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+  - test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
+  - library/cpp/ShortestPath/make_shortest_path_tree.cpp
+  - library/cpp/ShortestPath/bellman_ford.cpp
+  - library/cpp/ShortestPath/dijkstra.cpp
   - library/cpp/Graph/connected_components.cpp
-  - library/cpp/Graph/make_shortest_path_tree.cpp
-  - library/cpp/Graph/bellman_ford.cpp
   - library/cpp/Graph/find_cycle.cpp
-  - library/cpp/Graph/dijkstra.cpp
   timestamp: '2023-05-15 18:41:16+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/cpp/ShortestPath/bellman_ford1.test.cpp
+  - test/cpp/ShortestPath/dijkstra1.test.cpp
   - test/cpp/Graph/find_cycle1.test.cpp
   - test/cpp/Graph/connected_components1.test.cpp
-  - test/cpp/Graph/bellman_ford1.test.cpp
   - test/cpp/Graph/find_cycle2.test.cpp
-  - test/cpp/Graph/dijkstra1.test.cpp
 documentation_of: library/cpp/Graph/Graph.hpp
 layout: document
 redirect_from:

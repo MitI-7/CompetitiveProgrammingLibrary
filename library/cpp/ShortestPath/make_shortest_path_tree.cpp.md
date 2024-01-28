@@ -4,13 +4,13 @@ data:
   - icon: ':question:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
-  - icon: ':heavy_check_mark:'
-    path: library/cpp/Graph/dijkstra.cpp
-    title: library/cpp/Graph/dijkstra.cpp
+  - icon: ':x:'
+    path: library/cpp/ShortestPath/dijkstra.cpp
+    title: library/cpp/ShortestPath/dijkstra.cpp
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
-    title: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+    path: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
+    title: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
@@ -30,31 +30,15 @@ data:
     \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n#line 1 \"library/cpp/Graph/dijkstra.cpp\"\
-    \n#include <functional>\n#line 3 \"library/cpp/Graph/dijkstra.cpp\"\n#include\
-    \ <queue>\n#include <limits>\n#line 6 \"library/cpp/Graph/dijkstra.cpp\"\n\n/**\n\
-    \ * s \u304B\u3089\u3059\u3079\u3066\u306E\u9802\u70B9\u3078\u306E\u6700\u77ED\
-    \u8DDD\u96E2\u3068\uFF0C\u5404\u9802\u70B9\u306B\u63A5\u7D9A\u3059\u308B\u6700\
-    \u77ED\u8DDD\u96E2\u3068\u306A\u308B\u8FBA\u3092\u6C42\u3081\u308B\n * O(|E| log\
-    \ |V|)\n * \u5230\u9054\u3067\u304D\u306A\u3044\u5834\u5408\u306F T \u306E\u6700\
-    \u5927\u5024\u3092\u683C\u7D0D\u3059\u308B\n * \u8CA0\u8FBA\u306F\u306A\u3044\u3082\
-    \u306E\u3068\u3059\u308B\n */\ntemplate<typename T>\nstd::pair<std::vector<T>,\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 1 \"library/cpp/ShortestPath/dijkstra.cpp\"\
+    \n#include <functional>\n#line 3 \"library/cpp/ShortestPath/dijkstra.cpp\"\n#include\
+    \ <queue>\n#include <limits>\n#line 6 \"library/cpp/ShortestPath/dijkstra.cpp\"\
+    \n\n/**\n * s \u304B\u3089\u3059\u3079\u3066\u306E\u9802\u70B9\u3078\u306E\u6700\
+    \u77ED\u8DDD\u96E2\u3068\uFF0C\u5404\u9802\u70B9\u306B\u63A5\u7D9A\u3059\u308B\
+    \u6700\u77ED\u8DDD\u96E2\u3068\u306A\u308B\u8FBA\u3092\u6C42\u3081\u308B\n * O(|E|\
+    \ log |V|)\n * \u5230\u9054\u3067\u304D\u306A\u3044\u5834\u5408\u306F T \u306E\
+    \u6700\u5927\u5024\u3092\u683C\u7D0D\u3059\u308B\n * \u8CA0\u8FBA\u306F\u306A\u3044\
+    \u3082\u306E\u3068\u3059\u308B\n */\ntemplate<typename T>\nstd::pair<std::vector<T>,\
     \ std::vector<Edge<T>>> dijkstra(const int s, const Graph<T> &graph) {\n\n   \
     \ //[(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque(\u8DDD\u96E2\u304C\
     \u8FD1\u3044\u9806\u306B\u3068\u308A\u3060\u3059)\n    std::priority_queue<std::pair<T,\
@@ -76,7 +60,7 @@ data:
     \ &prev) {\n    int now = t;\n    std::vector<Edge<long long>> path;\n    while\
     \ (now != s) {\n        path.emplace_back(prev[now]);\n        now = prev[now].from;\n\
     \        if (now == -1) {\n            return {};\n        }\n    }\n    std::reverse(path.begin(),\
-    \ path.end());\n\n    return path;\n}\n#line 3 \"library/cpp/Graph/make_shortest_path_tree.cpp\"\
+    \ path.end());\n\n    return path;\n}\n#line 3 \"library/cpp/ShortestPath/make_shortest_path_tree.cpp\"\
     \n\n// start\u3092\u6839\u3068\u3059\u308B\u6700\u77ED\u8DEF\u6728\u3092\u3064\
     \u304F\u308B\n// \u6700\u77ED\u8DEF\u6728\u306F\u6709\u5411\u6728\u306B\u306A\u308B\
     \u3053\u3068\u306B\u6CE8\u610F\ntemplate<typename T>\nGraph<T> make_shortest_path_tree(const\
@@ -84,7 +68,7 @@ data:
     \ graph);\n\n    Graph<T> shortest_path_tree(graph.num_nodes);\n    for (auto\
     \ e: prev) {\n        if (e.no != -1) {\n            shortest_path_tree.add_directed_edge(e.from,\
     \ e.to, e.w, e.no);\n        }\n    }\n\n    return shortest_path_tree;\n}\n"
-  code: "#include \"library/cpp/Graph/Graph.hpp\"\n#include \"library/cpp/Graph/dijkstra.cpp\"\
+  code: "#include \"library/cpp/Graph/Graph.hpp\"\n#include \"library/cpp/ShortestPath/dijkstra.cpp\"\
     \n\n// start\u3092\u6839\u3068\u3059\u308B\u6700\u77ED\u8DEF\u6728\u3092\u3064\
     \u304F\u308B\n// \u6700\u77ED\u8DEF\u6728\u306F\u6709\u5411\u6728\u306B\u306A\u308B\
     \u3053\u3068\u306B\u6CE8\u610F\ntemplate<typename T>\nGraph<T> make_shortest_path_tree(const\
@@ -94,18 +78,18 @@ data:
     \ e.to, e.w, e.no);\n        }\n    }\n\n    return shortest_path_tree;\n}"
   dependsOn:
   - library/cpp/Graph/Graph.hpp
-  - library/cpp/Graph/dijkstra.cpp
+  - library/cpp/ShortestPath/dijkstra.cpp
   isVerificationFile: false
-  path: library/cpp/Graph/make_shortest_path_tree.cpp
+  path: library/cpp/ShortestPath/make_shortest_path_tree.cpp
   requiredBy:
-  - test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+  - test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   timestamp: '2024-01-20 16:49:08+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: library/cpp/Graph/make_shortest_path_tree.cpp
+documentation_of: library/cpp/ShortestPath/make_shortest_path_tree.cpp
 layout: document
 redirect_from:
-- /library/library/cpp/Graph/make_shortest_path_tree.cpp
-- /library/library/cpp/Graph/make_shortest_path_tree.cpp.html
-title: library/cpp/Graph/make_shortest_path_tree.cpp
+- /library/library/cpp/ShortestPath/make_shortest_path_tree.cpp
+- /library/library/cpp/ShortestPath/make_shortest_path_tree.cpp.html
+title: library/cpp/ShortestPath/make_shortest_path_tree.cpp
 ---

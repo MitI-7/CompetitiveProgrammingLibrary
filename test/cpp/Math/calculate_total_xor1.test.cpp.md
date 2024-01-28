@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Math/calculate_total_xor.cpp
     title: library/cpp/Math/calculate_total_xor.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc121/tasks/abc121_d
@@ -37,7 +37,7 @@ data:
   path: test/cpp/Math/calculate_total_xor1.test.cpp
   requiredBy: []
   timestamp: '2024-01-20 16:45:37+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Math/calculate_total_xor1.test.cpp
 layout: document

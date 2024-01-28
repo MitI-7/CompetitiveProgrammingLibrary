@@ -145,7 +145,7 @@ data:
   isVerificationFile: false
   path: library/cpp/Graph/FunctionalGraph.hpp
   requiredBy: []
-  timestamp: '2024-01-22 20:11:49+09:00'
+  timestamp: '2024-01-20 16:46:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Graph/FunctionalGraph1_in_cycle.test.cpp

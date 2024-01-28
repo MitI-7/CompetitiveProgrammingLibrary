@@ -14,7 +14,7 @@ data:
       title: library/cpp/Algorithm/Mo.hpp
   - name: library/cpp/Compression
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Compression/CoordinateCompression.hpp
       title: library/cpp/Compression/CoordinateCompression.hpp
     - icon: ':heavy_check_mark:'
@@ -28,21 +28,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/DynamicMedian.hpp
       title: library/cpp/DataStructure/DynamicMedian.hpp
-    - icon: ':question:'
-      path: library/cpp/DataStructure/FenwickTree.hpp
-      title: library/cpp/DataStructure/FenwickTree.hpp
-    - icon: ':heavy_check_mark:'
-      path: library/cpp/DataStructure/FenwickTreeRange.hpp
-      title: library/cpp/DataStructure/FenwickTreeRange.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/RollbackUnionFind.hpp
       title: library/cpp/DataStructure/RollbackUnionFind.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/TopK.hpp
       title: library/cpp/DataStructure/TopK.hpp
-    - icon: ':question:'
-      path: library/cpp/DataStructure/UnionFind.hpp
-      title: library/cpp/DataStructure/UnionFind.hpp
   - name: library/cpp/Geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -63,64 +54,66 @@ data:
       path: library/cpp/Graph/Graph.hpp
       title: library/cpp/Graph/Graph.hpp
     - icon: ':heavy_check_mark:'
-      path: library/cpp/Graph/bellman_ford.cpp
-      title: library/cpp/Graph/bellman_ford.cpp
-    - icon: ':x:'
       path: library/cpp/Graph/connected_components.cpp
       title: library/cpp/Graph/connected_components.cpp
     - icon: ':heavy_check_mark:'
-      path: library/cpp/Graph/dijkstra.cpp
-      title: library/cpp/Graph/dijkstra.cpp
-    - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/find_cycle.cpp
       title: library/cpp/Graph/find_cycle.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/kruskal.cpp
       title: library/cpp/Graph/kruskal.cpp
-    - icon: ':warning:'
-      path: library/cpp/Graph/make_shortest_path_tree.cpp
-      title: library/cpp/Graph/make_shortest_path_tree.cpp
-    - icon: ':heavy_check_mark:'
-      path: library/cpp/Graph/warshall_floyd.cpp
-      title: library/cpp/Graph/warshall_floyd.cpp
   - name: library/cpp/Math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/Combination.hpp
       title: library/cpp/Math/Combination.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/Fraction.hpp
       title: library/cpp/Math/Fraction.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/derangement.cpp
       title: library/cpp/Math/derangement.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/inversion_number.cpp
       title: library/cpp/Math/inversion_number.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/is_odd_permutation.cpp
       title: library/cpp/Math/is_odd_permutation.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/is_prime.cpp
       title: library/cpp/Math/is_prime.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/make_divisor_count_list.cpp
       title: library/cpp/Math/make_divisor_count_list.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/make_divisor_list.cpp
       title: library/cpp/Math/make_divisor_list.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/pow_mod.cpp
       title: library/cpp/Math/pow_mod.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/prime_factor_decomposition.cpp
       title: library/cpp/Math/prime_factor_decomposition.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/row_reduction_xor.cpp
       title: library/cpp/Math/row_reduction_xor.cpp
+  - name: library/cpp/ShortestPath
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/ShortestPath/bellman_ford.cpp
+      title: library/cpp/ShortestPath/bellman_ford.cpp
+    - icon: ':x:'
+      path: library/cpp/ShortestPath/dijkstra.cpp
+      title: library/cpp/ShortestPath/dijkstra.cpp
+    - icon: ':warning:'
+      path: library/cpp/ShortestPath/make_shortest_path_tree.cpp
+      title: library/cpp/ShortestPath/make_shortest_path_tree.cpp
+    - icon: ':x:'
+      path: library/cpp/ShortestPath/warshall_floyd.cpp
+      title: library/cpp/ShortestPath/warshall_floyd.cpp
   - name: library/cpp/Sort
     pages:
     - icon: ':x:'
@@ -133,30 +126,39 @@ data:
       title: library/cpp/String/RollingHash.hpp
   - name: library/cpp/Tree
     pages:
+    - icon: ':question:'
+      path: library/cpp/Tree/FenwickTree.hpp
+      title: library/cpp/Tree/FenwickTree.hpp
+    - icon: ':x:'
+      path: library/cpp/Tree/FenwickTreeRange.hpp
+      title: library/cpp/Tree/FenwickTreeRange.hpp
     - icon: ':x:'
       path: library/cpp/Tree/SegmentTree.hpp
       title: library/cpp/Tree/SegmentTree.hpp
+    - icon: ':question:'
+      path: library/cpp/Tree/UnionFind.hpp
+      title: library/cpp/Tree/UnionFind.hpp
     - icon: ':x:'
       path: library/cpp/Tree/WeightedUnionFind.hpp
       title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Utility/mint.hpp
       title: library/cpp/Utility/mint.hpp
   - name: library/python/Utility
     pages:
+    - icon: ':warning:'
+      path: library/python/Utility/matrix_rotate.py
+      title: library/python/Utility/matrix_rotate.py
     - icon: ':x:'
       path: library/python/Utility/matrix_shift.py
       title: library/python/Utility/matrix_shift.py
-    - icon: ':x:'
-      path: library/python/Utility/rotate.py
-      title: library/python/Utility/rotate.py
-  - name: test/cpp/Graph
+  - name: test/cpp/ShortestPath
     pages:
     - icon: ':warning:'
-      path: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
-      title: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+      path: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
+      title: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   - name: tools
     pages:
     - icon: ':warning:'
@@ -191,15 +193,6 @@ data:
       path: test/cpp/DataStructure/DynamicMedian1.test.cpp
       title: test/cpp/DataStructure/DynamicMedian1.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/FenwickTree1.test.cpp
-      title: test/cpp/DataStructure/FenwickTree1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
-      title: test/cpp/DataStructure/FenwickTreeRange1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
-      title: test/cpp/DataStructure/FenwickTreeRange2.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
       title: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -211,12 +204,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
       title: test/cpp/DataStructure/TopK3_get_top_k_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/UnionFind1.test.cpp
-      title: test/cpp/DataStructure/UnionFind1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/UnionFind2_group.test.cpp
-      title: test/cpp/DataStructure/UnionFind2_group.test.cpp
   - name: test/cpp/Geometry
     pages:
     - icon: ':heavy_check_mark:'
@@ -246,64 +233,66 @@ data:
       path: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
       title: test/cpp/Graph/FunctionalGraph3_k_step.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/cpp/Graph/bellman_ford1.test.cpp
-      title: test/cpp/Graph/bellman_ford1.test.cpp
-    - icon: ':x:'
       path: test/cpp/Graph/connected_components1.test.cpp
       title: test/cpp/Graph/connected_components1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/Graph/dijkstra1.test.cpp
-      title: test/cpp/Graph/dijkstra1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/find_cycle1.test.cpp
       title: test/cpp/Graph/find_cycle1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/find_cycle2.test.cpp
       title: test/cpp/Graph/find_cycle2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Graph/kruskal1.test.cpp
       title: test/cpp/Graph/kruskal1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/Graph/warshall_floyd1.test.cpp
-      title: test/cpp/Graph/warshall_floyd1.test.cpp
   - name: test/cpp/Math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/Combination1_nCr.test.cpp
       title: test/cpp/Math/Combination1_nCr.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/Fraction1.test.cpp
       title: test/cpp/Math/Fraction1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/derangement1.test.cpp
       title: test/cpp/Math/derangement1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/inversion_number1.test.cpp
       title: test/cpp/Math/inversion_number1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/is_odd_permutation1.test.cpp
       title: test/cpp/Math/is_odd_permutation1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/is_prime1.test.cpp
       title: test/cpp/Math/is_prime1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/make_divisor_count_list1.test.cpp
       title: test/cpp/Math/make_divisor_count_list1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/make_divisor_list1.test.cpp
       title: test/cpp/Math/make_divisor_list1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/pow_mod1.test.cpp
       title: test/cpp/Math/pow_mod1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/prime_factor_decomposition1.test.cpp
       title: test/cpp/Math/prime_factor_decomposition1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/row_reduction_xor.test.cpp
       title: test/cpp/Math/row_reduction_xor.test.cpp
+  - name: test/cpp/ShortestPath
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/ShortestPath/bellman_ford1.test.cpp
+      title: test/cpp/ShortestPath/bellman_ford1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/ShortestPath/dijkstra1.test.cpp
+      title: test/cpp/ShortestPath/dijkstra1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/ShortestPath/warshall_floyd1.test.cpp
+      title: test/cpp/ShortestPath/warshall_floyd1.test.cpp
   - name: test/cpp/Sort
     pages:
     - icon: ':x:'
@@ -320,6 +309,15 @@ data:
   - name: test/cpp/Tree
     pages:
     - icon: ':x:'
+      path: test/cpp/Tree/FenwickTree1.test.cpp
+      title: test/cpp/Tree/FenwickTree1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/FenwickTreeRange1.test.cpp
+      title: test/cpp/Tree/FenwickTreeRange1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/FenwickTreeRange2.test.cpp
+      title: test/cpp/Tree/FenwickTreeRange2.test.cpp
+    - icon: ':x:'
       path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
     - icon: ':x:'
@@ -331,6 +329,15 @@ data:
     - icon: ':x:'
       path: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
       title: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+      title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/UnionFind1.test.cpp
+      title: test/cpp/Tree/UnionFind1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/UnionFind2_group.test.cpp
+      title: test/cpp/Tree/UnionFind2_group.test.cpp
     - icon: ':x:'
       path: test/cpp/Tree/WeightedUnionFind1.test.cpp
       title: test/cpp/Tree/WeightedUnionFind1.test.cpp

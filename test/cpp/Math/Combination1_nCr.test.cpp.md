@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Math/Combination.hpp
     title: library/cpp/Math/Combination.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Utility/mint.hpp
     title: library/cpp/Utility/mint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc178/tasks/abc178_d
@@ -41,13 +41,14 @@ data:
     \ &os, const mint &obj) {\n        os << obj.x;\n        return os;\n    }\n};\n\
     \n\n//const int MOD = 1000000000 + 7; // 10^9 + 7\n//const int MOD = 998244353;\n\
     #line 5 \"library/cpp/Math/Combination.hpp\"\n\n// nCr\n// O(r)\ntemplate<typename\
-    \ T>\nT combination(long long n, long long r) {\n    T ans = 1;\n    for (long\
-    \ long d = 1; d <= r; ++d) {\n        ans *= n--;\n        ans /= d;\n    }\n\
-    \    return ans;\n}\n\ntemplate<int MOD>\nclass Combination {\npublic:\n    std::vector<mint<MOD>>\
-    \ fact;\n    std::vector<mint<MOD>> inv;\n\n    // O(n)\n    Combination(int n)\
-    \ {\n        assert(0 < n);\n        this->fact.resize(n + 1, 1);\n        this->inv.resize(n\
-    \ + 1, 1);\n\n        for (int i = 1; i < int(fact.size()); ++i) {\n         \
-    \   this->fact[i] = this->fact[i - 1] * i;\n            this->inv[i] = this->fact[i].inv();\n\
+    \ T>\nT combination(long long n, long long r) {\n    if (r < 0) {\n        return\
+    \ 0;\n    }\n    T ans = 1;\n    for (long long d = 1; d <= r; ++d) {\n      \
+    \  ans *= n--;\n        ans /= d;\n    }\n    return ans;\n}\n\ntemplate<int MOD>\n\
+    class Combination {\npublic:\n    std::vector<mint<MOD>> fact;\n    std::vector<mint<MOD>>\
+    \ inv;\n\n    // O(n)\n    Combination(int n) {\n        assert(0 < n);\n    \
+    \    this->fact.resize(n + 1, 1);\n        this->inv.resize(n + 1, 1);\n\n   \
+    \     for (int i = 1; i < int(fact.size()); ++i) {\n            this->fact[i]\
+    \ = this->fact[i - 1] * i;\n            this->inv[i] = this->fact[i].inv();\n\
     \        }\n    }\n\n    mint<MOD> nCr(const int n, const int r) const {\n   \
     \     assert(0 <= n and 0 <= r);\n        if (n < r) {\n            return 0;\n\
     \        }\n        return this->fact[n] * (this->inv[r] * this->inv[n - r]);\n\
@@ -78,7 +79,7 @@ data:
   path: test/cpp/Math/Combination1_nCr.test.cpp
   requiredBy: []
   timestamp: '2024-01-20 16:49:02+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Math/Combination1_nCr.test.cpp
 layout: document

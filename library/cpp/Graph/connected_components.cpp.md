@@ -6,12 +6,12 @@ data:
     title: library/cpp/Graph/Graph.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Graph/connected_components1.test.cpp
     title: test/cpp/Graph/connected_components1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/cpp/Graph/Graph.hpp\"\n\n#include <vector>\n#include\
@@ -27,23 +27,7 @@ data:
     \ int u, const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n#line 2 \"library/cpp/Graph/connected_components.cpp\"\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 2 \"library/cpp/Graph/connected_components.cpp\"\
     \n\n// u \u304B\u3089\u5230\u9054\u3067\u304D\u308B\u30CE\u30FC\u30C9\u3092\u8272\
     \ c \u3067\u5857\u308B\ntemplate<typename T>\nvoid coloring(const int u, const\
     \ int c, std::vector<int> &color, Graph<T> &graph) {\n    color[u] = c;\n    for\
@@ -72,7 +56,7 @@ data:
   path: library/cpp/Graph/connected_components.cpp
   requiredBy: []
   timestamp: '2024-01-20 16:47:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Graph/connected_components1.test.cpp
 documentation_of: library/cpp/Graph/connected_components.cpp

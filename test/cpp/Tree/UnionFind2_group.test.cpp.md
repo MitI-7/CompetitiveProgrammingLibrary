@@ -2,20 +2,20 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: library/cpp/DataStructure/UnionFind.hpp
-    title: library/cpp/DataStructure/UnionFind.hpp
+    path: library/cpp/Tree/UnionFind.hpp
+    title: library/cpp/Tree/UnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    PROBLEM: https://atcoder.jp/contests/abc256/tasks/abc256_e
     links:
-    - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"test/cpp/DataStructure/UnionFind1.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 1 \"library/cpp/DataStructure/UnionFind.hpp\"\
+    - https://atcoder.jp/contests/abc256/tasks/abc256_e
+  bundledCode: "#line 1 \"test/cpp/Tree/UnionFind2_group.test.cpp\"\n#define PROBLEM\
+    \ \"https://atcoder.jp/contests/abc256/tasks/abc256_e\"\n\n#line 1 \"library/cpp/Tree/UnionFind.hpp\"\
     \n#include <numeric>\n#include <vector>\n\nclass UnionFind {\npublic:\n    const\
     \ int num_nodes;    // \u8981\u7D20\u306E\u500B\u6570\n    int set_size;     \
     \      // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n    std::vector<int> parent;\
@@ -47,33 +47,39 @@ data:
     \ group;\n    }\n\nprivate:\n    // \u6728\u306E\u6839\u3092\u6C42\u3081\u308B\
     \n    int find_root(const int u) {\n        if (this->parent[u] < 0) {\n     \
     \       return u;\n        } else {\n            return this->parent[u] = this->find_root(this->parent[u]);\n\
-    \        }\n    }\n};\n#line 4 \"test/cpp/DataStructure/UnionFind1.test.cpp\"\n\
-    #include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
-    \    ios::sync_with_stdio(false);\n\n    int N, Q;\n    cin >> N >> Q;\n\n   \
-    \ UnionFind uf(N);\n    for (int i = 0; i < Q; ++i) {\n        int T, U, V;\n\
-    \        cin >> T >> U >> V;\n        if (T == 0) {\n            uf.unite(U, V);\n\
-    \        }\n        else {\n            cout << uf.is_same_set(U, V) << endl;\n\
-    \        }\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
-    \ \"library/cpp/DataStructure/UnionFind.hpp\"\n#include <iostream>\n\nusing namespace\
-    \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n\n    UnionFind uf(N);\n    for (int i =\
-    \ 0; i < Q; ++i) {\n        int T, U, V;\n        cin >> T >> U >> V;\n      \
-    \  if (T == 0) {\n            uf.unite(U, V);\n        }\n        else {\n   \
-    \         cout << uf.is_same_set(U, V) << endl;\n        }\n    }\n\n    return\
-    \ 0;\n}"
+    \        }\n    }\n};\n#line 4 \"test/cpp/Tree/UnionFind2_group.test.cpp\"\n#include\
+    \ <iostream>\n#include <tuple>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int N;\n    cin >> N;\n    vector<int>\
+    \ X(N), C(N);\n    for (int i = 0; i < N; ++i) {\n        cin >> X[i];\n     \
+    \   X[i]--;\n    }\n    for (int i = 0; i < N; ++i) {\n        cin >> C[i];\n\
+    \    }\n\n    vector<tuple<int, int, int>> c_u_v;\n    for (int i = 0; i < N;\
+    \ ++i) {\n        c_u_v.emplace_back(C[i], i, X[i]);\n    }\n    sort(c_u_v.rbegin(),\
+    \ c_u_v.rend());\n\n    long long ans = 0;\n    UnionFind uf(N);\n    for (auto\
+    \ [c, u, v]: c_u_v) {\n        if (not uf.unite(u, v)) {\n            ans += c;\n\
+    \        }\n    }\n    cout << ans << endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc256/tasks/abc256_e\"\n\n\
+    #include \"library/cpp/Tree/UnionFind.hpp\"\n#include <iostream>\n#include <tuple>\n\
+    \nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N;\n    cin >> N;\n    vector<int> X(N), C(N);\n    for (int i = 0;\
+    \ i < N; ++i) {\n        cin >> X[i];\n        X[i]--;\n    }\n    for (int i\
+    \ = 0; i < N; ++i) {\n        cin >> C[i];\n    }\n\n    vector<tuple<int, int,\
+    \ int>> c_u_v;\n    for (int i = 0; i < N; ++i) {\n        c_u_v.emplace_back(C[i],\
+    \ i, X[i]);\n    }\n    sort(c_u_v.rbegin(), c_u_v.rend());\n\n    long long ans\
+    \ = 0;\n    UnionFind uf(N);\n    for (auto [c, u, v]: c_u_v) {\n        if (not\
+    \ uf.unite(u, v)) {\n            ans += c;\n        }\n    }\n    cout << ans\
+    \ << endl;\n\n    return 0;\n}"
   dependsOn:
-  - library/cpp/DataStructure/UnionFind.hpp
+  - library/cpp/Tree/UnionFind.hpp
   isVerificationFile: true
-  path: test/cpp/DataStructure/UnionFind1.test.cpp
+  path: test/cpp/Tree/UnionFind2_group.test.cpp
   requiredBy: []
-  timestamp: '2024-01-22 20:10:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-22 20:11:30+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/cpp/DataStructure/UnionFind1.test.cpp
+documentation_of: test/cpp/Tree/UnionFind2_group.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/DataStructure/UnionFind1.test.cpp
-- /verify/test/cpp/DataStructure/UnionFind1.test.cpp.html
-title: test/cpp/DataStructure/UnionFind1.test.cpp
+- /verify/test/cpp/Tree/UnionFind2_group.test.cpp
+- /verify/test/cpp/Tree/UnionFind2_group.test.cpp.html
+title: test/cpp/Tree/UnionFind2_group.test.cpp
 ---

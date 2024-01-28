@@ -2,30 +2,30 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/kruskal.cpp
     title: library/cpp/Graph/kruskal.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/cpp/DataStructure/UnionFind1.test.cpp
-    title: test/cpp/DataStructure/UnionFind1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/DataStructure/UnionFind2_group.test.cpp
-    title: test/cpp/DataStructure/UnionFind2_group.test.cpp
-  - icon: ':x:'
     path: test/cpp/Graph/kruskal1.test.cpp
     title: test/cpp/Graph/kruskal1.test.cpp
+  - icon: ':x:'
+    path: test/cpp/Tree/UnionFind1.test.cpp
+    title: test/cpp/Tree/UnionFind1.test.cpp
+  - icon: ':x:'
+    path: test/cpp/Tree/UnionFind2_group.test.cpp
+    title: test/cpp/Tree/UnionFind2_group.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/DataStructure/UnionFind.hpp\"\n#include <numeric>\n\
-    #include <vector>\n\nclass UnionFind {\npublic:\n    const int num_nodes;    //\
-    \ \u8981\u7D20\u306E\u500B\u6570\n    int set_size;           // \u96C6\u5408\u306E\
-    \u500B\u6570\n\nprivate:\n    std::vector<int> parent;    // \u89AA\u306E\u756A\
-    \u53F7(\u89AA\u3060\u3063\u305F\u5834\u5408\u306F-(\u305D\u306E\u96C6\u5408\u306E\
-    \u30B5\u30A4\u30BA))\n    std::vector<int> next;\n\npublic:\n    explicit UnionFind(int\
+  bundledCode: "#line 1 \"library/cpp/Tree/UnionFind.hpp\"\n#include <numeric>\n#include\
+    \ <vector>\n\nclass UnionFind {\npublic:\n    const int num_nodes;    // \u8981\
+    \u7D20\u306E\u500B\u6570\n    int set_size;           // \u96C6\u5408\u306E\u500B\
+    \u6570\n\nprivate:\n    std::vector<int> parent;    // \u89AA\u306E\u756A\u53F7\
+    (\u89AA\u3060\u3063\u305F\u5834\u5408\u306F-(\u305D\u306E\u96C6\u5408\u306E\u30B5\
+    \u30A4\u30BA))\n    std::vector<int> next;\n\npublic:\n    explicit UnionFind(int\
     \ num_nodes) : num_nodes(num_nodes), set_size(num_nodes), parent(num_nodes, -1)\
     \ {\n        this->next.resize(num_nodes);\n        std::iota(this->next.begin(),\
     \ this->next.end(), 0);\n    }\n\n    // u \u3068 v \u304C\u540C\u3058\u96C6\u5408\
@@ -87,19 +87,19 @@ data:
     \        }\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/cpp/DataStructure/UnionFind.hpp
+  path: library/cpp/Tree/UnionFind.hpp
   requiredBy:
   - library/cpp/Graph/kruskal.cpp
-  timestamp: '2024-01-22 20:10:57+09:00'
+  timestamp: '2023-05-15 18:21:43+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/cpp/Tree/UnionFind1.test.cpp
+  - test/cpp/Tree/UnionFind2_group.test.cpp
   - test/cpp/Graph/kruskal1.test.cpp
-  - test/cpp/DataStructure/UnionFind1.test.cpp
-  - test/cpp/DataStructure/UnionFind2_group.test.cpp
-documentation_of: library/cpp/DataStructure/UnionFind.hpp
+documentation_of: library/cpp/Tree/UnionFind.hpp
 layout: document
 redirect_from:
-- /library/library/cpp/DataStructure/UnionFind.hpp
-- /library/library/cpp/DataStructure/UnionFind.hpp.html
-title: library/cpp/DataStructure/UnionFind.hpp
+- /library/library/cpp/Tree/UnionFind.hpp
+- /library/library/cpp/Tree/UnionFind.hpp.html
+title: library/cpp/Tree/UnionFind.hpp
 ---

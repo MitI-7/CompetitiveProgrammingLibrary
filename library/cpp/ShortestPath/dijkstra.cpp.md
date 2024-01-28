@@ -6,21 +6,21 @@ data:
     title: library/cpp/Graph/Graph.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: library/cpp/Graph/make_shortest_path_tree.cpp
-    title: library/cpp/Graph/make_shortest_path_tree.cpp
+    path: library/cpp/ShortestPath/make_shortest_path_tree.cpp
+    title: library/cpp/ShortestPath/make_shortest_path_tree.cpp
   - icon: ':warning:'
-    path: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
-    title: test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
+    path: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
+    title: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/Graph/dijkstra1.test.cpp
-    title: test/cpp/Graph/dijkstra1.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/cpp/ShortestPath/dijkstra1.test.cpp
+    title: test/cpp/ShortestPath/dijkstra1.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/Graph/dijkstra.cpp\"\n#include <functional>\n\
+  bundledCode: "#line 1 \"library/cpp/ShortestPath/dijkstra.cpp\"\n#include <functional>\n\
     #include <vector>\n#include <queue>\n#include <limits>\n#line 2 \"library/cpp/Graph/Graph.hpp\"\
     \n\n#line 4 \"library/cpp/Graph/Graph.hpp\"\n#include <iostream>\n\ntemplate<typename\
     \ T>\nclass Edge {\npublic:\n    int from;\n    int to;\n    T w;\n    int no;\n\
@@ -35,23 +35,7 @@ data:
     \ const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n#line 6 \"library/cpp/Graph/dijkstra.cpp\"\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 6 \"library/cpp/ShortestPath/dijkstra.cpp\"\
     \n\n/**\n * s \u304B\u3089\u3059\u3079\u3066\u306E\u9802\u70B9\u3078\u306E\u6700\
     \u77ED\u8DDD\u96E2\u3068\uFF0C\u5404\u9802\u70B9\u306B\u63A5\u7D9A\u3059\u308B\
     \u6700\u77ED\u8DDD\u96E2\u3068\u306A\u308B\u8FBA\u3092\u6C42\u3081\u308B\n * O(|E|\
@@ -112,18 +96,18 @@ data:
   dependsOn:
   - library/cpp/Graph/Graph.hpp
   isVerificationFile: false
-  path: library/cpp/Graph/dijkstra.cpp
+  path: library/cpp/ShortestPath/dijkstra.cpp
   requiredBy:
-  - test/cpp/Graph/make_shortest_path_tree1.dummy.cpp
-  - library/cpp/Graph/make_shortest_path_tree.cpp
+  - test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
+  - library/cpp/ShortestPath/make_shortest_path_tree.cpp
   timestamp: '2023-05-15 18:47:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/cpp/Graph/dijkstra1.test.cpp
-documentation_of: library/cpp/Graph/dijkstra.cpp
+  - test/cpp/ShortestPath/dijkstra1.test.cpp
+documentation_of: library/cpp/ShortestPath/dijkstra.cpp
 layout: document
 redirect_from:
-- /library/library/cpp/Graph/dijkstra.cpp
-- /library/library/cpp/Graph/dijkstra.cpp.html
-title: library/cpp/Graph/dijkstra.cpp
+- /library/library/cpp/ShortestPath/dijkstra.cpp
+- /library/library/cpp/ShortestPath/dijkstra.cpp.html
+title: library/cpp/ShortestPath/dijkstra.cpp
 ---

@@ -11,12 +11,12 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
+    PROBLEM: https://atcoder.jp/contests/abc331/tasks/abc331_f
     links:
-    - https://judge.yosupo.jp/problem/point_add_range_sum
-  bundledCode: "#line 1 \"test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n\
-    #line 1 \"library/cpp/Tree/SegmentTree.hpp\"\n#include <cassert>\n#include <cstdint>\n\
+    - https://atcoder.jp/contests/abc331/tasks/abc331_f
+  bundledCode: "#line 1 \"test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp\"\
+    \n#define PROBLEM \"https://atcoder.jp/contests/abc331/tasks/abc331_f\"\n\n#line\
+    \ 1 \"library/cpp/Tree/SegmentTree.hpp\"\n#include <cassert>\n#include <cstdint>\n\
     #include <functional>\n#include <numeric>\n#include <tuple>\n#include <vector>\n\
     \n// \u30E2\u30CE\u30A4\u30C9\u3092\u4E57\u305B\u308B\u3053\u3068\u304C\u3067\u304D\
     \u308B\n// \u7D50\u5408\u5247: a * (b * c) = (a * b) * c\n// \u5358\u4F4D\u5143\
@@ -69,37 +69,50 @@ data:
     \ long long, int> b) {\n    auto [h0, x0, p0] = a;\n    auto [h1, x1, p1] = b;\n\
     \    return {(h0 + h1 * x0) % p0, (x0 * x1) % p0, p0};\n}\n\nstd::tuple<uint_fast64_t,\
     \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n#line\
-    \ 4 \"test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp\"\n#include <iostream>\n\
-    \nusing namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n\n    auto st = make_segment_tree_sum<long\
-    \ long>(N);\n    for (int i = 0; i < N; ++i) {\n        long long A;\n       \
-    \ cin >> A;\n        st.update(i, A);\n    }\n\n    for (int i = 0; i < Q; ++i)\
-    \ {\n        int T;\n        cin >> T;\n        if (T == 0) {\n            int\
-    \ P, X;\n            cin >> P >> X;\n            st.update(P, st.access(P) + X);\n\
-    \        } else {\n            int L, R;\n            cin >> L >> R;\n       \
-    \     cout << st.query(L, R) << endl;\n        }\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
-    \n#include \"library/cpp/Tree/SegmentTree.hpp\"\n#include <iostream>\n\nusing\
-    \ namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n\n    auto st = make_segment_tree_sum<long\
-    \ long>(N);\n    for (int i = 0; i < N; ++i) {\n        long long A;\n       \
-    \ cin >> A;\n        st.update(i, A);\n    }\n\n    for (int i = 0; i < Q; ++i)\
-    \ {\n        int T;\n        cin >> T;\n        if (T == 0) {\n            int\
-    \ P, X;\n            cin >> P >> X;\n            st.update(P, st.access(P) + X);\n\
-    \        } else {\n            int L, R;\n            cin >> L >> R;\n       \
-    \     cout << st.query(L, R) << endl;\n        }\n    }\n\n    return 0;\n}"
+    \ 4 \"test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp\"\n#include\
+    \ <iostream>\n\nusing namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int N, Q;\n    cin >> N >> Q;\n    string\
+    \ S;\n    cin >> S;\n\n    SegmentTree<tuple<uint_fast64_t, long long, int>, rh_op,\
+    \ rh_unit> st1(N), st2(N);\n    for (int i = 0; i < N; ++i) {\n        st1.update(i,\
+    \ {S[i] - 'a', base, P});\n        st2.update(i, {S[N - 1 - i] - 'a', base, P});\n\
+    \    }\n\n    for (int i = 0; i < Q; ++i) {\n        int T;\n        cin >> T;\n\
+    \        if (T == 1) {\n            int X;\n            char C;\n            cin\
+    \ >> X >> C;\n            X--;\n            C -= 'a';\n            st1.update(X,\
+    \ {C, base, P});\n            st2.update(N - 1 - X, {C, base, P});\n        }\
+    \ else {\n            int L, R;\n            cin >> L >> R;\n            L--;\n\
+    \            R--;\n            auto [h0, x0, p0] = st1.query(L, R + 1);\n    \
+    \        auto [h1, x1, p1] = st2.query(N - (R + 1), N - L);\n            if (h0\
+    \ == h1) {\n                cout << \"Yes\" << endl;\n            } else {\n \
+    \               cout << \"No\" << endl;\n            }\n        }\n    }\n\n \
+    \   return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc331/tasks/abc331_f\"\n\n\
+    #include \"library/cpp/Tree/SegmentTree.hpp\"\n#include <iostream>\n\nusing namespace\
+    \ std;\n\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N, Q;\n    cin >> N >> Q;\n    string S;\n    cin >> S;\n\n    SegmentTree<tuple<uint_fast64_t,\
+    \ long long, int>, rh_op, rh_unit> st1(N), st2(N);\n    for (int i = 0; i < N;\
+    \ ++i) {\n        st1.update(i, {S[i] - 'a', base, P});\n        st2.update(i,\
+    \ {S[N - 1 - i] - 'a', base, P});\n    }\n\n    for (int i = 0; i < Q; ++i) {\n\
+    \        int T;\n        cin >> T;\n        if (T == 1) {\n            int X;\n\
+    \            char C;\n            cin >> X >> C;\n            X--;\n         \
+    \   C -= 'a';\n            st1.update(X, {C, base, P});\n            st2.update(N\
+    \ - 1 - X, {C, base, P});\n        } else {\n            int L, R;\n         \
+    \   cin >> L >> R;\n            L--;\n            R--;\n            auto [h0,\
+    \ x0, p0] = st1.query(L, R + 1);\n            auto [h1, x1, p1] = st2.query(N\
+    \ - (R + 1), N - L);\n            if (h0 == h1) {\n                cout << \"\
+    Yes\" << endl;\n            } else {\n                cout << \"No\" << endl;\n\
+    \            }\n        }\n    }\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Tree/SegmentTree.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+  path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
   requiredBy: []
-  timestamp: '2024-01-27 12:24:04+09:00'
+  timestamp: '2024-01-27 20:34:11+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+documentation_of: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
-- /verify/test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp.html
-title: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+- /verify/test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+- /verify/test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp.html
+title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
 ---

@@ -7,14 +7,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/cpp/Graph/bellman_ford1.test.cpp
-    title: test/cpp/Graph/bellman_ford1.test.cpp
+    path: test/cpp/ShortestPath/bellman_ford1.test.cpp
+    title: test/cpp/ShortestPath/bellman_ford1.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/Graph/bellman_ford.cpp\"\n#include <vector>\n\
+  bundledCode: "#line 1 \"library/cpp/ShortestPath/bellman_ford.cpp\"\n#include <vector>\n\
     #include <functional>\n#include <limits>\n#line 2 \"library/cpp/Graph/Graph.hpp\"\
     \n\n#line 4 \"library/cpp/Graph/Graph.hpp\"\n#include <iostream>\n\ntemplate<typename\
     \ T>\nclass Edge {\npublic:\n    int from;\n    int to;\n    T w;\n    int no;\n\
@@ -29,23 +29,7 @@ data:
     \ const int v, const T w = 1, const int no = -1) {\n        this->graph[u].emplace_back(Edge(u,\
     \ v, w, no));\n        this->graph[v].emplace_back(Edge(v, u, w, no));\n     \
     \   this->num_edges += 2;\n    }\n\n    std::vector<Edge<T>> &operator[](const\
-    \ int u) {\n        return this->graph[u];\n    }\n};\n\ntemplate<typename T>\n\
-    Graph<T> read_unweighted_directed_graph(int num_nodes, int num_edges) {\n    Graph<T>\
-    \ graph(num_nodes);\n\n    for (int i = 0; i < num_edges; ++i) {\n        int\
-    \ u, v;\n        std::cin >> u >> v;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, 1, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_unweighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        std::cin >> u >> v;\n\
-    \        u--;\n        v--;\n        graph.add_undirected_edge(u, v, 1, i);\n\
-    \    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_directed_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_directed_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n\ntemplate<typename T>\nGraph<T> read_weighted_undirected_graph(int\
-    \ num_nodes, int num_edges) {\n    Graph<T> graph(num_nodes);\n\n    for (int\
-    \ i = 0; i < num_edges; ++i) {\n        int u, v;\n        T w;\n        std::cin\
-    \ >> u >> v >> w;\n        u--;\n        v--;\n        graph.add_undirected_edge(u,\
-    \ v, w, i);\n    }\n    return graph;\n}\n#line 5 \"library/cpp/Graph/bellman_ford.cpp\"\
+    \ int u) {\n        return this->graph[u];\n    }\n};\n#line 5 \"library/cpp/ShortestPath/bellman_ford.cpp\"\
     \n\n/**\n * start\u304B\u3089\u4ED6\u306E\u3059\u3079\u3066\u306Enode\u3078\u306E\
     \u6700\u77ED\u8DDD\u96E2(\u5230\u9054\u3067\u304D\u306A\u3044node\u306Finf)\u3092\
     \u3082\u3068\u3081\u308B\n * \u8CA0\u306E\u9589\u8DEF\u304C\u3042\u308B\u5834\u5408\
@@ -101,16 +85,16 @@ data:
   dependsOn:
   - library/cpp/Graph/Graph.hpp
   isVerificationFile: false
-  path: library/cpp/Graph/bellman_ford.cpp
+  path: library/cpp/ShortestPath/bellman_ford.cpp
   requiredBy: []
   timestamp: '2023-05-15 19:51:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Graph/bellman_ford1.test.cpp
-documentation_of: library/cpp/Graph/bellman_ford.cpp
+  - test/cpp/ShortestPath/bellman_ford1.test.cpp
+documentation_of: library/cpp/ShortestPath/bellman_ford.cpp
 layout: document
 redirect_from:
-- /library/library/cpp/Graph/bellman_ford.cpp
-- /library/library/cpp/Graph/bellman_ford.cpp.html
-title: library/cpp/Graph/bellman_ford.cpp
+- /library/library/cpp/ShortestPath/bellman_ford.cpp
+- /library/library/cpp/ShortestPath/bellman_ford.cpp.html
+title: library/cpp/ShortestPath/bellman_ford.cpp
 ---

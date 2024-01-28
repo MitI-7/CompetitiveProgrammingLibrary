@@ -3,20 +3,20 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/Graph/warshall_floyd1.test.cpp
-    title: test/cpp/Graph/warshall_floyd1.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/cpp/ShortestPath/warshall_floyd1.test.cpp
+    title: test/cpp/ShortestPath/warshall_floyd1.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/Graph/warshall_floyd.cpp\"\n#include <limits>\n\
-    #include <vector>\n\n/**\n * \u5168\u30CE\u30FC\u30C9\u9593\u306E\u6700\u77ED\u8DDD\
-    \u96E2\u3092\u3082\u3068\u3081\u308B\n * matrix[i][j]\u306B\u306F\u8FBAe=(i,j)\u306E\
-    \u30B3\u30B9\u30C8(\u8FBA\u304C\u5B58\u5728\u3057\u306A\u3044\u5834\u5408\u306F\
-    LINF)\n * \u8CA0\u306E\u9589\u8DEF\u304C\u3042\u308B\u5834\u5408\u306F\u7A7A\u3092\
-    \u8FD4\u3059\n * O(|V|^3)\n */\ntemplate<typename T>\nstd::vector<std::vector<T>>\
+  bundledCode: "#line 1 \"library/cpp/ShortestPath/warshall_floyd.cpp\"\n#include\
+    \ <limits>\n#include <vector>\n\n/**\n * \u5168\u30CE\u30FC\u30C9\u9593\u306E\u6700\
+    \u77ED\u8DDD\u96E2\u3092\u3082\u3068\u3081\u308B\n * matrix[i][j]\u306B\u306F\u8FBA\
+    e=(i,j)\u306E\u30B3\u30B9\u30C8(\u8FBA\u304C\u5B58\u5728\u3057\u306A\u3044\u5834\
+    \u5408\u306FLINF)\n * \u8CA0\u306E\u9589\u8DEF\u304C\u3042\u308B\u5834\u5408\u306F\
+    \u7A7A\u3092\u8FD4\u3059\n * O(|V|^3)\n */\ntemplate<typename T>\nstd::vector<std::vector<T>>\
     \ warshall_floyd(std::vector<std::vector<T>> matrix) {\n    const auto infinity\
     \ = std::numeric_limits<T>::max();\n    const int num_node = matrix.size();\n\n\
     \    // \u81EA\u5206\u306E\u8DDD\u96E2\u306F0\n    for (int i = 0; i < num_node;\
@@ -54,16 +54,16 @@ data:
     \    }\n\n    return matrix;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: library/cpp/Graph/warshall_floyd.cpp
+  path: library/cpp/ShortestPath/warshall_floyd.cpp
   requiredBy: []
-  timestamp: '2023-05-15 19:58:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-28 11:54:59+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/cpp/Graph/warshall_floyd1.test.cpp
-documentation_of: library/cpp/Graph/warshall_floyd.cpp
+  - test/cpp/ShortestPath/warshall_floyd1.test.cpp
+documentation_of: library/cpp/ShortestPath/warshall_floyd.cpp
 layout: document
 redirect_from:
-- /library/library/cpp/Graph/warshall_floyd.cpp
-- /library/library/cpp/Graph/warshall_floyd.cpp.html
-title: library/cpp/Graph/warshall_floyd.cpp
+- /library/library/cpp/ShortestPath/warshall_floyd.cpp
+- /library/library/cpp/ShortestPath/warshall_floyd.cpp.html
+title: library/cpp/ShortestPath/warshall_floyd.cpp
 ---

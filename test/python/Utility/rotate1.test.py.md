@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':x:'
-    path: library/python/Utility/rotate.py
-    title: library/python/Utility/rotate.py
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: true
@@ -28,8 +25,7 @@ data:
     \     ok &= B[y][x] == 1\n        if ok:\n            print(\"Yes\")\n       \
     \     return\n        A = rotate(A)\n\n    print(\"No\")\n\n\nif __name__ == '__main__':\n\
     \    main()\n"
-  dependsOn:
-  - library/python/Utility/rotate.py
+  dependsOn: []
   isVerificationFile: true
   path: test/python/Utility/rotate1.test.py
   requiredBy: []

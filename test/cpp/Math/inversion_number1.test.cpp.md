@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Compression/CoordinateCompression.hpp
     title: library/cpp/Compression/CoordinateCompression.hpp
-  - icon: ':question:'
-    path: library/cpp/DataStructure/FenwickTree.hpp
-    title: library/cpp/DataStructure/FenwickTree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Math/inversion_number.cpp
     title: library/cpp/Math/inversion_number.cpp
+  - icon: ':question:'
+    path: library/cpp/Tree/FenwickTree.hpp
+    title: library/cpp/Tree/FenwickTree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D
@@ -23,23 +23,23 @@ data:
   bundledCode: "#line 1 \"test/cpp/Math/inversion_number1.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\n\n\
     #line 1 \"library/cpp/Math/inversion_number.cpp\"\n#include <algorithm>\n#include\
-    \ <vector>\n#line 1 \"library/cpp/DataStructure/FenwickTree.hpp\"\n#include <cassert>\n\
-    #line 3 \"library/cpp/DataStructure/FenwickTree.hpp\"\n\n// \u3059\u3079\u3066\
-    \ 0-origin\ntemplate<class T>\nclass FenwickTree {\npublic:\n    const int n;\n\
-    \    std::vector<T> v;\n\n    // n: \u8981\u7D20\u6570\n    explicit FenwickTree(const\
-    \ int n) : n(n) {\n        this->v.assign(n + 1, 0);\n    }\n\n    // v[i]\n \
-    \   // O(log n)\n    T access(const int i) const {\n        return this->sum(i,\
-    \ i + 1);\n    }\n\n    // v[i] += x\n    // O(log n)\n    void add(int i, T x)\
-    \ {\n        assert(i < this->n);\n\n        while (i < this->n) {\n         \
-    \   this->v[i] += x;\n            i |= i + 1;\n        }\n    }\n\n    // v[i]\
-    \ = x\n    // O(log n)\n    void update(int i, T x) {\n        assert(i < this->n);\n\
-    \n        const T now = this->access(i);\n        this->add(i, x - now);\n   \
-    \ }\n\n    // sum(v[0, i))\n    // O(log n)\n    T sum(int i) const {\n      \
-    \  assert(0 <= i and i <= this->n);\n\n        T s = 0;\n        i -= 1;\n   \
-    \     while (i >= 0) {\n            s += this->v[i];\n            i = (i & (i\
-    \ + 1)) - 1;\n        }\n        return s;\n    }\n\n    // sum(v[left, right))\n\
-    \    // O(log n)\n    T sum(const int left, const int right) const {\n       \
-    \ if (left >= right) {\n            return 0;\n        }\n        return this->sum(right)\
+    \ <vector>\n#line 1 \"library/cpp/Tree/FenwickTree.hpp\"\n#include <cassert>\n\
+    #line 3 \"library/cpp/Tree/FenwickTree.hpp\"\n\n// \u3059\u3079\u3066 0-origin\n\
+    template<class T>\nclass FenwickTree {\npublic:\n    const int n;\n    std::vector<T>\
+    \ v;\n\n    // n: \u8981\u7D20\u6570\n    explicit FenwickTree(const int n) :\
+    \ n(n) {\n        this->v.assign(n + 1, 0);\n    }\n\n    // v[i]\n    // O(log\
+    \ n)\n    T access(const int i) const {\n        return this->sum(i, i + 1);\n\
+    \    }\n\n    // v[i] += x\n    // O(log n)\n    void add(int i, T x) {\n    \
+    \    assert(i < this->n);\n\n        while (i < this->n) {\n            this->v[i]\
+    \ += x;\n            i |= i + 1;\n        }\n    }\n\n    // v[i] = x\n    //\
+    \ O(log n)\n    void update(int i, T x) {\n        assert(i < this->n);\n\n  \
+    \      const T now = this->access(i);\n        this->add(i, x - now);\n    }\n\
+    \n    // sum(v[0, i))\n    // O(log n)\n    T sum(int i) const {\n        assert(0\
+    \ <= i and i <= this->n);\n\n        T s = 0;\n        i -= 1;\n        while\
+    \ (i >= 0) {\n            s += this->v[i];\n            i = (i & (i + 1)) - 1;\n\
+    \        }\n        return s;\n    }\n\n    // sum(v[left, right))\n    // O(log\
+    \ n)\n    T sum(const int left, const int right) const {\n        if (left >=\
+    \ right) {\n            return 0;\n        }\n        return this->sum(right)\
     \ - this->sum(left);\n    }\n};\n#line 4 \"library/cpp/Math/inversion_number.cpp\"\
     \n\n// j < i \u304B\u3064 v[j] > v[i] \u306E\u7D44\u306E\u500B\u6570\u3067\u3042\
     \u308B\u8EE2\u5012\u6570\u3092\u6C42\u3081\u308B\n// v\u306E\u8981\u7D20\u304C\
@@ -80,13 +80,13 @@ data:
     \  cout << inversion_number(A) << endl;\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Math/inversion_number.cpp
-  - library/cpp/DataStructure/FenwickTree.hpp
+  - library/cpp/Tree/FenwickTree.hpp
   - library/cpp/Compression/CoordinateCompression.hpp
   isVerificationFile: true
   path: test/cpp/Math/inversion_number1.test.cpp
   requiredBy: []
   timestamp: '2024-01-20 16:51:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Math/inversion_number1.test.cpp
 layout: document
