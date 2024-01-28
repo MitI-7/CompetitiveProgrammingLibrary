@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Utility/mint.hpp
     title: library/cpp/Utility/mint.hpp
   _extendedRequiredBy:

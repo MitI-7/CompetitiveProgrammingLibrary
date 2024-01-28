@@ -29,9 +29,6 @@ data:
       path: library/cpp/DataStructure/DynamicMedian.hpp
       title: library/cpp/DataStructure/DynamicMedian.hpp
     - icon: ':heavy_check_mark:'
-      path: library/cpp/DataStructure/RollbackUnionFind.hpp
-      title: library/cpp/DataStructure/RollbackUnionFind.hpp
-    - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/TopK.hpp
       title: library/cpp/DataStructure/TopK.hpp
   - name: library/cpp/Geometry
@@ -102,7 +99,7 @@ data:
       title: library/cpp/Math/row_reduction_xor.cpp
   - name: library/cpp/ShortestPath
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: library/cpp/ShortestPath/bellman_ford.cpp
       title: library/cpp/ShortestPath/bellman_ford.cpp
     - icon: ':x:'
@@ -133,6 +130,9 @@ data:
       path: library/cpp/Tree/FenwickTreeRange.hpp
       title: library/cpp/Tree/FenwickTreeRange.hpp
     - icon: ':x:'
+      path: library/cpp/Tree/RollbackUnionFind.hpp
+      title: library/cpp/Tree/RollbackUnionFind.hpp
+    - icon: ':x:'
       path: library/cpp/Tree/SegmentTree.hpp
       title: library/cpp/Tree/SegmentTree.hpp
     - icon: ':question:'
@@ -143,17 +143,20 @@ data:
       title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/cpp/Utility/mint.hpp
       title: library/cpp/Utility/mint.hpp
   - name: library/python/Utility
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: library/python/Utility/matrix_rotate.py
       title: library/python/Utility/matrix_rotate.py
     - icon: ':x:'
       path: library/python/Utility/matrix_shift.py
       title: library/python/Utility/matrix_shift.py
+    - icon: ':x:'
+      path: library/python/Utility/matrix_strip.py
+      title: library/python/Utility/matrix_strip.py
   - name: test/cpp/ShortestPath
     pages:
     - icon: ':warning:'
@@ -192,9 +195,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/DynamicMedian1.test.cpp
       title: test/cpp/DataStructure/DynamicMedian1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
-      title: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
       title: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
@@ -284,7 +284,7 @@ data:
       title: test/cpp/Math/row_reduction_xor.test.cpp
   - name: test/cpp/ShortestPath
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/cpp/ShortestPath/bellman_ford1.test.cpp
       title: test/cpp/ShortestPath/bellman_ford1.test.cpp
     - icon: ':x:'
@@ -318,6 +318,9 @@ data:
       path: test/cpp/Tree/FenwickTreeRange2.test.cpp
       title: test/cpp/Tree/FenwickTreeRange2.test.cpp
     - icon: ':x:'
+      path: test/cpp/Tree/RollbackUnionFind1.test.cpp
+      title: test/cpp/Tree/RollbackUnionFind1.test.cpp
+    - icon: ':x:'
       path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
     - icon: ':x:'
@@ -350,13 +353,16 @@ data:
   - name: test/python/Utility
     pages:
     - icon: ':x:'
+      path: test/python/Utility/matrix_rotate1.test.py
+      title: test/python/Utility/matrix_rotate1.test.py
+    - icon: ':x:'
       path: test/python/Utility/matrix_shift1.test.py
       title: test/python/Utility/matrix_shift1.test.py
     - icon: ':x:'
       path: test/python/Utility/matrix_shift2.test.py
       title: test/python/Utility/matrix_shift2.test.py
     - icon: ':x:'
-      path: test/python/Utility/rotate1.test.py
-      title: test/python/Utility/rotate1.test.py
+      path: test/python/Utility/matrix_strip1.test.py
+      title: test/python/Utility/matrix_strip1.test.py
 layout: toppage
 ---

@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/ShortestPath/bellman_ford.cpp
     title: library/cpp/ShortestPath/bellman_ford.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B
@@ -87,7 +87,7 @@ data:
   path: test/cpp/ShortestPath/bellman_ford1.test.cpp
   requiredBy: []
   timestamp: '2023-05-15 19:51:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/cpp/ShortestPath/bellman_ford1.test.cpp
 layout: document

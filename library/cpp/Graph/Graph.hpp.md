@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/find_cycle.cpp
     title: library/cpp/Graph/find_cycle.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: library/cpp/ShortestPath/bellman_ford.cpp
     title: library/cpp/ShortestPath/bellman_ford.cpp
   - icon: ':x:'
@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Graph/find_cycle2.test.cpp
     title: test/cpp/Graph/find_cycle2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/cpp/ShortestPath/bellman_ford1.test.cpp
     title: test/cpp/ShortestPath/bellman_ford1.test.cpp
   - icon: ':x:'

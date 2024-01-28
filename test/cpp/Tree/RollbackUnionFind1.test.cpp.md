@@ -1,29 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: library/cpp/DataStructure/RollbackUnionFind.hpp
-    title: library/cpp/DataStructure/RollbackUnionFind.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
+    path: library/cpp/Tree/RollbackUnionFind.hpp
+    title: library/cpp/Tree/RollbackUnionFind.hpp
+  - icon: ':question:'
     path: library/cpp/Utility/mint.hpp
     title: library/cpp/Utility/mint.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc334/tasks/abc334_e
     links:
     - https://atcoder.jp/contests/abc334/tasks/abc334_e
-  bundledCode: "#line 1 \"test/cpp/DataStructure/RollbackUnionFind1.test.cpp\"\n#define\
-    \ PROBLEM \"https://atcoder.jp/contests/abc334/tasks/abc334_e\"\n\n#line 1 \"\
-    library/cpp/DataStructure/RollbackUnionFind.hpp\"\n#include <cassert>\n#include\
-    \ <stack>\n#include <tuple>\n#include <vector>\n\nclass RollbackUnionFind {\n\
-    public:\n    int set_size;   // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n \
-    \   std::vector<int> parent;\n    std::stack<std::tuple<int, int, int, int, int>>\
-    \ history;\n    int snap_no;\n\npublic:\n    explicit RollbackUnionFind(const\
+  bundledCode: "#line 1 \"test/cpp/Tree/RollbackUnionFind1.test.cpp\"\n#define PROBLEM\
+    \ \"https://atcoder.jp/contests/abc334/tasks/abc334_e\"\n\n#line 1 \"library/cpp/Tree/RollbackUnionFind.hpp\"\
+    \n#include <cassert>\n#include <stack>\n#include <tuple>\n#include <vector>\n\n\
+    class RollbackUnionFind {\npublic:\n    int set_size;   // \u96C6\u5408\u306E\u500B\
+    \u6570\n\nprivate:\n    std::vector<int> parent;\n    std::stack<std::tuple<int,\
+    \ int, int, int, int>> history;\n    int snap_no;\n\npublic:\n    explicit RollbackUnionFind(const\
     \ int num_nodes) : set_size(num_nodes), parent(num_nodes, -1), snap_no(0) {\n\
     \    }\n\n    // u \u3068 v \u304C\u540C\u3058\u96C6\u5408\u306B\u5C5E\u3059\u308B\
     \u304B\u5224\u5B9A\u3059\u308B\n    // O(log n)\n    int is_same_set(const int\
@@ -83,7 +82,7 @@ data:
     \ const {\n        mint res(*this);\n        return res /= a;\n    }\n\n    friend\
     \ std::ostream &operator<<(std::ostream &os, const mint &obj) {\n        os <<\
     \ obj.x;\n        return os;\n    }\n};\n\n\n//const int MOD = 1000000000 + 7;\
-    \ // 10^9 + 7\n//const int MOD = 998244353;\n#line 7 \"test/cpp/DataStructure/RollbackUnionFind1.test.cpp\"\
+    \ // 10^9 + 7\n//const int MOD = 998244353;\n#line 7 \"test/cpp/Tree/RollbackUnionFind1.test.cpp\"\
     \n\nusing namespace std;\nconst int MOD = 998244353;\n\ninline bool inside(long\
     \ long y, long long x, long long H, long long W) { return 0 <= y and y < H and\
     \ 0 <= x and x < W; }\n\nconst std::vector<int> dy8 = {0, 1, 0, -1, -1, 1, 1,\
@@ -97,9 +96,9 @@ data:
     \ ++i) {\n                int ny = dy8[i] + y;\n                int nx = dx8[i]\
     \ + x;\n\n                if (inside(ny, nx, H, W) and grid[ny][nx] == '#') {\n\
     \                    ruf.unite(y * W + x, ny * W + nx);\n                }\n \
-    \           }\n        }\n    }\n    ruf.snapshot();\n\n    mint <MOD> ans;\n\
-    \    for (int y = 0; y < H; ++y) {\n        for (int x = 0; x < W; ++x) {\n  \
-    \          if (grid[y][x] == '#') {\n                continue;\n            }\n\
+    \           }\n        }\n    }\n    ruf.snapshot();\n\n    mint<MOD> ans;\n \
+    \   for (int y = 0; y < H; ++y) {\n        for (int x = 0; x < W; ++x) {\n   \
+    \         if (grid[y][x] == '#') {\n                continue;\n            }\n\
     \n            for (int i = 0; i < 4; ++i) {\n                int ny = dy8[i] +\
     \ y;\n                int nx = dx8[i] + x;\n\n                if (inside(ny, nx,\
     \ H, W) and grid[ny][nx] == '#') {\n                    ruf.unite(y * W + x, ny\
@@ -107,7 +106,7 @@ data:
     \ - (num_red - 1);\n\n            ruf.rollback();\n        }\n    }\n    cout\
     \ << ans / num_red << endl;\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc334/tasks/abc334_e\"\n\n\
-    #include \"library/cpp/DataStructure/RollbackUnionFind.hpp\"\n#include \"library/cpp/Utility/mint.hpp\"\
+    #include \"library/cpp/Tree/RollbackUnionFind.hpp\"\n#include \"library/cpp/Utility/mint.hpp\"\
     \n#include <iostream>\n#include <vector>\n\nusing namespace std;\nconst int MOD\
     \ = 998244353;\n\ninline bool inside(long long y, long long x, long long H, long\
     \ long W) { return 0 <= y and y < H and 0 <= x and x < W; }\n\nconst std::vector<int>\
@@ -122,7 +121,7 @@ data:
     \               int nx = dx8[i] + x;\n\n                if (inside(ny, nx, H,\
     \ W) and grid[ny][nx] == '#') {\n                    ruf.unite(y * W + x, ny *\
     \ W + nx);\n                }\n            }\n        }\n    }\n    ruf.snapshot();\n\
-    \n    mint <MOD> ans;\n    for (int y = 0; y < H; ++y) {\n        for (int x =\
+    \n    mint<MOD> ans;\n    for (int y = 0; y < H; ++y) {\n        for (int x =\
     \ 0; x < W; ++x) {\n            if (grid[y][x] == '#') {\n                continue;\n\
     \            }\n\n            for (int i = 0; i < 4; ++i) {\n                int\
     \ ny = dy8[i] + y;\n                int nx = dx8[i] + x;\n\n                if\
@@ -131,18 +130,18 @@ data:
     \ += ruf.set_size - (num_red - 1);\n\n            ruf.rollback();\n        }\n\
     \    }\n    cout << ans / num_red << endl;\n\n    return 0;\n}"
   dependsOn:
-  - library/cpp/DataStructure/RollbackUnionFind.hpp
+  - library/cpp/Tree/RollbackUnionFind.hpp
   - library/cpp/Utility/mint.hpp
   isVerificationFile: true
-  path: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
+  path: test/cpp/Tree/RollbackUnionFind1.test.cpp
   requiredBy: []
-  timestamp: '2024-01-20 16:52:05+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-01-28 13:45:41+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
+documentation_of: test/cpp/Tree/RollbackUnionFind1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/DataStructure/RollbackUnionFind1.test.cpp
-- /verify/test/cpp/DataStructure/RollbackUnionFind1.test.cpp.html
-title: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
+- /verify/test/cpp/Tree/RollbackUnionFind1.test.cpp
+- /verify/test/cpp/Tree/RollbackUnionFind1.test.cpp.html
+title: test/cpp/Tree/RollbackUnionFind1.test.cpp
 ---

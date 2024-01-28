@@ -3,16 +3,16 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
-    title: test/cpp/DataStructure/RollbackUnionFind1.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/cpp/Tree/RollbackUnionFind1.test.cpp
+    title: test/cpp/Tree/RollbackUnionFind1.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"library/cpp/DataStructure/RollbackUnionFind.hpp\"\n#include\
-    \ <cassert>\n#include <stack>\n#include <tuple>\n#include <vector>\n\nclass RollbackUnionFind\
+  bundledCode: "#line 1 \"library/cpp/Tree/RollbackUnionFind.hpp\"\n#include <cassert>\n\
+    #include <stack>\n#include <tuple>\n#include <vector>\n\nclass RollbackUnionFind\
     \ {\npublic:\n    int set_size;   // \u96C6\u5408\u306E\u500B\u6570\n\nprivate:\n\
     \    std::vector<int> parent;\n    std::stack<std::tuple<int, int, int, int, int>>\
     \ history;\n    int snap_no;\n\npublic:\n    explicit RollbackUnionFind(const\
@@ -100,16 +100,16 @@ data:
     \u306A\u3044\n        return this->find_root(this->parent[u]);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: library/cpp/DataStructure/RollbackUnionFind.hpp
+  path: library/cpp/Tree/RollbackUnionFind.hpp
   requiredBy: []
-  timestamp: '2024-01-20 16:38:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-01-28 13:45:29+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/cpp/DataStructure/RollbackUnionFind1.test.cpp
-documentation_of: library/cpp/DataStructure/RollbackUnionFind.hpp
+  - test/cpp/Tree/RollbackUnionFind1.test.cpp
+documentation_of: library/cpp/Tree/RollbackUnionFind.hpp
 layout: document
 redirect_from:
-- /library/library/cpp/DataStructure/RollbackUnionFind.hpp
-- /library/library/cpp/DataStructure/RollbackUnionFind.hpp.html
-title: library/cpp/DataStructure/RollbackUnionFind.hpp
+- /library/library/cpp/Tree/RollbackUnionFind.hpp
+- /library/library/cpp/Tree/RollbackUnionFind.hpp.html
+title: library/cpp/Tree/RollbackUnionFind.hpp
 ---
