@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
     title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
     title: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
     title: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
     title: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
     title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/SegmentTree.hpp\"\n#include <cassert>\n\
@@ -135,7 +135,7 @@ data:
   path: library/cpp/Tree/SegmentTree.hpp
   requiredBy: []
   timestamp: '2024-01-27 12:23:01+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
   - test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp

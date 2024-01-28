@@ -26,6 +26,9 @@ data:
       path: library/cpp/DataStructure/CumulativeSum.hpp
       title: library/cpp/DataStructure/CumulativeSum.hpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/DataStructure/CumulativeSum2Dim.hpp
+      title: library/cpp/DataStructure/CumulativeSum2Dim.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/DynamicMedian.hpp
       title: library/cpp/DataStructure/DynamicMedian.hpp
     - icon: ':heavy_check_mark:'
@@ -47,7 +50,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/FunctionalGraph.hpp
       title: library/cpp/Graph/FunctionalGraph.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Graph/Graph.hpp
       title: library/cpp/Graph/Graph.hpp
     - icon: ':heavy_check_mark:'
@@ -97,42 +100,50 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/row_reduction_xor.cpp
       title: library/cpp/Math/row_reduction_xor.cpp
+  - name: library/cpp/Range
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Range/RangeSet.hpp
+      title: library/cpp/Range/RangeSet.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Range/StaticRangeFrequency.hpp
+      title: library/cpp/Range/StaticRangeFrequency.hpp
   - name: library/cpp/ShortestPath
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/ShortestPath/bellman_ford.cpp
       title: library/cpp/ShortestPath/bellman_ford.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/ShortestPath/dijkstra.cpp
       title: library/cpp/ShortestPath/dijkstra.cpp
     - icon: ':warning:'
       path: library/cpp/ShortestPath/make_shortest_path_tree.cpp
       title: library/cpp/ShortestPath/make_shortest_path_tree.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/ShortestPath/warshall_floyd.cpp
       title: library/cpp/ShortestPath/warshall_floyd.cpp
   - name: library/cpp/Sort
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Sort/TopologicalSort.hpp
       title: library/cpp/Sort/TopologicalSort.hpp
   - name: library/cpp/String
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/String/RollingHash.hpp
       title: library/cpp/String/RollingHash.hpp
   - name: library/cpp/Tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/FenwickTree.hpp
       title: library/cpp/Tree/FenwickTree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/FenwickTreeRange.hpp
       title: library/cpp/Tree/FenwickTreeRange.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/RollbackUnionFind.hpp
       title: library/cpp/Tree/RollbackUnionFind.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/SegmentTree.hpp
       title: library/cpp/Tree/SegmentTree.hpp
     - icon: ':question:'
@@ -143,9 +154,17 @@ data:
       title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Utility/mint.hpp
       title: library/cpp/Utility/mint.hpp
+  - name: library/python/String
+    pages:
+    - icon: ':x:'
+      path: library/python/String/find_kth_string_permutation.py
+      title: library/python/String/find_kth_string_permutation.py
+    - icon: ':x:'
+      path: library/python/String/find_string_no_permutation.py
+      title: library/python/String/find_string_no_permutation.py
   - name: library/python/Utility
     pages:
     - icon: ':x:'
@@ -192,6 +211,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/CumulativeSum1.test.cpp
       title: test/cpp/DataStructure/CumulativeSum1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
+      title: test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/DynamicMedian1.test.cpp
       title: test/cpp/DataStructure/DynamicMedian1.test.cpp
@@ -282,57 +304,68 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/row_reduction_xor.test.cpp
       title: test/cpp/Math/row_reduction_xor.test.cpp
+  - name: test/cpp/Range
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Range/RangeSet1.test.cpp
+      title: test/cpp/Range/RangeSet1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Range/StaticRangeFrequency1_range_count.test.cpp
+      title: test/cpp/Range/StaticRangeFrequency1_range_count.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
+      title: test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
   - name: test/cpp/ShortestPath
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/ShortestPath/bellman_ford1.test.cpp
       title: test/cpp/ShortestPath/bellman_ford1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/ShortestPath/dijkstra1.test.cpp
       title: test/cpp/ShortestPath/dijkstra1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/ShortestPath/warshall_floyd1.test.cpp
       title: test/cpp/ShortestPath/warshall_floyd1.test.cpp
   - name: test/cpp/Sort
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Sort/TopologicalSort1.test.cpp
       title: test/cpp/Sort/TopologicalSort1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Sort/TopologicalSort2.test.cpp
       title: test/cpp/Sort/TopologicalSort2.test.cpp
   - name: test/cpp/String
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/String/RollingHash1_hash.test.cpp
       title: test/cpp/String/RollingHash1_hash.test.cpp
   - name: test/cpp/Tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/FenwickTree1.test.cpp
       title: test/cpp/Tree/FenwickTree1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/FenwickTreeRange1.test.cpp
       title: test/cpp/Tree/FenwickTreeRange1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/FenwickTreeRange2.test.cpp
       title: test/cpp/Tree/FenwickTreeRange2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind1.test.cpp
       title: test/cpp/Tree/RollbackUnionFind1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
       title: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
       title: test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
       title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
     - icon: ':x:'
@@ -350,6 +383,14 @@ data:
     - icon: ':x:'
       path: test/cpp/Tree/WeightedUnionFind3.test.cpp
       title: test/cpp/Tree/WeightedUnionFind3.test.cpp
+  - name: test/python/String
+    pages:
+    - icon: ':x:'
+      path: test/python/String/find_kth_string_permutation1.test.py
+      title: test/python/String/find_kth_string_permutation1.test.py
+    - icon: ':x:'
+      path: test/python/String/find_string_no_permutation1.test.py
+      title: test/python/String/find_string_no_permutation1.test.py
   - name: test/python/Utility
     pages:
     - icon: ':x:'

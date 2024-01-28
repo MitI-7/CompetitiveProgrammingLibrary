@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/cpp/Math/Combination.hpp
     title: library/cpp/Math/Combination.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Utility/mint.hpp
     title: library/cpp/Utility/mint.hpp
   _extendedRequiredBy: []

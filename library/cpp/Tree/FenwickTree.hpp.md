@@ -5,25 +5,25 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/cpp/Math/inversion_number.cpp
     title: library/cpp/Math/inversion_number.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Tree/FenwickTreeRange.hpp
     title: library/cpp/Tree/FenwickTreeRange.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Math/inversion_number1.test.cpp
     title: test/cpp/Math/inversion_number1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/FenwickTree1.test.cpp
     title: test/cpp/Tree/FenwickTree1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/FenwickTreeRange1.test.cpp
     title: test/cpp/Tree/FenwickTreeRange1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/FenwickTreeRange2.test.cpp
     title: test/cpp/Tree/FenwickTreeRange2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/FenwickTree.hpp\"\n#include <cassert>\n\
@@ -67,7 +67,7 @@ data:
   - library/cpp/Tree/FenwickTreeRange.hpp
   - library/cpp/Math/inversion_number.cpp
   timestamp: '2024-01-20 16:44:05+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/FenwickTree1.test.cpp
   - test/cpp/Tree/FenwickTreeRange1.test.cpp

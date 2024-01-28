@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
     path: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
     title: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/ShortestPath/dijkstra1.test.cpp
     title: test/cpp/ShortestPath/dijkstra1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/ShortestPath/dijkstra.cpp\"\n#include <functional>\n\
@@ -101,7 +101,7 @@ data:
   - test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   - library/cpp/ShortestPath/make_shortest_path_tree.cpp
   timestamp: '2023-05-15 18:47:15+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/ShortestPath/dijkstra1.test.cpp
 documentation_of: library/cpp/ShortestPath/dijkstra.cpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/cpp/Math/inversion_number.cpp
     title: library/cpp/Math/inversion_number.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Tree/FenwickTree.hpp
     title: library/cpp/Tree/FenwickTree.hpp
   _extendedRequiredBy: []

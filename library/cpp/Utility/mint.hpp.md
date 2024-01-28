@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Math/derangement1.test.cpp
     title: test/cpp/Math/derangement1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/RollbackUnionFind1.test.cpp
     title: test/cpp/Tree/RollbackUnionFind1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"library/cpp/Utility/mint.hpp\"\n\n#include <iostream>\n\n\
@@ -72,7 +72,7 @@ data:
   - library/cpp/Math/Combination.hpp
   - library/cpp/Math/derangement.cpp
   timestamp: '2024-01-20 16:48:49+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/RollbackUnionFind1.test.cpp
   - test/cpp/Math/derangement1.test.cpp

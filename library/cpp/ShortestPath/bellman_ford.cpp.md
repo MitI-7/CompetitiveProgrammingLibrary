@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/Graph.hpp
     title: library/cpp/Graph/Graph.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/ShortestPath/bellman_ford1.test.cpp
     title: test/cpp/ShortestPath/bellman_ford1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/ShortestPath/bellman_ford.cpp\"\n#include <vector>\n\
@@ -88,7 +88,7 @@ data:
   path: library/cpp/ShortestPath/bellman_ford.cpp
   requiredBy: []
   timestamp: '2023-05-15 19:51:47+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/ShortestPath/bellman_ford1.test.cpp
 documentation_of: library/cpp/ShortestPath/bellman_ford.cpp

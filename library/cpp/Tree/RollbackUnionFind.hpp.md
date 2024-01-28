@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/RollbackUnionFind1.test.cpp
     title: test/cpp/Tree/RollbackUnionFind1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/RollbackUnionFind.hpp\"\n#include <cassert>\n\
@@ -102,8 +102,8 @@ data:
   isVerificationFile: false
   path: library/cpp/Tree/RollbackUnionFind.hpp
   requiredBy: []
-  timestamp: '2024-01-28 13:45:29+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-01-20 16:38:44+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/RollbackUnionFind1.test.cpp
 documentation_of: library/cpp/Tree/RollbackUnionFind.hpp

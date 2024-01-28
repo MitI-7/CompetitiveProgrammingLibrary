@@ -33,7 +33,7 @@ data:
   isVerificationFile: true
   path: test/python/Utility/matrix_rotate1.test.py
   requiredBy: []
-  timestamp: '2024-01-28 13:42:25+09:00'
+  timestamp: '2024-01-20 16:47:44+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/python/Utility/matrix_rotate1.test.py
