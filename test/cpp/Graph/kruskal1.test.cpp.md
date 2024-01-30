@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: library/cpp/Graph/kruskal.cpp
     title: library/cpp/Graph/kruskal.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Tree/UnionFind.hpp
     title: library/cpp/Tree/UnionFind.hpp
   _extendedRequiredBy: []

@@ -68,16 +68,23 @@ data:
     \ long long, int>\nrh_op(std::tuple<uint_fast64_t, long long, int> a, std::tuple<uint_fast64_t,\
     \ long long, int> b) {\n    auto [h0, x0, p0] = a;\n    auto [h1, x1, p1] = b;\n\
     \    return {(h0 + h1 * x0) % p0, (x0 * x1) % p0, p0};\n}\n\nstd::tuple<uint_fast64_t,\
-    \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n#line\
-    \ 4 \"test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp\"\n#include <iostream>\n\
-    \nusing namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n\n    auto st = make_segment_tree_sum<long\
-    \ long>(N);\n    for (int i = 0; i < N; ++i) {\n        long long A;\n       \
-    \ cin >> A;\n        st.update(i, A);\n    }\n\n    for (int i = 0; i < Q; ++i)\
-    \ {\n        int T;\n        cin >> T;\n        if (T == 0) {\n            int\
-    \ P, X;\n            cin >> P >> X;\n            st.update(P, st.access(P) + X);\n\
-    \        } else {\n            int L, R;\n            cin >> L >> R;\n       \
-    \     cout << st.query(L, R) << endl;\n        }\n    }\n\n    return 0;\n}\n"
+    \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n\n\n\
+    // \u30AB\u30C3\u30B3\u5217\n// \u300C(\u300D\u3092 +1\uFF0C\u300C)\u300D\u3092\
+    \ -1 \u3068\u3059\u308B\n// (\u5408\u8A08\uFF0C\u533A\u9593\u6700\u5C0F)\nconst\
+    \ std::pair<int, int> parenthesis_left = {1, 0};\nconst std::pair<int, int> parenthesis_right\
+    \ = {-1, -1};\n\nstd::pair<int, int> parenthesis_op(std::pair<int, int> a, std::pair<int,\
+    \ int> b) {\n    const auto [t0, m0] = a;\n    const auto [t1, m1] = b;\n    return\
+    \ {t0 + t1, std::min(m0, t0 + m1)};\n}\n\nstd::pair<int, int> parenthesis_unit()\
+    \ {\n    return {0, 0};\n}\n#line 4 \"test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp\"\
+    \n#include <iostream>\n\nusing namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int N, Q;\n    cin >> N >> Q;\n\n   \
+    \ auto st = make_segment_tree_sum<long long>(N);\n    for (int i = 0; i < N; ++i)\
+    \ {\n        long long A;\n        cin >> A;\n        st.update(i, A);\n    }\n\
+    \n    for (int i = 0; i < Q; ++i) {\n        int T;\n        cin >> T;\n     \
+    \   if (T == 0) {\n            int P, X;\n            cin >> P >> X;\n       \
+    \     st.update(P, st.access(P) + X);\n        } else {\n            int L, R;\n\
+    \            cin >> L >> R;\n            cout << st.query(L, R) << endl;\n   \
+    \     }\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
     \n#include \"library/cpp/Tree/SegmentTree.hpp\"\n#include <iostream>\n\nusing\
     \ namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\

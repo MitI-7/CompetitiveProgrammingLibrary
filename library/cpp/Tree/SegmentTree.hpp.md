@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
     title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
+    title: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -76,7 +79,14 @@ data:
     \ long, int>\nrh_op(std::tuple<uint_fast64_t, long long, int> a, std::tuple<uint_fast64_t,\
     \ long long, int> b) {\n    auto [h0, x0, p0] = a;\n    auto [h1, x1, p1] = b;\n\
     \    return {(h0 + h1 * x0) % p0, (x0 * x1) % p0, p0};\n}\n\nstd::tuple<uint_fast64_t,\
-    \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n"
+    \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n\n\n\
+    // \u30AB\u30C3\u30B3\u5217\n// \u300C(\u300D\u3092 +1\uFF0C\u300C)\u300D\u3092\
+    \ -1 \u3068\u3059\u308B\n// (\u5408\u8A08\uFF0C\u533A\u9593\u6700\u5C0F)\nconst\
+    \ std::pair<int, int> parenthesis_left = {1, 0};\nconst std::pair<int, int> parenthesis_right\
+    \ = {-1, -1};\n\nstd::pair<int, int> parenthesis_op(std::pair<int, int> a, std::pair<int,\
+    \ int> b) {\n    const auto [t0, m0] = a;\n    const auto [t1, m1] = b;\n    return\
+    \ {t0 + t1, std::min(m0, t0 + m1)};\n}\n\nstd::pair<int, int> parenthesis_unit()\
+    \ {\n    return {0, 0};\n}\n"
   code: "#include <cassert>\n#include <cstdint>\n#include <functional>\n#include <numeric>\n\
     #include <tuple>\n#include <vector>\n\n// \u30E2\u30CE\u30A4\u30C9\u3092\u4E57\
     \u305B\u308B\u3053\u3068\u304C\u3067\u304D\u308B\n// \u7D50\u5408\u5247: a * (b\
@@ -129,7 +139,14 @@ data:
     \ long long, int>\nrh_op(std::tuple<uint_fast64_t, long long, int> a, std::tuple<uint_fast64_t,\
     \ long long, int> b) {\n    auto [h0, x0, p0] = a;\n    auto [h1, x1, p1] = b;\n\
     \    return {(h0 + h1 * x0) % p0, (x0 * x1) % p0, p0};\n}\n\nstd::tuple<uint_fast64_t,\
-    \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n"
+    \ long long, int> rh_unit() {\n    return {(uint_fast64_t) 0, 1, P};\n}\n\n\n\
+    // \u30AB\u30C3\u30B3\u5217\n// \u300C(\u300D\u3092 +1\uFF0C\u300C)\u300D\u3092\
+    \ -1 \u3068\u3059\u308B\n// (\u5408\u8A08\uFF0C\u533A\u9593\u6700\u5C0F)\nconst\
+    \ std::pair<int, int> parenthesis_left = {1, 0};\nconst std::pair<int, int> parenthesis_right\
+    \ = {-1, -1};\n\nstd::pair<int, int> parenthesis_op(std::pair<int, int> a, std::pair<int,\
+    \ int> b) {\n    const auto [t0, m0] = a;\n    const auto [t1, m1] = b;\n    return\
+    \ {t0 + t1, std::min(m0, t0 + m1)};\n}\n\nstd::pair<int, int> parenthesis_unit()\
+    \ {\n    return {0, 0};\n}"
   dependsOn: []
   isVerificationFile: false
   path: library/cpp/Tree/SegmentTree.hpp
@@ -139,6 +156,7 @@ data:
   verifiedWith:
   - test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
   - test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+  - test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
   - test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
   - test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
   - test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp

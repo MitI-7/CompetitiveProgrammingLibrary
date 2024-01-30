@@ -11,11 +11,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc331/tasks/abc331_f
+    PROBLEM: https://atcoder.jp/contests/abc223/tasks/abc223_f
     links:
-    - https://atcoder.jp/contests/abc331/tasks/abc331_f
-  bundledCode: "#line 1 \"test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp\"\
-    \n#define PROBLEM \"https://atcoder.jp/contests/abc331/tasks/abc331_f\"\n\n#line\
+    - https://atcoder.jp/contests/abc223/tasks/abc223_f
+  bundledCode: "#line 1 \"test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp\"\
+    \n#define PROBLEM \"https://atcoder.jp/contests/abc223/tasks/abc223_f\"\n\n#line\
     \ 1 \"library/cpp/Tree/SegmentTree.hpp\"\n#include <cassert>\n#include <cstdint>\n\
     #include <functional>\n#include <numeric>\n#include <tuple>\n#include <vector>\n\
     \n// \u30E2\u30CE\u30A4\u30C9\u3092\u4E57\u305B\u308B\u3053\u3068\u304C\u3067\u304D\
@@ -75,50 +75,48 @@ data:
     \ = {-1, -1};\n\nstd::pair<int, int> parenthesis_op(std::pair<int, int> a, std::pair<int,\
     \ int> b) {\n    const auto [t0, m0] = a;\n    const auto [t1, m1] = b;\n    return\
     \ {t0 + t1, std::min(m0, t0 + m1)};\n}\n\nstd::pair<int, int> parenthesis_unit()\
-    \ {\n    return {0, 0};\n}\n#line 4 \"test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp\"\
+    \ {\n    return {0, 0};\n}\n#line 4 \"test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp\"\
     \n#include <iostream>\n\nusing namespace std;\n\n\nint main() {\n    cin.tie(nullptr);\n\
-    \    ios::sync_with_stdio(false);\n\n    int N, Q;\n    cin >> N >> Q;\n    string\
-    \ S;\n    cin >> S;\n\n    SegmentTree<tuple<uint_fast64_t, long long, int>, rh_op,\
-    \ rh_unit> st1(N), st2(N);\n    for (int i = 0; i < N; ++i) {\n        st1.update(i,\
-    \ {S[i] - 'a', base, P});\n        st2.update(i, {S[N - 1 - i] - 'a', base, P});\n\
-    \    }\n\n    for (int i = 0; i < Q; ++i) {\n        int T;\n        cin >> T;\n\
-    \        if (T == 1) {\n            int X;\n            char C;\n            cin\
-    \ >> X >> C;\n            X--;\n            C -= 'a';\n            st1.update(X,\
-    \ {C, base, P});\n            st2.update(N - 1 - X, {C, base, P});\n        }\
-    \ else {\n            int L, R;\n            cin >> L >> R;\n            L--;\n\
-    \            R--;\n            auto [h0, x0, p0] = st1.query(L, R + 1);\n    \
-    \        auto [h1, x1, p1] = st2.query(N - (R + 1), N - L);\n            if (h0\
-    \ == h1) {\n                cout << \"Yes\" << endl;\n            } else {\n \
-    \               cout << \"No\" << endl;\n            }\n        }\n    }\n\n \
-    \   return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/abc331/tasks/abc331_f\"\n\n\
+    \    ios::sync_with_stdio(false);\n\n    int N, Q;\n    string S;\n    cin >>\
+    \ N >> Q;\n    cin >> S;\n\n    vector<pair<int, int>> v(N);\n\n    for (int i\
+    \ = 0; i < N; ++i) {\n        if (S[i] == '(') {\n            v[i] = parenthesis_left;\n\
+    \        } else {\n            v[i] = parenthesis_right;\n        }\n    }\n\n\
+    \    SegmentTree<pair<int, int>, parenthesis_op, parenthesis_unit> st(N);\n  \
+    \  for (int i = 0; i < N; ++i) {\n        st.update(i, v[i]);\n    }\n\n    for\
+    \ (int i = 0; i < Q; ++i) {\n        int T, L, R;\n        cin >> T >> L >> R;\n\
+    \        L--;\n        R--;\n        if (T == 1) {\n            swap(v[L], v[R]);\n\
+    \            st.update(L, v[L]);\n            st.update(R, v[R]);\n        } else\
+    \ {\n            auto [t, m] = st.query(L, R + 1);\n            if (t == 0 and\
+    \ m == 0) {\n                cout << \"Yes\" << endl;\n            } else {\n\
+    \                cout << \"No\" << endl;\n            }\n        }\n    }\n\n\
+    \    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc223/tasks/abc223_f\"\n\n\
     #include \"library/cpp/Tree/SegmentTree.hpp\"\n#include <iostream>\n\nusing namespace\
     \ std;\n\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n    string S;\n    cin >> S;\n\n    SegmentTree<tuple<uint_fast64_t,\
-    \ long long, int>, rh_op, rh_unit> st1(N), st2(N);\n    for (int i = 0; i < N;\
-    \ ++i) {\n        st1.update(i, {S[i] - 'a', base, P});\n        st2.update(i,\
-    \ {S[N - 1 - i] - 'a', base, P});\n    }\n\n    for (int i = 0; i < Q; ++i) {\n\
-    \        int T;\n        cin >> T;\n        if (T == 1) {\n            int X;\n\
-    \            char C;\n            cin >> X >> C;\n            X--;\n         \
-    \   C -= 'a';\n            st1.update(X, {C, base, P});\n            st2.update(N\
-    \ - 1 - X, {C, base, P});\n        } else {\n            int L, R;\n         \
-    \   cin >> L >> R;\n            L--;\n            R--;\n            auto [h0,\
-    \ x0, p0] = st1.query(L, R + 1);\n            auto [h1, x1, p1] = st2.query(N\
-    \ - (R + 1), N - L);\n            if (h0 == h1) {\n                cout << \"\
-    Yes\" << endl;\n            } else {\n                cout << \"No\" << endl;\n\
-    \            }\n        }\n    }\n\n    return 0;\n}"
+    \n    int N, Q;\n    string S;\n    cin >> N >> Q;\n    cin >> S;\n\n    vector<pair<int,\
+    \ int>> v(N);\n\n    for (int i = 0; i < N; ++i) {\n        if (S[i] == '(') {\n\
+    \            v[i] = parenthesis_left;\n        } else {\n            v[i] = parenthesis_right;\n\
+    \        }\n    }\n\n    SegmentTree<pair<int, int>, parenthesis_op, parenthesis_unit>\
+    \ st(N);\n    for (int i = 0; i < N; ++i) {\n        st.update(i, v[i]);\n   \
+    \ }\n\n    for (int i = 0; i < Q; ++i) {\n        int T, L, R;\n        cin >>\
+    \ T >> L >> R;\n        L--;\n        R--;\n        if (T == 1) {\n          \
+    \  swap(v[L], v[R]);\n            st.update(L, v[L]);\n            st.update(R,\
+    \ v[R]);\n        } else {\n            auto [t, m] = st.query(L, R + 1);\n  \
+    \          if (t == 0 and m == 0) {\n                cout << \"Yes\" << endl;\n\
+    \            } else {\n                cout << \"No\" << endl;\n            }\n\
+    \        }\n    }\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Tree/SegmentTree.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+  path: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
   requiredBy: []
-  timestamp: '2024-01-27 20:34:11+09:00'
+  timestamp: '2024-01-28 22:17:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+documentation_of: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
-- /verify/test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp.html
-title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+- /verify/test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
+- /verify/test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp.html
+title: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
 ---

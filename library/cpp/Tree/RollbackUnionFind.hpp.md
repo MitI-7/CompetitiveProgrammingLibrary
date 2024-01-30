@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/RollbackUnionFind1.test.cpp
     title: test/cpp/Tree/RollbackUnionFind1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Tree/RollbackUnionFind2.test.cpp
+    title: test/cpp/Tree/RollbackUnionFind2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -36,18 +39,19 @@ data:
     \u3059\u308B\u96C6\u5408\u306E leader \u3092\u53D6\u5F97\n    // O(log n)\n  \
     \  int leader(const int u) {\n        return this->find_root(u);\n    }\n\n  \
     \  // \u76F4\u524D\u306B\u884C\u3063\u305F unite \u64CD\u4F5C\u3092\u53D6\u308A\
-    \u6D88\u3059\n    // O(1)\n    void undo() {\n        assert(not this->history.empty());\n\
+    \u6D88\u3059\n    // \u53D6\u308A\u6D88\u3057\u305F (u, v) \u3092\u8FD4\u3059\n\
+    \    // O(1)\n    std::pair<int, int> undo() {\n        assert(not this->history.empty());\n\
     \n        const auto [u, u_p, v, v_p, s] = history.top();\n        this->history.pop();\n\
     \        this->parent[u] = u_p;\n        this->parent[v] = v_p;\n        this->set_size\
-    \ = s;\n    }\n\n    // \u73FE\u5728\u306E\u72B6\u614B\u3092\u4FDD\u5B58\n   \
-    \ // undo \u3092\u3088\u3093\u3067\uFF0Csnapshot \u3092\u547C\u3073\u51FA\u3057\
-    \u305F\u72B6\u614B\u3088\u308A\u524D\u306B\u623B\u3063\u305F\u3068\u304D\uFF0C\
-    \u610F\u5473\u306E\u306A\u3044\u72B6\u614B\u306B\u306A\u308B\u3053\u3068\u306B\
-    \u6CE8\u610F\n    // O(1)\n    void snapshot() {\n        this->snap_no = this->get_snap_no();\n\
-    \    }\n\n    int get_snap_no() {\n        return int(history.size());\n    }\n\
-    \n    // snapshot \u3092\u64AE\u3063\u305F\u72B6\u614B\u306B\u623B\u3059\n   \
-    \ // num \u3092\u6307\u5B9A\u3057\u305F\u5834\u5408\uFF0Cunite \u95A2\u6570\u3092\
-    \ num \u56DE\u547C\u3073\u51FA\u3057\u305F\u6642\u306E\u72B6\u614B\u306B\u623B\
+    \ = s;\n\n        return {u, v};\n    }\n\n    // \u73FE\u5728\u306E\u72B6\u614B\
+    \u3092\u4FDD\u5B58\n    // undo \u3092\u3088\u3093\u3067\uFF0Csnapshot \u3092\u547C\
+    \u3073\u51FA\u3057\u305F\u72B6\u614B\u3088\u308A\u524D\u306B\u623B\u3063\u305F\
+    \u3068\u304D\uFF0C\u610F\u5473\u306E\u306A\u3044\u72B6\u614B\u306B\u306A\u308B\
+    \u3053\u3068\u306B\u6CE8\u610F\n    // O(1)\n    void snapshot() {\n        this->snap_no\
+    \ = this->get_snap_no();\n    }\n\n    int get_snap_no() {\n        return int(history.size());\n\
+    \    }\n\n    // snapshot \u3092\u64AE\u3063\u305F\u72B6\u614B\u306B\u623B\u3059\
+    \n    // num \u3092\u6307\u5B9A\u3057\u305F\u5834\u5408\uFF0Cunite \u95A2\u6570\
+    \u3092 num \u56DE\u547C\u3073\u51FA\u3057\u305F\u6642\u306E\u72B6\u614B\u306B\u623B\
     \u3059\n    // O(\u623B\u3059\u56DE\u6570)\n    void rollback(int num = -1) {\n\
     \        if (num == -1) {\n            num = this->snap_no;\n        }\n     \
     \   while (num < int(this->history.size())) {\n            this->undo();\n   \
@@ -79,18 +83,19 @@ data:
     \u3059\u308B\u96C6\u5408\u306E leader \u3092\u53D6\u5F97\n    // O(log n)\n  \
     \  int leader(const int u) {\n        return this->find_root(u);\n    }\n\n  \
     \  // \u76F4\u524D\u306B\u884C\u3063\u305F unite \u64CD\u4F5C\u3092\u53D6\u308A\
-    \u6D88\u3059\n    // O(1)\n    void undo() {\n        assert(not this->history.empty());\n\
+    \u6D88\u3059\n    // \u53D6\u308A\u6D88\u3057\u305F (u, v) \u3092\u8FD4\u3059\n\
+    \    // O(1)\n    std::pair<int, int> undo() {\n        assert(not this->history.empty());\n\
     \n        const auto [u, u_p, v, v_p, s] = history.top();\n        this->history.pop();\n\
     \        this->parent[u] = u_p;\n        this->parent[v] = v_p;\n        this->set_size\
-    \ = s;\n    }\n\n    // \u73FE\u5728\u306E\u72B6\u614B\u3092\u4FDD\u5B58\n   \
-    \ // undo \u3092\u3088\u3093\u3067\uFF0Csnapshot \u3092\u547C\u3073\u51FA\u3057\
-    \u305F\u72B6\u614B\u3088\u308A\u524D\u306B\u623B\u3063\u305F\u3068\u304D\uFF0C\
-    \u610F\u5473\u306E\u306A\u3044\u72B6\u614B\u306B\u306A\u308B\u3053\u3068\u306B\
-    \u6CE8\u610F\n    // O(1)\n    void snapshot() {\n        this->snap_no = this->get_snap_no();\n\
-    \    }\n\n    int get_snap_no() {\n        return int(history.size());\n    }\n\
-    \n    // snapshot \u3092\u64AE\u3063\u305F\u72B6\u614B\u306B\u623B\u3059\n   \
-    \ // num \u3092\u6307\u5B9A\u3057\u305F\u5834\u5408\uFF0Cunite \u95A2\u6570\u3092\
-    \ num \u56DE\u547C\u3073\u51FA\u3057\u305F\u6642\u306E\u72B6\u614B\u306B\u623B\
+    \ = s;\n\n        return {u, v};\n    }\n\n    // \u73FE\u5728\u306E\u72B6\u614B\
+    \u3092\u4FDD\u5B58\n    // undo \u3092\u3088\u3093\u3067\uFF0Csnapshot \u3092\u547C\
+    \u3073\u51FA\u3057\u305F\u72B6\u614B\u3088\u308A\u524D\u306B\u623B\u3063\u305F\
+    \u3068\u304D\uFF0C\u610F\u5473\u306E\u306A\u3044\u72B6\u614B\u306B\u306A\u308B\
+    \u3053\u3068\u306B\u6CE8\u610F\n    // O(1)\n    void snapshot() {\n        this->snap_no\
+    \ = this->get_snap_no();\n    }\n\n    int get_snap_no() {\n        return int(history.size());\n\
+    \    }\n\n    // snapshot \u3092\u64AE\u3063\u305F\u72B6\u614B\u306B\u623B\u3059\
+    \n    // num \u3092\u6307\u5B9A\u3057\u305F\u5834\u5408\uFF0Cunite \u95A2\u6570\
+    \u3092 num \u56DE\u547C\u3073\u51FA\u3057\u305F\u6642\u306E\u72B6\u614B\u306B\u623B\
     \u3059\n    // O(\u623B\u3059\u56DE\u6570)\n    void rollback(int num = -1) {\n\
     \        if (num == -1) {\n            num = this->snap_no;\n        }\n     \
     \   while (num < int(this->history.size())) {\n            this->undo();\n   \
@@ -106,6 +111,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/RollbackUnionFind1.test.cpp
+  - test/cpp/Tree/RollbackUnionFind2.test.cpp
 documentation_of: library/cpp/Tree/RollbackUnionFind.hpp
 layout: document
 redirect_from:

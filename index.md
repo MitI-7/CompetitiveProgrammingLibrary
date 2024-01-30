@@ -146,10 +146,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/SegmentTree.hpp
       title: library/cpp/Tree/SegmentTree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/UnionFind.hpp
       title: library/cpp/Tree/UnionFind.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/WeightedUnionFind.hpp
       title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
@@ -231,6 +231,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Point1_rotate.test.cpp
       title: test/cpp/Geometry/Point1_rotate.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Point2.test.cpp
+      title: test/cpp/Geometry/Point2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Polygon1_area.test.cpp
       title: test/cpp/Geometry/Polygon1_area.test.cpp
@@ -354,6 +357,9 @@ data:
       path: test/cpp/Tree/RollbackUnionFind1.test.cpp
       title: test/cpp/Tree/RollbackUnionFind1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/RollbackUnionFind2.test.cpp
+      title: test/cpp/Tree/RollbackUnionFind2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -368,19 +374,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
       title: test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
+      title: test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/UnionFind1.test.cpp
       title: test/cpp/Tree/UnionFind1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/UnionFind2_group.test.cpp
       title: test/cpp/Tree/UnionFind2_group.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/WeightedUnionFind1.test.cpp
       title: test/cpp/Tree/WeightedUnionFind1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/WeightedUnionFind2.test.cpp
       title: test/cpp/Tree/WeightedUnionFind2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/WeightedUnionFind3.test.cpp
       title: test/cpp/Tree/WeightedUnionFind3.test.cpp
   - name: test/python/String

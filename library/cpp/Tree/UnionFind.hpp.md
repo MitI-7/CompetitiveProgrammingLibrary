@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Graph/kruskal1.test.cpp
     title: test/cpp/Graph/kruskal1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/UnionFind1.test.cpp
     title: test/cpp/Tree/UnionFind1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/UnionFind2_group.test.cpp
     title: test/cpp/Tree/UnionFind2_group.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/UnionFind.hpp\"\n#include <numeric>\n#include\
@@ -91,7 +91,7 @@ data:
   requiredBy:
   - library/cpp/Graph/kruskal.cpp
   timestamp: '2023-05-15 18:21:43+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/UnionFind1.test.cpp
   - test/cpp/Tree/UnionFind2_group.test.cpp

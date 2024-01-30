@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/WeightedUnionFind1.test.cpp
     title: test/cpp/Tree/WeightedUnionFind1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/WeightedUnionFind2.test.cpp
     title: test/cpp/Tree/WeightedUnionFind2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/WeightedUnionFind3.test.cpp
     title: test/cpp/Tree/WeightedUnionFind3.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/WeightedUnionFind.hpp\"\n#include <cassert>\n\
@@ -85,7 +85,7 @@ data:
   path: library/cpp/Tree/WeightedUnionFind.hpp
   requiredBy: []
   timestamp: '2024-01-27 12:52:09+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/WeightedUnionFind2.test.cpp
   - test/cpp/Tree/WeightedUnionFind3.test.cpp
