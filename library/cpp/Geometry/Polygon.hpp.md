@@ -112,9 +112,9 @@ data:
   timestamp: '2024-01-20 16:46:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Geometry/Polygon3_is_convex.test.cpp
   - test/cpp/Geometry/Polygon2_area.test.cpp
   - test/cpp/Geometry/Polygon1_area.test.cpp
+  - test/cpp/Geometry/Polygon3_is_convex.test.cpp
 documentation_of: library/cpp/Geometry/Polygon.hpp
 layout: document
 redirect_from:

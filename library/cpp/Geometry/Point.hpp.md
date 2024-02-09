@@ -3,9 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: library/cpp/Geometry/Line.hpp
+    title: library/cpp/Geometry/Line.hpp
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Geometry/Polygon.hpp
     title: library/cpp/Geometry/Polygon.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Geometry/Line1_is_parallel.test.cpp
+    title: test/cpp/Geometry/Line1_is_parallel.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Geometry/Line2_is_intersection.test.cpp
+    title: test/cpp/Geometry/Line2_is_intersection.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Geometry/Line3_oline.test.cpp
+    title: test/cpp/Geometry/Line3_oline.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Geometry/Line4_slope.test.cpp
+    title: test/cpp/Geometry/Line4_slope.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/cpp/Geometry/Point1_rotate.test.cpp
     title: test/cpp/Geometry/Point1_rotate.test.cpp
@@ -109,15 +124,20 @@ data:
   isVerificationFile: false
   path: library/cpp/Geometry/Point.hpp
   requiredBy:
+  - library/cpp/Geometry/Line.hpp
   - library/cpp/Geometry/Polygon.hpp
   timestamp: '2024-01-20 16:45:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Geometry/Polygon3_is_convex.test.cpp
-  - test/cpp/Geometry/Polygon2_area.test.cpp
   - test/cpp/Geometry/Point1_rotate.test.cpp
-  - test/cpp/Geometry/Point2.test.cpp
+  - test/cpp/Geometry/Polygon2_area.test.cpp
+  - test/cpp/Geometry/Line3_oline.test.cpp
   - test/cpp/Geometry/Polygon1_area.test.cpp
+  - test/cpp/Geometry/Line2_is_intersection.test.cpp
+  - test/cpp/Geometry/Line4_slope.test.cpp
+  - test/cpp/Geometry/Point2.test.cpp
+  - test/cpp/Geometry/Line1_is_parallel.test.cpp
+  - test/cpp/Geometry/Polygon3_is_convex.test.cpp
 documentation_of: library/cpp/Geometry/Point.hpp
 layout: document
 redirect_from:

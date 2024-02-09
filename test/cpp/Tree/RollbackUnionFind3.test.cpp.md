@@ -6,16 +6,16 @@ data:
     title: library/cpp/Tree/RollbackUnionFind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://atcoder.jp/contests/abc120/tasks/abc120_d
+    PROBLEM: https://atcoder.jp/contests/abc264/tasks/abc264_e
     links:
-    - https://atcoder.jp/contests/abc120/tasks/abc120_d
-  bundledCode: "#line 1 \"test/cpp/Tree/RollbackUnionFind2.test.cpp\"\n#define PROBLEM\
-    \ \"https://atcoder.jp/contests/abc120/tasks/abc120_d\"\n\n#line 1 \"library/cpp/Tree/RollbackUnionFind.hpp\"\
+    - https://atcoder.jp/contests/abc264/tasks/abc264_e
+  bundledCode: "#line 1 \"test/cpp/Tree/RollbackUnionFind3.test.cpp\"\n#define PROBLEM\
+    \ \"https://atcoder.jp/contests/abc264/tasks/abc264_e\"\n\n#line 1 \"library/cpp/Tree/RollbackUnionFind.hpp\"\
     \n#include <cassert>\n#include <stack>\n#include <tuple>\n#include <vector>\n\n\
     class RollbackUnionFind {\npublic:\n    int set_size;   // \u96C6\u5408\u306E\u500B\
     \u6570\n\nprivate:\n    std::vector<int> parent;\n    std::stack<std::tuple<int,\
@@ -60,39 +60,51 @@ data:
     \  // O(log n)\n    int find_root(int u) {\n        if (this->parent[u] < 0) {\n\
     \            return u;\n        }\n        // \u7D4C\u8DEF\u5727\u7E2E\u306F\u3057\
     \u306A\u3044\n        return this->find_root(this->parent[u]);\n    }\n};\n#line\
-    \ 4 \"test/cpp/Tree/RollbackUnionFind2.test.cpp\"\n#include <iostream>\n\nusing\
+    \ 4 \"test/cpp/Tree/RollbackUnionFind3.test.cpp\"\n#include <iostream>\n\nusing\
     \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, M;\n    cin >> N >> M;\n\n    vector<pair<int, int>> vec(M);\n  \
-    \  for (int i = 0; i < M; ++i) {\n        cin >> vec[i].first >> vec[i].second;\n\
-    \        vec[i].first--;\n        vec[i].second--;\n    }\n    reverse(vec.begin(),\
-    \ vec.end());\n\n    RollbackUnionFind ruf(N);\n    for (auto [u, v]: vec) {\n\
-    \        ruf.unite(u, v);\n    }\n\n    long long ans = 0;\n    for (int i = 0;\
-    \ i < M; ++i) {\n        auto [u, v] = ruf.undo();\n        if (not ruf.is_same_set(u,\
-    \ v)) {\n            ans += ruf.size(u) * ruf.size(v);\n        }\n        cout\
-    \ << ans << endl;\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://atcoder.jp/contests/abc120/tasks/abc120_d\"\n\n\
+    \n    int N, M, E;\n    cin >> N >> M >> E;\n\n    vector<pair<int, int>> vec(E);\n\
+    \    for (int i = 0; i < E; ++i) {\n        int U, V;\n        cin >> U >> V;\n\
+    \        U--;\n        V--;\n        U = min(U, N);\n        V = min(V, N);\n\
+    \        vec[i] = {U, V};\n    }\n\n    int Q;\n    cin >> Q;\n    vector<int>\
+    \ X(Q);\n    vector<bool> exist(E, true);    // \u96FB\u7DDA\u304C\u5207\u65AD\
+    \u3055\u308C\u308B\u304B\u3069\u3046\u304B\n    for (int i = 0; i < Q; ++i) {\n\
+    \        cin >> X[i];\n        X[i]--;\n        exist[X[i]] = false;\n    }\n\n\
+    \    RollbackUnionFind ruf(N + 1);\n    // \u5207\u65AD\u3055\u308C\u306A\u3044\
+    \u96FB\u7DDA\u3092\u3064\u306A\u3052\u3066\u304A\u304F\n    for (int i = 0; i\
+    \ < E; ++i) {\n        if (exist[i]) {\n            auto [u, v] = vec[i];\n  \
+    \          ruf.unite(u, v);\n        }\n    }\n\n    reverse(X.begin(), X.end());\n\
+    \    for (auto x: X) {\n        auto [u, v] = vec[x];\n        ruf.unite(u, v);\n\
+    \    }\n\n    for (int i = 0; i < Q; ++i) {\n        ruf.undo();\n        cout\
+    \ << ruf.size(N) - 1 << endl;\n    }\n    \n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc264/tasks/abc264_e\"\n\n\
     #include \"library/cpp/Tree/RollbackUnionFind.hpp\"\n#include <iostream>\n\nusing\
     \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, M;\n    cin >> N >> M;\n\n    vector<pair<int, int>> vec(M);\n  \
-    \  for (int i = 0; i < M; ++i) {\n        cin >> vec[i].first >> vec[i].second;\n\
-    \        vec[i].first--;\n        vec[i].second--;\n    }\n    reverse(vec.begin(),\
-    \ vec.end());\n\n    RollbackUnionFind ruf(N);\n    for (auto [u, v]: vec) {\n\
-    \        ruf.unite(u, v);\n    }\n\n    long long ans = 0;\n    for (int i = 0;\
-    \ i < M; ++i) {\n        auto [u, v] = ruf.undo();\n        if (not ruf.is_same_set(u,\
-    \ v)) {\n            ans += ruf.size(u) * ruf.size(v);\n        }\n        cout\
-    \ << ans << endl;\n    }\n\n    return 0;\n}"
+    \n    int N, M, E;\n    cin >> N >> M >> E;\n\n    vector<pair<int, int>> vec(E);\n\
+    \    for (int i = 0; i < E; ++i) {\n        int U, V;\n        cin >> U >> V;\n\
+    \        U--;\n        V--;\n        U = min(U, N);\n        V = min(V, N);\n\
+    \        vec[i] = {U, V};\n    }\n\n    int Q;\n    cin >> Q;\n    vector<int>\
+    \ X(Q);\n    vector<bool> exist(E, true);    // \u96FB\u7DDA\u304C\u5207\u65AD\
+    \u3055\u308C\u308B\u304B\u3069\u3046\u304B\n    for (int i = 0; i < Q; ++i) {\n\
+    \        cin >> X[i];\n        X[i]--;\n        exist[X[i]] = false;\n    }\n\n\
+    \    RollbackUnionFind ruf(N + 1);\n    // \u5207\u65AD\u3055\u308C\u306A\u3044\
+    \u96FB\u7DDA\u3092\u3064\u306A\u3052\u3066\u304A\u304F\n    for (int i = 0; i\
+    \ < E; ++i) {\n        if (exist[i]) {\n            auto [u, v] = vec[i];\n  \
+    \          ruf.unite(u, v);\n        }\n    }\n\n    reverse(X.begin(), X.end());\n\
+    \    for (auto x: X) {\n        auto [u, v] = vec[x];\n        ruf.unite(u, v);\n\
+    \    }\n\n    for (int i = 0; i < Q; ++i) {\n        ruf.undo();\n        cout\
+    \ << ruf.size(N) - 1 << endl;\n    }\n    \n    return 0;\n}"
   dependsOn:
   - library/cpp/Tree/RollbackUnionFind.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/RollbackUnionFind2.test.cpp
+  path: test/cpp/Tree/RollbackUnionFind3.test.cpp
   requiredBy: []
-  timestamp: '2024-01-29 12:25:23+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-02-05 16:09:31+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/cpp/Tree/RollbackUnionFind2.test.cpp
+documentation_of: test/cpp/Tree/RollbackUnionFind3.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/RollbackUnionFind2.test.cpp
-- /verify/test/cpp/Tree/RollbackUnionFind2.test.cpp.html
-title: test/cpp/Tree/RollbackUnionFind2.test.cpp
+- /verify/test/cpp/Tree/RollbackUnionFind3.test.cpp
+- /verify/test/cpp/Tree/RollbackUnionFind3.test.cpp.html
+title: test/cpp/Tree/RollbackUnionFind3.test.cpp
 ---

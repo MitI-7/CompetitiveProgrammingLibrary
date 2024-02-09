@@ -9,9 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/RollbackUnionFind2.test.cpp
     title: test/cpp/Tree/RollbackUnionFind2.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/cpp/Tree/RollbackUnionFind3.test.cpp
+    title: test/cpp/Tree/RollbackUnionFind3.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/RollbackUnionFind.hpp\"\n#include <cassert>\n\
@@ -108,8 +111,9 @@ data:
   path: library/cpp/Tree/RollbackUnionFind.hpp
   requiredBy: []
   timestamp: '2024-01-20 16:38:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/cpp/Tree/RollbackUnionFind3.test.cpp
   - test/cpp/Tree/RollbackUnionFind1.test.cpp
   - test/cpp/Tree/RollbackUnionFind2.test.cpp
 documentation_of: library/cpp/Tree/RollbackUnionFind.hpp

@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
     title: test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Range/StaticRangeFrequency3_range_count.test.cpp
+    title: test/cpp/Range/StaticRangeFrequency3_range_count.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -67,6 +70,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Range/StaticRangeFrequency1_range_count.test.cpp
+  - test/cpp/Range/StaticRangeFrequency3_range_count.test.cpp
   - test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
 documentation_of: library/cpp/Range/StaticRangeFrequency.hpp
 layout: document

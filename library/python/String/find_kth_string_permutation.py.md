@@ -7,6 +7,9 @@ data:
     path: test/python/String/find_kth_string_permutation1.test.py
     title: test/python/String/find_kth_string_permutation1.test.py
   - icon: ':x:'
+    path: test/python/String/find_kth_string_permutation2.test.py
+    title: test/python/String/find_kth_string_permutation2.test.py
+  - icon: ':x:'
     path: test/python/String/find_string_no_permutation1.test.py
     title: test/python/String/find_string_no_permutation1.test.py
   _isVerificationFailed: true
@@ -45,6 +48,7 @@ data:
   timestamp: '2024-01-28 14:26:24+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/python/String/find_kth_string_permutation2.test.py
   - test/python/String/find_string_no_permutation1.test.py
   - test/python/String/find_kth_string_permutation1.test.py
 documentation_of: library/python/String/find_kth_string_permutation.py

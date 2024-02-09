@@ -37,6 +37,9 @@ data:
   - name: library/cpp/Geometry
     pages:
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Geometry/Line.hpp
+      title: library/cpp/Geometry/Line.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Geometry/Point.hpp
       title: library/cpp/Geometry/Point.hpp
     - icon: ':heavy_check_mark:'
@@ -45,6 +48,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Geometry/SmallestEnclosingCircle.hpp
       title: library/cpp/Geometry/SmallestEnclosingCircle.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Geometry/sort_clockwise_polygon_points.cpp
+      title: library/cpp/Geometry/sort_clockwise_polygon_points.cpp
   - name: library/cpp/Graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -71,6 +77,9 @@ data:
       path: library/cpp/Math/Fraction.hpp
       title: library/cpp/Math/Fraction.hpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Math/LinearExpression.hpp
+      title: library/cpp/Math/LinearExpression.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
     - icon: ':heavy_check_mark:'
@@ -91,6 +100,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/make_divisor_list.cpp
       title: library/cpp/Math/make_divisor_list.cpp
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Math/make_divisor_list_in_list.cpp
+      title: library/cpp/Math/make_divisor_list_in_list.cpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/Math/pow_mod.cpp
       title: library/cpp/Math/pow_mod.cpp
@@ -140,7 +152,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/FenwickTreeRange.hpp
       title: library/cpp/Tree/FenwickTreeRange.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
+      path: library/cpp/Tree/ReRooting.hpp
+      title: library/cpp/Tree/ReRooting.hpp
+    - icon: ':question:'
       path: library/cpp/Tree/RollbackUnionFind.hpp
       title: library/cpp/Tree/RollbackUnionFind.hpp
     - icon: ':heavy_check_mark:'
@@ -154,6 +169,9 @@ data:
       title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
     pages:
+    - icon: ':x:'
+      path: library/cpp/Utility/is_range_overlap.cpp
+      title: library/cpp/Utility/is_range_overlap.cpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/Utility/mint.hpp
       title: library/cpp/Utility/mint.hpp
@@ -204,6 +222,9 @@ data:
   - name: test/cpp/Compression
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Compression/CoordinateCompression1.test.cpp
+      title: test/cpp/Compression/CoordinateCompression1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Compression/run_length_encoding1.test.cpp
       title: test/cpp/Compression/run_length_encoding1.test.cpp
   - name: test/cpp/DataStructure
@@ -229,6 +250,18 @@ data:
   - name: test/cpp/Geometry
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Line1_is_parallel.test.cpp
+      title: test/cpp/Geometry/Line1_is_parallel.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Line2_is_intersection.test.cpp
+      title: test/cpp/Geometry/Line2_is_intersection.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Line3_oline.test.cpp
+      title: test/cpp/Geometry/Line3_oline.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Line4_slope.test.cpp
+      title: test/cpp/Geometry/Line4_slope.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Point1_rotate.test.cpp
       title: test/cpp/Geometry/Point1_rotate.test.cpp
     - icon: ':heavy_check_mark:'
@@ -246,6 +279,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
       title: test/cpp/Geometry/SmallestEnclosingCircle1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/sort_clockwise_polygon_points1.test.cpp
+      title: test/cpp/Geometry/sort_clockwise_polygon_points1.test.cpp
   - name: test/cpp/Graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -278,6 +314,9 @@ data:
       path: test/cpp/Math/Fraction1.test.cpp
       title: test/cpp/Math/Fraction1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Math/LinearExpression1.test.cpp
+      title: test/cpp/Math/LinearExpression1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -299,6 +338,9 @@ data:
       path: test/cpp/Math/make_divisor_list1.test.cpp
       title: test/cpp/Math/make_divisor_list1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Math/make_divisor_list_in_list1.test.cpp
+      title: test/cpp/Math/make_divisor_list_in_list1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Math/pow_mod1.test.cpp
       title: test/cpp/Math/pow_mod1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -318,6 +360,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
       title: test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Range/StaticRangeFrequency3_range_count.test.cpp
+      title: test/cpp/Range/StaticRangeFrequency3_range_count.test.cpp
   - name: test/cpp/ShortestPath
     pages:
     - icon: ':heavy_check_mark:'
@@ -354,11 +399,23 @@ data:
       path: test/cpp/Tree/FenwickTreeRange2.test.cpp
       title: test/cpp/Tree/FenwickTreeRange2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/ReRooting1.test.cpp
+      title: test/cpp/Tree/ReRooting1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/ReRooting2.test.cpp
+      title: test/cpp/Tree/ReRooting2.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/ReRooting3.test.cpp
+      title: test/cpp/Tree/ReRooting3.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind1.test.cpp
       title: test/cpp/Tree/RollbackUnionFind1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind2.test.cpp
       title: test/cpp/Tree/RollbackUnionFind2.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/RollbackUnionFind3.test.cpp
+      title: test/cpp/Tree/RollbackUnionFind3.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
@@ -392,11 +449,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/WeightedUnionFind3.test.cpp
       title: test/cpp/Tree/WeightedUnionFind3.test.cpp
+  - name: test/cpp/Utility
+    pages:
+    - icon: ':x:'
+      path: test/cpp/Utility/is_range_overlap1.test.cpp
+      title: test/cpp/Utility/is_range_overlap1.test.cpp
   - name: test/python/String
     pages:
     - icon: ':x:'
       path: test/python/String/find_kth_string_permutation1.test.py
       title: test/python/String/find_kth_string_permutation1.test.py
+    - icon: ':x:'
+      path: test/python/String/find_kth_string_permutation2.test.py
+      title: test/python/String/find_kth_string_permutation2.test.py
     - icon: ':x:'
       path: test/python/String/find_string_no_permutation1.test.py
       title: test/python/String/find_string_no_permutation1.test.py

@@ -154,12 +154,12 @@ data:
   timestamp: '2024-01-27 12:23:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
-  - test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
   - test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
-  - test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
+  - test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
   - test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
   - test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
+  - test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+  - test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
 documentation_of: library/cpp/Tree/SegmentTree.hpp
 layout: document
 redirect_from:
