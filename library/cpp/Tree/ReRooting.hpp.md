@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/ReRooting2.test.cpp
     title: test/cpp/Tree/ReRooting2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/ReRooting3.test.cpp
     title: test/cpp/Tree/ReRooting3.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/ReRooting.hpp\"\n#include <cassert>\n#include\
@@ -173,7 +173,7 @@ data:
   path: library/cpp/Tree/ReRooting.hpp
   requiredBy: []
   timestamp: '2024-02-05 18:56:56+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/ReRooting1.test.cpp
   - test/cpp/Tree/ReRooting3.test.cpp

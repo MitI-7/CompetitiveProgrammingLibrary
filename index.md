@@ -152,7 +152,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/FenwickTreeRange.hpp
       title: library/cpp/Tree/FenwickTreeRange.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/ReRooting.hpp
       title: library/cpp/Tree/ReRooting.hpp
     - icon: ':question:'
@@ -404,7 +404,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/ReRooting2.test.cpp
       title: test/cpp/Tree/ReRooting2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/ReRooting3.test.cpp
       title: test/cpp/Tree/ReRooting3.test.cpp
     - icon: ':heavy_check_mark:'
