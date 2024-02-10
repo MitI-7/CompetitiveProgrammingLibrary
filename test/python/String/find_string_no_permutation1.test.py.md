@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/python/String/find_kth_string_permutation.py
     title: library/python/String/find_kth_string_permutation.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/python/String/find_string_no_permutation.py
     title: library/python/String/find_string_no_permutation.py
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc276/tasks/abc276_c
     links:
@@ -29,13 +29,13 @@ data:
     \n    k = find_string_no_permutation_no(P)\n    print(*find_kth_string_permutation(k\
     \ - 1, P))\n\n\nif __name__ == '__main__':\n    main()\n"
   dependsOn:
-  - library/python/String/find_string_no_permutation.py
   - library/python/String/find_kth_string_permutation.py
+  - library/python/String/find_string_no_permutation.py
   isVerificationFile: true
   path: test/python/String/find_string_no_permutation1.test.py
   requiredBy: []
   timestamp: '2024-01-28 14:27:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/python/String/find_string_no_permutation1.test.py
 layout: document

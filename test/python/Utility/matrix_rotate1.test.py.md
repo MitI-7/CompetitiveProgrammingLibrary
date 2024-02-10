@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/python/Utility/matrix_rotate.py
     title: library/python/Utility/matrix_rotate.py
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc298/tasks/abc298_b
     links:
@@ -34,7 +34,7 @@ data:
   path: test/python/Utility/matrix_rotate1.test.py
   requiredBy: []
   timestamp: '2024-01-20 16:47:44+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/python/Utility/matrix_rotate1.test.py
 layout: document

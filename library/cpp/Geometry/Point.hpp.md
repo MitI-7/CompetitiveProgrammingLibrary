@@ -22,6 +22,12 @@ data:
     path: test/cpp/Geometry/Line4_slope.test.cpp
     title: test/cpp/Geometry/Line4_slope.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/cpp/Geometry/Line5_slope.test.cpp
+    title: test/cpp/Geometry/Line5_slope.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Geometry/Line6_online.test.cpp
+    title: test/cpp/Geometry/Line6_online.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Geometry/Point1_rotate.test.cpp
     title: test/cpp/Geometry/Point1_rotate.test.cpp
   - icon: ':heavy_check_mark:'
@@ -130,8 +136,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Geometry/Point1_rotate.test.cpp
+  - test/cpp/Geometry/Line6_online.test.cpp
   - test/cpp/Geometry/Polygon2_area.test.cpp
   - test/cpp/Geometry/Line3_oline.test.cpp
+  - test/cpp/Geometry/Line5_slope.test.cpp
   - test/cpp/Geometry/Polygon1_area.test.cpp
   - test/cpp/Geometry/Line2_is_intersection.test.cpp
   - test/cpp/Geometry/Line4_slope.test.cpp

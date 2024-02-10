@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/python/Utility/matrix_shift1.test.py
     title: test/python/Utility/matrix_shift1.test.py
   - icon: ':x:'
@@ -11,7 +11,7 @@ data:
     title: test/python/Utility/matrix_shift2.test.py
   _isVerificationFailed: true
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -37,7 +37,7 @@ data:
   path: library/python/Utility/matrix_shift.py
   requiredBy: []
   timestamp: '2024-01-20 16:48:30+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/python/Utility/matrix_shift1.test.py
   - test/python/Utility/matrix_shift2.test.py

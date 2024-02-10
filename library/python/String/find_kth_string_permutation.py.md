@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/python/String/find_kth_string_permutation1.test.py
     title: test/python/String/find_kth_string_permutation1.test.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/python/String/find_kth_string_permutation2.test.py
     title: test/python/String/find_kth_string_permutation2.test.py
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/python/String/find_string_no_permutation1.test.py
     title: test/python/String/find_string_no_permutation1.test.py
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -46,7 +46,7 @@ data:
   path: library/python/String/find_kth_string_permutation.py
   requiredBy: []
   timestamp: '2024-01-28 14:26:24+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/python/String/find_kth_string_permutation2.test.py
   - test/python/String/find_string_no_permutation1.test.py

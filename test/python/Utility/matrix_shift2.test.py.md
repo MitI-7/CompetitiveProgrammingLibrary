@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: library/python/Utility/matrix_shift.py
     title: library/python/Utility/matrix_shift.py
   _extendedRequiredBy: []

@@ -78,10 +78,10 @@ data:
     \ T get_total() const {\n        return this->total;\n    }\n\n    // \u30AB\u30D0\
     \u30FC\u306E\u96C6\u5408\u3092\u53D6\u5F97\u3059\u308B\n    std::set<std::pair<T,\
     \ T>> get_covers() const {\n        std::set<std::pair<T, T>> covers;\n      \
-    \  for (const auto [l, r]: this->range_set) {\n            if (l == this->INF\
+    \  for (const auto &[l, r]: this->range_set) {\n            if (l == this->INF\
     \ or l == -INF) {\n                continue;\n            }\n            covers.emplace(l,\
     \ r);\n        }\n        return covers;\n    }\n\n    void dump() const {\n \
-    \       for (auto [l, r]: this->range_set) {\n            if (l == -this->INF\
+    \       for (const auto &[l, r]: this->range_set) {\n            if (l == -this->INF\
     \ or l == this->INF) {\n                continue;\n            }\n           \
     \ std::cout << \"[\" << l << \",\" << r << \")\" << std::endl;\n        }\n  \
     \  }\n};\n"
@@ -151,10 +151,10 @@ data:
     \ T get_total() const {\n        return this->total;\n    }\n\n    // \u30AB\u30D0\
     \u30FC\u306E\u96C6\u5408\u3092\u53D6\u5F97\u3059\u308B\n    std::set<std::pair<T,\
     \ T>> get_covers() const {\n        std::set<std::pair<T, T>> covers;\n      \
-    \  for (const auto [l, r]: this->range_set) {\n            if (l == this->INF\
+    \  for (const auto &[l, r]: this->range_set) {\n            if (l == this->INF\
     \ or l == -INF) {\n                continue;\n            }\n            covers.emplace(l,\
     \ r);\n        }\n        return covers;\n    }\n\n    void dump() const {\n \
-    \       for (auto [l, r]: this->range_set) {\n            if (l == -this->INF\
+    \       for (const auto &[l, r]: this->range_set) {\n            if (l == -this->INF\
     \ or l == this->INF) {\n                continue;\n            }\n           \
     \ std::cout << \"[\" << l << \",\" << r << \")\" << std::endl;\n        }\n  \
     \  }\n};"

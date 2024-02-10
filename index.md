@@ -155,7 +155,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/ReRooting.hpp
       title: library/cpp/Tree/ReRooting.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/RollbackUnionFind.hpp
       title: library/cpp/Tree/RollbackUnionFind.hpp
     - icon: ':heavy_check_mark:'
@@ -169,7 +169,7 @@ data:
       title: library/cpp/Tree/WeightedUnionFind.hpp
   - name: library/cpp/Utility
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Utility/is_range_overlap.cpp
       title: library/cpp/Utility/is_range_overlap.cpp
     - icon: ':heavy_check_mark:'
@@ -177,18 +177,18 @@ data:
       title: library/cpp/Utility/mint.hpp
   - name: library/python/String
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/python/String/find_kth_string_permutation.py
       title: library/python/String/find_kth_string_permutation.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/python/String/find_string_no_permutation.py
       title: library/python/String/find_string_no_permutation.py
   - name: library/python/Utility
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/python/Utility/matrix_rotate.py
       title: library/python/Utility/matrix_rotate.py
-    - icon: ':x:'
+    - icon: ':question:'
       path: library/python/Utility/matrix_shift.py
       title: library/python/Utility/matrix_shift.py
     - icon: ':x:'
@@ -261,6 +261,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Line4_slope.test.cpp
       title: test/cpp/Geometry/Line4_slope.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Line5_slope.test.cpp
+      title: test/cpp/Geometry/Line5_slope.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Geometry/Line6_online.test.cpp
+      title: test/cpp/Geometry/Line6_online.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Geometry/Point1_rotate.test.cpp
       title: test/cpp/Geometry/Point1_rotate.test.cpp
@@ -413,7 +419,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind2.test.cpp
       title: test/cpp/Tree/RollbackUnionFind2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind3.test.cpp
       title: test/cpp/Tree/RollbackUnionFind3.test.cpp
     - icon: ':heavy_check_mark:'
@@ -451,26 +457,26 @@ data:
       title: test/cpp/Tree/WeightedUnionFind3.test.cpp
   - name: test/cpp/Utility
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Utility/is_range_overlap1.test.cpp
       title: test/cpp/Utility/is_range_overlap1.test.cpp
   - name: test/python/String
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/String/find_kth_string_permutation1.test.py
       title: test/python/String/find_kth_string_permutation1.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/String/find_kth_string_permutation2.test.py
       title: test/python/String/find_kth_string_permutation2.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/String/find_string_no_permutation1.test.py
       title: test/python/String/find_string_no_permutation1.test.py
   - name: test/python/Utility
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/Utility/matrix_rotate1.test.py
       title: test/python/Utility/matrix_rotate1.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/Utility/matrix_shift1.test.py
       title: test/python/Utility/matrix_shift1.test.py
     - icon: ':x:'

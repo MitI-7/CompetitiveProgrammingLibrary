@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/python/String/find_kth_string_permutation.py
     title: library/python/String/find_kth_string_permutation.py
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc215/tasks/abc215_c
     links:
@@ -29,7 +29,7 @@ data:
   path: test/python/String/find_kth_string_permutation2.test.py
   requiredBy: []
   timestamp: '2024-02-09 16:09:21+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/python/String/find_kth_string_permutation2.test.py
 layout: document

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Tree/RollbackUnionFind.hpp
     title: library/cpp/Tree/RollbackUnionFind.hpp
   - icon: ':heavy_check_mark:'

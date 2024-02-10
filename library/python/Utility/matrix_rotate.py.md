@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/python/Utility/matrix_rotate1.test.py
     title: test/python/Utility/matrix_rotate1.test.py
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -26,7 +26,7 @@ data:
   path: library/python/Utility/matrix_rotate.py
   requiredBy: []
   timestamp: '2024-01-20 16:47:38+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/python/Utility/matrix_rotate1.test.py
 documentation_of: library/python/Utility/matrix_rotate.py
