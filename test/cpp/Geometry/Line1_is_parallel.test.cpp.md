@@ -53,7 +53,7 @@ data:
     \ 4;\n        }\n    }\n\n    // \u504F\u89D2\u30BD\u30FC\u30C8\u7528(\u53CD\u6642\
     \u8A08\u56DE\u308A\u306B\u30BD\u30FC\u30C8)\n    // \u8AA4\u5DEE\u306B\u6CE8\u610F\
     \n    static bool radian_sort_cmp_key(const Point &l, const Point &r) {\n    \
-    \    return l.adian() < r.radian();\n    }\n\n    // xy\u3067\u30BD\u30FC\u30C8\
+    \    return l.adian() < r.radian();\n    }\n\n    // (x, y)\u3067\u30BD\u30FC\u30C8\
     \n    static bool xy_sort_cmp_key(const Point &l, const Point &r) {\n        if\
     \ (fabs(l.x - r.x) < 1e-10) {\n            return l.y < r.y;\n        }\n    \
     \    return l.x < r.x;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
@@ -111,16 +111,16 @@ data:
     \ // \u7AEF\u70B9\u3092\u542B\u307E\u306A\u3044\u3067\u4EA4\u308F\u308B\n    \
     \    // tc * td < 0 && ta * tb < 0\n        bool a = (ta != 0 and tb != 0 and\
     \ ((ta < 0) != (tb < 0)));\n        bool b = (tc != 0 and td != 0 and ((tc < 0)\
-    \ != (td < 0)));\n\n        return a and b;\n    }\n};\n#line 4 \"test/cpp/Geometry/Line1_is_parallel.test.cpp\"\
-    \n#include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
-    \    ios::sync_with_stdio(false);\n\n    int N;\n    cin >> N;\n    for (int t\
-    \ = 0; t < N; ++t) {\n        int x0, y0, x1, y1, x2, y2, x3, y3;\n        cin\
-    \ >> x0 >> y0 >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;\n        Line line1(Point(x0,\
-    \ y0), Point(x1, y1));\n        Line line2(Point(x2, y2), Point(x3, y3));\n\n\
-    \        if (line1.is_parallel(line2)) {\n            cout << 2 << endl;\n   \
-    \     }\n        else if (line1.is_orthogonal(line2)) {\n            cout << 1\
-    \ << endl;\n        }\n        else {\n            cout << 0 << endl;\n      \
-    \  }\n    }\n\n    return 0;\n}\n"
+    \ != (td < 0)));\n\n        return a and b;\n    }\n    \n    // \u4EA4\u70B9\n\
+    };\n#line 4 \"test/cpp/Geometry/Line1_is_parallel.test.cpp\"\n#include <iostream>\n\
+    \nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N;\n    cin >> N;\n    for (int t = 0; t < N; ++t) {\n        int x0,\
+    \ y0, x1, y1, x2, y2, x3, y3;\n        cin >> x0 >> y0 >> x1 >> y1 >> x2 >> y2\
+    \ >> x3 >> y3;\n        Line line1(Point(x0, y0), Point(x1, y1));\n        Line\
+    \ line2(Point(x2, y2), Point(x3, y3));\n\n        if (line1.is_parallel(line2))\
+    \ {\n            cout << 2 << endl;\n        }\n        else if (line1.is_orthogonal(line2))\
+    \ {\n            cout << 1 << endl;\n        }\n        else {\n            cout\
+    \ << 0 << endl;\n        }\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_2_A\"\
     \n\n#include \"library/cpp/Geometry/Line.hpp\"\n#include <iostream>\n\nusing namespace\
     \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\

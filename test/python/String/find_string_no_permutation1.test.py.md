@@ -29,8 +29,8 @@ data:
     \n    k = find_string_no_permutation_no(P)\n    print(*find_kth_string_permutation(k\
     \ - 1, P))\n\n\nif __name__ == '__main__':\n    main()\n"
   dependsOn:
-  - library/python/String/find_kth_string_permutation.py
   - library/python/String/find_string_no_permutation.py
+  - library/python/String/find_kth_string_permutation.py
   isVerificationFile: true
   path: test/python/String/find_string_no_permutation1.test.py
   requiredBy: []

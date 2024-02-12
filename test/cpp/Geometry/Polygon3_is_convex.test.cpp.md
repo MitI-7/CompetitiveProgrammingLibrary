@@ -54,7 +54,7 @@ data:
     \ 4;\n        }\n    }\n\n    // \u504F\u89D2\u30BD\u30FC\u30C8\u7528(\u53CD\u6642\
     \u8A08\u56DE\u308A\u306B\u30BD\u30FC\u30C8)\n    // \u8AA4\u5DEE\u306B\u6CE8\u610F\
     \n    static bool radian_sort_cmp_key(const Point &l, const Point &r) {\n    \
-    \    return l.adian() < r.radian();\n    }\n\n    // xy\u3067\u30BD\u30FC\u30C8\
+    \    return l.adian() < r.radian();\n    }\n\n    // (x, y)\u3067\u30BD\u30FC\u30C8\
     \n    static bool xy_sort_cmp_key(const Point &l, const Point &r) {\n        if\
     \ (fabs(l.x - r.x) < 1e-10) {\n            return l.y < r.y;\n        }\n    \
     \    return l.x < r.x;\n    }\n\n    friend std::ostream &operator<<(std::ostream\

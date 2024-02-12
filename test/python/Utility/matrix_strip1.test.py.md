@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: library/python/Utility/matrix_strip.py
     title: library/python/Utility/matrix_strip.py
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc307/tasks/abc307_c
     links:
@@ -43,7 +43,7 @@ data:
   path: test/python/Utility/matrix_strip1.test.py
   requiredBy: []
   timestamp: '2024-01-28 13:43:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/python/Utility/matrix_strip1.test.py
 layout: document

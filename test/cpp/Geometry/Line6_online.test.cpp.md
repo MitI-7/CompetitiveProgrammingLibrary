@@ -52,7 +52,7 @@ data:
     \ 0 ? 3 : 4;\n        }\n    }\n\n    // \u504F\u89D2\u30BD\u30FC\u30C8\u7528\
     (\u53CD\u6642\u8A08\u56DE\u308A\u306B\u30BD\u30FC\u30C8)\n    // \u8AA4\u5DEE\u306B\
     \u6CE8\u610F\n    static bool radian_sort_cmp_key(const Point &l, const Point\
-    \ &r) {\n        return l.adian() < r.radian();\n    }\n\n    // xy\u3067\u30BD\
+    \ &r) {\n        return l.adian() < r.radian();\n    }\n\n    // (x, y)\u3067\u30BD\
     \u30FC\u30C8\n    static bool xy_sort_cmp_key(const Point &l, const Point &r)\
     \ {\n        if (fabs(l.x - r.x) < 1e-10) {\n            return l.y < r.y;\n \
     \       }\n        return l.x < r.x;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
@@ -110,21 +110,21 @@ data:
     \ // \u7AEF\u70B9\u3092\u542B\u307E\u306A\u3044\u3067\u4EA4\u308F\u308B\n    \
     \    // tc * td < 0 && ta * tb < 0\n        bool a = (ta != 0 and tb != 0 and\
     \ ((ta < 0) != (tb < 0)));\n        bool b = (tc != 0 and td != 0 and ((tc < 0)\
-    \ != (td < 0)));\n\n        return a and b;\n    }\n};\n#line 4 \"test/cpp/Geometry/Line6_online.test.cpp\"\
-    \n#include <iostream>\n#include <set>\n#include <vector>\n\nusing namespace std;\n\
-    \nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n  \
-    \  int N, K;\n    cin >> N >> K;\n    vector<Point<long long>> A(N);\n    for\
-    \ (int i = 0; i < N; ++i) {\n        long long X, Y;\n        cin >> X >> Y;\n\
-    \        A[i] = Point(X, Y);\n    }\n\n    if (K == 1) {\n        cout << \"Infinity\"\
-    \ << endl;\n        return 0;\n    }\n\n    set<pair<pair<long long, long long>,\
-    \ pair<long long, long long>>> ans;\n    for (int i = 0; i < N; ++i) {\n     \
-    \   for (int j = i + 1; j < N; ++j) {\n            Line<long long> line(A[i],\
-    \ A[j]);\n\n            int count = 0;\n            for (int k = 0; k < N; ++k)\
-    \ {\n                count += line.on_line(A[k]);\n            }\n\n         \
-    \   if (count >= K) {\n                auto p1 = line.slope();\n             \
-    \   auto p2 = line.y_intercept();\n                ans.insert({p1, p2});\n   \
-    \         }\n        }\n    }\n    cout << ans.size() << endl;\n\n    return 0;\n\
-    }\n"
+    \ != (td < 0)));\n\n        return a and b;\n    }\n    \n    // \u4EA4\u70B9\n\
+    };\n#line 4 \"test/cpp/Geometry/Line6_online.test.cpp\"\n#include <iostream>\n\
+    #include <set>\n#include <vector>\n\nusing namespace std;\n\nint main() {\n  \
+    \  cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n    int N, K;\n    cin\
+    \ >> N >> K;\n    vector<Point<long long>> A(N);\n    for (int i = 0; i < N; ++i)\
+    \ {\n        long long X, Y;\n        cin >> X >> Y;\n        A[i] = Point(X,\
+    \ Y);\n    }\n\n    if (K == 1) {\n        cout << \"Infinity\" << endl;\n   \
+    \     return 0;\n    }\n\n    set<pair<pair<long long, long long>, pair<long long,\
+    \ long long>>> ans;\n    for (int i = 0; i < N; ++i) {\n        for (int j = i\
+    \ + 1; j < N; ++j) {\n            Line<long long> line(A[i], A[j]);\n\n      \
+    \      int count = 0;\n            for (int k = 0; k < N; ++k) {\n           \
+    \     count += line.on_line(A[k]);\n            }\n\n            if (count >=\
+    \ K) {\n                auto p1 = line.slope();\n                auto p2 = line.y_intercept();\n\
+    \                ans.insert({p1, p2});\n            }\n        }\n    }\n    cout\
+    \ << ans.size() << endl;\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://atcoder.jp/contests/abc248/tasks/abc248_e\"\n\n\
     #include \"library/cpp/Geometry/Line.hpp\"\n#include <iostream>\n#include <set>\n\
     #include <vector>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\

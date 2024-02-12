@@ -19,7 +19,9 @@ data:
     \ + 1, 0);\n        for (int i = 0; i < int(line.size()); ++i) {\n           \
     \ this->memo[i + 1] = this->memo[i] + line[i];\n        }\n    }\n\n    // sum[left,\
     \ right)\n    T sum(const int left, const int right) const {\n        assert(right\
-    \ >= left);\n        return this->memo[right] - this->memo[left];\n    }\n};\n"
+    \ >= left);\n        return this->memo[right] - this->memo[left];\n    }\n\n \
+    \   T sum_circle(const long long left, const long long right) const {\n      \
+    \  // TODO\n        return 0;\n    }\n};\n"
   code: "#include <cassert>\n#include <vector>\n\ntemplate<typename T>\nclass CumulativeSum\
     \ {\nprivate:\n    std::vector<T> memo;\n\npublic:\n    CumulativeSum() {\n  \
     \  }\n\n    CumulativeSum(const std::vector<T> &line) {\n        this->build(line);\n\
@@ -27,7 +29,9 @@ data:
     \ + 1, 0);\n        for (int i = 0; i < int(line.size()); ++i) {\n           \
     \ this->memo[i + 1] = this->memo[i] + line[i];\n        }\n    }\n\n    // sum[left,\
     \ right)\n    T sum(const int left, const int right) const {\n        assert(right\
-    \ >= left);\n        return this->memo[right] - this->memo[left];\n    }\n};"
+    \ >= left);\n        return this->memo[right] - this->memo[left];\n    }\n\n \
+    \   T sum_circle(const long long left, const long long right) const {\n      \
+    \  // TODO\n        return 0;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: library/cpp/DataStructure/CumulativeSum.hpp

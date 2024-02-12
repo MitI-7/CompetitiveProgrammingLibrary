@@ -188,10 +188,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/python/Utility/matrix_rotate.py
       title: library/python/Utility/matrix_rotate.py
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/python/Utility/matrix_shift.py
       title: library/python/Utility/matrix_shift.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: library/python/Utility/matrix_strip.py
       title: library/python/Utility/matrix_strip.py
   - name: test/cpp/ShortestPath
@@ -238,6 +238,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/DynamicMedian1.test.cpp
       title: test/cpp/DataStructure/DynamicMedian1.test.cpp
+    - icon: ':x:'
+      path: test/cpp/DataStructure/DynamicMedian2.test.cpp
+      title: test/cpp/DataStructure/DynamicMedian2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
       title: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
@@ -477,12 +480,15 @@ data:
       path: test/python/Utility/matrix_rotate1.test.py
       title: test/python/Utility/matrix_rotate1.test.py
     - icon: ':heavy_check_mark:'
+      path: test/python/Utility/matrix_rotate2.test.py
+      title: test/python/Utility/matrix_rotate2.test.py
+    - icon: ':heavy_check_mark:'
       path: test/python/Utility/matrix_shift1.test.py
       title: test/python/Utility/matrix_shift1.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/Utility/matrix_shift2.test.py
       title: test/python/Utility/matrix_shift2.test.py
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/python/Utility/matrix_strip1.test.py
       title: test/python/Utility/matrix_strip1.test.py
 layout: toppage

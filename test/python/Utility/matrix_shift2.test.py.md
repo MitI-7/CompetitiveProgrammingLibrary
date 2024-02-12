@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/python/Utility/matrix_shift.py
     title: library/python/Utility/matrix_shift.py
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: py
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     PROBLEM: https://atcoder.jp/contests/abc300/tasks/abc300_b
     links:
@@ -34,7 +34,7 @@ data:
   path: test/python/Utility/matrix_shift2.test.py
   requiredBy: []
   timestamp: '2024-01-20 16:48:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/python/Utility/matrix_shift2.test.py
 layout: document

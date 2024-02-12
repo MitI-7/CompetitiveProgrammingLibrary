@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/python/Utility/matrix_rotate1.test.py
     title: test/python/Utility/matrix_rotate1.test.py
+  - icon: ':heavy_check_mark:'
+    path: test/python/Utility/matrix_rotate2.test.py
+    title: test/python/Utility/matrix_rotate2.test.py
   _isVerificationFailed: false
   _pathExtension: py
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -29,6 +32,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/python/Utility/matrix_rotate1.test.py
+  - test/python/Utility/matrix_rotate2.test.py
 documentation_of: library/python/Utility/matrix_rotate.py
 layout: document
 redirect_from:

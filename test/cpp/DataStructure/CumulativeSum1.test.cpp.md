@@ -23,14 +23,15 @@ data:
     \ + 1, 0);\n        for (int i = 0; i < int(line.size()); ++i) {\n           \
     \ this->memo[i + 1] = this->memo[i] + line[i];\n        }\n    }\n\n    // sum[left,\
     \ right)\n    T sum(const int left, const int right) const {\n        assert(right\
-    \ >= left);\n        return this->memo[right] - this->memo[left];\n    }\n};\n\
-    #line 4 \"test/cpp/DataStructure/CumulativeSum1.test.cpp\"\n#include <iostream>\n\
-    \nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N, Q;\n    cin >> N >> Q;\n    vector<long long> A(N);\n    for (int\
-    \ i = 0; i < N; ++i) {\n        cin >> A[i];\n    }\n\n    CumulativeSum<long\
-    \ long> cs(A);\n\n    for (int i = 0; i < Q; ++i) {\n        int L, R;\n     \
-    \   cin >> L >> R;\n        cout << cs.sum(L, R) << endl;\n    }\n\n    return\
-    \ 0;\n}\n"
+    \ >= left);\n        return this->memo[right] - this->memo[left];\n    }\n\n \
+    \   T sum_circle(const long long left, const long long right) const {\n      \
+    \  // TODO\n        return 0;\n    }\n};\n#line 4 \"test/cpp/DataStructure/CumulativeSum1.test.cpp\"\
+    \n#include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int N, Q;\n    cin >> N >> Q;\n    vector<long\
+    \ long> A(N);\n    for (int i = 0; i < N; ++i) {\n        cin >> A[i];\n    }\n\
+    \n    CumulativeSum<long long> cs(A);\n\n    for (int i = 0; i < Q; ++i) {\n \
+    \       int L, R;\n        cin >> L >> R;\n        cout << cs.sum(L, R) << endl;\n\
+    \    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include \"library/cpp/DataStructure/CumulativeSum.hpp\"\n#include <iostream>\n\
     \nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\

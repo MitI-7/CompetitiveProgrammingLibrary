@@ -63,7 +63,7 @@ data:
     \ 0 ? 3 : 4;\n        }\n    }\n\n    // \u504F\u89D2\u30BD\u30FC\u30C8\u7528\
     (\u53CD\u6642\u8A08\u56DE\u308A\u306B\u30BD\u30FC\u30C8)\n    // \u8AA4\u5DEE\u306B\
     \u6CE8\u610F\n    static bool radian_sort_cmp_key(const Point &l, const Point\
-    \ &r) {\n        return l.adian() < r.radian();\n    }\n\n    // xy\u3067\u30BD\
+    \ &r) {\n        return l.adian() < r.radian();\n    }\n\n    // (x, y)\u3067\u30BD\
     \u30FC\u30C8\n    static bool xy_sort_cmp_key(const Point &l, const Point &r)\
     \ {\n        if (fabs(l.x - r.x) < 1e-10) {\n            return l.y < r.y;\n \
     \       }\n        return l.x < r.x;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
@@ -121,7 +121,8 @@ data:
     \ // \u7AEF\u70B9\u3092\u542B\u307E\u306A\u3044\u3067\u4EA4\u308F\u308B\n    \
     \    // tc * td < 0 && ta * tb < 0\n        bool a = (ta != 0 and tb != 0 and\
     \ ((ta < 0) != (tb < 0)));\n        bool b = (tc != 0 and td != 0 and ((tc < 0)\
-    \ != (td < 0)));\n\n        return a and b;\n    }\n};\n"
+    \ != (td < 0)));\n\n        return a and b;\n    }\n    \n    // \u4EA4\u70B9\n\
+    };\n"
   code: "#include \"library/cpp/Geometry/Point.hpp\"\n#include <numeric>\n#include\
     \ <utility>\n\n// \u5E73\u9762\u4E0A\u306E\u7DDA\u5206\ntemplate<class T=long\
     \ long>\nclass Line {\npublic:\n    constexpr static const double epsilon = 1e-9;\n\
@@ -175,7 +176,8 @@ data:
     \ // \u7AEF\u70B9\u3092\u542B\u307E\u306A\u3044\u3067\u4EA4\u308F\u308B\n    \
     \    // tc * td < 0 && ta * tb < 0\n        bool a = (ta != 0 and tb != 0 and\
     \ ((ta < 0) != (tb < 0)));\n        bool b = (tc != 0 and td != 0 and ((tc < 0)\
-    \ != (td < 0)));\n\n        return a and b;\n    }\n};\n"
+    \ != (td < 0)));\n\n        return a and b;\n    }\n    \n    // \u4EA4\u70B9\n\
+    };\n"
   dependsOn:
   - library/cpp/Geometry/Point.hpp
   isVerificationFile: false
