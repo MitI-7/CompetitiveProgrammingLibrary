@@ -80,5 +80,8 @@
 "test/python/String/find_kth_string_permutation2.test.py": "2024-02-09 16:09:21 +0900",
 "test/python/String/find_string_no_permutation1.test.py": "2024-01-28 14:27:00 +0900",
 "test/python/Utility/matrix_rotate1.test.py": "2024-01-20 16:47:44 +0900",
-"test/python/Utility/matrix_shift1.test.py": "2024-01-20 16:48:36 +0900"
+"test/python/Utility/matrix_rotate2.test.py": "2024-01-28 13:42:58 +0900",
+"test/python/Utility/matrix_shift1.test.py": "2024-01-20 16:48:36 +0900",
+"test/python/Utility/matrix_shift2.test.py": "2024-01-20 16:48:42 +0900",
+"test/python/Utility/matrix_strip1.test.py": "2024-01-28 13:43:08 +0900"
 }
