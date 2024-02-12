@@ -13,6 +13,12 @@ data:
     title: test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+    title: test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+    title: test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/cpp/ShortestPath/dijkstra1.test.cpp
     title: test/cpp/ShortestPath/dijkstra1.test.cpp
   _isVerificationFailed: false
@@ -46,8 +52,8 @@ data:
     \u304D\u306A\u3044\u5834\u5408\u306F infinity \u3092\u683C\u7D0D\u3059\u308B\n\
     \ * \u8CA0\u8FBA\u306F\u306A\u3044\u3082\u306E\u3068\u3059\u308B\n */\ntemplate<typename\
     \ T>\nstd::pair<std::vector<T>, std::vector<Edge<T>>> dijkstra(const int s, const\
-    \ Graph<T> &graph, const T infinity = std::numeric_limits<T>::max()) {\n\n   \
-    \ // [(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque (\u8DDD\u96E2\u304C\
+    \ Graph<T> &graph, const T infinity = std::numeric_limits<T>::max() / 3) {\n\n\
+    \    // [(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque (\u8DDD\u96E2\u304C\
     \u8FD1\u3044\u9806\u306B\u3068\u308A\u3060\u3059)\n    std::priority_queue<std::pair<T,\
     \ int>, std::vector<std::pair<T, int>>, std::greater<>> que;\n    que.push({0,\
     \ s});\n\n    std::vector<Edge<T>> prev_edge(graph.num_nodes);       // \u7D4C\
@@ -68,8 +74,8 @@ data:
     \u304D\u306A\u3044\u5834\u5408\u306F infinity \u3092\u683C\u7D0D\u3059\u308B\n\
     \ * \u8CA0\u8FBA\u306F\u306A\u3044\u3082\u306E\u3068\u3059\u308B\n */\ntemplate<typename\
     \ T>\nstd::pair<std::vector<T>, std::vector<Edge<T>>> dijkstra(const int s, const\
-    \ Graph<T> &graph, const T infinity = std::numeric_limits<T>::max()) {\n\n   \
-    \ // [(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque (\u8DDD\u96E2\u304C\
+    \ Graph<T> &graph, const T infinity = std::numeric_limits<T>::max() / 3) {\n\n\
+    \    // [(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque (\u8DDD\u96E2\u304C\
     \u8FD1\u3044\u9806\u306B\u3068\u308A\u3060\u3059)\n    std::priority_queue<std::pair<T,\
     \ int>, std::vector<std::pair<T, int>>, std::greater<>> que;\n    que.push({0,\
     \ s});\n\n    std::vector<Edge<T>> prev_edge(graph.num_nodes);       // \u7D4C\
@@ -92,6 +98,8 @@ data:
   timestamp: '2023-05-15 18:47:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+  - test/cpp/ShortestPath/construct_s_t_path1.test.cpp
   - test/cpp/ShortestPath/dijkstra1.test.cpp
 documentation_of: library/cpp/ShortestPath/dijkstra.cpp
 layout: document

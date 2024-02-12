@@ -52,18 +52,18 @@ data:
     \u30CE\u30FC\u30C9\u306B\u5165\u308B\u8FBA\u3092\u9664\u53BB\u3057\u3066\u304A\
     \u3051\u3070\u3044\u3044\n * O(|V||E|)\n */\ntemplate<typename T>\nstd::pair<std::vector<T>,\
     \ std::vector<Edge<T>>> bellman_ford(const int start, Graph<T> &graph, const T\
-    \ infinity) {\n    const int num_nodes = graph.num_nodes;\n    std::vector<T>\
-    \ distance(num_nodes, infinity);\n    distance[start] = 0;\n    std::vector<Edge<T>>\
-    \ prev_edge(graph.num_nodes);       // \u7D4C\u8DEF\u5FA9\u5143\u7528\n\n    int\
-    \ i;\n    for (i = 0; i < num_nodes; ++i) {\n        bool update = false;\n  \
-    \      for (int u = 0; u < num_nodes; ++u) {\n            for (const auto &edge:\
-    \ graph[u]) {\n                if (distance[u] != infinity and distance[edge.to]\
-    \ > distance[u] + edge.w) {\n                    distance[edge.to] = distance[u]\
-    \ + edge.w;\n                    prev_edge[edge.to] = edge;\n                \
-    \    update = true;\n                }\n            }\n        }\n        if (not\
-    \ update) {\n            break;\n        }\n    }\n\n    if (i == num_nodes) {\n\
-    \        return {{},\n                {}};\n    } else {\n        return {distance,\
-    \ prev_edge};\n    }\n}\n#line 5 \"test/cpp/ShortestPath/bellman_ford1.test.cpp\"\
+    \ infinity = std::numeric_limits<T>::max() / 3) {\n    const int num_nodes = graph.num_nodes;\n\
+    \    std::vector<T> distance(num_nodes, infinity);\n    distance[start] = 0;\n\
+    \    std::vector<Edge<T>> prev_edge(graph.num_nodes);       // \u7D4C\u8DEF\u5FA9\
+    \u5143\u7528\n\n    int i;\n    for (i = 0; i < num_nodes; ++i) {\n        bool\
+    \ update = false;\n        for (int u = 0; u < num_nodes; ++u) {\n           \
+    \ for (const auto &edge: graph[u]) {\n                if (distance[u] != infinity\
+    \ and distance[edge.to] > distance[u] + edge.w) {\n                    distance[edge.to]\
+    \ = distance[u] + edge.w;\n                    prev_edge[edge.to] = edge;\n  \
+    \                  update = true;\n                }\n            }\n        }\n\
+    \        if (not update) {\n            break;\n        }\n    }\n\n    if (i\
+    \ == num_nodes) {\n        return {{},\n                {}};\n    } else {\n \
+    \       return {distance, prev_edge};\n    }\n}\n#line 5 \"test/cpp/ShortestPath/bellman_ford1.test.cpp\"\
     \n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int V, E, R;\n    cin >> V >> E >> R;\n\n    Graph<long long> graph(V);\n\
     \    for (int i = 0; i < E; ++i) {\n        int S, T, D;\n        cin >> S >>\

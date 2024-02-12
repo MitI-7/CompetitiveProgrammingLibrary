@@ -45,8 +45,8 @@ data:
     \u304D\u306A\u3044\u5834\u5408\u306F infinity \u3092\u683C\u7D0D\u3059\u308B\n\
     \ * \u8CA0\u8FBA\u306F\u306A\u3044\u3082\u306E\u3068\u3059\u308B\n */\ntemplate<typename\
     \ T>\nstd::pair<std::vector<T>, std::vector<Edge<T>>> dijkstra(const int s, const\
-    \ Graph<T> &graph, const T infinity = std::numeric_limits<T>::max()) {\n\n   \
-    \ // [(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque (\u8DDD\u96E2\u304C\
+    \ Graph<T> &graph, const T infinity = std::numeric_limits<T>::max() / 3) {\n\n\
+    \    // [(\u6700\u77ED\u8DDD\u96E2, node\u756A\u53F7)]\u306Eque (\u8DDD\u96E2\u304C\
     \u8FD1\u3044\u9806\u306B\u3068\u308A\u3060\u3059)\n    std::priority_queue<std::pair<T,\
     \ int>, std::vector<std::pair<T, int>>, std::greater<>> que;\n    que.push({0,\
     \ s});\n\n    std::vector<Edge<T>> prev_edge(graph.num_nodes);       // \u7D4C\

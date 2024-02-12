@@ -12,6 +12,9 @@ data:
     path: library/cpp/ShortestPath/bellman_ford.cpp
     title: library/cpp/ShortestPath/bellman_ford.cpp
   - icon: ':heavy_check_mark:'
+    path: library/cpp/ShortestPath/construct_s_t_path.cpp
+    title: library/cpp/ShortestPath/construct_s_t_path.cpp
+  - icon: ':heavy_check_mark:'
     path: library/cpp/ShortestPath/dijkstra.cpp
     title: library/cpp/ShortestPath/dijkstra.cpp
   - icon: ':warning:'
@@ -33,6 +36,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/ShortestPath/bellman_ford1.test.cpp
     title: test/cpp/ShortestPath/bellman_ford1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+    title: test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+    title: test/cpp/ShortestPath/construct_s_t_path2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/cpp/ShortestPath/dijkstra1.test.cpp
     title: test/cpp/ShortestPath/dijkstra1.test.cpp
@@ -82,12 +91,15 @@ data:
   - library/cpp/ShortestPath/make_shortest_path_tree.cpp
   - library/cpp/ShortestPath/bellman_ford.cpp
   - library/cpp/ShortestPath/dijkstra.cpp
+  - library/cpp/ShortestPath/construct_s_t_path.cpp
   - library/cpp/Graph/find_cycle.cpp
   - library/cpp/Graph/connected_components.cpp
   - test/cpp/ShortestPath/make_shortest_path_tree1.dummy.cpp
   timestamp: '2023-05-15 18:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+  - test/cpp/ShortestPath/construct_s_t_path1.test.cpp
   - test/cpp/ShortestPath/dijkstra1.test.cpp
   - test/cpp/ShortestPath/bellman_ford1.test.cpp
   - test/cpp/Graph/find_cycle1.test.cpp

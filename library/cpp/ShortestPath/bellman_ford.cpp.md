@@ -47,18 +47,18 @@ data:
     \u30CE\u30FC\u30C9\u306B\u5165\u308B\u8FBA\u3092\u9664\u53BB\u3057\u3066\u304A\
     \u3051\u3070\u3044\u3044\n * O(|V||E|)\n */\ntemplate<typename T>\nstd::pair<std::vector<T>,\
     \ std::vector<Edge<T>>> bellman_ford(const int start, Graph<T> &graph, const T\
-    \ infinity) {\n    const int num_nodes = graph.num_nodes;\n    std::vector<T>\
-    \ distance(num_nodes, infinity);\n    distance[start] = 0;\n    std::vector<Edge<T>>\
-    \ prev_edge(graph.num_nodes);       // \u7D4C\u8DEF\u5FA9\u5143\u7528\n\n    int\
-    \ i;\n    for (i = 0; i < num_nodes; ++i) {\n        bool update = false;\n  \
-    \      for (int u = 0; u < num_nodes; ++u) {\n            for (const auto &edge:\
-    \ graph[u]) {\n                if (distance[u] != infinity and distance[edge.to]\
-    \ > distance[u] + edge.w) {\n                    distance[edge.to] = distance[u]\
-    \ + edge.w;\n                    prev_edge[edge.to] = edge;\n                \
-    \    update = true;\n                }\n            }\n        }\n        if (not\
-    \ update) {\n            break;\n        }\n    }\n\n    if (i == num_nodes) {\n\
-    \        return {{},\n                {}};\n    } else {\n        return {distance,\
-    \ prev_edge};\n    }\n}\n"
+    \ infinity = std::numeric_limits<T>::max() / 3) {\n    const int num_nodes = graph.num_nodes;\n\
+    \    std::vector<T> distance(num_nodes, infinity);\n    distance[start] = 0;\n\
+    \    std::vector<Edge<T>> prev_edge(graph.num_nodes);       // \u7D4C\u8DEF\u5FA9\
+    \u5143\u7528\n\n    int i;\n    for (i = 0; i < num_nodes; ++i) {\n        bool\
+    \ update = false;\n        for (int u = 0; u < num_nodes; ++u) {\n           \
+    \ for (const auto &edge: graph[u]) {\n                if (distance[u] != infinity\
+    \ and distance[edge.to] > distance[u] + edge.w) {\n                    distance[edge.to]\
+    \ = distance[u] + edge.w;\n                    prev_edge[edge.to] = edge;\n  \
+    \                  update = true;\n                }\n            }\n        }\n\
+    \        if (not update) {\n            break;\n        }\n    }\n\n    if (i\
+    \ == num_nodes) {\n        return {{},\n                {}};\n    } else {\n \
+    \       return {distance, prev_edge};\n    }\n}\n"
   code: "#include <vector>\n#include <functional>\n#include <limits>\n#include \"\
     library/cpp/Graph/Graph.hpp\"\n\n/**\n * start\u304B\u3089\u4ED6\u306E\u3059\u3079\
     \u3066\u306Enode\u3078\u306E\u6700\u77ED\u8DDD\u96E2(\u5230\u9054\u3067\u304D\u306A\
@@ -73,9 +73,9 @@ data:
     \u5230\u9054\u3067\u304D\u306A\u3044\u3088\u3046\u306A\u30CE\u30FC\u30C9\u306B\
     \u5165\u308B\u8FBA\u3092\u9664\u53BB\u3057\u3066\u304A\u3051\u3070\u3044\u3044\
     \n * O(|V||E|)\n */\ntemplate<typename T>\nstd::pair<std::vector<T>, std::vector<Edge<T>>>\
-    \ bellman_ford(const int start, Graph<T> &graph, const T infinity) {\n    const\
-    \ int num_nodes = graph.num_nodes;\n    std::vector<T> distance(num_nodes, infinity);\n\
-    \    distance[start] = 0;\n    std::vector<Edge<T>> prev_edge(graph.num_nodes);\
+    \ bellman_ford(const int start, Graph<T> &graph, const T infinity = std::numeric_limits<T>::max()\
+    \ / 3) {\n    const int num_nodes = graph.num_nodes;\n    std::vector<T> distance(num_nodes,\
+    \ infinity);\n    distance[start] = 0;\n    std::vector<Edge<T>> prev_edge(graph.num_nodes);\
     \       // \u7D4C\u8DEF\u5FA9\u5143\u7528\n\n    int i;\n    for (i = 0; i < num_nodes;\
     \ ++i) {\n        bool update = false;\n        for (int u = 0; u < num_nodes;\
     \ ++u) {\n            for (const auto &edge: graph[u]) {\n                if (distance[u]\

@@ -126,6 +126,9 @@ data:
       path: library/cpp/ShortestPath/bellman_ford.cpp
       title: library/cpp/ShortestPath/bellman_ford.cpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/ShortestPath/construct_s_t_path.cpp
+      title: library/cpp/ShortestPath/construct_s_t_path.cpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/ShortestPath/dijkstra.cpp
       title: library/cpp/ShortestPath/dijkstra.cpp
     - icon: ':warning:'
@@ -146,6 +149,9 @@ data:
       title: library/cpp/String/RollingHash.hpp
   - name: library/cpp/Tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Tree/BinaryTrie.hpp
+      title: library/cpp/Tree/BinaryTrie.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/FenwickTree.hpp
       title: library/cpp/Tree/FenwickTree.hpp
@@ -378,6 +384,12 @@ data:
       path: test/cpp/ShortestPath/bellman_ford1.test.cpp
       title: test/cpp/ShortestPath/bellman_ford1.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+      title: test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+      title: test/cpp/ShortestPath/construct_s_t_path2.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/ShortestPath/dijkstra1.test.cpp
       title: test/cpp/ShortestPath/dijkstra1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -398,6 +410,12 @@ data:
       title: test/cpp/String/RollingHash1_hash.test.cpp
   - name: test/cpp/Tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie1_exist.test.cpp
+      title: test/cpp/Tree/BinaryTrie1_exist.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+      title: test/cpp/Tree/BinaryTrie2_erase.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/FenwickTree1.test.cpp
       title: test/cpp/Tree/FenwickTree1.test.cpp
