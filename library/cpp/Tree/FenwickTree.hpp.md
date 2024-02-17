@@ -67,16 +67,16 @@ data:
   isVerificationFile: false
   path: library/cpp/Tree/FenwickTree.hpp
   requiredBy:
-  - library/cpp/Math/inversion_number.cpp
   - library/cpp/Tree/FenwickTreeRange.hpp
+  - library/cpp/Math/inversion_number.cpp
   timestamp: '2024-01-20 16:44:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Geometry/sort_clockwise_polygon_points1.test.cpp
-  - test/cpp/Math/inversion_number1.test.cpp
   - test/cpp/Tree/FenwickTreeRange1.test.cpp
   - test/cpp/Tree/FenwickTreeRange2.test.cpp
   - test/cpp/Tree/FenwickTree1.test.cpp
+  - test/cpp/Geometry/sort_clockwise_polygon_points1.test.cpp
+  - test/cpp/Math/inversion_number1.test.cpp
 documentation_of: library/cpp/Tree/FenwickTree.hpp
 layout: document
 redirect_from:

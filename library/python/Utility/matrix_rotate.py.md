@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
     \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/python.py\"\
+    \  File \"/opt/hostedtoolcache/Python/3.12.2/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/python.py\"\
     , line 96, in bundle\n    raise NotImplementedError\nNotImplementedError\n"
   code: "# 2\u6B21\u5143\u884C\u5217\u3092\u53F3\u306B90\u5EA6\u56DE\u8EE2\ndef matrix_rotate(A):\n\
     \    H, W = len(A), len(A[0])\n    ans = [[None] * H for _ in range(W)]\n\n  \
@@ -31,8 +31,8 @@ data:
   timestamp: '2024-01-20 16:47:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/python/Utility/matrix_rotate1.test.py
   - test/python/Utility/matrix_rotate2.test.py
+  - test/python/Utility/matrix_rotate1.test.py
 documentation_of: library/python/Utility/matrix_rotate.py
 layout: document
 redirect_from:

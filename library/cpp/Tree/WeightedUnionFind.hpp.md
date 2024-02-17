@@ -87,9 +87,9 @@ data:
   timestamp: '2024-01-27 12:52:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Tree/WeightedUnionFind3.test.cpp
-  - test/cpp/Tree/WeightedUnionFind2.test.cpp
   - test/cpp/Tree/WeightedUnionFind1.test.cpp
+  - test/cpp/Tree/WeightedUnionFind2.test.cpp
+  - test/cpp/Tree/WeightedUnionFind3.test.cpp
 documentation_of: library/cpp/Tree/WeightedUnionFind.hpp
 layout: document
 redirect_from:

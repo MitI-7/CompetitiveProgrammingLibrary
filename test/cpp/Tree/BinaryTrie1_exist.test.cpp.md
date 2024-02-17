@@ -28,18 +28,19 @@ data:
     \u306E\u8981\u7D20\u6570\n    [[nodiscard]] int size() const {\n        return\
     \ this->root->count;\n    }\n\n    [[nodiscard]] bool empty() const {\n      \
     \  return this->root->count == 0;\n    }\n\n    // x \u3092 num \u500B\u633F\u5165\
-    \u3059\u308B\n    void insert(const T x, int num = 1) {\n        auto node = this->root.get();\n\
-    \        node->count++;\n\n        for (int i = bit_size - 1; i >= 0; --i) {\n\
-    \            const auto b = this->get_ith_bit(x, i);\n            if (node->children[b]\
-    \ == nullptr) {\n                node->children[b] = std::make_unique<Node>(0);\n\
-    \            }\n            node = node->children[b].get();\n            node->count++;\n\
-    \        }\n        node->freq += num;\n    }\n\n    // x \u3092 num \u500B\u524A\
-    \u9664\u3059\u308B\n    // num \u672A\u6E80\u3057\u304B\u306A\u3044\u5834\u5408\
-    \u306F\u3059\u3079\u3066\u524A\u9664\u3059\u308B\n    void erase(const T x, int\
-    \ num = 1) {\n        num = std::min(num, this->count(x));\n        if (num ==\
-    \ 0) {\n            return;\n        }\n\n        auto node = this->root.get();\n\
-    \        node->count -= num;\n\n        for (int i = bit_size - 1; i >= 0; --i)\
-    \ {\n            const auto b = this->get_ith_bit(x, i);\n\n            if (node->children[b].get()->count\
+    \u3059\u308B\n    void insert(const T x, int num = 1) {\n        assert(x >= 0);\n\
+    \        auto node = this->root.get();\n        node->count++;\n\n        for\
+    \ (int i = bit_size - 1; i >= 0; --i) {\n            const auto b = this->get_ith_bit(x,\
+    \ i);\n            if (node->children[b] == nullptr) {\n                node->children[b]\
+    \ = std::make_unique<Node>(0);\n            }\n            node = node->children[b].get();\n\
+    \            node->count++;\n        }\n        node->freq += num;\n    }\n\n\
+    \    // x \u3092 num \u500B\u524A\u9664\u3059\u308B\n    // num \u672A\u6E80\u3057\
+    \u304B\u306A\u3044\u5834\u5408\u306F\u3059\u3079\u3066\u524A\u9664\u3059\u308B\
+    \n    void erase(const T x, int num = 1) {\n        assert(x >= 0);\n        num\
+    \ = std::min(num, this->count(x));\n        if (num == 0) {\n            return;\n\
+    \        }\n\n        auto node = this->root.get();\n        node->count -= num;\n\
+    \n        for (int i = bit_size - 1; i >= 0; --i) {\n            const auto b\
+    \ = this->get_ith_bit(x, i);\n\n            if (node->children[b].get()->count\
     \ - num <= 0) {\n                node->children[b].release();\n              \
     \  return;\n            }\n\n            node = node->children[b].get();\n   \
     \         node->count -= num;\n        }\n        node->freq -= num;\n    }\n\n\
@@ -48,30 +49,32 @@ data:
     \ / 2 - 1), this->find_kth_min_element(m / 2)};\n        } else {\n          \
     \  return {this->find_kth_min_element(m / 2), this->find_kth_min_element(m / 2)};\n\
     \        }\n    }\n\n    // x \u306E\u51FA\u73FE\u56DE\u6570\n    int count(const\
-    \ T x) const {\n        auto node = this->root.get();\n        for (int i = bit_size\
-    \ - 1; i >= 0; --i) {\n            const auto b = this->get_ith_bit(x, i);\n \
-    \           if (node->children[b] == nullptr) {\n                return 0;\n \
-    \           }\n            node = node->children[b].get();\n        }\n      \
-    \  return node->freq;\n    }\n\n    // x \u3088\u308A\u5C0F\u3055\u3044\u5024\u306E\
-    \u51FA\u73FE\u56DE\u6570\n    long long count_less_than(const T x) const {\n \
-    \       long long count = 0;\n        auto node = this->root.get();\n\n      \
-    \  for (int i = bit_size - 1; i >= 0; --i) {\n            const auto b = this->get_ith_bit(x,\
-    \ i);\n            // bit \u304C 0 \u306E\u65B9\u306B\u3042\u308B\u51FA\u73FE\u56DE\
-    \u6570\u3092\u3059\u3079\u3066\u8DB3\u3059\n            if (b == 1 and node->children[0]\
-    \ != nullptr) {\n                count += node->children[0]->count;\n        \
-    \    }\n            if (node->children[b] == nullptr) {\n                break;\n\
-    \            }\n            node = node->children[b].get();\n        }\n\n   \
-    \     return count;\n    }\n\n    // x \u3088\u308A\u5927\u304D\u3044\u5024\u306E\
-    \u51FA\u73FE\u56DE\u6570\n    int count_more_than(const T x) const {\n       \
-    \ return this->size() - this->count_less_than(x) - this->count(x);\n    }\n\n\
-    \    // v\u304C\u3042\u308B\u304B\n    bool exist(const T x) const {\n       \
-    \ return this->count(x) > 0;\n    }\n\n    // \u96C6\u5408\u5185\u3067\u6700\u5927\
-    \u306E\u5024\n    T find_max_element() const {\n        return this->find_kth_max_element(0);\n\
-    \    }\n\n    // \u96C6\u5408\u5185\u3067\u6700\u5C0F\u306E\u5024\n    T find_min_element()\
-    \ const {\n        return this->find_kth_min_element(0);\n    }\n\n    // \u96C6\
-    \u5408\u5185\u3067\u5C0F\u3055\u3044\u9806\u306B\u6570\u3048\u3066 k \u756A\u76EE\
-    \u306E\u5024(0-origin)\n    // k = 0 \u3067\u6700\u5C0F\u5024\n    T find_kth_min_element(int\
-    \ k) const {\n        if (k < 0 or k >= this->size()) {\n            return this->NOTFOUND;\n\
+    \ T x) const {\n        assert(x >= 0);\n        auto node = this->root.get();\n\
+    \        for (int i = bit_size - 1; i >= 0; --i) {\n            const auto b =\
+    \ this->get_ith_bit(x, i);\n            if (node->children[b] == nullptr) {\n\
+    \                return 0;\n            }\n            node = node->children[b].get();\n\
+    \        }\n        return node->freq;\n    }\n\n    // x \u3088\u308A\u5C0F\u3055\
+    \u3044\u5024\u306E\u51FA\u73FE\u56DE\u6570\n    long long count_less_than(const\
+    \ T x) const {\n        assert(x >= 0);\n        long long count = 0;\n      \
+    \  auto node = this->root.get();\n\n        for (int i = bit_size - 1; i >= 0;\
+    \ --i) {\n            const auto b = this->get_ith_bit(x, i);\n            //\
+    \ bit \u304C 0 \u306E\u65B9\u306B\u3042\u308B\u51FA\u73FE\u56DE\u6570\u3092\u3059\
+    \u3079\u3066\u8DB3\u3059\n            if (b == 1 and node->children[0] != nullptr)\
+    \ {\n                count += node->children[0]->count;\n            }\n     \
+    \       if (node->children[b] == nullptr) {\n                break;\n        \
+    \    }\n            node = node->children[b].get();\n        }\n\n        return\
+    \ count;\n    }\n\n    // x \u3088\u308A\u5927\u304D\u3044\u5024\u306E\u51FA\u73FE\
+    \u56DE\u6570\n    int count_more_than(const T x) const {\n        assert(x >=\
+    \ 0);\n        return this->size() - this->count_less_than(x) - this->count(x);\n\
+    \    }\n\n    // v\u304C\u3042\u308B\u304B\n    bool exist(const T x) const {\n\
+    \        assert(x >= 0);\n        return this->count(x) > 0;\n    }\n\n    //\
+    \ \u96C6\u5408\u5185\u3067\u6700\u5927\u306E\u5024\n    T find_max_element() const\
+    \ {\n        return this->find_kth_max_element(0);\n    }\n\n    // \u96C6\u5408\
+    \u5185\u3067\u6700\u5C0F\u306E\u5024\n    T find_min_element() const {\n     \
+    \   return this->find_kth_min_element(0);\n    }\n\n    // \u96C6\u5408\u5185\u3067\
+    \u5C0F\u3055\u3044\u9806\u306B\u6570\u3048\u3066 k \u756A\u76EE\u306E\u5024(0-origin)\n\
+    \    // k = 0 \u3067\u6700\u5C0F\u5024\n    T find_kth_min_element(int k) const\
+    \ {\n        if (k < 0 or k >= this->size()) {\n            return this->NOTFOUND;\n\
     \        }\n\n        T ans = 0;\n        auto node = this->root.get();\n    \
     \    for (int i = bit_size - 1; i >= 0; --i) {\n\n            const bool exist0\
     \ = node->children[0] != nullptr;\n            const bool exist1 = node->children[1]\
@@ -88,45 +91,47 @@ data:
     \ {\n        if (k < 0 or k >= this->size()) {\n            return this->NOTFOUND;\n\
     \        }\n        return this->find_kth_min_element(this->size() - 1 - k);\n\
     \    }\n\n    // x \u4EE5\u4E0B\u3067\u6700\u5927\u306E\u5024\n    T predecessor(const\
-    \ T x) const {\n        const auto num_less_than_x = this->count_less_than(x +\
-    \ 1);\n        return this->find_kth_min_element(num_less_than_x - 1);\n    }\n\
-    \n    // x \u4EE5\u4E0A\u3067\u6700\u5C0F\u306E\u5024\n    T successor(const T\
-    \ x) const {\n        const auto num_less_than_x = this->count_less_than(x);\n\
-    \        return this->find_kth_min_element(num_less_than_x);\n    }\n\n    //\
-    \ v^x \u3092\u6700\u5C0F\u306B\u3059\u308B\u3088\u3046\u306A x \u3092\u307F\u3064\
-    \u3051\u308B\n    T find_xor_min_element(T v) const {\n        assert(not this->empty());\n\
-    \n        auto node = this->root.get();\n        T ans = 0;\n        for (int\
-    \ i = bit_size - 1; i >= 0; --i) {\n            auto b = (v >> (T) i) & 1u;\n\n\
-    \            const bool exist0 = node->children[0] != nullptr;\n            const\
-    \ bool exist1 = node->children[1] != nullptr;\n            assert(exist0 or exist1);\n\
-    \n            bool go_node0;\n            if (exist0 and exist1) {\n         \
-    \       go_node0 = (b == 0);\n            } else {\n                go_node0 =\
-    \ exist0;\n            }\n\n            if (go_node0) {\n                node\
-    \ = node->children[0].get();\n            } else {\n                ans |= (1u\
-    \ << (unsigned) i);\n                node = node->children[1].get();\n       \
-    \     }\n        }\n\n        return ans;\n    }\n\n    // v\u4EE5\u5916\u3067\
-    v^x\u3092\u6700\u5C0F\u306B\u3059\u308B\u3088\u3046\u306Ax\n    T min_element_xor_without_v(T\
-    \ v) const {\n        assert(false);\n        return 0;\n    }\n\n    // v^x\u3092\
-    \u6700\u5927\u306B\u3059\u308B\u3088\u3046\u306Ax\n    T max_element_xor(const\
-    \ T v) const {\n        assert(not this->empty());\n\n        auto node = this->root.get();\n\
-    \        T ans = 0;\n        for (int i = bit_size - 1; i >= 0; --i) {\n     \
-    \       auto b = (v >> (T) i) & 1u;\n\n            const bool exist0 = node->children[0]\
-    \ != nullptr;\n            const bool exist1 = node->children[1] != nullptr;\n\
-    \            assert(exist0 or exist1);\n\n            bool go_node0;\n       \
-    \     if (exist0 and exist1) {\n                go_node0 = (b == 1);\n       \
-    \     } else {\n                go_node0 = exist0;\n            }\n\n        \
-    \    if (go_node0) {\n                node = node->children[0].get();\n      \
-    \      } else {\n                ans |= (1u << (unsigned) i);\n              \
-    \  node = node->children[1].get();\n            }\n        }\n\n        return\
-    \ ans;\n    }\n\n    // xor\u3057\u305F\u3068\u304D\u306B\uFF0C\u5C0F\u3055\u3044\
-    \u65B9\u304B\u3089\u898B\u3066k\u756A\u76EE\u306E\u6570(0-based)\n    T kth_element_xor(const\
-    \ T v, int k) const {\n        assert(this->root->count != 0);\n        assert(k\
-    \ < this->root->count);\n        assert(false);\n        return 0;\n\n    }\n\n\
-    \    // \u3059\u3079\u3066\u306E\u8981\u7D20\u306B\u3064\u3044\u3066\uFF0Cv\u3092\
-    xor\u3057\u305F\u5024\u306B\u5909\u66F4\u3059\u308B\n    void xor_all(T v) const\
-    \ {\n        assert(false);\n    }\n\nprivate:\n    // x \u306E i \u756A\u76EE\
-    \u306E bit \u3092\u53D6\u5F97\n    int get_ith_bit(const T x, const int i) const\
-    \ {\n        return (x >> i) & 1u;\n    }\n};\n#line 4 \"test/cpp/Tree/BinaryTrie1_exist.test.cpp\"\
+    \ T x) const {\n        assert(x >= 0);\n        const auto num_less_than_x =\
+    \ this->count_less_than(x + 1);\n        return this->find_kth_min_element(num_less_than_x\
+    \ - 1);\n    }\n\n    // x \u4EE5\u4E0A\u3067\u6700\u5C0F\u306E\u5024\n    T successor(const\
+    \ T x) const {\n        assert(x >= 0);\n        const auto num_less_than_x =\
+    \ this->count_less_than(x);\n        return this->find_kth_min_element(num_less_than_x);\n\
+    \    }\n\n    // v^x \u3092\u6700\u5C0F\u306B\u3059\u308B\u3088\u3046\u306A x\
+    \ \u3092\u307F\u3064\u3051\u308B\n    T find_xor_min_element(T v) const {\n  \
+    \      assert(v >= 0);\n        assert(not this->empty());\n\n        auto node\
+    \ = this->root.get();\n        T ans = 0;\n        for (int i = bit_size - 1;\
+    \ i >= 0; --i) {\n            auto b = (v >> (T) i) & 1u;\n\n            const\
+    \ bool exist0 = node->children[0] != nullptr;\n            const bool exist1 =\
+    \ node->children[1] != nullptr;\n            assert(exist0 or exist1);\n\n   \
+    \         bool go_node0;\n            if (exist0 and exist1) {\n             \
+    \   go_node0 = (b == 0);\n            } else {\n                go_node0 = exist0;\n\
+    \            }\n\n            if (go_node0) {\n                node = node->children[0].get();\n\
+    \            } else {\n                ans |= (1u << (unsigned) i);\n        \
+    \        node = node->children[1].get();\n            }\n        }\n\n       \
+    \ return ans;\n    }\n\n    // v\u4EE5\u5916\u3067v^x\u3092\u6700\u5C0F\u306B\u3059\
+    \u308B\u3088\u3046\u306Ax\n    T min_element_xor_without_v(T v) const {\n    \
+    \    assert(false);\n        return 0;\n    }\n\n    // v^x\u3092\u6700\u5927\u306B\
+    \u3059\u308B\u3088\u3046\u306Ax\n    T max_element_xor(const T v) const {\n  \
+    \      assert(v >= 0);\n        assert(not this->empty());\n\n        auto node\
+    \ = this->root.get();\n        T ans = 0;\n        for (int i = bit_size - 1;\
+    \ i >= 0; --i) {\n            auto b = (v >> (T) i) & 1u;\n\n            const\
+    \ bool exist0 = node->children[0] != nullptr;\n            const bool exist1 =\
+    \ node->children[1] != nullptr;\n            assert(exist0 or exist1);\n\n   \
+    \         bool go_node0;\n            if (exist0 and exist1) {\n             \
+    \   go_node0 = (b == 1);\n            } else {\n                go_node0 = exist0;\n\
+    \            }\n\n            if (go_node0) {\n                node = node->children[0].get();\n\
+    \            } else {\n                ans |= (1u << (unsigned) i);\n        \
+    \        node = node->children[1].get();\n            }\n        }\n\n       \
+    \ return ans;\n    }\n\n    // xor\u3057\u305F\u3068\u304D\u306B\uFF0C\u5C0F\u3055\
+    \u3044\u65B9\u304B\u3089\u898B\u3066k\u756A\u76EE\u306E\u6570(0-based)\n    T\
+    \ kth_element_xor(const T v, int k) const {\n        assert(v >= 0);\n       \
+    \ assert(this->root->count != 0);\n        assert(k < this->root->count);\n  \
+    \      assert(false);\n        return 0;\n\n    }\n\n    // \u3059\u3079\u3066\
+    \u306E\u8981\u7D20\u306B\u3064\u3044\u3066\uFF0Cv\u3092xor\u3057\u305F\u5024\u306B\
+    \u5909\u66F4\u3059\u308B\n    void xor_all(T v) const {\n        assert(v >= 0);\n\
+    \        assert(false);\n    }\n\nprivate:\n    // x \u306E i \u756A\u76EE\u306E\
+    \ bit \u3092\u53D6\u5F97\n    int get_ith_bit(const T x, const int i) const {\n\
+    \        return (x >> i) & 1u;\n    }\n};\n#line 4 \"test/cpp/Tree/BinaryTrie1_exist.test.cpp\"\
     \n#include <iostream>\n\nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n\
     \    ios::sync_with_stdio(false);\n\n    int Q;\n    cin >> Q;\n\n    BinaryTrie\
     \ bt;\n    for (int i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >>\

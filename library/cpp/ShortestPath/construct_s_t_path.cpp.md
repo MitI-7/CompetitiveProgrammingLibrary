@@ -60,8 +60,8 @@ data:
   timestamp: '2024-02-12 19:55:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/ShortestPath/construct_s_t_path2.test.cpp
   - test/cpp/ShortestPath/construct_s_t_path1.test.cpp
+  - test/cpp/ShortestPath/construct_s_t_path2.test.cpp
 documentation_of: library/cpp/ShortestPath/construct_s_t_path.cpp
 layout: document
 redirect_from:

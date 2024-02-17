@@ -93,9 +93,9 @@ data:
   timestamp: '2023-05-15 18:21:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Graph/kruskal1.test.cpp
-  - test/cpp/Tree/UnionFind1.test.cpp
   - test/cpp/Tree/UnionFind2_group.test.cpp
+  - test/cpp/Tree/UnionFind1.test.cpp
+  - test/cpp/Graph/kruskal1.test.cpp
 documentation_of: library/cpp/Tree/UnionFind.hpp
 layout: document
 redirect_from:

@@ -48,7 +48,7 @@ data:
     \ std::vector<T> &v) {\n    int max_v = (int) *std::max_element(v.begin(), v.end());\n\
     \    FenwickTree<long long> ft(max_v + 10);\n\n    long long ans = 0;\n    for\
     \ (int i = 0; i < (int) v.size(); ++i) {\n        ans += i - ft.sum(v[i]);\n \
-    \       ft.add(v[i], 1);\n    }\n    return ans;\n}\n#line 1 \"library/cpp/Compression/CoordinateCompression.hpp\"\
+    \       ft.add(v[i], 1);\n    }\n    return ans;\n}\n#line 2 \"library/cpp/Compression/CoordinateCompression.hpp\"\
     \n#include <set>\n#include <unordered_map>\n\ntemplate<class T=long long>\nclass\
     \ CoordinateCompression {\nprivate:\n    bool initialized;\n    std::set<T> s;\n\
     \n    int no = 0;\n    std::unordered_map<T, int> _zip;\n    std::unordered_map<int,\
@@ -60,14 +60,15 @@ data:
     \            this->build();\n        }\n        return this->_zip[x];\n    }\n\
     \n    // \u5727\u7E2E\u3057\u305F\u5024 -> \u5143\u306E\u5024\n    T unzip(const\
     \ int i) {\n        if (not this->initialized) {\n            this->build();\n\
-    \        }\n        return this->_unzip[i];\n    }\n\nprivate:\n    void build()\
-    \ {\n        this->initialized = true;\n        for (auto x: this->s) {\n    \
-    \        this->_zip[x] = this->no;\n            this->_unzip[this->no] = x;\n\
-    \            this->no++;\n        }\n    }\n};\n#line 5 \"test/cpp/Math/inversion_number1.test.cpp\"\
-    \n#include <iostream>\n#line 7 \"test/cpp/Math/inversion_number1.test.cpp\"\n\n\
-    using namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int N;\n    cin >> N;\n    vector<int> A(N);\n    CoordinateCompression\
-    \ cc;\n    for (int i = 0; i < N; ++i) {\n        cin >> A[i];\n        cc.add(A[i]);\n\
+    \        }\n        assert(this->_unzip.contains(i));\n        return this->_unzip[i];\n\
+    \    }\n\nprivate:\n    void build() {\n        this->initialized = true;\n  \
+    \      for (auto x: this->s) {\n            this->_zip[x] = this->no;\n      \
+    \      this->_unzip[this->no] = x;\n            this->no++;\n        }\n    }\n\
+    };\n#line 5 \"test/cpp/Math/inversion_number1.test.cpp\"\n#include <iostream>\n\
+    #line 7 \"test/cpp/Math/inversion_number1.test.cpp\"\n\nusing namespace std;\n\
+    \nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n  \
+    \  int N;\n    cin >> N;\n    vector<int> A(N);\n    CoordinateCompression cc;\n\
+    \    for (int i = 0; i < N; ++i) {\n        cin >> A[i];\n        cc.add(A[i]);\n\
     \    }\n\n    for (int i = 0; i < N; ++i) {\n        A[i] = cc.zip(A[i]);\n  \
     \  }\n\n    cout << inversion_number(A) << endl;\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\

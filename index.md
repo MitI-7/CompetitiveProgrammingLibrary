@@ -80,6 +80,9 @@ data:
       path: library/cpp/Math/LinearExpression.hpp
       title: library/cpp/Math/LinearExpression.hpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Math/base_conversion.cpp
+      title: library/cpp/Math/base_conversion.cpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Math/calculate_total_xor.cpp
       title: library/cpp/Math/calculate_total_xor.cpp
     - icon: ':heavy_check_mark:'
@@ -181,6 +184,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Utility/mint.hpp
       title: library/cpp/Utility/mint.hpp
+  - name: library/python/Math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: library/python/Math/base_conversion.py
+      title: library/python/Math/base_conversion.py
   - name: library/python/String
     pages:
     - icon: ':heavy_check_mark:'
@@ -247,6 +255,9 @@ data:
     - icon: ':x:'
       path: test/cpp/DataStructure/DynamicMedian2.test.cpp
       title: test/cpp/DataStructure/DynamicMedian2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/DataStructure/DynamicMedian3.test.cpp
+      title: test/cpp/DataStructure/DynamicMedian3.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
       title: test/cpp/DataStructure/TopK1_get_top_k.test.cpp
@@ -331,6 +342,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/LinearExpression1.test.cpp
       title: test/cpp/Math/LinearExpression1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Math/base_conversion1_to_base_10.test.cpp
+      title: test/cpp/Math/base_conversion1_to_base_10.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Math/calculate_total_xor1.test.cpp
       title: test/cpp/Math/calculate_total_xor1.test.cpp
@@ -435,6 +449,9 @@ data:
       path: test/cpp/Tree/ReRooting3.test.cpp
       title: test/cpp/Tree/ReRooting3.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/ReRooting4.test.cpp
+      title: test/cpp/Tree/ReRooting4.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind1.test.cpp
       title: test/cpp/Tree/RollbackUnionFind1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -481,6 +498,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Utility/is_range_overlap1.test.cpp
       title: test/cpp/Utility/is_range_overlap1.test.cpp
+  - name: test/python/Math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/python/Math/base_conversion1_to_base_10.test.py
+      title: test/python/Math/base_conversion1_to_base_10.test.py
   - name: test/python/String
     pages:
     - icon: ':heavy_check_mark:'

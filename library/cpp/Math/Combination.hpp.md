@@ -91,8 +91,8 @@ data:
   timestamp: '2024-01-20 16:48:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Math/Combination1_nCr.test.cpp
   - test/cpp/Math/derangement1.test.cpp
+  - test/cpp/Math/Combination1_nCr.test.cpp
 documentation_of: library/cpp/Math/Combination.hpp
 layout: document
 redirect_from:

@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/DynamicMedian1.test.cpp
     title: test/cpp/DataStructure/DynamicMedian1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/DataStructure/DynamicMedian3.test.cpp
+    title: test/cpp/DataStructure/DynamicMedian3.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -127,6 +130,7 @@ data:
   timestamp: '2024-01-20 16:37:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/DataStructure/DynamicMedian3.test.cpp
   - test/cpp/DataStructure/DynamicMedian1.test.cpp
 documentation_of: library/cpp/DataStructure/DynamicMedian.hpp
 layout: document
