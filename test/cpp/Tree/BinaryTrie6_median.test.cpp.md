@@ -11,33 +11,33 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B
+    PROBLEM: https://atcoder.jp/contests/abc102/tasks/abc102_c
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B
-  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie2_erase.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\n\n#line\
-    \ 1 \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include <cassert>\n\
-    #include <limits>\n#include <memory>\n#include <vector>\n\ntemplate<typename T>\n\
-    class Node {\npublic:\n    T x;        // \u8449\u306E\u5024\n    int count; \
-    \ // \u3053\u306E\u30CE\u30FC\u30C9\u3092\u901A\u308B\u56DE\u6570\n\n    // \u5DE6\
-    \u306E\u5B50\u3068\u53F3\u306E\u5B50\n    std::array<std::unique_ptr<Node>, 2>\
-    \ child = {nullptr, nullptr};\n\n    // \u8449\u306E\u3068\u304D\uFF0C\u5DE6\u306E\
-    \u8449\u3068\u53F3\u306E\u8449\u3092\u6307\u3059\uFF08\u5B58\u5728\u3057\u306A\
-    \u3044\u5834\u5408\u306F DUMMY\u3092\u6307\u3059\uFF09\n    Node *prev;\n    Node\
-    \ *next;\n\n    Node *parent;\n\n    // \u5DE6\u306E\u5B50\u3092\u6301\u305F\u306A\
-    \u3044\u3068\u304D\u306F\u3001\u3053\u306E node \u3092\u6839\u3068\u3059\u308B\
-    \u90E8\u5206\u6728\u306B\u304A\u3051\u308B\u6700\u5C0F\u306E\u8449\u3092\u6307\
-    \u3059\n    // \u53F3\u306E\u5B50\u3092\u6301\u305F\u306A\u3044\u3068\u304D\u306F\
-    \u3001\u3053\u306E node \u3092\u6839\u3068\u3059\u308B\u90E8\u5206\u6728\u306B\
-    \u304A\u3051\u308B\u6700\u5927\u306E\u8449\u3092\u6307\u3059\n    // Trie \u304C\
-    \u7A7A\u306E\u3068\u304D\u306F DUMMY \u3092\u6307\u3059\n    Node *jump;\n\n \
-    \   Node() : x(0), count(0), prev(nullptr), next(nullptr), parent(nullptr), jump(nullptr)\
-    \ {}\n\n    Node(const T x, int count) : x(x), count(count), prev(nullptr), next(nullptr),\
-    \ parent(nullptr), jump(nullptr) {};\n};\n\ntemplate<typename T=uint64_t, int\
-    \ bit_size = 64>\nclass BinaryTrie {\nprivate:\npublic:\n    std::unique_ptr<Node<T>>\
-    \ root;\n    const T NOTFOUND = std::numeric_limits<T>::max();\n    Node<T> DUMMY;\n\
-    \n    BinaryTrie() {\n        this->root = std::make_unique<Node<T>>();\n    \
-    \    root->jump = &DUMMY;\n        DUMMY.jump = &DUMMY;\n        DUMMY.x = NOTFOUND;\n\
+    - https://atcoder.jp/contests/abc102/tasks/abc102_c
+  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie6_median.test.cpp\"\n#define PROBLEM\
+    \ \"https://atcoder.jp/contests/abc102/tasks/abc102_c\"\n\n#line 1 \"library/cpp/Tree/BinaryTrie.hpp\"\
+    \n#include <array>\n#include <cassert>\n#include <limits>\n#include <memory>\n\
+    #include <vector>\n\ntemplate<typename T>\nclass Node {\npublic:\n    T x;   \
+    \     // \u8449\u306E\u5024\n    int count;  // \u3053\u306E\u30CE\u30FC\u30C9\
+    \u3092\u901A\u308B\u56DE\u6570\n\n    // \u5DE6\u306E\u5B50\u3068\u53F3\u306E\u5B50\
+    \n    std::array<std::unique_ptr<Node>, 2> child = {nullptr, nullptr};\n\n   \
+    \ // \u8449\u306E\u3068\u304D\uFF0C\u5DE6\u306E\u8449\u3068\u53F3\u306E\u8449\u3092\
+    \u6307\u3059\uFF08\u5B58\u5728\u3057\u306A\u3044\u5834\u5408\u306F DUMMY\u3092\
+    \u6307\u3059\uFF09\n    Node *prev;\n    Node *next;\n\n    Node *parent;\n\n\
+    \    // \u5DE6\u306E\u5B50\u3092\u6301\u305F\u306A\u3044\u3068\u304D\u306F\u3001\
+    \u3053\u306E node \u3092\u6839\u3068\u3059\u308B\u90E8\u5206\u6728\u306B\u304A\
+    \u3051\u308B\u6700\u5C0F\u306E\u8449\u3092\u6307\u3059\n    // \u53F3\u306E\u5B50\
+    \u3092\u6301\u305F\u306A\u3044\u3068\u304D\u306F\u3001\u3053\u306E node \u3092\
+    \u6839\u3068\u3059\u308B\u90E8\u5206\u6728\u306B\u304A\u3051\u308B\u6700\u5927\
+    \u306E\u8449\u3092\u6307\u3059\n    // Trie \u304C\u7A7A\u306E\u3068\u304D\u306F\
+    \ DUMMY \u3092\u6307\u3059\n    Node *jump;\n\n    Node() : x(0), count(0), prev(nullptr),\
+    \ next(nullptr), parent(nullptr), jump(nullptr) {}\n\n    Node(const T x, int\
+    \ count) : x(x), count(count), prev(nullptr), next(nullptr), parent(nullptr),\
+    \ jump(nullptr) {};\n};\n\ntemplate<typename T=uint64_t, int bit_size = 64>\n\
+    class BinaryTrie {\nprivate:\npublic:\n    std::unique_ptr<Node<T>> root;\n  \
+    \  const T NOTFOUND = std::numeric_limits<T>::max();\n    Node<T> DUMMY;\n\n \
+    \   BinaryTrie() {\n        this->root = std::make_unique<Node<T>>();\n      \
+    \  root->jump = &DUMMY;\n        DUMMY.jump = &DUMMY;\n        DUMMY.x = NOTFOUND;\n\
     \        DUMMY.prev = DUMMY.next = &DUMMY;\n    }\n\n    // \u96C6\u5408\u306E\
     \u8981\u7D20\u6570\n    [[nodiscard]] int size() const {\n        return this->root->count;\n\
     \    }\n\n    [[nodiscard]] bool empty() const {\n        return this->root->count\
@@ -229,37 +229,35 @@ data:
     \           }\n//        }\n//\n//        return {mini, maxi};\n//    }\n\nprivate:\n\
     \    // x \u306E i \u756A\u76EE\u306E bit \u3092\u53D6\u5F97\n    int get_ith_bit(const\
     \ T x, const int i) const {\n        return (x >> i) & 1u;\n    }\n};\n#line 4\
-    \ \"test/cpp/Tree/BinaryTrie2_erase.test.cpp\"\n#include <iostream>\n\nusing namespace\
-    \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int Q;\n    cin >> Q;\n\n    BinaryTrie<unsigned int, 30> bt;\n    for (int\
-    \ i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >> QUERY >> X;\n  \
-    \      if (QUERY == 0) {\n            if (not bt.exist(X)) {\n               \
-    \ bt.insert(X);\n            }\n            cout << bt.size() << endl;\n     \
-    \   } else if (QUERY == 1) {\n            cout << bt.exist(X) << endl;\n     \
-    \   } else if (QUERY == 2) {\n            bt.erase(X);\n        }\n    }\n\n \
-    \   return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\
-    \n\n#include \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing\
+    \ \"test/cpp/Tree/BinaryTrie6_median.test.cpp\"\n#include <iostream>\n\nusing\
     \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int Q;\n    cin >> Q;\n\n    BinaryTrie<unsigned int, 30> bt;\n    for (int\
-    \ i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >> QUERY >> X;\n  \
-    \      if (QUERY == 0) {\n            if (not bt.exist(X)) {\n               \
-    \ bt.insert(X);\n            }\n            cout << bt.size() << endl;\n     \
-    \   } else if (QUERY == 1) {\n            cout << bt.exist(X) << endl;\n     \
-    \   } else if (QUERY == 2) {\n            bt.erase(X);\n        }\n    }\n\n \
-    \   return 0;\n}"
+    \n    int N;\n    cin >> N;\n\n    int base = 200000;\n    vector<int> A(N);\n\
+    \    BinaryTrie<unsigned int, 32> bt;\n    for (int i = 0; i < N; ++i) {\n   \
+    \     cin >> A[i];\n        A[i] = base + A[i] - (i + 1);\n        bt.insert(A[i]);\n\
+    \    }\n    const auto [m1, m2] = bt.find_median();\n\n    long long ans1 = 0;\n\
+    \    for (auto a: A) {\n        ans1 += abs(a - (long long) m1);\n    }\n    cout\
+    \ << ans1 << endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc102/tasks/abc102_c\"\n\n\
+    #include \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing namespace\
+    \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N;\n    cin >> N;\n\n    int base = 200000;\n    vector<int> A(N);\n\
+    \    BinaryTrie<unsigned int, 32> bt;\n    for (int i = 0; i < N; ++i) {\n   \
+    \     cin >> A[i];\n        A[i] = base + A[i] - (i + 1);\n        bt.insert(A[i]);\n\
+    \    }\n    const auto [m1, m2] = bt.find_median();\n\n    long long ans1 = 0;\n\
+    \    for (auto a: A) {\n        ans1 += abs(a - (long long) m1);\n    }\n    cout\
+    \ << ans1 << endl;\n\n    return 0;\n}\n"
   dependsOn:
   - library/cpp/Tree/BinaryTrie.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+  path: test/cpp/Tree/BinaryTrie6_median.test.cpp
   requiredBy: []
-  timestamp: '2024-02-12 19:57:34+09:00'
+  timestamp: '2024-02-19 15:41:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+documentation_of: test/cpp/Tree/BinaryTrie6_median.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/BinaryTrie2_erase.test.cpp
-- /verify/test/cpp/Tree/BinaryTrie2_erase.test.cpp.html
-title: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie6_median.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie6_median.test.cpp.html
+title: test/cpp/Tree/BinaryTrie6_median.test.cpp
 ---

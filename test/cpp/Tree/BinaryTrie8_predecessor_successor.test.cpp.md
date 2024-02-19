@@ -11,12 +11,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B
+    PROBLEM: https://judge.yosupo.jp/problem/predecessor_problem
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B
-  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie2_erase.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\n\n#line\
-    \ 1 \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include <cassert>\n\
+    - https://judge.yosupo.jp/problem/predecessor_problem
+  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\n\
+    #line 1 \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include <cassert>\n\
     #include <limits>\n#include <memory>\n#include <vector>\n\ntemplate<typename T>\n\
     class Node {\npublic:\n    T x;        // \u8449\u306E\u5024\n    int count; \
     \ // \u3053\u306E\u30CE\u30FC\u30C9\u3092\u901A\u308B\u56DE\u6570\n\n    // \u5DE6\
@@ -229,37 +229,51 @@ data:
     \           }\n//        }\n//\n//        return {mini, maxi};\n//    }\n\nprivate:\n\
     \    // x \u306E i \u756A\u76EE\u306E bit \u3092\u53D6\u5F97\n    int get_ith_bit(const\
     \ T x, const int i) const {\n        return (x >> i) & 1u;\n    }\n};\n#line 4\
-    \ \"test/cpp/Tree/BinaryTrie2_erase.test.cpp\"\n#include <iostream>\n\nusing namespace\
+    \ \"test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp\"\n#include <iostream>\n\
+    \nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N, Q;\n    string T;\n    cin >> N >> Q;\n    cin >> T;\n\n    BinaryTrie<unsigned\
+    \ int, 24> bt;\n    for (int i = 0; i < (int) T.size(); ++i) {\n        if (T[i]\
+    \ == '1') {\n            bt.insert(i);\n        }\n    }\n\n    for (int i = 0;\
+    \ i < Q; ++i) {\n        int C, K;\n        cin >> C >> K;\n        if (C == 0)\
+    \ {\n            if (not bt.exist(K)) {\n                bt.insert(K);\n     \
+    \       }\n        } else if (C == 1) {\n            if (bt.exist(K)) {\n    \
+    \            bt.erase(K, 1);\n            }\n        } else if (C == 2) {\n  \
+    \          cout << bt.exist(K) << endl;\n        } else if (C == 3) {\n      \
+    \      auto u = bt.successor(K);\n            if (u == &bt.DUMMY) {\n        \
+    \        cout << -1 << endl;;\n            } else {\n                cout << u->x\
+    \ << endl;\n            }\n        } else if (C == 4) {\n            auto u =\
+    \ bt.predecessor(K);\n            if (u == &bt.DUMMY) {\n                cout\
+    \ << -1 << endl;\n            } else {\n                cout << u->x << endl;\n\
+    \            }\n        }\n    }\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\
+    \n#include \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing namespace\
     \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int Q;\n    cin >> Q;\n\n    BinaryTrie<unsigned int, 30> bt;\n    for (int\
-    \ i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >> QUERY >> X;\n  \
-    \      if (QUERY == 0) {\n            if (not bt.exist(X)) {\n               \
-    \ bt.insert(X);\n            }\n            cout << bt.size() << endl;\n     \
-    \   } else if (QUERY == 1) {\n            cout << bt.exist(X) << endl;\n     \
-    \   } else if (QUERY == 2) {\n            bt.erase(X);\n        }\n    }\n\n \
-    \   return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\
-    \n\n#include \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing\
-    \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int Q;\n    cin >> Q;\n\n    BinaryTrie<unsigned int, 30> bt;\n    for (int\
-    \ i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >> QUERY >> X;\n  \
-    \      if (QUERY == 0) {\n            if (not bt.exist(X)) {\n               \
-    \ bt.insert(X);\n            }\n            cout << bt.size() << endl;\n     \
-    \   } else if (QUERY == 1) {\n            cout << bt.exist(X) << endl;\n     \
-    \   } else if (QUERY == 2) {\n            bt.erase(X);\n        }\n    }\n\n \
-    \   return 0;\n}"
+    \n    int N, Q;\n    string T;\n    cin >> N >> Q;\n    cin >> T;\n\n    BinaryTrie<unsigned\
+    \ int, 24> bt;\n    for (int i = 0; i < (int) T.size(); ++i) {\n        if (T[i]\
+    \ == '1') {\n            bt.insert(i);\n        }\n    }\n\n    for (int i = 0;\
+    \ i < Q; ++i) {\n        int C, K;\n        cin >> C >> K;\n        if (C == 0)\
+    \ {\n            if (not bt.exist(K)) {\n                bt.insert(K);\n     \
+    \       }\n        } else if (C == 1) {\n            if (bt.exist(K)) {\n    \
+    \            bt.erase(K, 1);\n            }\n        } else if (C == 2) {\n  \
+    \          cout << bt.exist(K) << endl;\n        } else if (C == 3) {\n      \
+    \      auto u = bt.successor(K);\n            if (u == &bt.DUMMY) {\n        \
+    \        cout << -1 << endl;;\n            } else {\n                cout << u->x\
+    \ << endl;\n            }\n        } else if (C == 4) {\n            auto u =\
+    \ bt.predecessor(K);\n            if (u == &bt.DUMMY) {\n                cout\
+    \ << -1 << endl;\n            } else {\n                cout << u->x << endl;\n\
+    \            }\n        }\n    }\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Tree/BinaryTrie.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+  path: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
   requiredBy: []
-  timestamp: '2024-02-12 19:57:34+09:00'
+  timestamp: '2024-02-19 15:42:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+documentation_of: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/BinaryTrie2_erase.test.cpp
-- /verify/test/cpp/Tree/BinaryTrie2_erase.test.cpp.html
-title: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp.html
+title: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
 ---

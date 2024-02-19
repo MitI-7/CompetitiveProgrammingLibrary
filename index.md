@@ -425,11 +425,38 @@ data:
   - name: test/cpp/Tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie10_find_kth_max_element.test.cpp
+      title: test/cpp/Tree/BinaryTrie10_find_kth_max_element.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
+      title: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/BinaryTrie1_exist.test.cpp
       title: test/cpp/Tree/BinaryTrie1_exist.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/BinaryTrie2_erase.test.cpp
       title: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie3_range.test.cpp
+      title: test/cpp/Tree/BinaryTrie3_range.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie4_count.test.cpp
+      title: test/cpp/Tree/BinaryTrie4_count.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie5_count_less_than_x.test.cpp
+      title: test/cpp/Tree/BinaryTrie5_count_less_than_x.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie6_median.test.cpp
+      title: test/cpp/Tree/BinaryTrie6_median.test.cpp
+    - icon: ':x:'
+      path: test/cpp/Tree/BinaryTrie7_median.test.cpp
+      title: test/cpp/Tree/BinaryTrie7_median.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
+      title: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
+      title: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/FenwickTree1.test.cpp
       title: test/cpp/Tree/FenwickTree1.test.cpp

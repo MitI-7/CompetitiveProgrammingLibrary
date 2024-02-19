@@ -11,11 +11,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_D
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B
-  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie2_erase.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\n\n#line\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_D
+  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie4_count.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_D\"\n\n#line\
     \ 1 \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include <cassert>\n\
     #include <limits>\n#include <memory>\n#include <vector>\n\ntemplate<typename T>\n\
     class Node {\npublic:\n    T x;        // \u8449\u306E\u5024\n    int count; \
@@ -229,37 +229,45 @@ data:
     \           }\n//        }\n//\n//        return {mini, maxi};\n//    }\n\nprivate:\n\
     \    // x \u306E i \u756A\u76EE\u306E bit \u3092\u53D6\u5F97\n    int get_ith_bit(const\
     \ T x, const int i) const {\n        return (x >> i) & 1u;\n    }\n};\n#line 4\
-    \ \"test/cpp/Tree/BinaryTrie2_erase.test.cpp\"\n#include <iostream>\n\nusing namespace\
+    \ \"test/cpp/Tree/BinaryTrie4_count.test.cpp\"\n#include <iostream>\n\nusing namespace\
     \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int Q;\n    cin >> Q;\n\n    BinaryTrie<unsigned int, 30> bt;\n    for (int\
-    \ i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >> QUERY >> X;\n  \
-    \      if (QUERY == 0) {\n            if (not bt.exist(X)) {\n               \
-    \ bt.insert(X);\n            }\n            cout << bt.size() << endl;\n     \
-    \   } else if (QUERY == 1) {\n            cout << bt.exist(X) << endl;\n     \
-    \   } else if (QUERY == 2) {\n            bt.erase(X);\n        }\n    }\n\n \
-    \   return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\
+    \ i = 0; i < Q; ++i) {\n        int QUERY;\n        unsigned int X, L, R;\n  \
+    \      cin >> QUERY;\n        if (QUERY == 0) {\n            cin >> X;\n     \
+    \       bt.insert(X);\n            cout << bt.size() << endl;\n        } else\
+    \ if (QUERY == 1) {\n            cin >> X;\n            cout << bt.count(X) <<\
+    \ endl;\n        } else if (QUERY == 2) {\n            cin >> X;\n           \
+    \ bt.erase(X, bt.count(X));\n        } else if (QUERY == 3) {\n            cin\
+    \ >> L >> R;\n            auto u = bt.successor(L);\n            while (u->x <=\
+    \ R and u != &bt.DUMMY) {\n                for (int j = 0; j < u->count; ++j)\
+    \ {\n                    cout << u->x << endl;\n                }\n          \
+    \      u = u->next;\n            }\n        }\n    }\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_D\"\
     \n\n#include \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing\
     \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int Q;\n    cin >> Q;\n\n    BinaryTrie<unsigned int, 30> bt;\n    for (int\
-    \ i = 0; i < Q; ++i) {\n        int QUERY, X;\n        cin >> QUERY >> X;\n  \
-    \      if (QUERY == 0) {\n            if (not bt.exist(X)) {\n               \
-    \ bt.insert(X);\n            }\n            cout << bt.size() << endl;\n     \
-    \   } else if (QUERY == 1) {\n            cout << bt.exist(X) << endl;\n     \
-    \   } else if (QUERY == 2) {\n            bt.erase(X);\n        }\n    }\n\n \
-    \   return 0;\n}"
+    \ i = 0; i < Q; ++i) {\n        int QUERY;\n        unsigned int X, L, R;\n  \
+    \      cin >> QUERY;\n        if (QUERY == 0) {\n            cin >> X;\n     \
+    \       bt.insert(X);\n            cout << bt.size() << endl;\n        } else\
+    \ if (QUERY == 1) {\n            cin >> X;\n            cout << bt.count(X) <<\
+    \ endl;\n        } else if (QUERY == 2) {\n            cin >> X;\n           \
+    \ bt.erase(X, bt.count(X));\n        } else if (QUERY == 3) {\n            cin\
+    \ >> L >> R;\n            auto u = bt.successor(L);\n            while (u->x <=\
+    \ R and u != &bt.DUMMY) {\n                for (int j = 0; j < u->count; ++j)\
+    \ {\n                    cout << u->x << endl;\n                }\n          \
+    \      u = u->next;\n            }\n        }\n    }\n\n    return 0;\n}"
   dependsOn:
   - library/cpp/Tree/BinaryTrie.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+  path: test/cpp/Tree/BinaryTrie4_count.test.cpp
   requiredBy: []
-  timestamp: '2024-02-12 19:57:34+09:00'
+  timestamp: '2024-02-19 15:41:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+documentation_of: test/cpp/Tree/BinaryTrie4_count.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/BinaryTrie2_erase.test.cpp
-- /verify/test/cpp/Tree/BinaryTrie2_erase.test.cpp.html
-title: test/cpp/Tree/BinaryTrie2_erase.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie4_count.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie4_count.test.cpp.html
+title: test/cpp/Tree/BinaryTrie4_count.test.cpp
 ---
