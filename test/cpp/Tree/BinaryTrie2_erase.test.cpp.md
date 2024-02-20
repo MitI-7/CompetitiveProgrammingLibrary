@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: library/cpp/Tree/BinaryTrie.hpp
     title: library/cpp/Tree/BinaryTrie.hpp
   _extendedRequiredBy: []
@@ -18,8 +18,10 @@ data:
     \ \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP2_7_B\"\n\n#line\
     \ 1 \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include <cassert>\n\
     #include <limits>\n#include <memory>\n#include <vector>\n\ntemplate<typename T>\n\
-    class Node {\npublic:\n    T x;        // \u8449\u306E\u5024\n    int count; \
-    \ // \u3053\u306E\u30CE\u30FC\u30C9\u3092\u901A\u308B\u56DE\u6570\n\n    // \u5DE6\
+    class Node {\npublic:\n    T x;                 // \u8449\u306E\u5024\n    int\
+    \ count;           // \u3053\u306E\u30CE\u30FC\u30C9\u3092\u901A\u308B\u56DE\u6570\
+    \n    int count_distinct;  // \u3053\u306E\u30CE\u30FC\u30C9\u3092\u9802\u70B9\
+    \u3068\u3059\u308B\u8449\u306E\u500B\u6570(=\u7A2E\u985E\u6570)\n\n    // \u5DE6\
     \u306E\u5B50\u3068\u53F3\u306E\u5B50\n    std::array<std::unique_ptr<Node>, 2>\
     \ child = {nullptr, nullptr};\n\n    // \u8449\u306E\u3068\u304D\uFF0C\u5DE6\u306E\
     \u8449\u3068\u53F3\u306E\u8449\u3092\u6307\u3059\uFF08\u5B58\u5728\u3057\u306A\
@@ -31,38 +33,42 @@ data:
     \u3001\u3053\u306E node \u3092\u6839\u3068\u3059\u308B\u90E8\u5206\u6728\u306B\
     \u304A\u3051\u308B\u6700\u5927\u306E\u8449\u3092\u6307\u3059\n    // Trie \u304C\
     \u7A7A\u306E\u3068\u304D\u306F DUMMY \u3092\u6307\u3059\n    Node *jump;\n\n \
-    \   Node() : x(0), count(0), prev(nullptr), next(nullptr), parent(nullptr), jump(nullptr)\
-    \ {}\n\n    Node(const T x, int count) : x(x), count(count), prev(nullptr), next(nullptr),\
-    \ parent(nullptr), jump(nullptr) {};\n};\n\ntemplate<typename T=uint64_t, int\
-    \ bit_size = 64>\nclass BinaryTrie {\nprivate:\npublic:\n    std::unique_ptr<Node<T>>\
-    \ root;\n    const T NOTFOUND = std::numeric_limits<T>::max();\n    Node<T> DUMMY;\n\
-    \n    BinaryTrie() {\n        this->root = std::make_unique<Node<T>>();\n    \
-    \    root->jump = &DUMMY;\n        DUMMY.jump = &DUMMY;\n        DUMMY.x = NOTFOUND;\n\
+    \   Node() : x(0), count(0), count_distinct(0), prev(nullptr), next(nullptr),\
+    \ parent(nullptr), jump(nullptr) {}\n\n    Node(const T x, int count) : x(x),\
+    \ count(count), count_distinct(0), prev(nullptr), next(nullptr), parent(nullptr),\
+    \ jump(nullptr) {};\n};\n\ntemplate<typename T=uint64_t, int bit_size = 64>\n\
+    class BinaryTrie {\nprivate:\npublic:\n    std::unique_ptr<Node<T>> root;\n  \
+    \  const T NOTFOUND = std::numeric_limits<T>::max();\n    Node<T> DUMMY;\n\n \
+    \   BinaryTrie() {\n        this->root = std::make_unique<Node<T>>();\n      \
+    \  root->jump = &DUMMY;\n        DUMMY.jump = &DUMMY;\n        DUMMY.x = NOTFOUND;\n\
     \        DUMMY.prev = DUMMY.next = &DUMMY;\n    }\n\n    // \u96C6\u5408\u306E\
     \u8981\u7D20\u6570\n    [[nodiscard]] int size() const {\n        return this->root->count;\n\
-    \    }\n\n    [[nodiscard]] bool empty() const {\n        return this->root->count\
-    \ == 0;\n    }\n\n    // x \u3092 num \u500B\u633F\u5165\u3059\u308B\n    void\
-    \ insert(const T x, const int num = 1) {\n        assert(x >= 0);\n        auto\
-    \ node = this->root.get();\n        node->count += num;\n\n        int i = bit_size\
-    \ - 1;\n        // \u6728\u306E\u7D42\u7AEF\u30CE\u30FC\u30C9\u306B\u305F\u3069\
-    \u308A\u7740\u304F\u307E\u3067\u4E0B\u308B\n        for (; i >= 0; --i) {\n  \
-    \          const int b = this->get_ith_bit(x, i);\n            if (node->child[b]\
-    \ == nullptr) {\n                break;\n            }\n            node = node->child[b].get();\n\
-    \            assert(node->count >= 1);\n            node->count += num;\n    \
-    \    }\n        // \u3059\u3067\u306B\u8449\u304C\u3042\u308B\n        if (i ==\
-    \ -1) {\n            assert(node->x == x);\n            return;\n        }\n\n\
-    \        // x \u306E\u5DE6\u306E\u8449\u3068\u53F3\u306E\u8449\u3092\u53D6\u5F97\
-    \n        assert(node->jump != nullptr);\n        const int b = this->get_ith_bit(x,\
+    \    }\n\n    // \u96C6\u5408\u306E\u7A2E\u985E\u6570\n    [[nodiscard]] int distinct()\
+    \ const {\n        return this->root->count_distinct;\n    }\n\n    [[nodiscard]]\
+    \ bool empty() const {\n        return this->root->count == 0;\n    }\n\n    //\
+    \ x \u3092 num \u500B\u633F\u5165\u3059\u308B\n    void insert(const T x, const\
+    \ int num = 1) {\n        assert(x >= 0);\n        auto node = this->root.get();\n\
+    \        node->count += num;\n\n        const bool exist = this->exist(x);\n\n\
+    \        int i = bit_size - 1;\n        // \u6728\u306E\u7D42\u7AEF\u30CE\u30FC\
+    \u30C9\u306B\u305F\u3069\u308A\u7740\u304F\u307E\u3067\u4E0B\u308B\n        for\
+    \ (; i >= 0; --i) {\n            const int b = this->get_ith_bit(x, i);\n    \
+    \        if (node->child[b] == nullptr) {\n                break;\n          \
+    \  }\n            node = node->child[b].get();\n            assert(node->count\
+    \ >= 1);\n            node->count += num;\n            node->count_distinct +=\
+    \ not exist;\n        }\n        // \u3059\u3067\u306B\u8449\u304C\u3042\u308B\
+    \n        if (i == -1) {\n            assert(node->x == x);\n            return;\n\
+    \        }\n\n        // x \u306E\u5DE6\u306E\u8449\u3068\u53F3\u306E\u8449\u3092\
+    \u53D6\u5F97\n        assert(node->jump != nullptr);\n        const int b = this->get_ith_bit(x,\
     \ i);\n        auto *left_leaf = (b == 1) ? node->jump : node->jump->prev;\n \
     \       auto *right_leaf = left_leaf->next;\n        node->jump = nullptr;\n \
     \       assert(left_leaf != nullptr);\n\n        // \u8449\u307E\u3067\u306E\u7D4C\
     \u8DEF\u3092\u4F5C\u308B\n        for (; i >= 0; --i) {\n            const int\
     \ b = this->get_ith_bit(x, i);\n            assert(node->child[b] == nullptr);\n\
     \            node->child[b] = std::make_unique<Node<T>>();\n            node->child[b]->parent\
-    \ = node;\n            node = node->child[b].get();\n            assert(node->count\
-    \ == 0);\n            node->count += num;\n        }\n        node->x = x;\n\n\
-    \        // x \u3092\u9023\u7D50\u30EA\u30B9\u30C8\u306B\u8FFD\u52A0\n       \
-    \ node->prev = left_leaf;\n        node->next = right_leaf;\n        left_leaf->next\
+    \ = node;\n            node = node->child[b].get();\n            node->count +=\
+    \ num;\n            node->count_distinct++;\n        }\n        node->x = x;\n\
+    \n        // x \u3092\u9023\u7D50\u30EA\u30B9\u30C8\u306B\u8FFD\u52A0\n      \
+    \  node->prev = left_leaf;\n        node->next = right_leaf;\n        left_leaf->next\
     \ = node;\n        right_leaf->prev = node;\n\n        // \u6839\u306B\u623B\u308A\
     \u306A\u304C\u3089\uFF0Cjump \u3092\u66F4\u65B0\u3059\u308B\n        auto u =\
     \ node->parent;\n        while (u != nullptr) {\n            if ((u->child[0]\
@@ -78,40 +84,58 @@ data:
     \ \u3092\u542B\u3080\u8449 u \u3092\u898B\u3064\u3051\u308B\n        for (; i\
     \ >= 0; --i) {\n            int b = this->get_ith_bit(x, i);\n            assert(node->child[b]\
     \ != nullptr);\n            node = node->child[b].get();\n            assert(node->count\
-    \ > 0);\n            node->count -= num;\n        }\n        assert(node->x ==\
-    \ x);   // \u8449\u306B\u3044\u308B\n\n        // x \u304C\u6B8B\u308B\u3068\u304D\
-    \u306F\u7D42\u4E86\n        if (num < num_x) {\n            return;\n        }\n\
-    \n        // node \u3092\u9023\u7D50\u30EA\u30B9\u30C8\u304B\u3089\u524A\u9664\
-    \u3059\u308B\n        node->prev->next = node->next;  // \u81EA\u5206\u306E\u5DE6\
-    \u306F\u81EA\u5206\u3092\u6307\u3057\u3066\u3044\u308B\u306E\u3067\uFF0C\u53F3\
-    \u3092\u6307\u3059\u3088\u3046\u306B\u66F4\u65B0\n        node->next->prev = node->prev;\
-    \  // \u81EA\u5206\u306E\u53F3\u306E\u81EA\u5206\u3092\u6307\u3057\u3066\u3044\
-    \u308B\u306E\u3067\uFF0C\u5DE6\u3092\u6307\u3059\u3088\u3046\u306B\u66F4\u65B0\
-    \n\n        // node \u304B\u3089\u6839\u3078\u4E0A\u308A\uFF0C\u4E0D\u8981\u306A\
-    \u30CE\u30FC\u30C9\u3092\u524A\u9664\u3059\u308B\n        auto u = node;\n   \
-    \     for (i = 0; i < bit_size; ++i) {\n            int b = this->get_ith_bit(x,\
-    \ i);\n            u = u->parent;\n            u->child[b].release();\n      \
-    \      u->child[b] = nullptr;\n            // \u53CD\u5BFE\u306E\u5B50\u4F9B\u304C\
-    \u5B58\u5728\u3059\u308C\u3070\u7D42\u4E86\n            if (u->child[1 - b] !=\
-    \ nullptr) {\n                break;\n            }\n        }\n\n        // jump\
-    \ \u3092\u66F4\u65B0\u3059\u308B\n        int b = this->get_ith_bit(x, i);\n \
-    \       assert(u->child[b] == nullptr);\n        if (u->child[0] == nullptr) {\n\
-    \            u->jump = node->next;\n        } else {\n            u->jump = node->prev;\n\
-    \        }\n\n        u = u->parent;\n        i++;\n        for (; i < bit_size;\
-    \ ++i) {\n            b = this->get_ith_bit(x, i);\n            if (u->jump ==\
-    \ node) {\n                if (u->child[0] == nullptr) {\n                   \
-    \ u->jump = node->next;\n                } else {\n                    u->jump\
-    \ = node->prev;\n                }\n            }\n            assert(u->count\
-    \ > 0);\n            u = u->parent;\n        }\n    }\n\n    std::pair<T, T> find_median()\
-    \ {\n        const int m = this->size();\n        assert(m > 0);\n        if (m\
-    \ % 2 == 0) {\n            return {this->find_kth_min_element(m / 2 - 1), this->find_kth_min_element(m\
-    \ / 2)};\n        } else {\n            return {this->find_kth_min_element(m /\
-    \ 2), this->find_kth_min_element(m / 2)};\n        }\n    }\n\n    // v\u304C\u3042\
-    \u308B\u304B\n    bool exist(const T x) const {\n        assert(x >= 0);\n   \
-    \     return this->count(x) > 0;\n    }\n\n    // x \u306E\u51FA\u73FE\u56DE\u6570\
-    \n    int count(const T x) const {\n        assert(x >= 0);\n        auto node\
-    \ = this->root.get();\n        for (int i = bit_size - 1; i >= 0; --i) {\n   \
-    \         const auto b = this->get_ith_bit(x, i);\n            if (node->child[b]\
+    \ > 0);\n            node->count -= num;\n            node->count_distinct -=\
+    \ (num == num_x);\n        }\n        assert(node->x == x);   // \u8449\u306B\u3044\
+    \u308B\n\n        // x \u304C\u6B8B\u308B\u3068\u304D\u306F\u7D42\u4E86\n    \
+    \    if (num < num_x) {\n            return;\n        }\n\n        // node \u3092\
+    \u9023\u7D50\u30EA\u30B9\u30C8\u304B\u3089\u524A\u9664\u3059\u308B\n        node->prev->next\
+    \ = node->next;  // \u81EA\u5206\u306E\u5DE6\u306F\u81EA\u5206\u3092\u6307\u3057\
+    \u3066\u3044\u308B\u306E\u3067\uFF0C\u53F3\u3092\u6307\u3059\u3088\u3046\u306B\
+    \u66F4\u65B0\n        node->next->prev = node->prev;  // \u81EA\u5206\u306E\u53F3\
+    \u306E\u81EA\u5206\u3092\u6307\u3057\u3066\u3044\u308B\u306E\u3067\uFF0C\u5DE6\
+    \u3092\u6307\u3059\u3088\u3046\u306B\u66F4\u65B0\n\n        // node \u304B\u3089\
+    \u6839\u3078\u4E0A\u308A\uFF0C\u4E0D\u8981\u306A\u30CE\u30FC\u30C9\u3092\u524A\
+    \u9664\u3059\u308B\n        auto u = node;\n        for (i = 0; i < bit_size;\
+    \ ++i) {\n            int b = this->get_ith_bit(x, i);\n            u = u->parent;\n\
+    \            u->child[b].release();\n            u->child[b] = nullptr;\n    \
+    \        // \u53CD\u5BFE\u306E\u5B50\u4F9B\u304C\u5B58\u5728\u3059\u308C\u3070\
+    \u7D42\u4E86\n            if (u->child[1 - b] != nullptr) {\n                break;\n\
+    \            }\n        }\n\n        // jump \u3092\u66F4\u65B0\u3059\u308B\n\
+    \        int b = this->get_ith_bit(x, i);\n        assert(u->child[b] == nullptr);\n\
+    \        if (u->child[0] == nullptr) {\n            u->jump = node->next;\n  \
+    \      } else {\n            u->jump = node->prev;\n        }\n\n        u = u->parent;\n\
+    \        i++;\n        for (; i < bit_size; ++i) {\n            b = this->get_ith_bit(x,\
+    \ i);\n            if (u->jump == node) {\n                if (u->child[0] ==\
+    \ nullptr) {\n                    u->jump = node->next;\n                } else\
+    \ {\n                    u->jump = node->prev;\n                }\n          \
+    \  }\n            assert(u->count > 0);\n            u = u->parent;\n        }\n\
+    \    }\n\n    std::pair<T, T> find_median() {\n        const int m = this->size();\n\
+    \        assert(m > 0);\n        if (m % 2 == 0) {\n            return {this->find_kth_min_element(m\
+    \ / 2 - 1), this->find_kth_min_element(m / 2)};\n        } else {\n          \
+    \  return {this->find_kth_min_element(m / 2), this->find_kth_min_element(m / 2)};\n\
+    \        }\n    }\n\n    // \u6728\u306B\u306A\u3044\u5024\u306E\u3046\u3061\uFF0C\
+    \u5C0F\u3055\u3044\u65B9\u304B\u3089 k \u756A\u76EE\u306E\u5024\u3092\u53D6\u5F97\
+    (0-origin)\n    T find_mex(long long k) const {\n        long long maxi_leaf =\
+    \ (long long) 1 << bit_size;\n\n        // k \u756A\u76EE\u306E\u5024\u306F\u6728\
+    \u306E\u5916\u5074\u306B\u3042\u308B\n        if (k + 1 >= maxi_leaf - this->root.get()->count_distinct)\
+    \ {\n            return (k - this->root.get()->count_distinct) + maxi_leaf;\n\
+    \        }\n\n        T ans = 0;\n        maxi_leaf /= 2;\n        auto node =\
+    \ this->root.get();\n        for (int i = bit_size - 1; i >= 0; --i) {\n     \
+    \       const int num_left_leaf = (node->child[0] == nullptr) ? 0 : node->child[0]->count_distinct;\n\
+    \            \n            // \u5DE6\u5074\u306E\u90E8\u5206\u6728\u5185\u306B\
+    \u3042\u308B\n            if (k + 1 <= maxi_leaf - num_left_leaf) {\n        \
+    \        if (node->child[0] == nullptr) {\n                    ans += k;\n   \
+    \                 break;\n                }\n                node = node->child[0].get();\n\
+    \            } else {\n                k -= (maxi_leaf - num_left_leaf);\n\n \
+    \               ans |= ((T) 1 << i);\n                if (node->child[1] == nullptr)\
+    \ {\n                    ans += k;\n                    break;\n             \
+    \   }\n                node = node->child[1].get();\n            }\n         \
+    \   maxi_leaf /= 2;\n        }\n\n        return ans;\n    }\n\n    // v\u304C\
+    \u3042\u308B\u304B\n    bool exist(const T x) const {\n        assert(x >= 0);\n\
+    \        return this->count(x) > 0;\n    }\n\n    // x \u306E\u51FA\u73FE\u56DE\
+    \u6570\n    int count(const T x) const {\n        assert(x >= 0);\n        auto\
+    \ node = this->root.get();\n        for (int i = bit_size - 1; i >= 0; --i) {\n\
+    \            const auto b = this->get_ith_bit(x, i);\n            if (node->child[b]\
     \ == nullptr) {\n                return 0;\n            }\n            node =\
     \ node->child[b].get();\n            assert(node->count > 0);\n        }\n   \
     \     assert(node->x == x);\n        assert(node->count > 0);\n        return\

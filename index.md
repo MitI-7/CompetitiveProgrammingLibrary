@@ -152,7 +152,7 @@ data:
       title: library/cpp/String/RollingHash.hpp
   - name: library/cpp/Tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: library/cpp/Tree/BinaryTrie.hpp
       title: library/cpp/Tree/BinaryTrie.hpp
     - icon: ':heavy_check_mark:'
@@ -431,6 +431,18 @@ data:
       path: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
       title: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie12_find_mex.test.cpp
+      title: test/cpp/Tree/BinaryTrie12_find_mex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie13_find_mex.test.cpp
+      title: test/cpp/Tree/BinaryTrie13_find_mex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie14_find_mex.test.cpp
+      title: test/cpp/Tree/BinaryTrie14_find_mex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/BinaryTrie15_find_mex.test.cpp
+      title: test/cpp/Tree/BinaryTrie15_find_mex.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/BinaryTrie1_exist.test.cpp
       title: test/cpp/Tree/BinaryTrie1_exist.test.cpp
     - icon: ':heavy_check_mark:'
@@ -454,7 +466,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
       title: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
       title: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
     - icon: ':heavy_check_mark:'

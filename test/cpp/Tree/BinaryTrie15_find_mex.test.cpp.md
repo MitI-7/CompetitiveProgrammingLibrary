@@ -11,11 +11,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
+    PROBLEM: https://atcoder.jp/contests/abc205/tasks/abc205_d
     links:
-    - https://judge.yosupo.jp/problem/set_xor_min
-  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#line 1 \"\
+    - https://atcoder.jp/contests/abc205/tasks/abc205_d
+  bundledCode: "#line 1 \"test/cpp/Tree/BinaryTrie15_find_mex.test.cpp\"\n#define\
+    \ PROBLEM \"https://atcoder.jp/contests/abc205/tasks/abc205_d\"\n\n#line 1 \"\
     library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include <cassert>\n#include\
     \ <limits>\n#include <memory>\n#include <vector>\n\ntemplate<typename T>\nclass\
     \ Node {\npublic:\n    T x;                 // \u8449\u306E\u5024\n    int count;\
@@ -252,35 +252,35 @@ data:
     \           }\n//        }\n//\n//        return {mini, maxi};\n//    }\n\nprivate:\n\
     \    // x \u306E i \u756A\u76EE\u306E bit \u3092\u53D6\u5F97\n    int get_ith_bit(const\
     \ T x, const int i) const {\n        return (x >> i) & 1u;\n    }\n};\n#line 4\
-    \ \"test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp\"\n#include <iostream>\n\
-    \nusing namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int Q;\n    cin >> Q;\n\n    BinaryTrie bt;\n    for (int i = 0; i < Q;\
-    \ ++i) {\n        int QUERY;\n        int X;\n        cin >> QUERY >> X;\n   \
-    \     if (QUERY == 0) {\n            bt.insert(X);\n        }\n        else if\
-    \ (QUERY == 1) {\n            bt.erase(X, bt.count(X));\n        }\n        else\
-    \ {\n            cout << (X ^ bt.find_xor_min_element(X)) << endl;\n        }\n\
-    \    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
-    \ \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing namespace\
+    \ \"test/cpp/Tree/BinaryTrie15_find_mex.test.cpp\"\n#include <iostream>\n\nusing\
+    \ namespace std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int N, Q;\n    cin >> N >> Q;\n\n    BinaryTrie<unsigned long long, 60>\
+    \ bt;\n    bt.insert(0);\n    for (int i = 0; i < N; ++i) {\n        unsigned\
+    \ long long A;\n        cin >> A;\n        bt.insert(A);\n    }\n\n    vector<unsigned\
+    \ long long> ans;\n    for (int i = 0; i < Q; ++i) {\n        unsigned long long\
+    \ K;\n        cin >> K;\n        K--;\n        cout << bt.find_mex(K) << endl;\n\
+    \    }\n    \n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc205/tasks/abc205_d\"\n\n\
+    #include \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <iostream>\n\nusing namespace\
     \ std;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int Q;\n    cin >> Q;\n\n    BinaryTrie bt;\n    for (int i = 0; i < Q;\
-    \ ++i) {\n        int QUERY;\n        int X;\n        cin >> QUERY >> X;\n   \
-    \     if (QUERY == 0) {\n            bt.insert(X);\n        }\n        else if\
-    \ (QUERY == 1) {\n            bt.erase(X, bt.count(X));\n        }\n        else\
-    \ {\n            cout << (X ^ bt.find_xor_min_element(X)) << endl;\n        }\n\
-    \    }\n\n    return 0;\n}"
+    \n    int N, Q;\n    cin >> N >> Q;\n\n    BinaryTrie<unsigned long long, 60>\
+    \ bt;\n    bt.insert(0);\n    for (int i = 0; i < N; ++i) {\n        unsigned\
+    \ long long A;\n        cin >> A;\n        bt.insert(A);\n    }\n\n    vector<unsigned\
+    \ long long> ans;\n    for (int i = 0; i < Q; ++i) {\n        unsigned long long\
+    \ K;\n        cin >> K;\n        K--;\n        cout << bt.find_mex(K) << endl;\n\
+    \    }\n    \n    return 0;\n}"
   dependsOn:
   - library/cpp/Tree/BinaryTrie.hpp
   isVerificationFile: true
-  path: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
+  path: test/cpp/Tree/BinaryTrie15_find_mex.test.cpp
   requiredBy: []
-  timestamp: '2024-02-19 15:42:51+09:00'
+  timestamp: '2024-02-20 14:23:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
+documentation_of: test/cpp/Tree/BinaryTrie15_find_mex.test.cpp
 layout: document
 redirect_from:
-- /verify/test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
-- /verify/test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp.html
-title: test/cpp/Tree/BinaryTrie11_find_xor_min_element.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie15_find_mex.test.cpp
+- /verify/test/cpp/Tree/BinaryTrie15_find_mex.test.cpp.html
+title: test/cpp/Tree/BinaryTrie15_find_mex.test.cpp
 ---
