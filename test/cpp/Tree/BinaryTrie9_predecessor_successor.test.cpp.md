@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Tree/BinaryTrie.hpp
     title: library/cpp/Tree/BinaryTrie.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://atcoder.jp/contests/abc241/tasks/abc241_d
@@ -294,7 +294,7 @@ data:
   path: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
   requiredBy: []
   timestamp: '2024-02-19 15:42:24+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
 layout: document

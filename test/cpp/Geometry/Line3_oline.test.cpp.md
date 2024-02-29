@@ -19,26 +19,34 @@ data:
     - https://atcoder.jp/contests/abc181/tasks/abc181_c
   bundledCode: "#line 1 \"test/cpp/Geometry/Line3_oline.test.cpp\"\n#define PROBLEM\
     \ \"https://atcoder.jp/contests/abc181/tasks/abc181_c\"\n\n#line 1 \"library/cpp/Geometry/Point.hpp\"\
-    \n#include <cmath>\n#include <ostream>\n\ntemplate<class T>\nclass Point {\npublic:\n\
-    \    T x;\n    T y;\n    int no;\n    double EPS = 1e-10;\n\n    Point() : x(0),\
-    \ y(0), no(0) {};\n\n    Point(const T x, const T y, int no = 0, double eps =\
-    \ 1e-10) : x(x), y(y), no(no), EPS(eps) {}\n\n    // \u539F\u70B9\u3092\u4E2D\u5FC3\
-    \u3068\u3057\u3066\uFF0C\u53CD\u6642\u8A08\u56DE\u308A\u306B theta \u56DE\u8EE2\
-    \u3055\u305B\u305F\u70B9\u3092\u6C42\u3081\u308B\n    Point<T> rotate(double theta)\
-    \ const {\n        return Point<T>(this->x * std::cos(theta) - this->y * std::sin(theta),\n\
-    \                        this->x * std::sin(theta) + this->y * std::cos(theta));\n\
-    \    }\n\n    // \u5185\u7A4D (dot product) : a\u22C5b = |a||b|cos\u03B8\n   \
-    \ double dot(const Point<T> &p) const {\n        return this->x * p.x + this->y\
-    \ * p.y;\n    }\n\n    // \u5916\u7A4D (cross product) : a\xD7b = |a||b|sin\u03B8\
-    \n    double cross(const Point<T> &p) const {\n        return this->y * p.x -\
-    \ this->x * p.y;\n    }\n\n    T norm2() const {\n        return this->x * this->x\
-    \ + this->y * this->y;\n    }\n\n    double radian() const {\n        return atan2(this->y,\
-    \ this->x);\n    }\n\n    Point<T> &operator+=(const Point<T> &p) {\n        this->x\
-    \ += p.x;\n        this->y += p.y;\n        return *this;\n    }\n\n    Point<T>\
-    \ operator+(const Point<T> &p) const {\n        return Point<T>(this->x + p.x,\
-    \ this->y + p.y);\n    }\n\n    Point<T> &operator-=(const Point<T> &p) {\n  \
-    \      this->x -= p.x;\n        this->y -= p.y;\n        return *this;\n    }\n\
-    \n    Point<T> operator-(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \n#include <cmath>\n#include <numeric>\n#include <ostream>\n\ntemplate<class T>\n\
+    class Point {\npublic:\n    T x;\n    T y;\n    int no;\n    double EPS = 1e-10;\n\
+    \n    Point() : x(0), y(0), no(0) {};\n\n    Point(const T x, const T y, int no\
+    \ = 0, double eps = 1e-10) : x(x), y(y), no(no), EPS(eps) {}\n\n    // \u539F\u70B9\
+    \u3092\u4E2D\u5FC3\u3068\u3057\u3066\uFF0C\u53CD\u6642\u8A08\u56DE\u308A\u306B\
+    \ theta \u56DE\u8EE2\u3055\u305B\u305F\u70B9\u3092\u6C42\u3081\u308B\n    Point<T>\
+    \ rotate(double theta) const {\n        return Point<T>(this->x * std::cos(theta)\
+    \ - this->y * std::sin(theta),\n                        this->x * std::sin(theta)\
+    \ + this->y * std::cos(theta));\n    }\n\n    // \u5185\u7A4D (dot product) :\
+    \ a\u22C5b = |a||b|cos\u03B8\n    double dot(const Point<T> &p) const {\n    \
+    \    return this->x * p.x + this->y * p.y;\n    }\n\n    // \u5916\u7A4D (cross\
+    \ product) : a\xD7b = |a||b|sin\u03B8\n    double cross(const Point<T> &p) const\
+    \ {\n        return this->y * p.x - this->x * p.y;\n    }\n\n    T norm2() const\
+    \ {\n        return this->x * this->x + this->y * this->y;\n    }\n\n    double\
+    \ radian() const {\n        return atan2(this->y, this->x);\n    }\n\n    // \u50BE\
+    \u304D\u3092\u6709\u7406\u6570\u3067\u8FD4\u3059(first / second)\n    // \u50BE\
+    \u304D\u304C\u7121\u9650\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u5834\u5408\
+    \u306F (1, 0) \u3068\u3059\u308B\n    std::pair<T, T> slope() {\n        auto\
+    \ dx = this->x;\n        auto dy = this->y;\n        if (dx < 0) {\n         \
+    \   dx = -dx;\n            dy = -dy;\n        }\n\n        // \u7E26\n       \
+    \ if (dx == 0) {\n            dy = 1;\n        } else {\n            auto g =\
+    \ std::gcd(dx, dy);\n            dx /= g;\n            dy /= g;\n        }\n\n\
+    \        return {dy, dx};\n    }\n\n    Point<T> &operator+=(const Point<T> &p)\
+    \ {\n        this->x += p.x;\n        this->y += p.y;\n        return *this;\n\
+    \    }\n\n    Point<T> operator+(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \ + p.x, this->y + p.y);\n    }\n\n    Point<T> &operator-=(const Point<T> &p)\
+    \ {\n        this->x -= p.x;\n        this->y -= p.y;\n        return *this;\n\
+    \    }\n\n    Point<T> operator-(const Point<T> &p) const {\n        return Point<T>(this->x\
     \ - p.x, this->y - p.y);\n    }\n\n    Point<T> &operator*=(const T d) {\n   \
     \     this->x *= d;\n        this->y *= d;\n        return *this;\n    }\n\n \
     \   Point<T> operator*(const T d) const {\n        return Point<T>(this->x * d,\
@@ -57,22 +65,22 @@ data:
     \ {\n        if (fabs(l.x - r.x) < 1e-10) {\n            return l.y < r.y;\n \
     \       }\n        return l.x < r.x;\n    }\n\n    friend std::ostream &operator<<(std::ostream\
     \ &os, const Point<T> &p) {\n        os << \"(x=\" << p.x << \", y=\" << p.y <<\
-    \ \")\";\n        return os;\n    }\n};\n#line 2 \"library/cpp/Geometry/Line.hpp\"\
-    \n#include <numeric>\n#include <utility>\n\n// \u5E73\u9762\u4E0A\u306E\u7DDA\u5206\
-    \ntemplate<class T=long long>\nclass Line {\npublic:\n    constexpr static const\
-    \ double epsilon = 1e-9;\n    Point<T> a;\n    Point<T> b;\n\n    Line() = default;\n\
-    \n    Line(const Point<T> a, const Point<T> b) : a(a), b(b) {}\n\n    // line\
-    \ \u306E\u50BE\u304D\uFF0E\u6709\u7406\u6570\u3067\u8FD4\u3059\n    // line \u304C\
-    \u7E26\u3067\u50BE\u304D\u304C\u7121\u9650\u306B\u306A\u3063\u3066\u3057\u307E\
-    \u3046\u5834\u5408\u306F (1, 0) \u3068\u3059\u308B\n    std::pair<T, T> slope()\
-    \ {\n        auto dx = this->a.x - this->b.x;\n        auto dy = this->a.y - this->b.y;\n\
-    \        if (dx < 0) {\n            dx = -dx;\n            dy = -dy;\n       \
-    \ }\n\n        // \u7E26\n        if (dx == 0) {\n            dy = 1;\n      \
-    \  } else {\n            auto g = std::gcd(dx, dy);\n            dx /= g;\n  \
-    \          dy /= g;\n        }\n\n        return {dy, dx};\n    }\n\n    // y\
-    \ \u5207\u7247\uFF0E\u6709\u7406\u6570\u3067\u8FD4\u3059\n    // line \u304C\u7E26\
-    \u3067 y \u5207\u7247\u304C\u306A\u3044\u5834\u5408\u306F {-start.x, 0} \u3092\
-    \u8FD4\u3059\n    std::pair<T, T> y_intercept() {\n        auto [dy, dx] = this->slope();\n\
+    \ \")\";\n        return os;\n    }\n};\n#line 3 \"library/cpp/Geometry/Line.hpp\"\
+    \n#include <utility>\n\n// \u5E73\u9762\u4E0A\u306E\u7DDA\u5206\ntemplate<class\
+    \ T=long long>\nclass Line {\npublic:\n    constexpr static const double epsilon\
+    \ = 1e-9;\n    Point<T> a;\n    Point<T> b;\n\n    Line() = default;\n\n    Line(const\
+    \ Point<T> a, const Point<T> b) : a(a), b(b) {}\n\n    // line \u306E\u50BE\u304D\
+    \uFF0E\u6709\u7406\u6570\u3067\u8FD4\u3059\n    // line \u304C\u7E26\u3067\u50BE\
+    \u304D\u304C\u7121\u9650\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u5834\u5408\
+    \u306F (1, 0) \u3068\u3059\u308B\n    std::pair<T, T> slope() {\n        auto\
+    \ dx = this->a.x - this->b.x;\n        auto dy = this->a.y - this->b.y;\n    \
+    \    if (dx < 0) {\n            dx = -dx;\n            dy = -dy;\n        }\n\n\
+    \        // \u7E26\n        if (dx == 0) {\n            dy = 1;\n        } else\
+    \ {\n            auto g = std::gcd(dx, dy);\n            dx /= g;\n          \
+    \  dy /= g;\n        }\n\n        return {dy, dx};\n    }\n\n    // y \u5207\u7247\
+    \uFF0E\u6709\u7406\u6570\u3067\u8FD4\u3059\n    // line \u304C\u7E26\u3067 y \u5207\
+    \u7247\u304C\u306A\u3044\u5834\u5408\u306F {-start.x, 0} \u3092\u8FD4\u3059\n\
+    \    std::pair<T, T> y_intercept() {\n        auto [dy, dx] = this->slope();\n\
     \        return {dx * this->a.y - dy * this->a.x, dx};\n    }\n\n    // \u7DDA\
     \u5206\u4E0A\u306B point \u304C\u3042\u308B\u304B\u5224\u5B9A\n    bool on_line(const\
     \ Point<T> &point) const {\n        const auto ax = this->a.x;\n        const\

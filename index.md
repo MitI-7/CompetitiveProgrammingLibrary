@@ -152,7 +152,7 @@ data:
       title: library/cpp/String/RollingHash.hpp
   - name: library/cpp/Tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/BinaryTrie.hpp
       title: library/cpp/Tree/BinaryTrie.hpp
     - icon: ':heavy_check_mark:'
@@ -170,6 +170,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/SegmentTree.hpp
       title: library/cpp/Tree/SegmentTree.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Tree/SegmentTree2D.hpp
+      title: library/cpp/Tree/SegmentTree2D.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/UnionFind.hpp
       title: library/cpp/Tree/UnionFind.hpp
@@ -466,7 +469,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
       title: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
       title: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
     - icon: ':heavy_check_mark:'
@@ -491,6 +494,9 @@ data:
       path: test/cpp/Tree/ReRooting4.test.cpp
       title: test/cpp/Tree/ReRooting4.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/ReRooting5.test.cpp
+      title: test/cpp/Tree/ReRooting5.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/RollbackUnionFind1.test.cpp
       title: test/cpp/Tree/RollbackUnionFind1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -502,6 +508,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
       title: test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/SegmentTree2D1_sum.test.cpp
+      title: test/cpp/Tree/SegmentTree2D1_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/SegmentTree2D2_max.test.cpp
+      title: test/cpp/Tree/SegmentTree2D2_max.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/SegmentTree2D3_min.test.cpp
+      title: test/cpp/Tree/SegmentTree2D3_min.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
       title: test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp

@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/ReRooting4.test.cpp
     title: test/cpp/Tree/ReRooting4.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Tree/ReRooting5.test.cpp
+    title: test/cpp/Tree/ReRooting5.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -178,6 +181,7 @@ data:
   timestamp: '2024-02-05 18:56:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/Tree/ReRooting5.test.cpp
   - test/cpp/Tree/ReRooting3.test.cpp
   - test/cpp/Tree/ReRooting1.test.cpp
   - test/cpp/Tree/ReRooting2.test.cpp

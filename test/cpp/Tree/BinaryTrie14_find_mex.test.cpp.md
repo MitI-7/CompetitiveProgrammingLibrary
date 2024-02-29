@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: library/cpp/Tree/BinaryTrie.hpp
     title: library/cpp/Tree/BinaryTrie.hpp
   _extendedRequiredBy: []

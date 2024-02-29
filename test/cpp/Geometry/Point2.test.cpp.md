@@ -16,26 +16,34 @@ data:
     - https://atcoder.jp/contests/abc207/tasks/abc207_d
   bundledCode: "#line 1 \"test/cpp/Geometry/Point2.test.cpp\"\n#define PROBLEM \"\
     https://atcoder.jp/contests/abc207/tasks/abc207_d\"\n\n#line 1 \"library/cpp/Geometry/Point.hpp\"\
-    \n#include <cmath>\n#include <ostream>\n\ntemplate<class T>\nclass Point {\npublic:\n\
-    \    T x;\n    T y;\n    int no;\n    double EPS = 1e-10;\n\n    Point() : x(0),\
-    \ y(0), no(0) {};\n\n    Point(const T x, const T y, int no = 0, double eps =\
-    \ 1e-10) : x(x), y(y), no(no), EPS(eps) {}\n\n    // \u539F\u70B9\u3092\u4E2D\u5FC3\
-    \u3068\u3057\u3066\uFF0C\u53CD\u6642\u8A08\u56DE\u308A\u306B theta \u56DE\u8EE2\
-    \u3055\u305B\u305F\u70B9\u3092\u6C42\u3081\u308B\n    Point<T> rotate(double theta)\
-    \ const {\n        return Point<T>(this->x * std::cos(theta) - this->y * std::sin(theta),\n\
-    \                        this->x * std::sin(theta) + this->y * std::cos(theta));\n\
-    \    }\n\n    // \u5185\u7A4D (dot product) : a\u22C5b = |a||b|cos\u03B8\n   \
-    \ double dot(const Point<T> &p) const {\n        return this->x * p.x + this->y\
-    \ * p.y;\n    }\n\n    // \u5916\u7A4D (cross product) : a\xD7b = |a||b|sin\u03B8\
-    \n    double cross(const Point<T> &p) const {\n        return this->y * p.x -\
-    \ this->x * p.y;\n    }\n\n    T norm2() const {\n        return this->x * this->x\
-    \ + this->y * this->y;\n    }\n\n    double radian() const {\n        return atan2(this->y,\
-    \ this->x);\n    }\n\n    Point<T> &operator+=(const Point<T> &p) {\n        this->x\
-    \ += p.x;\n        this->y += p.y;\n        return *this;\n    }\n\n    Point<T>\
-    \ operator+(const Point<T> &p) const {\n        return Point<T>(this->x + p.x,\
-    \ this->y + p.y);\n    }\n\n    Point<T> &operator-=(const Point<T> &p) {\n  \
-    \      this->x -= p.x;\n        this->y -= p.y;\n        return *this;\n    }\n\
-    \n    Point<T> operator-(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \n#include <cmath>\n#include <numeric>\n#include <ostream>\n\ntemplate<class T>\n\
+    class Point {\npublic:\n    T x;\n    T y;\n    int no;\n    double EPS = 1e-10;\n\
+    \n    Point() : x(0), y(0), no(0) {};\n\n    Point(const T x, const T y, int no\
+    \ = 0, double eps = 1e-10) : x(x), y(y), no(no), EPS(eps) {}\n\n    // \u539F\u70B9\
+    \u3092\u4E2D\u5FC3\u3068\u3057\u3066\uFF0C\u53CD\u6642\u8A08\u56DE\u308A\u306B\
+    \ theta \u56DE\u8EE2\u3055\u305B\u305F\u70B9\u3092\u6C42\u3081\u308B\n    Point<T>\
+    \ rotate(double theta) const {\n        return Point<T>(this->x * std::cos(theta)\
+    \ - this->y * std::sin(theta),\n                        this->x * std::sin(theta)\
+    \ + this->y * std::cos(theta));\n    }\n\n    // \u5185\u7A4D (dot product) :\
+    \ a\u22C5b = |a||b|cos\u03B8\n    double dot(const Point<T> &p) const {\n    \
+    \    return this->x * p.x + this->y * p.y;\n    }\n\n    // \u5916\u7A4D (cross\
+    \ product) : a\xD7b = |a||b|sin\u03B8\n    double cross(const Point<T> &p) const\
+    \ {\n        return this->y * p.x - this->x * p.y;\n    }\n\n    T norm2() const\
+    \ {\n        return this->x * this->x + this->y * this->y;\n    }\n\n    double\
+    \ radian() const {\n        return atan2(this->y, this->x);\n    }\n\n    // \u50BE\
+    \u304D\u3092\u6709\u7406\u6570\u3067\u8FD4\u3059(first / second)\n    // \u50BE\
+    \u304D\u304C\u7121\u9650\u306B\u306A\u3063\u3066\u3057\u307E\u3046\u5834\u5408\
+    \u306F (1, 0) \u3068\u3059\u308B\n    std::pair<T, T> slope() {\n        auto\
+    \ dx = this->x;\n        auto dy = this->y;\n        if (dx < 0) {\n         \
+    \   dx = -dx;\n            dy = -dy;\n        }\n\n        // \u7E26\n       \
+    \ if (dx == 0) {\n            dy = 1;\n        } else {\n            auto g =\
+    \ std::gcd(dx, dy);\n            dx /= g;\n            dy /= g;\n        }\n\n\
+    \        return {dy, dx};\n    }\n\n    Point<T> &operator+=(const Point<T> &p)\
+    \ {\n        this->x += p.x;\n        this->y += p.y;\n        return *this;\n\
+    \    }\n\n    Point<T> operator+(const Point<T> &p) const {\n        return Point<T>(this->x\
+    \ + p.x, this->y + p.y);\n    }\n\n    Point<T> &operator-=(const Point<T> &p)\
+    \ {\n        this->x -= p.x;\n        this->y -= p.y;\n        return *this;\n\
+    \    }\n\n    Point<T> operator-(const Point<T> &p) const {\n        return Point<T>(this->x\
     \ - p.x, this->y - p.y);\n    }\n\n    Point<T> &operator*=(const T d) {\n   \
     \     this->x *= d;\n        this->y *= d;\n        return *this;\n    }\n\n \
     \   Point<T> operator*(const T d) const {\n        return Point<T>(this->x * d,\

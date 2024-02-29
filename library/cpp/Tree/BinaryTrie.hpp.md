@@ -42,12 +42,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
     title: test/cpp/Tree/BinaryTrie8_predecessor_successor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
     title: test/cpp/Tree/BinaryTrie9_predecessor_successor.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"library/cpp/Tree/BinaryTrie.hpp\"\n#include <array>\n#include\
@@ -528,7 +528,7 @@ data:
   path: library/cpp/Tree/BinaryTrie.hpp
   requiredBy: []
   timestamp: '2024-02-12 19:57:02+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/BinaryTrie5_count_less_than_x.test.cpp
   - test/cpp/Tree/BinaryTrie14_find_mex.test.cpp

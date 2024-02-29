@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
     title: test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/cpp/Tree/SegmentTree2D2_max.test.cpp
+    title: test/cpp/Tree/SegmentTree2D2_max.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -73,6 +76,7 @@ data:
   timestamp: '2024-01-28 17:02:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/Tree/SegmentTree2D2_max.test.cpp
   - test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
 documentation_of: library/cpp/DataStructure/CumulativeSum2Dim.hpp
 layout: document

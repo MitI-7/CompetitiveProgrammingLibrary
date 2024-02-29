@@ -31,8 +31,8 @@ data:
     )\n            return\n        S = matrix_rotate(S)\n\n    print(\"No\")\n\n\n\
     if __name__ == '__main__':\n    main()\n"
   dependsOn:
-  - library/python/Utility/matrix_strip.py
   - library/python/Utility/matrix_rotate.py
+  - library/python/Utility/matrix_strip.py
   isVerificationFile: true
   path: test/python/Utility/matrix_rotate2.test.py
   requiredBy: []
