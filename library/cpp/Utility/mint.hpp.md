@@ -69,14 +69,14 @@ data:
   isVerificationFile: false
   path: library/cpp/Utility/mint.hpp
   requiredBy:
-  - library/cpp/Math/Combination.hpp
   - library/cpp/Math/derangement.cpp
+  - library/cpp/Math/Combination.hpp
   timestamp: '2024-01-20 16:48:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Tree/RollbackUnionFind1.test.cpp
-  - test/cpp/Math/derangement1.test.cpp
   - test/cpp/Math/Combination1_nCr.test.cpp
+  - test/cpp/Math/derangement1.test.cpp
+  - test/cpp/Tree/RollbackUnionFind1.test.cpp
 documentation_of: library/cpp/Utility/mint.hpp
 layout: document
 redirect_from:

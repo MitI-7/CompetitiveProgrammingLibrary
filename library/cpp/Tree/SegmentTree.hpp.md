@@ -31,32 +31,38 @@ data:
     #include <vector>\n\n// \u30E2\u30CE\u30A4\u30C9\u3092\u4E57\u305B\u308B\u3053\
     \u3068\u304C\u3067\u304D\u308B\n// \u7D50\u5408\u5247: a * (b * c) = (a * b) *\
     \ c\n// \u5358\u4F4D\u5143: e * a = a * e = a\n// \u3059\u3079\u3066 0-origin\n\
-    template<class T, T (*op)(T, T), T (*unit)()>\nclass SegmentTree {\n    const\
-    \ int array_size;       // \u3082\u3068\u306E\u914D\u5217\u306E\u30B5\u30A4\u30BA\
-    \n    int n;                      // \u30BB\u30B0\u6728\u3067\u4F7F\u3046\u914D\
-    \u5217\u306E\u30B5\u30A4\u30BA\n    std::vector<T> data;\n\npublic:\n    SegmentTree(int\
-    \ array_size) : array_size(array_size), n(1) {\n        // n \u306F array_size\
-    \ \u4EE5\u4E0A\u306E\u6700\u5C0F\u306E 2 \u51AA\n        while (this->n < array_size)\
-    \ {\n            this->n <<= 1;\n        }\n        this->data.resize(2 * this->n\
-    \ - 1, unit());\n    }\n\n    T access(const int idx) const {\n        return\
-    \ this->data[idx + this->n - 1];\n    }\n\n    // array[idx] = x\n    // O(log\
-    \ N)\n    void update(int idx, const T x) {\n        assert(0 <= idx and idx <\
-    \ this->array_size);\n        idx += this->n - 1;   // \u6728\u3067\u306E\u5BFE\
-    \u8C61\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\n        this->data[idx] = x;\n\
-    \        while (idx > 0) {\n            idx = (idx - 1) / 2;                 \
-    \                                     // \u89AA\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\
-    \u30B9\n            this->data[idx] = op(this->data[idx * 2 + 1], this->data[idx\
-    \ * 2 + 2]);   // \u5DE6\u306E\u5B50\u3068\u53F3\u306E\u5B50\n        }\n    }\n\
-    \n    // op(array[left, right))\n    // O(log N)\n    T query(const int left,\
-    \ const int right) const {\n        assert(0 <= left and left < right and right\
-    \ <= this->array_size);\n        return query(left, right, 0, 0, this->n);\n \
-    \   }\n\nprivate:\n    // \u533A\u9593 [l, r)\u306E\u5024\u3092\u30CE\u30FC\u30C9\
-    \ u \u304B\u3089\u691C\u7D22\n    // \u30CE\u30FC\u30C9 u \u306F[start, end) \u3092\
-    \u30AB\u30D0\u30FC\u3059\u308B\n    T query(const int l, const int r, const int\
-    \ u, const int start, const int end) const {\n        assert(l < r && start <\
-    \ end);\n        // \u7BC4\u56F2\u5916\n        if (end <= l or r <= start) {\n\
-    \            return unit();\n        }\n\n        // \u5B8C\u5168\u306B\u542B\u3080\
-    \n        if (l <= start and end <= r) {\n            return this->data[u];\n\
+    template<class T, T (*op)(T, T), T (*unit)()>\nclass SegmentTree {\n    int n;\
+    \                      // \u30BB\u30B0\u6728\u3067\u4F7F\u3046\u914D\u5217\u306E\
+    \u30B5\u30A4\u30BA\n    std::vector<T> data;\n\npublic:\n    SegmentTree(const\
+    \ int array_size) : n(1) {\n        // n \u306F array_size \u4EE5\u4E0A\u306E\u6700\
+    \u5C0F\u306E 2 \u51AA\n        while (this->n < array_size) {\n            this->n\
+    \ <<= 1;\n        }\n        this->data.resize(2 * this->n - 1, unit());\n   \
+    \ }\n\n    SegmentTree(const std::vector<T> &v) : n(1) {\n        while (this->n\
+    \ < (int) v.size()) {\n            this->n <<= 1;\n        }\n        this->data.resize(2\
+    \ * this->n - 1, unit());\n\n        for (int i = 0; i < this->array_size; ++i)\
+    \ {\n            this->data[i + n - 1] = v[i];\n        }\n\n        for (int\
+    \ u = this->n - 2; u >= 0; --u) {\n            this->data[u] = op(this->data[u\
+    \ * 2 + 1], this->data[u * 2 + 2]);\n        }\n    }\n\n    T access(const int\
+    \ idx) const {\n        return this->data[idx + this->n - 1];\n    }\n\n    //\
+    \ data[idx] = x\n    // O(log N)\n    void update(int idx, const T x) {\n//  \
+    \      assert(0 <= idx and idx < this->array_size);\n        idx += this->n -\
+    \ 1;   // \u6728\u3067\u306E\u5BFE\u8C61\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\
+    \n        this->data[idx] = x;\n        while (idx > 0) {\n            idx = (idx\
+    \ - 1) / 2;                                                      // \u89AA\u306E\
+    \u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\n            this->data[idx] = op(this->data[idx\
+    \ * 2 + 1], this->data[idx * 2 + 2]);   // \u5DE6\u306E\u5B50\u3068\u53F3\u306E\
+    \u5B50\n        }\n    }\n\n    // op(data[left, right))\n    // O(log N)\n  \
+    \  T query(const int left, const int right) const {\n//        assert(0 <= left\
+    \ and left < right and right <= this->array_size);\n        return query(left,\
+    \ right, 0, 0, this->n);\n    }\n\n    // op(data[left, right)) = op(data[left,\
+    \ i)) \u3068\u306A\u308B\u6700\u5C0F\u306Ei\n    int query_left() {\n        return\
+    \ 0;\n    }\n\nprivate:\n    // \u533A\u9593 [l, r)\u306E\u5024\u3092\u30CE\u30FC\
+    \u30C9 u \u304B\u3089\u691C\u7D22\n    // \u30CE\u30FC\u30C9 u \u306F[start, end)\
+    \ \u3092\u30AB\u30D0\u30FC\u3059\u308B\n    T query(const int l, const int r,\
+    \ const int u, const int start, const int end) const {\n        assert(l < r &&\
+    \ start < end);\n        // \u7BC4\u56F2\u5916\n        if (end <= l or r <= start)\
+    \ {\n            return unit();\n        }\n\n        // \u5B8C\u5168\u306B\u542B\
+    \u3080\n        if (l <= start and end <= r) {\n            return this->data[u];\n\
     \        } else {\n            const int m = (start + end) / 2;\n            auto\
     \ vl = query(l, r, u * 2 + 1, start, m);  // \u5DE6\u306E\u5B50\n            auto\
     \ vr = query(l, r, u * 2 + 2, m, end);    // \u53F3\u306E\u5B50\n            return\
@@ -93,31 +99,37 @@ data:
     \u305B\u308B\u3053\u3068\u304C\u3067\u304D\u308B\n// \u7D50\u5408\u5247: a * (b\
     \ * c) = (a * b) * c\n// \u5358\u4F4D\u5143: e * a = a * e = a\n// \u3059\u3079\
     \u3066 0-origin\ntemplate<class T, T (*op)(T, T), T (*unit)()>\nclass SegmentTree\
-    \ {\n    const int array_size;       // \u3082\u3068\u306E\u914D\u5217\u306E\u30B5\
-    \u30A4\u30BA\n    int n;                      // \u30BB\u30B0\u6728\u3067\u4F7F\
-    \u3046\u914D\u5217\u306E\u30B5\u30A4\u30BA\n    std::vector<T> data;\n\npublic:\n\
-    \    SegmentTree(int array_size) : array_size(array_size), n(1) {\n        //\
-    \ n \u306F array_size \u4EE5\u4E0A\u306E\u6700\u5C0F\u306E 2 \u51AA\n        while\
-    \ (this->n < array_size) {\n            this->n <<= 1;\n        }\n        this->data.resize(2\
-    \ * this->n - 1, unit());\n    }\n\n    T access(const int idx) const {\n    \
-    \    return this->data[idx + this->n - 1];\n    }\n\n    // array[idx] = x\n \
-    \   // O(log N)\n    void update(int idx, const T x) {\n        assert(0 <= idx\
-    \ and idx < this->array_size);\n        idx += this->n - 1;   // \u6728\u3067\u306E\
-    \u5BFE\u8C61\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\n        this->data[idx]\
-    \ = x;\n        while (idx > 0) {\n            idx = (idx - 1) / 2;          \
-    \                                            // \u89AA\u306E\u30A4\u30F3\u30C7\
-    \u30C3\u30AF\u30B9\n            this->data[idx] = op(this->data[idx * 2 + 1],\
-    \ this->data[idx * 2 + 2]);   // \u5DE6\u306E\u5B50\u3068\u53F3\u306E\u5B50\n\
-    \        }\n    }\n\n    // op(array[left, right))\n    // O(log N)\n    T query(const\
-    \ int left, const int right) const {\n        assert(0 <= left and left < right\
-    \ and right <= this->array_size);\n        return query(left, right, 0, 0, this->n);\n\
-    \    }\n\nprivate:\n    // \u533A\u9593 [l, r)\u306E\u5024\u3092\u30CE\u30FC\u30C9\
-    \ u \u304B\u3089\u691C\u7D22\n    // \u30CE\u30FC\u30C9 u \u306F[start, end) \u3092\
-    \u30AB\u30D0\u30FC\u3059\u308B\n    T query(const int l, const int r, const int\
-    \ u, const int start, const int end) const {\n        assert(l < r && start <\
-    \ end);\n        // \u7BC4\u56F2\u5916\n        if (end <= l or r <= start) {\n\
-    \            return unit();\n        }\n\n        // \u5B8C\u5168\u306B\u542B\u3080\
-    \n        if (l <= start and end <= r) {\n            return this->data[u];\n\
+    \ {\n    int n;                      // \u30BB\u30B0\u6728\u3067\u4F7F\u3046\u914D\
+    \u5217\u306E\u30B5\u30A4\u30BA\n    std::vector<T> data;\n\npublic:\n    SegmentTree(const\
+    \ int array_size) : n(1) {\n        // n \u306F array_size \u4EE5\u4E0A\u306E\u6700\
+    \u5C0F\u306E 2 \u51AA\n        while (this->n < array_size) {\n            this->n\
+    \ <<= 1;\n        }\n        this->data.resize(2 * this->n - 1, unit());\n   \
+    \ }\n\n    SegmentTree(const std::vector<T> &v) : n(1) {\n        while (this->n\
+    \ < (int) v.size()) {\n            this->n <<= 1;\n        }\n        this->data.resize(2\
+    \ * this->n - 1, unit());\n\n        for (int i = 0; i < this->array_size; ++i)\
+    \ {\n            this->data[i + n - 1] = v[i];\n        }\n\n        for (int\
+    \ u = this->n - 2; u >= 0; --u) {\n            this->data[u] = op(this->data[u\
+    \ * 2 + 1], this->data[u * 2 + 2]);\n        }\n    }\n\n    T access(const int\
+    \ idx) const {\n        return this->data[idx + this->n - 1];\n    }\n\n    //\
+    \ data[idx] = x\n    // O(log N)\n    void update(int idx, const T x) {\n//  \
+    \      assert(0 <= idx and idx < this->array_size);\n        idx += this->n -\
+    \ 1;   // \u6728\u3067\u306E\u5BFE\u8C61\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\
+    \n        this->data[idx] = x;\n        while (idx > 0) {\n            idx = (idx\
+    \ - 1) / 2;                                                      // \u89AA\u306E\
+    \u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\n            this->data[idx] = op(this->data[idx\
+    \ * 2 + 1], this->data[idx * 2 + 2]);   // \u5DE6\u306E\u5B50\u3068\u53F3\u306E\
+    \u5B50\n        }\n    }\n\n    // op(data[left, right))\n    // O(log N)\n  \
+    \  T query(const int left, const int right) const {\n//        assert(0 <= left\
+    \ and left < right and right <= this->array_size);\n        return query(left,\
+    \ right, 0, 0, this->n);\n    }\n\n    // op(data[left, right)) = op(data[left,\
+    \ i)) \u3068\u306A\u308B\u6700\u5C0F\u306Ei\n    int query_left() {\n        return\
+    \ 0;\n    }\n\nprivate:\n    // \u533A\u9593 [l, r)\u306E\u5024\u3092\u30CE\u30FC\
+    \u30C9 u \u304B\u3089\u691C\u7D22\n    // \u30CE\u30FC\u30C9 u \u306F[start, end)\
+    \ \u3092\u30AB\u30D0\u30FC\u3059\u308B\n    T query(const int l, const int r,\
+    \ const int u, const int start, const int end) const {\n        assert(l < r &&\
+    \ start < end);\n        // \u7BC4\u56F2\u5916\n        if (end <= l or r <= start)\
+    \ {\n            return unit();\n        }\n\n        // \u5B8C\u5168\u306B\u542B\
+    \u3080\n        if (l <= start and end <= r) {\n            return this->data[u];\n\
     \        } else {\n            const int m = (start + end) / 2;\n            auto\
     \ vl = query(l, r, u * 2 + 1, start, m);  // \u5DE6\u306E\u5B50\n            auto\
     \ vr = query(l, r, u * 2 + 2, m, end);    // \u53F3\u306E\u5B50\n            return\
@@ -156,12 +168,12 @@ data:
   timestamp: '2024-01-27 12:23:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
-  - test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
-  - test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
-  - test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
-  - test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
   - test/cpp/Tree/SegmentTree6_point_update_parenthesis.test.cpp
+  - test/cpp/Tree/SegmentTree4_point_update_range_xor.test.cpp
+  - test/cpp/Tree/SegmentTree1_point_add_range_sum.test.cpp
+  - test/cpp/Tree/SegmentTree5_point_update_rolling_hash.test.cpp
+  - test/cpp/Tree/SegmentTree3_point_add_range_sum.test.cpp
+  - test/cpp/Tree/SegmentTree2_point_update_range_min.test.cpp
 documentation_of: library/cpp/Tree/SegmentTree.hpp
 layout: document
 redirect_from:

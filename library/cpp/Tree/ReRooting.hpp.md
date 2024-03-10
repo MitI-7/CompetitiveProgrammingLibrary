@@ -182,10 +182,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/cpp/Tree/ReRooting5.test.cpp
+  - test/cpp/Tree/ReRooting4.test.cpp
   - test/cpp/Tree/ReRooting3.test.cpp
   - test/cpp/Tree/ReRooting1.test.cpp
   - test/cpp/Tree/ReRooting2.test.cpp
-  - test/cpp/Tree/ReRooting4.test.cpp
 documentation_of: library/cpp/Tree/ReRooting.hpp
 layout: document
 redirect_from:

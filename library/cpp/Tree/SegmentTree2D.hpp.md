@@ -160,8 +160,8 @@ data:
   timestamp: '2024-02-29 16:39:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Tree/SegmentTree2D2_max.test.cpp
   - test/cpp/Tree/SegmentTree2D3_min.test.cpp
+  - test/cpp/Tree/SegmentTree2D2_max.test.cpp
   - test/cpp/Tree/SegmentTree2D1_sum.test.cpp
 documentation_of: library/cpp/Tree/SegmentTree2D.hpp
 layout: document

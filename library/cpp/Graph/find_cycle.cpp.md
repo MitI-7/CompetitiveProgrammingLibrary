@@ -94,8 +94,8 @@ data:
   timestamp: '2023-05-15 18:45:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Graph/find_cycle1.test.cpp
   - test/cpp/Graph/find_cycle2.test.cpp
+  - test/cpp/Graph/find_cycle1.test.cpp
 documentation_of: library/cpp/Graph/find_cycle.cpp
 layout: document
 redirect_from:

@@ -26,8 +26,8 @@ data:
       path: library/cpp/DataStructure/CumulativeSum.hpp
       title: library/cpp/DataStructure/CumulativeSum.hpp
     - icon: ':heavy_check_mark:'
-      path: library/cpp/DataStructure/CumulativeSum2Dim.hpp
-      title: library/cpp/DataStructure/CumulativeSum2Dim.hpp
+      path: library/cpp/DataStructure/CumulativeSum2D.hpp
+      title: library/cpp/DataStructure/CumulativeSum2D.hpp
     - icon: ':heavy_check_mark:'
       path: library/cpp/DataStructure/DynamicMedian.hpp
       title: library/cpp/DataStructure/DynamicMedian.hpp
@@ -162,6 +162,12 @@ data:
       path: library/cpp/Tree/FenwickTreeRange.hpp
       title: library/cpp/Tree/FenwickTreeRange.hpp
     - icon: ':heavy_check_mark:'
+      path: library/cpp/Tree/LazySegmentTree.hpp
+      title: library/cpp/Tree/LazySegmentTree.hpp
+    - icon: ':heavy_check_mark:'
+      path: library/cpp/Tree/LazySegmentTree_template.hpp
+      title: library/cpp/Tree/LazySegmentTree_template.hpp
+    - icon: ':heavy_check_mark:'
       path: library/cpp/Tree/ReRooting.hpp
       title: library/cpp/Tree/ReRooting.hpp
     - icon: ':heavy_check_mark:'
@@ -250,8 +256,8 @@ data:
       path: test/cpp/DataStructure/CumulativeSum1.test.cpp
       title: test/cpp/DataStructure/CumulativeSum1.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
-      title: test/cpp/DataStructure/CumulativeSum2Dim1.test.cpp
+      path: test/cpp/DataStructure/CumulativeSum2D1.test.cpp
+      title: test/cpp/DataStructure/CumulativeSum2D1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/DataStructure/DynamicMedian1.test.cpp
       title: test/cpp/DataStructure/DynamicMedian1.test.cpp
@@ -481,6 +487,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/FenwickTreeRange2.test.cpp
       title: test/cpp/Tree/FenwickTreeRange2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/LazySegmentTree1_RMQ_RUQ.test.cpp
+      title: test/cpp/Tree/LazySegmentTree1_RMQ_RUQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/LazySegmentTree2_RSQ_RAQ.test.cpp
+      title: test/cpp/Tree/LazySegmentTree2_RSQ_RAQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/LazySegmentTree3_RMQ_RAQ.test.cpp
+      title: test/cpp/Tree/LazySegmentTree3_RMQ_RAQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/LazySegmentTree4_RSQ_RUQ.test.cpp
+      title: test/cpp/Tree/LazySegmentTree4_RSQ_RUQ.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/cpp/Tree/LazySegmentTree5_RSQ_RUQ.test.cpp
+      title: test/cpp/Tree/LazySegmentTree5_RSQ_RUQ.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/cpp/Tree/ReRooting1.test.cpp
       title: test/cpp/Tree/ReRooting1.test.cpp

@@ -69,9 +69,9 @@ data:
   timestamp: '2024-01-28 14:22:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
   - test/cpp/Range/StaticRangeFrequency3_range_count.test.cpp
   - test/cpp/Range/StaticRangeFrequency1_range_count.test.cpp
-  - test/cpp/Range/StaticRangeFrequency2_range_count.test.cpp
 documentation_of: library/cpp/Range/StaticRangeFrequency.hpp
 layout: document
 redirect_from:

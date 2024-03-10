@@ -48,9 +48,9 @@ data:
   timestamp: '2024-01-28 14:26:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/python/String/find_kth_string_permutation2.test.py
   - test/python/String/find_string_no_permutation1.test.py
   - test/python/String/find_kth_string_permutation1.test.py
-  - test/python/String/find_kth_string_permutation2.test.py
 documentation_of: library/python/String/find_kth_string_permutation.py
 layout: document
 redirect_from:

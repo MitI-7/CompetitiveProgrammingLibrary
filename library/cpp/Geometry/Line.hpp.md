@@ -193,11 +193,11 @@ data:
   timestamp: '2024-02-09 11:36:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/cpp/Geometry/Line1_is_parallel.test.cpp
-  - test/cpp/Geometry/Line2_is_intersection.test.cpp
   - test/cpp/Geometry/Line6_online.test.cpp
+  - test/cpp/Geometry/Line1_is_parallel.test.cpp
   - test/cpp/Geometry/Line5_slope.test.cpp
   - test/cpp/Geometry/Line3_oline.test.cpp
+  - test/cpp/Geometry/Line2_is_intersection.test.cpp
   - test/cpp/Geometry/Line4_slope.test.cpp
 documentation_of: library/cpp/Geometry/Line.hpp
 layout: document
