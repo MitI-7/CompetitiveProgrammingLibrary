@@ -1,0 +1,15 @@
+services:
+  verify:
+    image: cpl_verify:latest
+    build: ./docker
+    volumes:
+      - type: bind
+        source: .
+        target: /CompetitiveProgrammingLibrary
+    working_dir: /CompetitiveProgrammingLibrary
+    environment:
+      - DROPBOX_TOKEN=${DROPBOX_TOKEN}
+      - YUKICODER_TOKEN=${YUKICODER_TOKEN}
+      - PYTHONDONTWRITEBYTECODE=1
+
+    entrypoint: [ "oj-verify", "run", "--tle", "10" ]
